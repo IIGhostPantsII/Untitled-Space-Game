@@ -1,6 +1,26 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-666508872602889243
+--- !u!114 &-7964591791849441354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Project/Space/Build/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 638333549066002523
+  FileSizes:
+  - Name: Desktop
+    Value: 78752
+  Exists: 1
+--- !u!114 &-6838026933355539509
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12,14 +32,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/Master.strings.bank
   m_EditorClassIdentifier: 
-  Path: ../../OneDrive/Documents/FMOD Studio/Space Game/Space/Build/Desktop/Master.strings.bank
+  Path: FMOD Project/Space/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638325711636400681
+  lastModified: 638333549065164766
   FileSizes:
   - Name: Desktop
-    Value: 754
+    Value: 1246
   Exists: 1
+--- !u!114 &-6408918529084494121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Bowsers Here
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Bowsers Here
+  Guid:
+    Data1: -384478593
+    Data2: 1307451911
+    Data3: 421788828
+    Data4: 1233414913
+  Banks:
+  - {fileID: 8499201432690538995}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 43003
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33,18 +80,25 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -666508872602889243}
-  - {fileID: 9198584883494386493}
+  - {fileID: -6838026933355539509}
+  - {fileID: 6422365686012519055}
+  - {fileID: 8499201432690538995}
+  - {fileID: -7964591791849441354}
   EditorEvents:
-  - {fileID: 5928540370698892477}
+  - {fileID: -6408918529084494121}
+  - {fileID: 5787792691496073840}
+  - {fileID: 8295062745087103246}
+  - {fileID: 4529178485175749104}
+  - {fileID: 3295579543783037433}
+  - {fileID: 8376693419226169297}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 9198584883494386493}
+  - {fileID: 6422365686012519055}
   StringsBanks:
-  - {fileID: -666508872602889243}
-  cacheTime: 638325711636400681
+  - {fileID: -6838026933355539509}
+  cacheTime: 638333549066002523
   cacheVersion: 131607
---- !u!114 &5928540370698892477
+--- !u!114 &3295579543783037433
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -54,24 +108,103 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music
+  m_Name: event:/Music/SpaceAmbience
   m_EditorClassIdentifier: 
-  Path: event:/Music
+  Path: event:/Music/SpaceAmbience
   Guid:
-    Data1: -384478593
-    Data2: 1307451911
-    Data3: 421788828
-    Data4: 1233414913
+    Data1: -604717760
+    Data2: 1287883879
+    Data3: 1806774197
+    Data4: 1674732764
   Banks:
-  - {fileID: 9198584883494386493}
+  - {fileID: 8499201432690538995}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 43003
---- !u!114 &9198584883494386493
+  Length: 30348
+--- !u!114 &3516625198368199140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/Pitch
+  m_EditorClassIdentifier: 
+  Name: Pitch
+  StudioPath: 
+  Min: -10
+  Max: 10
+  Default: 0
+  ID:
+    data1: 2134175879
+    data2: 2615861958
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &4529178485175749104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Biggest Room
+  m_EditorClassIdentifier: 
+  Path: snapshot:/Biggest Room
+  Guid:
+    Data1: -1771684516
+    Data2: 1252459632
+    Data3: 358538628
+    Data4: -588074205
+  Banks:
+  - {fileID: 6422365686012519055}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &5787792691496073840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sounds/Footsteps
+  m_EditorClassIdentifier: 
+  Path: event:/Sounds/Footsteps
+  Guid:
+    Data1: -1979624750
+    Data2: 1293228564
+    Data3: -1870967662
+    Data4: 1777116068
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 3516625198368199140}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6422365686012519055
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -83,11 +216,85 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/Master.bank
   m_EditorClassIdentifier: 
-  Path: ../../OneDrive/Documents/FMOD Studio/Space Game/Space/Build/Desktop/Master.bank
+  Path: FMOD Project/Space/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638325711636390680
+  lastModified: 638333549065124858
   FileSizes:
   - Name: Desktop
-    Value: 534400
+    Value: 2582
+  Exists: 1
+--- !u!114 &8295062745087103246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Bigger Room
+  m_EditorClassIdentifier: 
+  Path: snapshot:/Bigger Room
+  Guid:
+    Data1: -152129278
+    Data2: 1329784350
+    Data3: 984356993
+    Data4: -353053976
+  Banks:
+  - {fileID: 6422365686012519055}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &8376693419226169297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sounds/Heartbeat
+  m_EditorClassIdentifier: 
+  Path: event:/Sounds/Heartbeat
+  Guid:
+    Data1: -490539894
+    Data2: 1282474198
+    Data3: 1330988464
+    Data4: 1780275101
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 998
+--- !u!114 &8499201432690538995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Project/Space/Build/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 638333500672541397
+  FileSizes:
+  - Name: Desktop
+    Value: 710464
   Exists: 1

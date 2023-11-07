@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{e915527f-2207-4dee-9cfc-2319016b8449}">
 		<property name="name">
-			<value>Music</value>
+			<value>Bowsers Here</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{e57c4c37-bacf-41a2-b80e-cca4b88cae95}</destination>
+			<destination>{02a99041-2fd3-43af-8497-3d86a51bdc5e}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{f612abe7-00f2-4207-b9c2-b47b73f6bf54}</destination>
@@ -32,7 +32,7 @@
 			<destination>{b98668b6-45ae-425a-961c-508d8b0ebe78}</destination>
 		</relationship>
 		<relationship name="banks">
-			<destination>{d3df576c-ae02-4259-b11d-8b75288bdf77}</destination>
+			<destination>{59453b9e-a43f-4b72-9189-915ea2df3dbc}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{f612abe7-00f2-4207-b9c2-b47b73f6bf54}">
@@ -53,7 +53,7 @@
 			<destination>{31ef7f25-c6d3-4a0d-b889-99db9967b73b}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{d0e21db5-49b4-4caa-be7c-3178258a5364}</destination>
+			<destination>{d3dceea1-a85b-435e-83a3-45536a7adfbc}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{8f612232-a217-44ab-9ac9-1bf001694ecb}" />
@@ -75,6 +75,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{5558babc-1862-48e6-b64c-2bdb2cff656c}">
+		<property name="volume">
+			<value>-20</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{e2262056-4a10-4510-801a-8d686b52bd59}</destination>
 		</relationship>
