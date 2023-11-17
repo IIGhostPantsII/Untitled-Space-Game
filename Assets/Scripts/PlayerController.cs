@@ -9,22 +9,23 @@ public class PlayerController : MonoBehaviour
     public FMOD.Studio.EventInstance moveEvent;
     private FMOD.Studio.PLAYBACK_STATE playbackState;
     private float timeSinceLastPlay = 0.0f;
-    public float eventInterval = 0.5f; // Adjust this to change the interval
+    public float eventInterval = 0.4f; // Adjust to change footstep interval
     private bool isEventPlaying = false;
     private bool isFirstInput = true; // Track the first input
 
-    // Settings you can change in the inspector
+    // Inspector Settings
     [SerializeField] private float _speed = 800f;
     [SerializeField] private float _sprintMultiplier = 1.5f;
     [SerializeField] private float _jumpForce = 15f;
     [SerializeField] private float _groundCheckRadius = 1.0f;
     [SerializeField] private LayerMask _groundLayer;
+    [SerializeField] private Transform _cameraTransform;
+    [SerializeField] private float _mouseSensitivity = 5f;
 
     // INPUT BOOLS
     private bool _isSprinting;
     private bool _isJumping;
     private bool _isGrounded;
-    private bool _isDashing;
 
     // Using Unity's new input system
     PlayerInput _input;
@@ -39,6 +40,9 @@ public class PlayerController : MonoBehaviour
 
     private bool isMoving = false;
 
+    //Rotation - used for mouse input
+    float _xRotation = 0f;
+
     private void Awake()
     {
         _input = new PlayerInput();
@@ -49,8 +53,6 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         _playerRigidbody = GetComponent<Rigidbody>();
-
-        // Initialize the FMOD event instance
         moveEvent = RuntimeManager.CreateInstance(moveEventPath);
     }
 
@@ -59,7 +61,15 @@ public class PlayerController : MonoBehaviour
         // INPUT VALUES
         _isJumping = _input.Player.Jump.ReadValue<float>() > 0.1f;
         _isSprinting = _input.Player.Sprint.ReadValue<float>() > 0.1f;
-        _isDashing = _input.Player.Dash.ReadValue<float>() > 0.1f;
+
+        float mouseX = Input.GetAxis("Mouse X") * _mouseSensitivity * Screen.dpi * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * _mouseSensitivity * Screen.dpi * Time.deltaTime;
+
+        _xRotation -= mouseY;
+        _xRotation = Mathf.Clamp(_xRotation, -90f, 90f);
+
+        _cameraTransform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
+        transform.Rotate(Vector3.up * mouseX);
 
         _isGrounded = Physics.SphereCast(transform.position, _groundCheckRadius, -Vector3.up, out RaycastHit hitInfo, 0.1f, _groundLayer);
 
@@ -122,13 +132,6 @@ public class PlayerController : MonoBehaviour
             movement *= _sprintMultiplier;
         }
 
-        if (_isDashing && !_delay && movement.magnitude > 0)
-        {
-            StartCoroutine(InputDelay(3.0f));
-            _delay = true;
-            StartCoroutine(Dash(movement));
-        }
-
         if (!_isGrounded)
         {
             movement.y -= 9.8f * Time.deltaTime;
@@ -167,15 +170,6 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
         _shootDelay = false;
-    }
-
-    IEnumerator Dash(Vector3 soTrue)
-    {
-        for (int i = 20; i < 40; i++)
-        {
-            yield return new WaitForSeconds(0.01f);
-            _playerRigidbody.AddForce(soTrue.normalized * i, ForceMode.Impulse);
-        }
     }
 
     IEnumerator Jump()
