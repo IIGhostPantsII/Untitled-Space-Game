@@ -134,6 +134,7 @@ public class PlayerController : MonoBehaviour
 
         if (!_isGrounded)
         {
+            Debug.Log("LEGO");
             movement.y -= 9.8f * Time.deltaTime;
         }
 
