@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638358594237075607
+  lastModified: 638360883067926199
   FileSizes:
   - Name: Desktop
-    Value: 114624
+    Value: 145696
   Exists: 1
 --- !u!114 &-6838026933355539509
 MonoBehaviour:
@@ -35,10 +35,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638358594227188212
+  lastModified: 638360852240377033
   FileSizes:
   - Name: Desktop
-    Value: 1318
+    Value: 1404
   Exists: 1
 --- !u!114 &-6408918529084494121
 MonoBehaviour:
@@ -94,6 +94,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 577
+--- !u!114 &-3012071330258881105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sounds/ShipLeave
+  m_EditorClassIdentifier: 
+  Path: event:/Sounds/ShipLeave
+  Guid:
+    Data1: -1638793789
+    Data2: 1172889597
+    Data3: -106655064
+    Data4: 425029819
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2089
 --- !u!114 &-364162369600267364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,12 +174,13 @@ MonoBehaviour:
   - {fileID: 8376693419226169297}
   - {fileID: -364162369600267364}
   - {fileID: -6276951058794266847}
+  - {fileID: -3012071330258881105}
   EditorParameters: []
   MasterBanks:
   - {fileID: 6422365686012519055}
   StringsBanks:
   - {fileID: -6838026933355539509}
-  cacheTime: 638358594237075607
+  cacheTime: 638360883067926199
   cacheVersion: 131607
 --- !u!114 &3295579543783037433
 MonoBehaviour:
@@ -275,10 +303,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638358594227168299
+  lastModified: 638360852240347107
   FileSizes:
   - Name: Desktop
-    Value: 2582
+    Value: 2728
   Exists: 1
 --- !u!114 &8295062745087103246
 MonoBehaviour:
@@ -349,7 +377,7 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638358594235954056
+  lastModified: 638360852240860888
   FileSizes:
   - Name: Desktop
     Value: 710464

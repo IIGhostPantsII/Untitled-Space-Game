@@ -62,14 +62,17 @@ public class PlayerController : MonoBehaviour
         _isJumping = _input.Player.Jump.ReadValue<float>() > 0.1f;
         _isSprinting = _input.Player.Sprint.ReadValue<float>() > 0.1f;
 
-        float mouseX = Input.GetAxis("Mouse X") * _mouseSensitivity * Screen.dpi * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * _mouseSensitivity * Screen.dpi * Time.deltaTime;
+        if(Globals.Movement)
+        {
+            float mouseX = Input.GetAxis("Mouse X") * _mouseSensitivity * Screen.dpi * Time.deltaTime;
+            float mouseY = Input.GetAxis("Mouse Y") * _mouseSensitivity * Screen.dpi * Time.deltaTime;
 
-        _xRotation -= mouseY;
-        _xRotation = Mathf.Clamp(_xRotation, -90f, 90f);
+            _xRotation -= mouseY;
+            _xRotation = Mathf.Clamp(_xRotation, -90f, 90f);
 
-        _cameraTransform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
-        transform.Rotate(Vector3.up * mouseX);
+            _cameraTransform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
+            transform.Rotate(Vector3.up * mouseX);
+        }
 
         _isGrounded = Physics.SphereCast(transform.position, _groundCheckRadius, -Vector3.up, out RaycastHit hitInfo, 0.1f, _groundLayer);
 
@@ -101,8 +104,11 @@ public class PlayerController : MonoBehaviour
         // Play the FMOD event if the player is moving and enough time has passed
         if (isMoving && timeSinceLastPlay >= (isFirstInput ? eventInterval / 2 : eventInterval))
         {
-            moveEvent.start();
-            timeSinceLastPlay = 0.0f;
+            if(Globals.Movement)
+            {
+                moveEvent.start();
+                timeSinceLastPlay = 0.0f;
+            }
         }
 
         // Stop the FMOD event when the player has finished moving and the event is playing
@@ -134,7 +140,6 @@ public class PlayerController : MonoBehaviour
 
         if (!_isGrounded)
         {
-            Debug.Log("LEGO");
             movement.y -= 9.8f * Time.deltaTime;
         }
 
@@ -148,7 +153,10 @@ public class PlayerController : MonoBehaviour
             isMoving = false;
         }
 
-        _playerRigidbody.velocity = movement * _speed * Time.deltaTime;
+        if(Globals.Movement)
+        {
+            _playerRigidbody.velocity = movement * _speed * Time.deltaTime;
+        }
     }
 
     private void OnEnable()
@@ -178,7 +186,11 @@ public class PlayerController : MonoBehaviour
         for (int i = 5; i < _jumpForce; i++)
         {
             yield return new WaitForSeconds(0.005f);
-            _playerRigidbody.AddForce(Vector3.up * i, ForceMode.Impulse);
+            if(Globals.Movement)
+            {
+                _playerRigidbody.AddForce(Vector3.up * i, ForceMode.Impulse);
+            }
+                
         }
     }
 }
