@@ -9,9 +9,9 @@ public class PlayerController : MonoBehaviour
     public FMOD.Studio.EventInstance moveEvent;
     private FMOD.Studio.PLAYBACK_STATE playbackState;
     private float timeSinceLastPlay = 0.0f;
-    public float eventInterval = 0.4f; // Adjust to change footstep interval
+    public float eventInterval = 0.4f;
     private bool isEventPlaying = false;
-    private bool isFirstInput = true; // Track the first input
+    private bool isFirstInput = true;
 
     // Inspector Settings
     [SerializeField] private float _speed = 800f;
@@ -21,13 +21,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask _groundLayer;
     [SerializeField] private Transform _cameraTransform;
     [SerializeField] private float _mouseSensitivity = 5f;
+    [SerializeField] private Oxygen _oxygen;
 
     // INPUT BOOLS
     private bool _isSprinting;
     private bool _isJumping;
     private bool _isGrounded;
 
-    // Using Unity's new input system
+    // input system
     PlayerInput _input;
 
     private Rigidbody _playerRigidbody;
@@ -76,33 +77,30 @@ public class PlayerController : MonoBehaviour
 
         _isGrounded = Physics.SphereCast(transform.position, _groundCheckRadius, -Vector3.up, out RaycastHit hitInfo, 0.1f, _groundLayer);
 
-        if (_isJumping && !_delay && _isGrounded)
+        if(_isJumping && !_delay && _isGrounded)
         {
             StartCoroutine(InputDelay(0.15f));
             _delay = true;
             StartCoroutine(Jump());
         }
 
-        // Track the time since the event last played
-        if (isMoving)
+        // Track time since last event played
+        if(isMoving)
         {
             timeSinceLastPlay += Time.deltaTime;
 
-            // If it's the first input, use half the event interval
-            if (isFirstInput && timeSinceLastPlay >= eventInterval / 2)
+            if(isFirstInput && timeSinceLastPlay >= eventInterval / 2)
             {
                 isFirstInput = false;
             }
         }
         else
         {
-            // Reset the time since the event last played and the first input flag when the player stops moving
             timeSinceLastPlay = 0.0f;
             isFirstInput = true;
         }
 
-        // Play the FMOD event if the player is moving and enough time has passed
-        if (isMoving && timeSinceLastPlay >= (isFirstInput ? eventInterval / 2 : eventInterval))
+        if(isMoving && timeSinceLastPlay >= (isFirstInput ? eventInterval / 2 : eventInterval))
         {
             if(Globals.Movement)
             {
@@ -111,13 +109,12 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        // Stop the FMOD event when the player has finished moving and the event is playing
-        if (!isMoving)
+        if(!isMoving)
         {
             FMOD.Studio.PLAYBACK_STATE playbackState;
             moveEvent.getPlaybackState(out playbackState);
 
-            if (playbackState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+            if(playbackState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
             {
                 moveEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             }
@@ -133,17 +130,23 @@ public class PlayerController : MonoBehaviour
         movement = transform.TransformDirection(movement);
         movement.y = 0;
 
-        if (_isSprinting)
+        if(_isSprinting)
         {
+            eventInterval = 0.3f;
             movement *= _sprintMultiplier;
+            _oxygen._depletionSpeed = 2.5f;
+        }
+        if(!_isSprinting)
+        {
+            eventInterval = 0.6f;
+            _oxygen._depletionSpeed = 1.0f;
         }
 
-        if (!_isGrounded)
+        if(!_isGrounded)
         {
             movement.y -= 9.8f * Time.deltaTime;
         }
 
-        // Check if the player is moving
         if(Mathf.Abs(horizontal) > 0.1f || Mathf.Abs(vertical) > 0.1f)
         {
             isMoving = true;
