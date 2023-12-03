@@ -22,7 +22,7 @@ public class Door : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("Monster"))
         {
             isInsideTrigger = true;
             isOutsideTrigger = false; // Reset the flag when inside the trigger
@@ -31,7 +31,7 @@ public class Door : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("Monster"))
         {
             isInsideTrigger = false;
             isOutsideTrigger = true;
@@ -53,6 +53,16 @@ public class Door : MonoBehaviour
         else if (isOutsideTrigger)
         {
             MoveDoorUp();
+        }
+
+        if (moveEventOpen.isValid())
+        {
+            moveEventOpen.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
+        }
+        
+        if(moveEventClose.isValid())
+        {
+            moveEventClose.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
         }
     }
 

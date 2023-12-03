@@ -5,7 +5,7 @@
 			<value>Open</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{484cd9aa-4b56-4eb8-ad9d-0577599c1d49}</destination>
@@ -113,6 +113,7 @@
 	<object class="MixerBusEffectChain" id="{38a21219-422c-4dc8-a556-cc010a357060}">
 		<relationship name="effects">
 			<destination>{fa7b4817-4c41-4676-abc6-37d6a3e4f186}</destination>
+			<destination>{c52b18c6-691a-4125-bf0e-ac1271af5dfc}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{9e5b213b-b2af-43fc-af73-e931a7240dfd}" />
@@ -124,5 +125,25 @@
 	</object>
 	<object class="MixerBusPanner" id="{dae5598e-77d6-4c25-b283-9da25bd1eab7}" />
 	<object class="MixerBusFader" id="{fa7b4817-4c41-4676-abc6-37d6a3e4f186}" />
+	<object class="SpatialiserEffect" id="{c52b18c6-691a-4125-bf0e-ac1271af5dfc}">
+		<property name="distanceRolloffType">
+			<value>1</value>
+		</property>
+		<property name="minimumDistance">
+			<value>0</value>
+		</property>
+		<property name="maximumDistance">
+			<value>100</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="soundSize">
+			<value>8</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{cd79d4e5-47a5-4b42-815a-6d337b295100}" />
 </objects>

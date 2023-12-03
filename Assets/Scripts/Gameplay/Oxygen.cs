@@ -5,7 +5,7 @@ public class Oxygen : MonoBehaviour
 {
     public static bool NoSprint;
 
-    private float _oxygenMeter = 100.0f;
+    [SerializeField] public float _oxygenMeter = 100.0f;
     [SerializeField] public float _depletionSpeed = 1.0f;
 
     [SerializeField] private Color _goodState;
@@ -27,19 +27,21 @@ public class Oxygen : MonoBehaviour
 
     void Update()
     {
-        if(!NoSprint)
+        if(!NoSprint || !GainOxygen.InStation)
         {
             _oxygenMeter -= _depletionSpeed * Time.deltaTime;
-
-            _oxygenMeter = Mathf.Clamp(_oxygenMeter, 0f, 100f);
-
-            _rect.sizeDelta = new Vector2(_rect.sizeDelta.x, _oxygenMeter);
-            _rect.anchoredPosition = new Vector2(_rect.anchoredPosition.x, -534.0f + ((_oxygenMeter * 2.221f))); // Set your desired position
-
-            NoSprint = _oxygenMeter <= 0;
-
-            UpdateColor();
         }
+
+        _oxygenMeter = Mathf.Clamp(_oxygenMeter, 0f, 100f);
+
+        _rect.sizeDelta = new Vector2(_rect.sizeDelta.x, _oxygenMeter);
+        _rect.anchoredPosition = new Vector2(_rect.anchoredPosition.x, -534.0f + ((_oxygenMeter * 2.221f))); // Set your desired position
+
+        UpdateColor();
+
+        Debug.Log(_oxygenMeter);
+
+        NoSprint = _oxygenMeter <= 0;
     }
 
     void UpdateColor()

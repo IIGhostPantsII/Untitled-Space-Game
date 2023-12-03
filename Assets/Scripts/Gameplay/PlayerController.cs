@@ -130,7 +130,7 @@ public class PlayerController : MonoBehaviour
         movement = transform.TransformDirection(movement);
         movement.y = 0;
 
-        if(_isSprinting)
+        if(_isSprinting && !Oxygen.NoSprint)
         {
             eventInterval = 0.3f;
             movement *= _sprintMultiplier;

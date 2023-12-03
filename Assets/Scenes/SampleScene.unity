@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2758db6630fe17a40aaada806a21714f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _oxygenMeter: 100
   _depletionSpeed: 10
   _goodState: {r: 0, g: 1, b: 1, a: 1}
   _warning: {r: 1, g: 1, b: 0, a: 1}
@@ -562,9 +563,10 @@ GameObject:
   - component: {fileID: 808734810}
   - component: {fileID: 808734809}
   - component: {fileID: 808734808}
+  - component: {fileID: 808734814}
   m_Layer: 0
   m_Name: Monster
-  m_TagString: Player
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -591,8 +593,15 @@ MonoBehaviour:
   - {x: -395.92, y: 2.5, z: 304.67}
   - {x: -452.59, y: 2.5, z: 377.83}
   - {x: -369.16, y: 2.5, z: 656.19}
-  - {x: -289.87, y: 2.5, z: 709.51}
-  speed: 20
+  - {x: -288.1, y: 2.5, z: 711.13}
+  - {x: 280.7, y: 2.5, z: 710}
+  - {x: 364.08, y: 2.5, z: 658.27}
+  - {x: 450.43, y: 2.5, z: 384.46}
+  - {x: 395.1, y: 2.5, z: 306.7}
+  - {x: 145.63, y: 2.5, z: 117.94}
+  - {x: 86.29, y: 2.5, z: 76.42}
+  - {x: 0, y: 2.5, z: 75}
+  speed: 10
 --- !u!54 &808734809
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -688,6 +697,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &808734814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808734807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d73fc945ce48e44080c475ea06f9b66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1194,6 +1215,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1073507307797082887, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _oxygenScript
+      value: 
+      objectReference: {fileID: 211698226}
     - target: {fileID: 1625915212006928616, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1242,6 +1267,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Greybox
       objectReference: {fileID: 0}
+    - target: {fileID: 4445525100450859963, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _oxygenScript
+      value: 
+      objectReference: {fileID: 211698226}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
 --- !u!1 &1633868280
