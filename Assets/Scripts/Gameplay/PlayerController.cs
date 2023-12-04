@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
+using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform _cameraTransform;
     [SerializeField] private float _mouseSensitivity = 5f;
     [SerializeField] private Oxygen _oxygen;
+    [SerializeField] public GameObject Astronaut;
+    [SerializeField] private GameObject _firstPersonCam;
 
     // INPUT BOOLS
     private bool _isSprinting;
@@ -37,6 +40,7 @@ public class PlayerController : MonoBehaviour
     private bool _delay;
     private bool isMoving = false;
     private Animator _playerAnimator;
+    public bool Is2D;
 
     // Rotation - used for mouse input
     float _xRotation = 0f;
@@ -71,17 +75,19 @@ public class PlayerController : MonoBehaviour
         _isJumping = _input.Player.Jump.ReadValue<float>() > 0.1f;
         _isSprinting = _input.Player.Sprint.ReadValue<float>() > 0.1f;
 
-        if(Globals.Movement)
+        if(Globals.Movement && !Is2D)
         {
+            _firstPersonCam.SetActive(true);
+            
             float mouseX = Input.GetAxis("Mouse X") * _mouseSensitivity * Screen.dpi * Time.deltaTime;
             float mouseY = Input.GetAxis("Mouse Y") * _mouseSensitivity * Screen.dpi * Time.deltaTime;
 
             _xRotation -= mouseY;
             _xRotation = Mathf.Clamp(_xRotation, -90f, 90f);
 
-            _cameraTransform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
+            _firstPersonCam.transform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
             transform.Rotate(Vector3.up * mouseX);
-        }
+        } else if (Is2D) _firstPersonCam.SetActive(false);
 
         _isGrounded = Physics.SphereCast(transform.position, _groundCheckRadius, -Vector3.up, out RaycastHit hitInfo, 0.1f, _groundLayer);
 
@@ -96,7 +102,7 @@ public class PlayerController : MonoBehaviour
         {
             _bobbingTimer += Time.deltaTime * _bobbingSpeed;
             float bobbingOffset = Mathf.Sin(_bobbingTimer) * _bobbingAmount;
-            _cameraTransform.localPosition = _originalCameraPosition + new Vector3(bobbingOffset / 1.5f, bobbingOffset, 0f);
+            _firstPersonCam.transform.localPosition = _originalCameraPosition + new Vector3(bobbingOffset / 1.5f, bobbingOffset, 0f);
             timeSinceLastPlay += Time.deltaTime;
 
             if(isFirstInput && timeSinceLastPlay >= eventInterval / 2)
@@ -109,7 +115,7 @@ public class PlayerController : MonoBehaviour
             timeSinceLastPlay = 0.0f;
             _bobbingTimer = 0f;
             isFirstInput = true;
-            _cameraTransform.localPosition = _originalCameraPosition;
+            _firstPersonCam.transform.localPosition = _originalCameraPosition;
         }
 
         if(isMoving && timeSinceLastPlay >= (isFirstInput ? eventInterval / 2 : eventInterval))
@@ -138,7 +144,13 @@ public class PlayerController : MonoBehaviour
         float horizontal = _input.Player.Move.ReadValue<Vector2>().x;
         float vertical = _input.Player.Move.ReadValue<Vector2>().y;
 
-        Vector3 movement = new Vector3(horizontal, 0, vertical);
+        Vector3 movement;
+        if (Is2D)
+        {
+            if (vertical != 0) movement = new Vector3(0, 0, vertical);
+            else movement = new Vector3(0, 0, horizontal);
+        }
+        else movement = new Vector3(horizontal, 0, vertical);
         movement = transform.TransformDirection(movement);
         movement.y = 0;
 
