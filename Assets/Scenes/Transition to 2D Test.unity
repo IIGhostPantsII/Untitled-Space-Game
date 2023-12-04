@@ -1215,7 +1215,7 @@ GameObject:
   - component: {fileID: 1381190410}
   - component: {fileID: 1381190409}
   - component: {fileID: 1381190413}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: 2D Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
