@@ -5,6 +5,7 @@ using FMODUnity;
 
 public class PlayerController : MonoBehaviour
 {
+    // FMOD Things
     public FMODUnity.EventReference moveEventPath;
     public FMOD.Studio.EventInstance moveEvent;
     private FMOD.Studio.PLAYBACK_STATE playbackState;
@@ -28,17 +29,23 @@ public class PlayerController : MonoBehaviour
     private bool _isJumping;
     private bool _isGrounded;
 
-    // input system
+    // Input system
     PlayerInput _input;
 
+    // Other
     private Rigidbody _playerRigidbody;
-
-    bool _delay;
-
+    private bool _delay;
     private bool isMoving = false;
+    private Animator _playerAnimator;
 
-    //Rotation - used for mouse input
+    // Rotation - used for mouse input
     float _xRotation = 0f;
+
+    // Camera Bobbing
+    private float _bobbingSpeed = 5f;
+    private float _bobbingAmount = 0.1f;
+    private float _bobbingTimer = 0f;
+    private Vector3 _originalCameraPosition;
 
     private void Awake()
     {
@@ -49,8 +56,13 @@ public class PlayerController : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        _playerRigidbody = GetComponent<Rigidbody>();
+        _playerRigidbody = gameObject.GetComponent<Rigidbody>();
         moveEvent = RuntimeManager.CreateInstance(moveEventPath);
+        
+        //_playerAnimator = gameObject.GetComponent<Animator>();
+        //_playerAnimator.Play("idle_player");
+
+        _originalCameraPosition = new Vector3(0f, 2f, 0f);
     }
 
     void Update()
@@ -79,10 +91,12 @@ public class PlayerController : MonoBehaviour
             _delay = true;
             StartCoroutine(Jump());
         }
-
-        // Track time since last event played
+        
         if(isMoving)
         {
+            _bobbingTimer += Time.deltaTime * _bobbingSpeed;
+            float bobbingOffset = Mathf.Sin(_bobbingTimer) * _bobbingAmount;
+            _cameraTransform.localPosition = _originalCameraPosition + new Vector3(bobbingOffset / 1.5f, bobbingOffset, 0f);
             timeSinceLastPlay += Time.deltaTime;
 
             if(isFirstInput && timeSinceLastPlay >= eventInterval / 2)
@@ -93,7 +107,9 @@ public class PlayerController : MonoBehaviour
         else
         {
             timeSinceLastPlay = 0.0f;
+            _bobbingTimer = 0f;
             isFirstInput = true;
+            _cameraTransform.localPosition = _originalCameraPosition;
         }
 
         if(isMoving && timeSinceLastPlay >= (isFirstInput ? eventInterval / 2 : eventInterval))
@@ -131,11 +147,15 @@ public class PlayerController : MonoBehaviour
             eventInterval = 0.3f;
             movement *= _sprintMultiplier;
             _oxygen._depletionSpeed = 2.5f;
+            _bobbingSpeed = 10f;
+            _bobbingAmount = 0.2f;
         }
         if(!_isSprinting)
         {
             eventInterval = 0.6f;
             _oxygen._depletionSpeed = 1.0f;
+            _bobbingSpeed = 5f;
+            _bobbingAmount = 0.1f;
         }
 
         if(!_isGrounded)
@@ -143,17 +163,17 @@ public class PlayerController : MonoBehaviour
             movement.y -= 9.8f * Time.deltaTime;
         }
 
-        if(Mathf.Abs(horizontal) > 0.1f || Mathf.Abs(vertical) > 0.1f)
-        {
-            isMoving = true;
-        }
-        else
-        {
-            isMoving = false;
-        }
-
         if(Globals.Movement)
         {
+            if(Mathf.Abs(horizontal) > 0.1f || Mathf.Abs(vertical) > 0.1f)
+            {
+                isMoving = true;
+            }
+            else
+            {
+                isMoving = false;
+            }
+
             _playerRigidbody.velocity = movement * _speed * Time.deltaTime;
         }
     }
@@ -183,7 +203,6 @@ public class PlayerController : MonoBehaviour
             {
                 _playerRigidbody.AddForce(Vector3.up * i, ForceMode.Impulse);
             }
-                
         }
     }
 }

@@ -62,4 +62,11 @@ public class AnimationFunctions : MonoBehaviour
         moveEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         moveEvent.release();
     }
+
+    public void PlayOtherAnimation(string clip)
+    {
+        Animator _animator = gameObject.GetComponent<Animator>();
+        Debug.Log("Playing " + clip);
+        _animator.Play(clip);
+    }
 }
