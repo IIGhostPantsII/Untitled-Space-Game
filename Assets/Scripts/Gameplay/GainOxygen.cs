@@ -5,6 +5,7 @@ using UnityEngine;
 public class GainOxygen : MonoBehaviour
 {
     [SerializeField] private Oxygen _oxygenScript;
+    [SerializeField] private Oxygen _subOxygenScript;
 
     public static bool InStation;
 
@@ -22,7 +23,6 @@ public class GainOxygen : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             InStation = false;
-            Debug.Log(InStation);
         }
     }
 
@@ -30,7 +30,14 @@ public class GainOxygen : MonoBehaviour
     {
         if(InStation)
         {
-            _oxygenScript._oxygenMeter += 4.0f * Time.deltaTime;
+            if(_subOxygenScript._oxygenMeter >= 100f)
+            {
+                _oxygenScript._oxygenMeter += 4.0f * Time.deltaTime;
+            }
+            else
+            {
+                _subOxygenScript._oxygenMeter += 8.0f * Time.deltaTime;
+            }
         }
     }
 }

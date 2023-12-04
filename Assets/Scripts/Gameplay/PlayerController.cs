@@ -34,10 +34,6 @@ public class PlayerController : MonoBehaviour
     private Rigidbody _playerRigidbody;
 
     bool _delay;
-    public bool _shootDelay;
-    public bool _reload;
-    public bool _noAni;
-    public int _ammo;
 
     private bool isMoving = false;
 
@@ -176,12 +172,6 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
         _delay = false;
-    }
-
-    public IEnumerator ShootDelay(float seconds)
-    {
-        yield return new WaitForSeconds(seconds);
-        _shootDelay = false;
     }
 
     IEnumerator Jump()
