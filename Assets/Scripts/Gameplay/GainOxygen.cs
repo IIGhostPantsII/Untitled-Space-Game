@@ -33,6 +33,7 @@ public class GainOxygen : MonoBehaviour
             if(_subOxygenScript._oxygenMeter >= 100f)
             {
                 _oxygenScript._oxygenMeter += 4.0f * Time.deltaTime;
+                Debug.Log(_oxygenScript._oxygenMeter);
             }
             else
             {

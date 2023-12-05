@@ -15,7 +15,8 @@ public class TwoDimensionTrigger : MonoBehaviour
             _2DCam.SetActive(true);
             PlayerController playerController = other.gameObject.GetComponent<PlayerController>();
             playerController.Is2D = true;
-            playerController.Astronaut.SetActive(true);
+            playerController._astronaut.SetActive(true);
+            playerController._firstPersonCam.SetActive(false);
             playerController.transform.rotation = transform.rotation;
         }
     }
@@ -27,7 +28,8 @@ public class TwoDimensionTrigger : MonoBehaviour
             _2DCam.SetActive(false);
             PlayerController playerController = other.gameObject.GetComponent<PlayerController>();
             playerController.Is2D = false;
-            playerController.Astronaut.SetActive(false);
+            playerController._astronaut.SetActive(false);
+            playerController._firstPersonCam.SetActive(true);
         }
     }
 }

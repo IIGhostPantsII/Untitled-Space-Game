@@ -10,8 +10,8 @@ public class PlayerController : MonoBehaviour
     public FMODUnity.EventReference moveEventPath;
     public FMOD.Studio.EventInstance moveEvent;
     private FMOD.Studio.PLAYBACK_STATE playbackState;
-    private float timeSinceLastPlay = 0.0f;
     public float eventInterval = 0.4f;
+    private float timeSinceLastPlay = 0.0f;
     private bool isEventPlaying = false;
     private bool isFirstInput = true;
 
@@ -24,8 +24,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform _cameraTransform;
     [SerializeField] private float _mouseSensitivity = 5f;
     [SerializeField] private Oxygen _oxygen;
-    [SerializeField] public GameObject Astronaut;
-    [SerializeField] private GameObject _firstPersonCam;
+    [SerializeField] public GameObject _astronaut;
+    [SerializeField] public GameObject _firstPersonCam;
 
     // INPUT BOOLS
     private bool _isSprinting;
@@ -67,6 +67,11 @@ public class PlayerController : MonoBehaviour
         //_playerAnimator.Play("idle_player");
 
         _originalCameraPosition = new Vector3(0f, 2f, 0f);
+
+        if(_firstPersonCam != null)
+        {
+            StartCoroutine(TurnOn(4.5f));
+        }
     }
 
     void Update()
@@ -75,10 +80,9 @@ public class PlayerController : MonoBehaviour
         _isJumping = _input.Player.Jump.ReadValue<float>() > 0.1f;
         _isSprinting = _input.Player.Sprint.ReadValue<float>() > 0.1f;
 
-        if(Globals.Movement && !Is2D)
+        if(Globals.Movement)
         {
-            _firstPersonCam.SetActive(true);
-            
+
             float mouseX = Input.GetAxis("Mouse X") * _mouseSensitivity * Screen.dpi * Time.deltaTime;
             float mouseY = Input.GetAxis("Mouse Y") * _mouseSensitivity * Screen.dpi * Time.deltaTime;
 
@@ -87,7 +91,7 @@ public class PlayerController : MonoBehaviour
 
             _firstPersonCam.transform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
             transform.Rotate(Vector3.up * mouseX);
-        } else if (Is2D) _firstPersonCam.SetActive(false);
+        }
 
         _isGrounded = Physics.SphereCast(transform.position, _groundCheckRadius, -Vector3.up, out RaycastHit hitInfo, 0.1f, _groundLayer);
 
@@ -153,7 +157,11 @@ public class PlayerController : MonoBehaviour
         else movement = new Vector3(horizontal, 0, vertical);
         movement = transform.TransformDirection(movement);
         movement.y = 0;
-
+        
+        if(Oxygen.NoSprint)
+        {
+            _isSprinting = false;
+        }
         if(_isSprinting && !Oxygen.NoSprint)
         {
             eventInterval = 0.3f;
@@ -216,5 +224,12 @@ public class PlayerController : MonoBehaviour
                 _playerRigidbody.AddForce(Vector3.up * i, ForceMode.Impulse);
             }
         }
+    }
+
+    IEnumerator TurnOn(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        _firstPersonCam.SetActive(true);
+        _astronaut.SetActive(false);
     }
 }

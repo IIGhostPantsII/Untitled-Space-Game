@@ -1,5 +1,9 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using FMODUnity;
+using UnityEngine.Serialization;
 
 public class Oxygen : MonoBehaviour
 {
@@ -22,12 +26,22 @@ public class Oxygen : MonoBehaviour
 
     [SerializeField] private bool _subMeter;
     [SerializeField] private Oxygen _mainOxygen;
-    
+    [SerializeField] private GameObject _lowOxy;
+
+    // FMOD Things
+    public FMODUnity.EventReference moveEventPath;
+    public FMOD.Studio.EventInstance moveEvent;
+    bool _playOnce = true;
 
     void Start()
     {
         _rect = gameObject.GetComponent<RectTransform>();
         _image = GetComponent<Image>();
+
+        if(moveEventPath.ToString() != null)
+        {
+            moveEvent = RuntimeManager.CreateInstance(moveEventPath);
+        }
     }
 
     void Update()
@@ -59,6 +73,14 @@ public class Oxygen : MonoBehaviour
                         _oxygenMeter -= _depletionSpeed * Time.deltaTime;
                     }
 
+                    if(_playOnce)
+                    {
+                        moveEvent.start();
+                        StartCoroutine(LowOxygen(3f));
+                        _lowOxy.SetActive(true);
+                        _playOnce = false;
+                    }
+
                     _oxygenMeter = Mathf.Clamp(_oxygenMeter, 0f, 100f);
 
                     _rect.sizeDelta = new Vector2(_rect.sizeDelta.x, _oxygenMeter);
@@ -67,6 +89,10 @@ public class Oxygen : MonoBehaviour
                     UpdateColor();
             
                     NoOxygen = _oxygenMeter <= 0;
+                }
+                else if(_mainOxygen._oxygenMeter >= 0.1f)
+                {
+                    _playOnce = true;
                 }
             }
         }
@@ -86,5 +112,11 @@ public class Oxygen : MonoBehaviour
         {
             _image.color = _low;
         }
+    }
+
+    IEnumerator LowOxygen(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        _lowOxy.SetActive(false);
     }
 }

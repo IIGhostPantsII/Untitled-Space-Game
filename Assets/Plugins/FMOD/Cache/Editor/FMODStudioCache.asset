@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638373075480037294
+  lastModified: 638373226276322295
   FileSizes:
   - Name: Desktop
-    Value: 146240
+    Value: 199072
   Exists: 1
 --- !u!114 &-6838026933355539509
 MonoBehaviour:
@@ -35,10 +35,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638373003217009462
+  lastModified: 638373251322372756
   FileSizes:
   - Name: Desktop
-    Value: 1404
+    Value: 1526
   Exists: 1
 --- !u!114 &-6408918529084494121
 MonoBehaviour:
@@ -94,6 +94,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 577
+--- !u!114 &-3879109456065752680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/White Noise
+  m_EditorClassIdentifier: 
+  Path: event:/White Noise
+  Guid:
+    Data1: 2066768629
+    Data2: 1079325237
+    Data3: 1651737751
+    Data4: -414679227
+  Banks:
+  - {fileID: 6422365686012519055}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5087
 --- !u!114 &-3012071330258881105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,12 +202,14 @@ MonoBehaviour:
   - {fileID: -364162369600267364}
   - {fileID: -6276951058794266847}
   - {fileID: -3012071330258881105}
+  - {fileID: -3879109456065752680}
+  - {fileID: 4417711405366342180}
   EditorParameters: []
   MasterBanks:
   - {fileID: 6422365686012519055}
   StringsBanks:
   - {fileID: -6838026933355539509}
-  cacheTime: 638373075480037294
+  cacheTime: 638373251322372756
   cacheVersion: 131607
 --- !u!114 &3295579543783037433
 MonoBehaviour:
@@ -233,6 +262,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &4417711405366342180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sounds/LowOxygen
+  m_EditorClassIdentifier: 
+  Path: event:/Sounds/LowOxygen
+  Guid:
+    Data1: 862677246
+    Data2: 1206752152
+    Data3: -227948873
+    Data4: -639376441
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3727
 --- !u!114 &4529178485175749104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,10 +359,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638373003217004502
+  lastModified: 638373251322332879
   FileSizes:
   - Name: Desktop
-    Value: 2728
+    Value: 60192
   Exists: 1
 --- !u!114 &8295062745087103246
 MonoBehaviour:
@@ -377,7 +433,7 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638373003217039222
+  lastModified: 638373226274576928
   FileSizes:
   - Name: Desktop
     Value: 710464

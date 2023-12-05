@@ -7318,44 +7318,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     path: Armature/SpineBase/Ribs/CollarBone_R/UpperArm_R/LowerArm_R/ThumbBase_R/ThumbTip_R
-  m_FloatCurves:
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 4.375
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 4.3958335
-        value: 0
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_IsActive
-    path: SpaceSuit
-    classID: 1
-    script: {fileID: 0}
+  m_FloatCurves: []
   m_PPtrCurves: []
   m_SampleRate: 48
   m_WrapMode: 0
@@ -7565,13 +7528,6 @@ AnimationClip:
       attribute: 2
       script: {fileID: 0}
       typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-    - serializedVersion: 2
-      path: 2602587433
-      attribute: 2086281974
-      script: {fileID: 0}
-      typeID: 1
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
@@ -7965,7 +7921,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 4.3958335
+    m_StopTime: 4.1458335
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -34070,43 +34026,6 @@ AnimationClip:
     attribute: m_LocalRotation.w
     path: Armature/SpineBase/Ribs/CollarBone_R/UpperArm_R/LowerArm_R/ThumbBase_R/ThumbTip_R
     classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 4.375
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 4.3958335
-        value: 0
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_IsActive
-    path: SpaceSuit
-    classID: 1
     script: {fileID: 0}
   m_EulerEditorCurves:
   - curve:
