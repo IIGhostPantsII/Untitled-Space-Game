@@ -13,9 +13,9 @@ public class Oxygen : MonoBehaviour
     [SerializeField] public float _oxygenMeter = 100.0f;
     [SerializeField] public float _depletionSpeed = 1.0f;
 
-    [SerializeField] private Color _goodState;
-    [SerializeField] private Color _warning;
-    [SerializeField] private Color _low;
+    [SerializeField] private Color goodState;
+    [SerializeField] private Color warning;
+    [SerializeField] private Color low;
 
     private RectTransform _rect;
     private Image _image;
@@ -23,14 +23,18 @@ public class Oxygen : MonoBehaviour
     // thresholds for color transitions
     [SerializeField] private float warningThreshold = 50.0f;
     [SerializeField] private float lowThreshold = 20.0f;
-
+    [SerializeField] public float _time = 0f;
     [SerializeField] private bool _subMeter;
     [SerializeField] private Oxygen _mainOxygen;
     [SerializeField] private GameObject _lowOxy;
 
     // FMOD Things
-    public FMODUnity.EventReference moveEventPath;
-    public FMOD.Studio.EventInstance moveEvent;
+    public FMODUnity.EventReference eventPath;
+    public FMOD.Studio.EventInstance eventInstance;
+    public FMODUnity.EventReference whiteNoiseEventPath;
+    public FMOD.Studio.EventInstance whiteNoiseEventInstance;
+    public FMODUnity.EventReference heartbeatEventPath;
+    public FMOD.Studio.EventInstance heartbeatEventInstance;
     bool _playOnce = true;
 
     void Start()
@@ -38,9 +42,19 @@ public class Oxygen : MonoBehaviour
         _rect = gameObject.GetComponent<RectTransform>();
         _image = GetComponent<Image>();
 
-        if(moveEventPath.ToString() != null)
+        if(eventPath.ToString() != null)
         {
-            moveEvent = RuntimeManager.CreateInstance(moveEventPath);
+            eventInstance = RuntimeManager.CreateInstance(eventPath);
+        }
+
+        if(whiteNoiseEventPath.ToString() != null)
+        {
+            whiteNoiseEventInstance = RuntimeManager.CreateInstance(whiteNoiseEventPath);
+        }
+
+        if(heartbeatEventPath.ToString() != null)
+        {
+            heartbeatEventInstance = RuntimeManager.CreateInstance(heartbeatEventPath);
         }
     }
 
@@ -75,10 +89,22 @@ public class Oxygen : MonoBehaviour
 
                     if(_playOnce)
                     {
-                        moveEvent.start();
+                        _time = 0f;
+                        eventInstance.start();
+                        whiteNoiseEventInstance.start();
+                        heartbeatEventInstance.start();
                         StartCoroutine(LowOxygen(3f));
                         _lowOxy.SetActive(true);
                         _playOnce = false;
+                    }
+
+                    if(NoSprint && eventInstance.isValid() || NoSprint && whiteNoiseEventInstance.isValid() || NoSprint && heartbeatEventInstance.isValid())
+                    {
+                        _time += Time.deltaTime;
+                        float clampedTime = Mathf.Clamp(_time * 4, 0f, 100f);
+                        eventInstance.setParameterByName("Lowpass",(_oxygenMeter * 220));
+                        whiteNoiseEventInstance.setParameterByName("Volume",(clampedTime));
+                        heartbeatEventInstance.setParameterByName("Volume",(clampedTime));
                     }
 
                     _oxygenMeter = Mathf.Clamp(_oxygenMeter, 0f, 100f);
@@ -90,7 +116,7 @@ public class Oxygen : MonoBehaviour
             
                     NoOxygen = _oxygenMeter <= 0;
                 }
-                else if(_mainOxygen._oxygenMeter >= 0.1f)
+                else
                 {
                     _playOnce = true;
                 }
@@ -102,15 +128,15 @@ public class Oxygen : MonoBehaviour
     {
         if(_oxygenMeter > warningThreshold)
         {
-            _image.color = _goodState;
+            _image.color = goodState;
         }
         else if(_oxygenMeter > lowThreshold)
         {
-            _image.color = _warning;
+            _image.color = warning;
         }
         else
         {
-            _image.color = _low;
+            _image.color = low;
         }
     }
 

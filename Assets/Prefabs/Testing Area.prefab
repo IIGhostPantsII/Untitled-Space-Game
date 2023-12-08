@@ -873,7 +873,7 @@ MonoBehaviour:
       Data2: 1282474198
       Data3: 1330988464
       Data4: 1780275101
-    Path: event:/Sounds/Heartbeat
+    Path: event:/Secondary Sounds/Heartbeat
   Event: 
   PlayEvent: 3
   StopEvent: 4

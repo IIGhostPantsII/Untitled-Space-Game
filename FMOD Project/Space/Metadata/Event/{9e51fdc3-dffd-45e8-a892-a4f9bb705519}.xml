@@ -114,6 +114,7 @@
 		<relationship name="effects">
 			<destination>{aceac8b9-e7a5-4622-9594-af475c825bf6}</destination>
 			<destination>{76b0e20b-f5f1-4d57-94fa-447ee83b71ed}</destination>
+			<destination>{c258b0ec-7b1b-43e3-81d2-7c47de24f87d}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{0c5beb1d-0d26-4418-b8da-259a2d8ab2f9}" />
@@ -143,6 +144,11 @@
 		</property>
 		<property name="soundSize">
 			<value>200</value>
+		</property>
+	</object>
+	<object class="LowpassEffect" id="{c258b0ec-7b1b-43e3-81d2-7c47de24f87d}">
+		<property name="cutoff">
+			<value>22000</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{6877e9ab-5b2a-4da4-9690-1cff4d529ab1}" />

@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform _cameraTransform;
     [SerializeField] private float _mouseSensitivity = 5f;
     [SerializeField] private Oxygen _oxygen;
+    [SerializeField] private Oxygen _subOxygen;
     [SerializeField] public GameObject _astronaut;
     [SerializeField] public GameObject _firstPersonCam;
 
@@ -127,6 +128,14 @@ public class PlayerController : MonoBehaviour
             if(Globals.Movement)
             {
                 moveEvent.start();
+                if(Oxygen.NoSprint)
+                {
+                    moveEvent.setParameterByName("Lowpass",(_subOxygen._oxygenMeter * 220));
+                }
+                else
+                {
+                    moveEvent.setParameterByName("Lowpass",22000);
+                }
                 timeSinceLastPlay = 0.0f;
             }
         }
@@ -166,7 +175,7 @@ public class PlayerController : MonoBehaviour
         {
             eventInterval = 0.3f;
             movement *= _sprintMultiplier;
-            _oxygen._depletionSpeed = 2.5f;
+            _oxygen._depletionSpeed = 20.5f;
             _bobbingSpeed = 10f;
             _bobbingAmount = 0.2f;
         }

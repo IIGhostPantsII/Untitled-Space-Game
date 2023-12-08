@@ -177,21 +177,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _oxygenMeter: 100
   _depletionSpeed: 4
-  _goodState: {r: 0, g: 1, b: 1, a: 1}
-  _warning: {r: 1, g: 1, b: 0, a: 1}
-  _low: {r: 1, g: 0, b: 0, a: 1}
+  goodState: {r: 0, g: 1, b: 1, a: 1}
+  warning: {r: 1, g: 1, b: 0, a: 1}
+  low: {r: 1, g: 0, b: 0, a: 1}
   warningThreshold: 50
   lowThreshold: 20
+  _time: 0
   _subMeter: 0
   _mainOxygen: {fileID: 0}
   _lowOxy: {fileID: 0}
-  moveEventPath:
+  eventPath:
     Guid:
       Data1: 862677246
       Data2: 1206752152
       Data3: -227948873
       Data4: -639376441
     Path: event:/Sounds/LowOxygen
+  whiteNoiseEventPath:
+    Guid:
+      Data1: 2066768629
+      Data2: 1079325237
+      Data3: 1651737751
+      Data4: -414679227
+    Path: event:/Secondary Sounds/White Noise
+  heartbeatEventPath:
+    Guid:
+      Data1: -490539894
+      Data2: 1282474198
+      Data3: 1330988464
+      Data4: 1780275101
+    Path: event:/Secondary Sounds/Heartbeat
 --- !u!114 &211698227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,21 +545,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _oxygenMeter: 100
   _depletionSpeed: 4
-  _goodState: {r: 0, g: 1, b: 0, a: 1}
-  _warning: {r: 1, g: 1, b: 0, a: 1}
-  _low: {r: 1, g: 0, b: 0, a: 1}
+  goodState: {r: 0, g: 1, b: 0, a: 1}
+  warning: {r: 1, g: 1, b: 0, a: 1}
+  low: {r: 1, g: 0, b: 0, a: 1}
   warningThreshold: 50
   lowThreshold: 20
+  _time: 0
   _subMeter: 1
   _mainOxygen: {fileID: 211698226}
   _lowOxy: {fileID: 461647346}
-  moveEventPath:
+  eventPath:
     Guid:
       Data1: 862677246
       Data2: 1206752152
       Data3: -227948873
       Data4: -639376441
     Path: event:/Sounds/LowOxygen
+  whiteNoiseEventPath:
+    Guid:
+      Data1: 2066768629
+      Data2: 1079325237
+      Data3: 1651737751
+      Data4: -414679227
+    Path: event:/Secondary Sounds/White Noise
+  heartbeatEventPath:
+    Guid:
+      Data1: -490539894
+      Data2: 1282474198
+      Data3: 1330988464
+      Data4: 1780275101
+    Path: event:/Secondary Sounds/Heartbeat
 --- !u!114 &408542783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -815,8 +845,10 @@ GameObject:
   m_Component:
   - component: {fileID: 523607760}
   - component: {fileID: 523607759}
+  - component: {fileID: 523607761}
+  - component: {fileID: 523607762}
   m_Layer: 0
-  m_Name: MusicManager
+  m_Name: AudioManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -868,6 +900,106 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &523607761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523607758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17cf9a984673e7f41936958f1c2586d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sounds:
+  - Guid:
+      Data1: 676397561
+      Data2: 1336940628
+      Data3: 1806041263
+      Data4: -2004512656
+    Path: event:/Sounds/Close
+  - Guid:
+      Data1: -1979624750
+      Data2: 1293228564
+      Data3: -1870967662
+      Data4: 1777116068
+    Path: event:/Sounds/Footsteps
+  - Guid:
+      Data1: 862677246
+      Data2: 1206752152
+      Data3: -227948873
+      Data4: -639376441
+    Path: event:/Sounds/LowOxygen
+  - Guid:
+      Data1: 951494359
+      Data2: 1178098846
+      Data3: -1097398889
+      Data4: -12696197
+    Path: event:/Sounds/Open
+  - Guid:
+      Data1: -1638793789
+      Data2: 1172889597
+      Data3: -106655064
+      Data4: 425029819
+    Path: event:/Sounds/ShipLeave
+  _secondarySounds:
+  - Guid:
+      Data1: -490539894
+      Data2: 1282474198
+      Data3: 1330988464
+      Data4: 1780275101
+    Path: event:/Secondary Sounds/Heartbeat
+  - Guid:
+      Data1: 2066768629
+      Data2: 1079325237
+      Data3: 1651737751
+      Data4: -414679227
+    Path: event:/Secondary Sounds/White Noise
+--- !u!114 &523607762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523607758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6342331c7648e454a897f16907a19ef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogue:
+  - Guid:
+      Data1: -1454079840
+      Data2: 1302113909
+      Data3: 160043668
+      Data4: -1496633695
+    Path: event:/Dialogue Sounds/Dialogue1
+  - Guid:
+      Data1: -1323958526
+      Data2: 1170776964
+      Data3: -1326582370
+      Data4: 260084267
+    Path: event:/Dialogue Sounds/Dialogue2
+  _PASoundPath:
+  - Guid:
+      Data1: 458023594
+      Data2: 1202523352
+      Data3: -326271588
+      Data4: -1553909263
+    Path: event:/Dialogue Sounds/PA-Normal
+  - Guid:
+      Data1: -1276921461
+      Data2: 1328330613
+      Data3: -1456441178
+      Data4: -1107311141
+    Path: event:/Dialogue Sounds/PA-Minor
+  - Guid:
+      Data1: -1350579354
+      Data2: 1310290749
+      Data3: 740726951
+      Data4: 1506862592
+    Path: event:/Dialogue Sounds/PA-Celesta
 --- !u!1001 &695253133
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2110,6 +2242,7 @@ MonoBehaviour:
   _cameraTransform: {fileID: 963194228}
   _mouseSensitivity: 5
   _oxygen: {fileID: 211698226}
+  _subOxygen: {fileID: 408542782}
   _astronaut: {fileID: 742261603}
   _firstPersonCam: {fileID: 1363586722}
   Is2D: 0
@@ -2334,7 +2467,47 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 211698226}
     - target: {fileID: 1073507307797082887, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: eventPath.Path
+      value: event:/Sounds/Hiss
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073507307797082887, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
       propertyPath: _subOxygenScript
+      value: 
+      objectReference: {fileID: 408542782}
+    - target: {fileID: 1073507307797082887, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: eventPath.Guid.Data1
+      value: -1080439390
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073507307797082887, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: eventPath.Guid.Data2
+      value: 1262053157
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073507307797082887, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: eventPath.Guid.Data3
+      value: -1888658548
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073507307797082887, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: eventPath.Guid.Data4
+      value: -600258186
+      objectReference: {fileID: 0}
+    - target: {fileID: 1625915210614740631, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _subMeter
+      value: 
+      objectReference: {fileID: 408542782}
+    - target: {fileID: 1625915210687493147, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _subMeter
+      value: 
+      objectReference: {fileID: 408542782}
+    - target: {fileID: 1625915210796141874, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _subMeter
+      value: 
+      objectReference: {fileID: 408542782}
+    - target: {fileID: 1625915210867541546, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _subMeter
+      value: 
+      objectReference: {fileID: 408542782}
+    - target: {fileID: 1625915210986351159, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _subMeter
       value: 
       objectReference: {fileID: 408542782}
     - target: {fileID: 1625915210986351161, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
@@ -2345,18 +2518,70 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dc8335dfa5d178f4b8024c21c56e136d, type: 2}
+    - target: {fileID: 1625915210987602402, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _subMeter
+      value: 
+      objectReference: {fileID: 408542782}
+    - target: {fileID: 1625915210992680184, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _subMeter
+      value: 
+      objectReference: {fileID: 408542782}
     - target: {fileID: 1625915211178443151, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dc8335dfa5d178f4b8024c21c56e136d, type: 2}
+    - target: {fileID: 1625915211178443185, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _subMeter
+      value: 
+      objectReference: {fileID: 408542782}
+    - target: {fileID: 1625915211189678861, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _subMeter
+      value: 
+      objectReference: {fileID: 408542782}
+    - target: {fileID: 1625915211297733170, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _subMeter
+      value: 
+      objectReference: {fileID: 408542782}
+    - target: {fileID: 1625915211590204353, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _subMeter
+      value: 
+      objectReference: {fileID: 408542782}
+    - target: {fileID: 1625915211609161547, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _subMeter
+      value: 
+      objectReference: {fileID: 408542782}
+    - target: {fileID: 1625915211723423601, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _subMeter
+      value: 
+      objectReference: {fileID: 408542782}
+    - target: {fileID: 1625915211749016821, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _subMeter
+      value: 
+      objectReference: {fileID: 408542782}
     - target: {fileID: 1625915211780952651, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dc8335dfa5d178f4b8024c21c56e136d, type: 2}
+    - target: {fileID: 1625915211780952653, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _subMeter
+      value: 
+      objectReference: {fileID: 408542782}
     - target: {fileID: 1625915211865138714, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dc8335dfa5d178f4b8024c21c56e136d, type: 2}
+    - target: {fileID: 1625915211865138716, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _subMeter
+      value: 
+      objectReference: {fileID: 408542782}
+    - target: {fileID: 1625915211869677023, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _subMeter
+      value: 
+      objectReference: {fileID: 408542782}
+    - target: {fileID: 1625915211977426162, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _subMeter
+      value: 
+      objectReference: {fileID: 408542782}
     - target: {fileID: 1625915212006928616, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -2405,18 +2630,98 @@ PrefabInstance:
       propertyPath: m_Name
       value: Greybox
       objectReference: {fileID: 0}
+    - target: {fileID: 1625915212008358174, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _subMeter
+      value: 
+      objectReference: {fileID: 408542782}
+    - target: {fileID: 1625915212008850412, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _subMeter
+      value: 
+      objectReference: {fileID: 408542782}
+    - target: {fileID: 1625915212184811640, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _subMeter
+      value: 
+      objectReference: {fileID: 408542782}
+    - target: {fileID: 1625915212187055345, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _subMeter
+      value: 
+      objectReference: {fileID: 408542782}
+    - target: {fileID: 1625915212209399820, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _subMeter
+      value: 
+      objectReference: {fileID: 408542782}
+    - target: {fileID: 1625915212312118262, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _subMeter
+      value: 
+      objectReference: {fileID: 408542782}
+    - target: {fileID: 1625915212500379741, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _subMeter
+      value: 
+      objectReference: {fileID: 408542782}
     - target: {fileID: 1625915212500379743, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dc8335dfa5d178f4b8024c21c56e136d, type: 2}
+    - target: {fileID: 1625915212670487315, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _subMeter
+      value: 
+      objectReference: {fileID: 408542782}
+    - target: {fileID: 1826950312984756953, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _oxygen
+      value: 
+      objectReference: {fileID: 408542782}
+    - target: {fileID: 1826950312984756953, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _chatter
+      value: 
+      objectReference: {fileID: 523607762}
+    - target: {fileID: 4188024671252521468, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _oxygen
+      value: 
+      objectReference: {fileID: 408542782}
+    - target: {fileID: 4188024671252521468, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _chatter
+      value: 
+      objectReference: {fileID: 523607762}
     - target: {fileID: 4445525100450859963, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
       propertyPath: _oxygenScript
       value: 
       objectReference: {fileID: 211698226}
     - target: {fileID: 4445525100450859963, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: eventPath.Path
+      value: event:/Sounds/Hiss
+      objectReference: {fileID: 0}
+    - target: {fileID: 4445525100450859963, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
       propertyPath: _subOxygenScript
       value: 
       objectReference: {fileID: 408542782}
+    - target: {fileID: 4445525100450859963, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: eventPath.Guid.Data1
+      value: -1080439390
+      objectReference: {fileID: 0}
+    - target: {fileID: 4445525100450859963, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: eventPath.Guid.Data2
+      value: 1262053157
+      objectReference: {fileID: 0}
+    - target: {fileID: 4445525100450859963, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: eventPath.Guid.Data3
+      value: -1888658548
+      objectReference: {fileID: 0}
+    - target: {fileID: 4445525100450859963, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: eventPath.Guid.Data4
+      value: -600258186
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421546195155838076, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: m_Name
+      value: Speakers
+      objectReference: {fileID: 0}
+    - target: {fileID: 6868849213617104659, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _oxygen
+      value: 
+      objectReference: {fileID: 408542782}
+    - target: {fileID: 6868849213617104659, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: _chatter
+      value: 
+      objectReference: {fileID: 523607762}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
 --- !u!1 &1633868280

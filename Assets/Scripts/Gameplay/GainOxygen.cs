@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class GainOxygen : MonoBehaviour
 {
@@ -9,12 +10,32 @@ public class GainOxygen : MonoBehaviour
 
     public static bool InStation;
 
+    // FMOD Things
+    public FMODUnity.EventReference eventPath;
+    public FMOD.Studio.EventInstance eventInstance;
+
+    void Start()
+    {
+        if(eventPath.ToString() != null)
+        {
+            eventInstance = RuntimeManager.CreateInstance(eventPath);
+        }
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
         {
             InStation = true;
-            Debug.Log(InStation);
+            eventInstance.start();
+            if(Oxygen.NoSprint)
+            {
+                eventInstance.setParameterByName("Lowpass",(_subOxygenScript._oxygenMeter * 220));
+            }
+            else
+            {
+                eventInstance.setParameterByName("Lowpass",22000);
+            }
         }
     }
 
@@ -30,10 +51,10 @@ public class GainOxygen : MonoBehaviour
     {
         if(InStation)
         {
+            _subOxygenScript._time -= Time.deltaTime * 2;
             if(_subOxygenScript._oxygenMeter >= 100f)
             {
                 _oxygenScript._oxygenMeter += 4.0f * Time.deltaTime;
-                Debug.Log(_oxygenScript._oxygenMeter);
             }
             else
             {

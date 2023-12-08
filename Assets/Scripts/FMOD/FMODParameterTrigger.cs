@@ -9,13 +9,13 @@ public class FMODParameterTrigger : MonoBehaviour
     public PlayerController _playerMovement;
 
 
-    private void OnTriggerEnter(Collider other)
-    {
-        _playerMovement.moveEvent.setParameterByName("Pitch", 10);
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        _playerMovement.moveEvent.setParameterByName("Pitch", 0);
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    _playerMovement.moveEvent.setParameterByName("Pitch", 10);
+    //}
+//
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    _playerMovement.moveEvent.setParameterByName("Pitch", 0);
+    //}
 }

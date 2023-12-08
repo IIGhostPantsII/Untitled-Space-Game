@@ -15,10 +15,10 @@ public class Door : MonoBehaviour
     public float maxYPosition = 7.5f;
     public float lowYPosition = -30f;
 
+    [SerializeField] private Oxygen _subMeter;
+ 
     private bool isInsideTrigger = false;
     private bool isOutsideTrigger = false;
-    private bool playDownOnce = true;
-    private bool playUpOnce = true;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -26,6 +26,16 @@ public class Door : MonoBehaviour
         {
             isInsideTrigger = true;
             isOutsideTrigger = false; // Reset the flag when inside the trigger
+            moveEventOpen.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            moveEventOpen.start();
+            if(Oxygen.NoSprint)
+            {
+                moveEventOpen.setParameterByName("Lowpass",(_subMeter._oxygenMeter * 220));
+            }
+            else
+            {
+                moveEventOpen.setParameterByName("Lowpass",22000);
+            }
         }
     }
 
@@ -35,6 +45,7 @@ public class Door : MonoBehaviour
         {
             isInsideTrigger = false;
             isOutsideTrigger = true;
+            StartCoroutine(Close());
         }
     }
 
@@ -71,15 +82,9 @@ public class Door : MonoBehaviour
         if (transform.position.y > lowYPosition)
         {
             transform.Translate(Vector3.down * doorSpeed * Time.deltaTime);
-            if(playDownOnce)
-            {
-                playDownOnce = false;
-                moveEventOpen.start();
-            }
         }
         else
         {
-            playDownOnce = true;
             transform.position = new Vector3(transform.position.x, lowYPosition, transform.position.z);
         }
     }
@@ -89,15 +94,9 @@ public class Door : MonoBehaviour
         if (transform.position.y < maxYPosition)
         {
             transform.Translate(Vector3.up * doorSpeed * Time.deltaTime);
-            if(playUpOnce)
-            {
-                playUpOnce = false;
-                StartCoroutine(Close());
-            }
         }
         else
         {
-            playUpOnce = true;
             isOutsideTrigger = false;
             transform.position = new Vector3(transform.position.x, maxYPosition, transform.position.z);
         }
@@ -106,6 +105,15 @@ public class Door : MonoBehaviour
     IEnumerator Close()
     {
         yield return new WaitForSeconds(0.25f);
+        moveEventClose.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         moveEventClose.start();
+        if(Oxygen.NoSprint)
+        {
+            moveEventClose.setParameterByName("Lowpass",(_subMeter._oxygenMeter * 220));
+        }
+        else
+        {
+            moveEventClose.setParameterByName("Lowpass",22000);
+        }
     }
 }
