@@ -10,8 +10,8 @@ public class RandomChatter : MonoBehaviour
     
     private Speakers[] _speakers;
 
-    private float minDelay = 17.5f;
-    private float maxDelay = 20f;
+    private float minDelay = 5f;
+    private float maxDelay = 5f;
 
     int random;
 
@@ -38,8 +38,8 @@ public class RandomChatter : MonoBehaviour
         {
             yield return new WaitForSeconds(Random.Range(minDelay, maxDelay));
             SetRandomPA();
-            yield return new WaitForSeconds(3f);
-            PlayRandomDialogue();
+            //yield return new WaitForSeconds(3f);
+            //PlayRandomDialogue();
         }
     }
 
@@ -48,15 +48,15 @@ public class RandomChatter : MonoBehaviour
         random = Random.Range(0,300);
         if(random == 1)
         {
-            RunAllSpeakers(_PASoundPath[2], _PASoundPath.Length, false);
+            RunAllSpeakers(_PASoundPath[2], _PASoundPath.Length, true);
         }
         else if(random > 1 && random < 16)
         {
-            RunAllSpeakers(_PASoundPath[1], _PASoundPath.Length, false);
+            RunAllSpeakers(_PASoundPath[1], _PASoundPath.Length, true);
         }
         else
         {
-            RunAllSpeakers(_PASoundPath[0], _PASoundPath.Length, false);
+            RunAllSpeakers(_PASoundPath[0], _PASoundPath.Length, true);
         }
     }
 

@@ -10,7 +10,7 @@ public class Speakers : MonoBehaviour
 
     private FMOD.Studio.EventInstance eventInstance;
 
-    private bool doSomething;
+    public static bool DoSomething;
 
     void Update()
     {
@@ -20,19 +20,13 @@ public class Speakers : MonoBehaviour
         if (eventInstance.isValid())
         {
             eventInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
-            //if (playbackState == FMOD.Studio.PLAYBACK_STATE.STOPPED && doSomething)
-            //{
-            //    doSomething = false;
-            //    Debug.Log($"dosmt {doSomething}");
-            //    _chatter.GoAgain();
-            //}
+            Debug.Log($"dosmt {DoSomething}");
+            if (playbackState == FMOD.Studio.PLAYBACK_STATE.STOPPED && DoSomething)
+            {
+                DoSomething = false;
+                _chatter.GoAgain();
+            }
         }
-    }
-
-    public void PlaySound(FMODUnity.EventReference reference, bool afterEffect)
-    {
-        eventInstance = FMODUnity.RuntimeManager.CreateInstance(reference);
-        eventInstance.start();
 
         if(Oxygen.NoSprint)
         {
@@ -42,10 +36,16 @@ public class Speakers : MonoBehaviour
         {
             eventInstance.setParameterByName("Lowpass",22000);
         }
+    }
+
+    public void PlaySound(FMODUnity.EventReference reference, bool afterEffect)
+    {
+        eventInstance = FMODUnity.RuntimeManager.CreateInstance(reference);
+        eventInstance.start();
 
         if(afterEffect)
         {
-            doSomething = true;
+            DoSomething = true;
         }
     }
 }
