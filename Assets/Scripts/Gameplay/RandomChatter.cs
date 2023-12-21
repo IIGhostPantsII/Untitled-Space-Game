@@ -10,8 +10,8 @@ public class RandomChatter : MonoBehaviour
     
     private Speakers[] _speakers;
 
-    private float minDelay = 5f;
-    private float maxDelay = 5f;
+    private float minDelay = 17.5f;
+    private float maxDelay = 20f;
 
     int random;
 
