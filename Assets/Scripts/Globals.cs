@@ -8,6 +8,8 @@ public static class Globals
 
     public static bool GameIsActive;
 
+    public static bool GetOriginalTriggers;
+
     public static void LockMovement()
     {
         Movement = false;
@@ -16,5 +18,15 @@ public static class Globals
     public static void UnlockMovement()
     {
         Movement = true;
+    }
+
+    public static void ResetGame()
+    {
+        //Turn off all Bools that get turned on mid-game
+    }
+
+    public static void OriginalTriggersCompleted()
+    {
+        GetOriginalTriggers = true;
     }
 }

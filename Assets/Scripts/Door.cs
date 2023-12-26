@@ -28,6 +28,7 @@ public class Door : MonoBehaviour
             isOutsideTrigger = false; // Reset the flag when inside the trigger
             moveEventOpen.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             moveEventOpen.start();
+
             if(Oxygen.NoSprint)
             {
                 moveEventOpen.setParameterByName("Lowpass",(_subMeter._oxygenMeter * 220));
@@ -46,6 +47,11 @@ public class Door : MonoBehaviour
             isInsideTrigger = false;
             isOutsideTrigger = true;
             StartCoroutine(Close());
+
+            if(other.CompareTag("Monster"))
+            {
+                References.TurnOnAllAreaTriggers();
+            }
         }
     }
 
