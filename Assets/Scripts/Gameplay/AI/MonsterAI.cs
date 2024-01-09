@@ -124,6 +124,10 @@ public class MonsterAI : MonoBehaviour
                 currentIndex = 0;
             }
         }
+        else if(patrolMode)
+        {
+            
+        }
     }
 
     void MoveTowardsTarget(Vector3 target)

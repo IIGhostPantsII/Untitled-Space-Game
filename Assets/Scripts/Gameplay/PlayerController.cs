@@ -7,68 +7,72 @@ using UnityEngine.Serialization;
 public class PlayerController : MonoBehaviour
 {
     // FMOD Things
+    public float eventInterval = 0.4f;
+    private float timeSinceLastPlay = 0.0f;
+    private bool isFirstInput = true;
     public FMODUnity.EventReference moveEventPath;
     public FMOD.Studio.EventInstance moveEvent;
     private FMOD.Studio.PLAYBACK_STATE playbackState;
-    public float eventInterval = 0.4f;
-    private float timeSinceLastPlay = 0.0f;
-    private bool isEventPlaying = false;
-    private bool isFirstInput = true;
 
     // Inspector Settings
     [SerializeField] private float _speed = 800f;
     [SerializeField] private float _sprintMultiplier = 1.5f;
     [SerializeField] private float _jumpForce = 15f;
+    [SerializeField] private float _crouchSpeed;
     [SerializeField] private float _groundCheckRadius = 1.0f;
+    [SerializeField] private float _mouseSensitivity = 5f;
     [SerializeField] private LayerMask _groundLayer;
     [SerializeField] private Transform _cameraTransform;
-    [SerializeField] private float _mouseSensitivity = 5f;
     [SerializeField] private Oxygen _oxygen;
     [SerializeField] private Oxygen _subOxygen;
     [SerializeField] public GameObject _astronaut;
     [SerializeField] public GameObject _firstPersonCam;
 
     // INPUT BOOLS
-    private bool _isSprinting;
-    private bool _isJumping;
-    private bool _isGrounded;
+    private bool isSprinting;
+    private bool isJumping;
+    private bool isGrounded;
+    private bool isMoving;
+    private bool isCrouching;
 
     // Input system
-    PlayerInput _input;
+    private PlayerInput input;
 
     // Other
-    private Rigidbody _playerRigidbody;
-    private bool _delay;
-    private bool isMoving = false;
-    private Animator _playerAnimator;
-    public bool Is2D;
+    private bool delay;
+    private bool jumpOver = true;
+    private bool holdingSprint;
+    private float holdDuration = 0f;
+    private Rigidbody playerRigidbody;
+    private Animator playerAnimator;
+
+    public bool is2D;
 
     // Rotation - used for mouse input
-    float _xRotation = 0f;
+    private float xRotation = 0f;
 
     // Camera Bobbing
-    private float _bobbingSpeed = 5f;
-    private float _bobbingAmount = 0.1f;
-    private float _bobbingTimer = 0f;
-    private Vector3 _originalCameraPosition;
+    private float bobbingSpeed = 5f;
+    private float bobbingAmount = 0.05f;
+    private float bobbingTimer = 0f;
+    private Vector3 originalCameraPosition;
 
     private void Awake()
     {
-        _input = new PlayerInput();
+        input = new PlayerInput();
     }
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        _playerRigidbody = gameObject.GetComponent<Rigidbody>();
+
+        playerRigidbody = gameObject.GetComponent<Rigidbody>();
+
         moveEvent = RuntimeManager.CreateInstance(moveEventPath);
+
+        originalCameraPosition = new Vector3(0f, 2f, 0f);
         
-        //_playerAnimator = gameObject.GetComponent<Animator>();
-        //_playerAnimator.Play("idle_player");
-
-        _originalCameraPosition = new Vector3(0f, 2f, 0f);
-
         if(_firstPersonCam != null)
         {
             StartCoroutine(TurnOn(4.5f));
@@ -78,8 +82,9 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // INPUT VALUES
-        _isJumping = _input.Player.Jump.ReadValue<float>() > 0.1f;
-        _isSprinting = _input.Player.Sprint.ReadValue<float>() > 0.1f;
+        isJumping = input.Player.Jump.ReadValue<float>() > 0.1f;
+        isSprinting = input.Player.Sprint.ReadValue<float>() > 0.1f;
+        isGrounded = Physics.SphereCast(transform.position, _groundCheckRadius, -Vector3.up, out RaycastHit hitInfo, 0.1f, _groundLayer);
 
         if(Globals.Movement)
         {
@@ -87,113 +92,133 @@ public class PlayerController : MonoBehaviour
             float mouseX = Input.GetAxis("Mouse X") * _mouseSensitivity * Screen.dpi * Time.deltaTime;
             float mouseY = Input.GetAxis("Mouse Y") * _mouseSensitivity * Screen.dpi * Time.deltaTime;
 
-            _xRotation -= mouseY;
-            _xRotation = Mathf.Clamp(_xRotation, -90f, 90f);
+            xRotation -= mouseY;
+            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-            _firstPersonCam.transform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
+            _firstPersonCam.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
             transform.Rotate(Vector3.up * mouseX);
-        }
 
-        _isGrounded = Physics.SphereCast(transform.position, _groundCheckRadius, -Vector3.up, out RaycastHit hitInfo, 0.1f, _groundLayer);
-
-        if(_isJumping && !_delay && _isGrounded)
-        {
-            StartCoroutine(InputDelay(0.15f));
-            _delay = true;
-            StartCoroutine(Jump());
-        }
-        
-        if(isMoving)
-        {
-            _bobbingTimer += Time.deltaTime * _bobbingSpeed;
-            float bobbingOffset = Mathf.Sin(_bobbingTimer) * _bobbingAmount;
-            _firstPersonCam.transform.localPosition = _originalCameraPosition + new Vector3(bobbingOffset / 1.5f, bobbingOffset, 0f);
-            timeSinceLastPlay += Time.deltaTime;
-
-            if(isFirstInput && timeSinceLastPlay >= eventInterval / 2)
+            if(isMoving)
             {
-                isFirstInput = false;
+                bobbingTimer += Time.deltaTime * bobbingSpeed;
+                float bobbingOffset = Mathf.Sin(bobbingTimer) * bobbingAmount;
+                _firstPersonCam.transform.localPosition = originalCameraPosition + new Vector3(bobbingOffset / 1.5f, bobbingOffset, 0f);
+                timeSinceLastPlay += Time.deltaTime;
+
+                if(isFirstInput && timeSinceLastPlay >= eventInterval / 2)
+                {
+                    isFirstInput = false;
+                }
             }
-        }
-        else
-        {
-            timeSinceLastPlay = 0.0f;
-            _bobbingTimer = 0f;
-            isFirstInput = true;
-            _firstPersonCam.transform.localPosition = _originalCameraPosition;
-        }
-
-        if(isMoving && timeSinceLastPlay >= (isFirstInput ? eventInterval / 2 : eventInterval))
-        {
-            if(Globals.Movement)
+            else
             {
-                moveEvent.start();
-                if(Oxygen.NoSprint)
-                {
-                    moveEvent.setParameterByName("Lowpass",(_subOxygen._oxygenMeter * 220));
-                }
-                else
-                {
-                    moveEvent.setParameterByName("Lowpass",22000);
-                }
                 timeSinceLastPlay = 0.0f;
+                bobbingTimer = 0f;
+                isFirstInput = true;
+                _firstPersonCam.transform.localPosition = originalCameraPosition;
             }
-        }
 
-        if(!isMoving)
-        {
-            FMOD.Studio.PLAYBACK_STATE playbackState;
-            moveEvent.getPlaybackState(out playbackState);
-
-            if(playbackState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+            if(isMoving && timeSinceLastPlay >= (isFirstInput ? eventInterval / 2 : eventInterval))
             {
-                moveEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                if(Globals.Movement && isGrounded && !isCrouching)
+                {
+                    moveEvent.start();
+                    if(Oxygen.NoSprint)
+                    {
+                        moveEvent.setParameterByName("Lowpass",(_subOxygen._oxygenMeter * 220));
+                    }
+                    else
+                    {
+                        moveEvent.setParameterByName("Lowpass",22000);
+                    }
+                    timeSinceLastPlay = 0.0f;
+                }
+            }
+
+            if(!isMoving)
+            {
+                FMOD.Studio.PLAYBACK_STATE playbackState;
+                moveEvent.getPlaybackState(out playbackState);
+
+                if(playbackState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+                {
+                    moveEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                }
+            }
+
+            if(holdingSprint)
+            {
+                holdDuration += Time.deltaTime;
+                if (holdDuration >= 1f) // If hold duration is bigger then 1 second
+                {
+                    isCrouching = false;
+                }
             }
         }
     }
 
     void FixedUpdate()
     {
-        float horizontal = _input.Player.Move.ReadValue<Vector2>().x;
-        float vertical = _input.Player.Move.ReadValue<Vector2>().y;
-
-        Vector3 movement;
-        if (Is2D)
-        {
-            if (vertical != 0) movement = new Vector3(0, 0, vertical);
-            else movement = new Vector3(0, 0, horizontal);
-        }
-        else movement = new Vector3(horizontal, 0, vertical);
-        movement = transform.TransformDirection(movement);
-        movement.y = 0;
-        
-        if(Oxygen.NoSprint)
-        {
-            _isSprinting = false;
-        }
-        if(_isSprinting && !Oxygen.NoSprint)
-        {
-            eventInterval = 0.3f;
-            movement *= _sprintMultiplier;
-            _oxygen._depletionSpeed = 20.5f;
-            _bobbingSpeed = 10f;
-            _bobbingAmount = 0.2f;
-        }
-        if(!_isSprinting)
-        {
-            eventInterval = 0.6f;
-            _oxygen._depletionSpeed = 1.0f;
-            _bobbingSpeed = 5f;
-            _bobbingAmount = 0.1f;
-        }
-
-        if(!_isGrounded)
-        {
-            movement.y -= 9.8f * Time.deltaTime;
-        }
-
+        //Scuffed as hell
         if(Globals.Movement)
         {
+            float horizontal = input.Player.Move.ReadValue<Vector2>().x;
+            float vertical = input.Player.Move.ReadValue<Vector2>().y;
+
+            Vector3 movement;
+            if(is2D)
+            {
+                if (vertical != 0) movement = new Vector3(0, 0, vertical);
+                else movement = new Vector3(0, 0, horizontal);
+            }
+            else movement = new Vector3(horizontal, 0, vertical);
+            movement = transform.TransformDirection(movement);
+            movement.y = 0;
+            
+            if(Oxygen.NoSprint)
+            {
+                isSprinting = false;
+            }
+            else if(isSprinting && !isCrouching && !Oxygen.NoSprint)
+            {
+                eventInterval = 0.3f;
+                movement *= _sprintMultiplier;
+                _oxygen._depletionSpeed = 0.25f;
+                bobbingSpeed = 10f;
+                bobbingAmount = 0.2f;
+            }
+            else if(isCrouching)
+            {
+                eventInterval = 0.6f;
+                _oxygen._depletionSpeed = 0.05f;
+                bobbingSpeed = 3f;
+                bobbingAmount = 0.2f;
+            }
+            else if(!isSprinting)
+            {
+                eventInterval = 0.6f;
+                _oxygen._depletionSpeed = 0.1f;
+                bobbingSpeed = 5f;
+                bobbingAmount = 0.1f;
+            }
+
+            if(isCrouching)
+            {
+                movement /= _sprintMultiplier;
+                originalCameraPosition = Vector3.MoveTowards(originalCameraPosition, new Vector3(0f, 1f, 0f), Time.deltaTime * _crouchSpeed);
+                //transform.position = Vector3.MoveTowards(transform.position, target, step);
+            }
+            else
+            {
+                originalCameraPosition = Vector3.MoveTowards(originalCameraPosition, new Vector3(0f, 2f, 0f), Time.deltaTime * _crouchSpeed);
+            }
+
+            if(!isGrounded && jumpOver)
+            {
+                Vector3 gravityVector = -500f * Vector3.up; // Define the gravity vector
+                playerRigidbody.AddForce(gravityVector, ForceMode.Acceleration);
+            }
+
             if(Mathf.Abs(horizontal) > 0.1f || Mathf.Abs(vertical) > 0.1f)
             {
                 isMoving = true;
@@ -203,36 +228,71 @@ public class PlayerController : MonoBehaviour
                 isMoving = false;
             }
 
-            _playerRigidbody.velocity = movement * _speed * Time.deltaTime;
+            playerRigidbody.velocity = movement * _speed * Time.deltaTime;
+
+            if(isJumping && !delay && isGrounded && Globals.Movement)
+            {
+                StartCoroutine(InputDelay(0.15f));
+                delay = true;
+                StartCoroutine(Jump());
+            }
         }
     }
 
     private void OnEnable()
     {
-        _input.Enable();
+        input.Enable();
+
+        // Toggle crouch
+        input.Player.Crouch.performed += ctx => ToggleCrouch();
+
+        // If sprint is being held while crouching
+        input.Player.Sprint.started += ctx => HoldingSprint();
+        input.Player.Sprint.canceled += ctx => ResetSprintTimer();
     }
 
     private void OnDisable()
     {
-        _input.Disable();
+        input.Disable();
     }
 
     IEnumerator InputDelay(float seconds)
     {
-        yield return new WaitForSeconds(seconds);
-        _delay = false;
+        for(int i = 0; i < 10; i++)
+        {
+            originalCameraPosition = originalCameraPosition - new Vector3(0f, 0.15f, 0f);
+            yield return new WaitForSeconds(seconds / 15f);
+        }
+        for(int j = 0; j < 5; j++)
+        {
+            originalCameraPosition = originalCameraPosition + new Vector3(0f, 0.3f, 0f);
+            yield return new WaitForSeconds(seconds / 15f);
+        }
+        delay = false;
     }
 
     IEnumerator Jump()
     {
-        for (int i = 5; i < _jumpForce; i++)
+        float currentForce = 0f;
+        float timeToReachMaxForce = 1.0f; // Adjust this value to control the speed of the jump
+
+        while (currentForce < _jumpForce)
         {
-            yield return new WaitForSeconds(0.005f);
-            if(Globals.Movement)
-            {
-                _playerRigidbody.AddForce(Vector3.up * i, ForceMode.Impulse);
-            }
+            float forceStep = _jumpForce / timeToReachMaxForce * Time.deltaTime * 6.0f;
+            currentForce = Mathf.Min(currentForce + forceStep, _jumpForce);
+
+            // Adjusting force application to simulate a more dynamic jump
+            float forceMultiplier = 1.0f - Mathf.Pow(1.0f - (currentForce / _jumpForce), 2);
+            playerRigidbody.AddForce(Vector3.up * _jumpForce * forceMultiplier, ForceMode.Impulse);
+
+            yield return null; // Wait for the next frame
         }
+
+        jumpOver = false;
+
+        yield return new WaitForSeconds(0.25f);
+
+        jumpOver = true;
     }
 
     IEnumerator TurnOn(float seconds)
@@ -240,5 +300,30 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         _firstPersonCam.SetActive(true);
         _astronaut.SetActive(false);
+    }
+
+    private void ToggleCrouch()
+    {
+        if(Globals.Movement)
+        {
+            isCrouching = !isCrouching;
+        }
+    }
+
+    private void HoldingSprint()
+    {
+        if(Globals.Movement)
+        {
+            holdingSprint = true;
+        }
+    }
+
+    private void ResetSprintTimer()
+    {
+        if(Globals.Movement)
+        {
+            holdingSprint = false;
+            holdDuration = 0f;
+        }
     }
 }
