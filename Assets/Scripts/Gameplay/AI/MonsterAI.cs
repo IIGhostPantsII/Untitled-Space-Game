@@ -60,7 +60,8 @@ public class MonsterAI : MonoBehaviour
                         int random = Random.Range(0, 20);
                         if(random == 0)
                         {
-                            turnBack = !turnBack;
+                            //Turning the AI back is super mega broken rn
+                            //turnBack = !turnBack;
                             if(turnBack)
                             {
                                 currentIndex -= 2;

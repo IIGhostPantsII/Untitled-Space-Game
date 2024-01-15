@@ -11,7 +11,9 @@ public class PlayerController : MonoBehaviour
     private float timeSinceLastPlay = 0.0f;
     private bool isFirstInput = true;
     public FMODUnity.EventReference moveEventPath;
+    public FMODUnity.EventReference jumpEventPath;
     public FMOD.Studio.EventInstance moveEvent;
+    public FMOD.Studio.EventInstance jumpEvent;
     private FMOD.Studio.PLAYBACK_STATE playbackState;
 
     // Inspector Settings
@@ -42,6 +44,7 @@ public class PlayerController : MonoBehaviour
     private bool delay;
     private bool jumpOver = true;
     private bool holdingSprint;
+    private bool jumpSound = false;
     private float holdDuration = 0f;
     private Rigidbody playerRigidbody;
     private Animator playerAnimator;
@@ -71,6 +74,8 @@ public class PlayerController : MonoBehaviour
 
         moveEvent = RuntimeManager.CreateInstance(moveEventPath);
 
+        jumpEvent = RuntimeManager.CreateInstance(jumpEventPath);
+
         originalCameraPosition = new Vector3(0f, 2f, 0f);
         
         if(_firstPersonCam != null)
@@ -85,7 +90,7 @@ public class PlayerController : MonoBehaviour
         isJumping = input.Player.Jump.ReadValue<float>() > 0.1f;
         isSprinting = input.Player.Sprint.ReadValue<float>() > 0.1f;
         isGrounded = Physics.SphereCast(transform.position, _groundCheckRadius, -Vector3.up, out RaycastHit hitInfo, 0.1f, _groundLayer);
-
+        Debug.Log(isGrounded);
         if(Globals.Movement)
         {
 
@@ -153,6 +158,25 @@ public class PlayerController : MonoBehaviour
                 {
                     isCrouching = false;
                 }
+            }
+
+            if(isGrounded && jumpSound)
+            {
+                jumpSound = false;
+                jumpEvent.start();
+                Debug.Log("Hi!");
+                if(Oxygen.NoSprint)
+                {
+                    jumpEvent.setParameterByName("Lowpass",(_subOxygen._oxygenMeter * 220));
+                }
+                else
+                {
+                    jumpEvent.setParameterByName("Lowpass",22000);
+                }
+            }
+            else if(!isGrounded)
+            {
+                jumpSound = true;
             }
         }
     }

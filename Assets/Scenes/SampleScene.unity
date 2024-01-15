@@ -2452,6 +2452,58 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3034483526383356310, guid: b3ca47e4580c2c241bf561802ae61d1f, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3921199951272831972, guid: b3ca47e4580c2c241bf561802ae61d1f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 3921199951272831972, guid: b3ca47e4580c2c241bf561802ae61d1f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 3921199951272831972, guid: b3ca47e4580c2c241bf561802ae61d1f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 3921199951527128773, guid: b3ca47e4580c2c241bf561802ae61d1f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 3921199951527128773, guid: b3ca47e4580c2c241bf561802ae61d1f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 3921199951527128773, guid: b3ca47e4580c2c241bf561802ae61d1f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239396573271637867, guid: b3ca47e4580c2c241bf561802ae61d1f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239396573271637867, guid: b3ca47e4580c2c241bf561802ae61d1f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239396573271637867, guid: b3ca47e4580c2c241bf561802ae61d1f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239396573534353994, guid: b3ca47e4580c2c241bf561802ae61d1f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239396573534353994, guid: b3ca47e4580c2c241bf561802ae61d1f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239396573534353994, guid: b3ca47e4580c2c241bf561802ae61d1f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 6626443340224938352, guid: b3ca47e4580c2c241bf561802ae61d1f, type: 3}
       propertyPath: m_Name
       value: Tube
@@ -2594,6 +2646,13 @@ MonoBehaviour:
       Data3: -1870967662
       Data4: 1777116068
     Path: event:/Sounds/Footsteps
+  jumpEventPath:
+    Guid:
+      Data1: -384478593
+      Data2: 1307451911
+      Data3: 421788828
+      Data4: 1233414913
+    Path: event:/Music/Bowsers Here
   _speed: 800
   _sprintMultiplier: 1.5
   _jumpForce: 4
