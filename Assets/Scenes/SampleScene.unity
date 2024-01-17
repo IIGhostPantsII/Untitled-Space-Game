@@ -3662,6 +3662,7 @@ GameObject:
   - component: {fileID: 919132149515964245}
   - component: {fileID: 919132149515964247}
   - component: {fileID: 919132149515964243}
+  - component: {fileID: 919132149515964248}
   m_Layer: 0
   m_Name: Freddy Fazbear AR AR AR AR AR
   m_TagString: Monster
@@ -3732,6 +3733,26 @@ MonoBehaviour:
   _speed: 15
   _rotationSpeed: 8
   _references: {fileID: 530064397}
+--- !u!95 &919132149515964248
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149515964242}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f1443f8aa5f1f124c843dfffed069452, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!4 &1044651748539579496
 Transform:
   m_ObjectHideFlags: 0

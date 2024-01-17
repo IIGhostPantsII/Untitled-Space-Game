@@ -17,7 +17,8 @@ public class MonsterAI : MonoBehaviour
     private bool patrolMode;
     private bool chaseMode;
 
-    private bool idling;
+    private bool isIdling;
+    private bool isMoving;
     private bool turnBack;
 
     private int currentIndex = 0;
@@ -27,14 +28,25 @@ public class MonsterAI : MonoBehaviour
 
     private Quaternion initialRotation;
 
+    private Animator monsterAni;
+
     void Start()
     {
         int spawnLength = _spawnPoints.Length;
-        //SpawnTheMonster(spawnLength);
+        monsterAni = GetComponent<Animator>();
     }
 
     void Update()
     {
+        if(isIdling)
+        {
+            monsterAni.Play("idle");
+        }
+        else if(isMoving)
+        {
+            monsterAni.Play("walking");
+        }
+
         if(idleMode)
         {
             if(_pointsOfInterest.Count > 0 && currentIndex >= 0)
@@ -43,41 +55,46 @@ public class MonsterAI : MonoBehaviour
                 {
                     if(rotationTimer <= _rotationDuration)
                     {
-                        idling = true;
+                        isMoving = false;
+                        isIdling = true;
                         MonsterIdle();
                         rotationTimer += Time.deltaTime;
                     }
                     else
                     {
+                        isMoving = true;
+                        isIdling = false;
                         idleChance = 20;
                         rotationTimer = 0f;
                     }
                 }
                 else
                 {
-                    if(idling)
+                    if(isIdling)
                     {
-                        int random = Random.Range(0, 20);
-                        if(random == 0)
-                        {
-                            //Turning the AI back is super mega broken rn
-                            //turnBack = !turnBack;
-                            if(turnBack)
-                            {
-                                currentIndex -= 2;
-                            }
-                            else
-                            {
-                                if ((currentIndex + 3) < _pointsOfInterest.Count)
-                                {
-                                    for(int i = _pointsOfInterest.Count - 1; i > (currentIndex + 3); i--)
-                                    {
-                                        _pointsOfInterest.RemoveAt(i);
-                                    }
-                                }
-                            }
-                        }
-                        idling = false;
+                        //Turning the AI backwards is super mega broken rn, just ignore this bit
+                        //int random = Random.Range(0, 20);
+                        //int random = 1;
+                        //if(random == 0)
+                        //{
+                        //    Debug.Log("THIS SHOULDNT HAPPEN WAIT WHAT?");
+                        //    //turnBack = !turnBack;
+                        //    if(turnBack)
+                        //    {
+                        //        currentIndex -= 2;
+                        //    }
+                        //    else
+                        //    {
+                        //        if((currentIndex + 3) < _pointsOfInterest.Count)
+                        //        {
+                        //            for(int i = _pointsOfInterest.Count - 1; i > (currentIndex + 3); i--)
+                        //            {
+                        //                _pointsOfInterest.RemoveAt(i);
+                        //            }
+                        //        }
+                        //    }
+                        //}
+                        isIdling = false;
                     }
 
                     if(currentIndex >= 0)
@@ -119,7 +136,7 @@ public class MonsterAI : MonoBehaviour
             else
             {
                 //Hard Reset
-                idling = false;
+                isIdling = false;
                 turnBack = false;
                 _references.ResetAI();
                 currentIndex = 0;
@@ -133,6 +150,7 @@ public class MonsterAI : MonoBehaviour
 
     void MoveTowardsTarget(Vector3 target)
     {
+        isMoving = true;
         float step = _speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, target, step);
 
