@@ -154,7 +154,7 @@ public class MonsterAI : MonoBehaviour
         float step = _speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, target, step);
 
-        Vector3 direction = (target - transform.position).normalized;
+        Vector3 direction = (transform.position - target).normalized;
 
         Quaternion targetRotation = Quaternion.LookRotation(direction);
 
