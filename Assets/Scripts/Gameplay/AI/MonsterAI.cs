@@ -154,6 +154,7 @@ public class MonsterAI : MonoBehaviour
         float step = _speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, target, step);
 
+        //To flip the direction, flip transform and target around
         Vector3 direction = (transform.position - target).normalized;
 
         Quaternion targetRotation = Quaternion.LookRotation(direction);
