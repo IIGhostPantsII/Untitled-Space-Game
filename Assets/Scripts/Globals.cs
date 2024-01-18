@@ -5,9 +5,8 @@ using UnityEngine;
 public static class Globals
 {
     public static bool Movement = true;
-
     public static bool GameIsActive;
-
+    public static bool Paused;
     public static bool GetOriginalTriggers;
 
     public static void LockMovement()

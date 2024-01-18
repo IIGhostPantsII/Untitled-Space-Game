@@ -1,8 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using FMODUnity;
-using UnityEngine.Serialization;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Oxygen _subOxygen;
     [SerializeField] public GameObject _astronaut;
     [SerializeField] public GameObject _firstPersonCam;
+    [SerializeField] public GameObject _defaultUI;
+    [SerializeField] public GameObject _pauseMenu;
 
     // INPUT BOOLS
     private bool isSprinting;
@@ -39,6 +41,7 @@ public class PlayerController : MonoBehaviour
 
     // Input system
     private PlayerInput input;
+    private InputAction _openMenu;
 
     // Other
     private bool delay;
@@ -63,6 +66,8 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         input = new PlayerInput();
+        
+        input.Player.Pause.performed += PauseGame;
     }
 
     void Start()
@@ -91,6 +96,7 @@ public class PlayerController : MonoBehaviour
         isSprinting = input.Player.Sprint.ReadValue<float>() > 0.1f;
         isGrounded = Physics.SphereCast(transform.position, _groundCheckRadius, -Vector3.up, out RaycastHit hitInfo, 0.1f, _groundLayer);
         Debug.Log(isGrounded);
+
         if(Globals.Movement)
         {
 
@@ -317,6 +323,36 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(0.25f);
 
         jumpOver = true;
+    }
+    
+    private void PauseGame(InputAction.CallbackContext obj)
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Globals.LockMovement();
+        
+        _defaultUI.SetActive(false);
+        _pauseMenu.SetActive(true);
+    }
+
+    public void UnpauseGame()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Globals.UnlockMovement();
+        
+        _defaultUI.SetActive(true);
+        _pauseMenu.SetActive(false);
+    }
+
+    public void QuitGame()
+    {
+        #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+        #else
+                     Application.Quit();
+        #endif
     }
 
     IEnumerator TurnOn(float seconds)
