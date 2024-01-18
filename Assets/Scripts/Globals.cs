@@ -8,6 +8,7 @@ public static class Globals
     public static bool GameIsActive;
     public static bool Paused;
     public static bool GetOriginalTriggers;
+    public static GameState GameState = GameState.Main;
 
     public static void LockMovement()
     {
@@ -28,4 +29,12 @@ public static class Globals
     {
         GetOriginalTriggers = true;
     }
+}
+
+public enum GameState
+{
+    Main,
+    Paused,
+    Lost,
+    Victory
 }
