@@ -99,7 +99,8 @@ public class PlayerController : MonoBehaviour
 
         if(Globals.Movement)
         {
-
+            Oxygen.PauseDepletion = false;
+            
             float mouseX = Input.GetAxis("Mouse X") * _mouseSensitivity * Screen.dpi * Time.deltaTime;
             float mouseY = Input.GetAxis("Mouse Y") * _mouseSensitivity * Screen.dpi * Time.deltaTime;
 
@@ -184,6 +185,10 @@ public class PlayerController : MonoBehaviour
             {
                 jumpSound = true;
             }
+        }
+        else
+        {
+            Oxygen.PauseDepletion = true;
         }
     }
 
