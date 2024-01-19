@@ -1,8 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using FMODUnity;
-using UnityEngine.Serialization;
+using NaughtyAttributes;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -29,6 +31,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Oxygen _subOxygen;
     [SerializeField] public GameObject _astronaut;
     [SerializeField] public GameObject _firstPersonCam;
+    [SerializeField] public GameObject _defaultUI;
+    [SerializeField] public GameObject _pauseMenu;
+    [SerializeField] public GameObject _gameOverScreen;
+    [SerializeField] public GameObject _victoryScreen;
 
     // INPUT BOOLS
     private bool isSprinting;
@@ -39,6 +45,7 @@ public class PlayerController : MonoBehaviour
 
     // Input system
     private PlayerInput input;
+    private InputAction _openMenu;
 
     // Other
     private bool delay;
@@ -63,6 +70,8 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         input = new PlayerInput();
+        
+        input.Player.Pause.performed += PauseGame;
     }
 
     void Start()
@@ -91,9 +100,11 @@ public class PlayerController : MonoBehaviour
         isSprinting = input.Player.Sprint.ReadValue<float>() > 0.1f;
         isGrounded = Physics.SphereCast(transform.position, _groundCheckRadius, -Vector3.up, out RaycastHit hitInfo, 0.1f, _groundLayer);
         Debug.Log(isGrounded);
+
         if(Globals.Movement)
         {
-
+            Oxygen.PauseDepletion = false;
+            
             float mouseX = Input.GetAxis("Mouse X") * _mouseSensitivity * Screen.dpi * Time.deltaTime;
             float mouseY = Input.GetAxis("Mouse Y") * _mouseSensitivity * Screen.dpi * Time.deltaTime;
 
@@ -179,17 +190,32 @@ public class PlayerController : MonoBehaviour
                 jumpSound = true;
             }
         }
+        else
+        {
+            
+            Oxygen.PauseDepletion = true;
+        }
+
+        if (_subOxygen._oxygenMeter <= 0)
+        {
+            Globals.GameState = GameState.Lost;
+            LoadGameOverMenu();
+        } else if (Globals.GameState == GameState.Victory)
+        {
+            LoadWinMenu();
+        }
     }
 
     void FixedUpdate()
     {
+        Vector3 movement = Vector3.zero;
+        
         //Scuffed as hell
         if(Globals.Movement)
         {
             float horizontal = input.Player.Move.ReadValue<Vector2>().x;
             float vertical = input.Player.Move.ReadValue<Vector2>().y;
 
-            Vector3 movement;
             if(is2D)
             {
                 if (vertical != 0) movement = new Vector3(0, 0, vertical);
@@ -252,8 +278,6 @@ public class PlayerController : MonoBehaviour
                 isMoving = false;
             }
 
-            playerRigidbody.velocity = movement * _speed * Time.deltaTime;
-
             if(isJumping && !delay && isGrounded && Globals.Movement)
             {
                 StartCoroutine(InputDelay(0.15f));
@@ -261,8 +285,16 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(Jump());
             }
         }
+        
+        playerRigidbody.velocity = movement * _speed * Time.deltaTime;
     }
 
+    [Button()]
+    private void WinGame()
+    {
+        Globals.GameState = GameState.Victory;
+    }
+    
     private void OnEnable()
     {
         input.Enable();
@@ -317,6 +349,65 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(0.25f);
 
         jumpOver = true;
+    }
+
+    private void LoadGameOverMenu()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Globals.LockMovement();
+        
+        _defaultUI.SetActive(false);
+        _pauseMenu.SetActive(false);
+        _gameOverScreen.SetActive(true);
+    }
+    
+    private void LoadWinMenu()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Globals.LockMovement();
+        
+        _defaultUI.SetActive(false);
+        _pauseMenu.SetActive(false);
+        _victoryScreen.SetActive(true);
+    }
+    
+    private void PauseGame(InputAction.CallbackContext obj)
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Globals.LockMovement();
+        
+        _defaultUI.SetActive(false);
+        _pauseMenu.SetActive(true);
+    }
+
+    public void UnpauseGame()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Globals.UnlockMovement();
+        
+        _defaultUI.SetActive(true);
+        _pauseMenu.SetActive(false);
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void QuitGame()
+    {
+        #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+        #else
+                     Application.Quit();
+        #endif
     }
 
     IEnumerator TurnOn(float seconds)

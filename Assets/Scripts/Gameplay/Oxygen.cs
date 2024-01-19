@@ -9,6 +9,7 @@ public class Oxygen : MonoBehaviour
 {
     public static bool NoSprint;
     public static bool NoOxygen;
+    public static bool PauseDepletion;
 
     [SerializeField] public float _oxygenMeter = 100.0f;
     [SerializeField] public float _depletionSpeed = 1.0f;
@@ -60,6 +61,8 @@ public class Oxygen : MonoBehaviour
 
     void Update()
     {
+        if (PauseDepletion) return;
+
         if(!NoSprint && !_subMeter || !GainOxygen.InStation && !_subMeter)
         {
             _oxygenMeter -= _depletionSpeed * Time.deltaTime;
@@ -126,6 +129,7 @@ public class Oxygen : MonoBehaviour
 
     void UpdateColor()
     {
+        float alpha = _image.color.a;
         if(_oxygenMeter > warningThreshold)
         {
             _image.color = goodState;
@@ -138,6 +142,8 @@ public class Oxygen : MonoBehaviour
         {
             _image.color = low;
         }
+
+        _image.color = new Color(_image.color.r, _image.color.g, _image.color.b, alpha);
     }
 
     IEnumerator LowOxygen(float seconds)

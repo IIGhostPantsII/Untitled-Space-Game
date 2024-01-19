@@ -272,13 +272,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _oxygenMeter: 100
   _depletionSpeed: 4
-  _goodState: {r: 0, g: 1, b: 1, a: 1}
-  _warning: {r: 1, g: 1, b: 0, a: 1}
-  _low: {r: 1, g: 0, b: 0, a: 1}
+  goodState: {r: 0, g: 0, b: 0, a: 0}
+  warning: {r: 0, g: 0, b: 0, a: 0}
+  low: {r: 0, g: 0, b: 0, a: 0}
   warningThreshold: 50
   lowThreshold: 20
+  _time: 0
   _subMeter: 0
   _mainOxygen: {fileID: 0}
+  _lowOxy: {fileID: 0}
+  eventPath:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  whiteNoiseEventPath:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  heartbeatEventPath:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!114 &211698227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -506,13 +529,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _oxygenMeter: 100
   _depletionSpeed: 4
-  _goodState: {r: 0, g: 1, b: 0, a: 1}
-  _warning: {r: 1, g: 1, b: 0, a: 1}
-  _low: {r: 1, g: 0, b: 0, a: 1}
+  goodState: {r: 0, g: 0, b: 0, a: 0}
+  warning: {r: 0, g: 0, b: 0, a: 0}
+  low: {r: 0, g: 0, b: 0, a: 0}
   warningThreshold: 50
   lowThreshold: 20
+  _time: 0
   _subMeter: 1
   _mainOxygen: {fileID: 211698226}
+  _lowOxy: {fileID: 0}
+  eventPath:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  whiteNoiseEventPath:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  heartbeatEventPath:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!114 &408542783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -791,6 +837,7 @@ MonoBehaviour:
   - {x: 86.29, y: 2.5, z: 76.42}
   - {x: 0, y: 2.5, z: 75}
   speed: 10
+  rotationSpeed: 8
 --- !u!54 &808734809
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1895,6 +1942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68c76d0095d84474ab77efafdc9aff63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventInterval: 0.6
   moveEventPath:
     Guid:
       Data1: -1979624750
@@ -1902,20 +1950,30 @@ MonoBehaviour:
       Data3: -1870967662
       Data4: 1777116068
     Path: event:/Sounds/Footsteps
-  eventInterval: 0.6
+  jumpEventPath:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   _speed: 800
   _sprintMultiplier: 1.5
   _jumpForce: 15
+  _crouchSpeed: 0
   _groundCheckRadius: 1
+  _mouseSensitivity: 5
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8
   _cameraTransform: {fileID: 963194228}
-  _mouseSensitivity: 5
   _oxygen: {fileID: 211698226}
-  Astronaut: {fileID: 479147602}
+  _subOxygen: {fileID: 0}
+  _astronaut: {fileID: 0}
   _firstPersonCam: {fileID: 1510506745}
-  Is2D: 0
+  _defaultUI: {fileID: 0}
+  _pauseMenu: {fileID: 0}
+  is2D: 0
 --- !u!136 &1557005707
 CapsuleCollider:
   m_ObjectHideFlags: 0
