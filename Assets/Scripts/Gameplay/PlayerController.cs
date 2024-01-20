@@ -105,8 +105,8 @@ public class PlayerController : MonoBehaviour
         {
             Oxygen.PauseDepletion = false;
             
-            float mouseX = Input.GetAxis("Mouse X") * _mouseSensitivity * Screen.dpi * Time.deltaTime;
-            float mouseY = Input.GetAxis("Mouse Y") * _mouseSensitivity * Screen.dpi * Time.deltaTime;
+            float mouseX = Input.GetAxis("Mouse X") * _mouseSensitivity * Screen.dpi;
+            float mouseY = Input.GetAxis("Mouse Y") * _mouseSensitivity * Screen.dpi;
 
             xRotation -= mouseY;
             xRotation = Mathf.Clamp(xRotation, -90f, 90f);
@@ -233,21 +233,21 @@ public class PlayerController : MonoBehaviour
             {
                 eventInterval = 0.3f;
                 movement *= _sprintMultiplier;
-                _oxygen._depletionSpeed = 0.25f;
+                _oxygen._depletionSpeed = _oxygen._sprintDepletionSpeed;
                 bobbingSpeed = 10f;
                 bobbingAmount = 0.2f;
             }
             else if(isCrouching)
             {
                 eventInterval = 0.6f;
-                _oxygen._depletionSpeed = 0.05f;
+                _oxygen._depletionSpeed = _oxygen._crouchDepletionSpeed;
                 bobbingSpeed = 3f;
                 bobbingAmount = 0.2f;
             }
             else if(!isSprinting)
             {
                 eventInterval = 0.6f;
-                _oxygen._depletionSpeed = 0.1f;
+                _oxygen._depletionSpeed = _oxygen._normalDepletionSpeed;
                 bobbingSpeed = 5f;
                 bobbingAmount = 0.1f;
             }

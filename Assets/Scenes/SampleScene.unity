@@ -731,10 +731,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _oxygenMeter: 100
-  _depletionSpeed: 4
+  _normalDepletionSpeed: 0.1
+  _crouchDepletionSpeed: 0.05
+  _sprintDepletionSpeed: 0.25
   goodState: {r: 0, g: 1, b: 1, a: 1}
   warning: {r: 1, g: 1, b: 0, a: 1}
   low: {r: 1, g: 0, b: 0, a: 1}
+  _depletionSpeed: 4
   warningThreshold: 50
   lowThreshold: 20
   _time: 0
@@ -1222,10 +1225,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _oxygenMeter: 100
-  _depletionSpeed: 4
+  _normalDepletionSpeed: 0.1
+  _crouchDepletionSpeed: 0.05
+  _sprintDepletionSpeed: 0.25
   goodState: {r: 0, g: 1, b: 0, a: 1}
   warning: {r: 1, g: 1, b: 0, a: 1}
   low: {r: 1, g: 0, b: 0, a: 1}
+  _depletionSpeed: 4
   warningThreshold: 50
   lowThreshold: 20
   _time: 0
@@ -3671,7 +3677,7 @@ MonoBehaviour:
   _jumpForce: 4
   _crouchSpeed: 8
   _groundCheckRadius: 1
-  _mouseSensitivity: 5
+  _mouseSensitivity: 0.04
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8
