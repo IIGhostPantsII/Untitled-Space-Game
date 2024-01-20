@@ -11,8 +11,10 @@ public class Oxygen : MonoBehaviour
     public static bool NoOxygen;
     public static bool PauseDepletion;
 
-    [SerializeField] public float _oxygenMeter = 100.0f;
-    [SerializeField] public float _depletionSpeed = 1.0f;
+    public float _oxygenMeter = 100.0f;
+    public float _normalDepletionSpeed = 0.1f;
+    public float _crouchDepletionSpeed = 0.05f;
+    public float _sprintDepletionSpeed = 0.25f;
 
     [SerializeField] private Color goodState;
     [SerializeField] private Color warning;
@@ -20,6 +22,7 @@ public class Oxygen : MonoBehaviour
 
     private RectTransform _rect;
     private Image _image;
+    [HideInInspector] public float _depletionSpeed = 1.0f;
 
     // thresholds for color transitions
     [SerializeField] private float warningThreshold = 50.0f;

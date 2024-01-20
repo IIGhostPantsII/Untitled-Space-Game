@@ -731,10 +731,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _oxygenMeter: 100
-  _depletionSpeed: 4
+  _normalDepletionSpeed: 0.1
+  _crouchDepletionSpeed: 0.05
+  _sprintDepletionSpeed: 0.25
   goodState: {r: 0, g: 1, b: 1, a: 1}
   warning: {r: 1, g: 1, b: 0, a: 1}
   low: {r: 1, g: 0, b: 0, a: 1}
+  _depletionSpeed: 4
   warningThreshold: 50
   lowThreshold: 20
   _time: 0
@@ -1222,10 +1225,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _oxygenMeter: 100
-  _depletionSpeed: 4
+  _normalDepletionSpeed: 0.1
+  _crouchDepletionSpeed: 0.05
+  _sprintDepletionSpeed: 0.25
   goodState: {r: 0, g: 1, b: 0, a: 1}
   warning: {r: 1, g: 1, b: 0, a: 1}
   low: {r: 1, g: 0, b: 0, a: 1}
+  _depletionSpeed: 4
   warningThreshold: 50
   lowThreshold: 20
   _time: 0
@@ -2051,6 +2057,7 @@ GameObject:
   m_Component:
   - component: {fileID: 705507995}
   - component: {fileID: 705507994}
+  - component: {fileID: 705507996}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -2135,6 +2142,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &705507996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705507993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &742261603 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8992271543225541628, guid: 8889dd0e323ff8a4d9c88c0e9f900a6c, type: 3}
@@ -2310,7 +2337,7 @@ Camera:
   m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
+  m_FocalLength: 20.78461
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -3629,7 +3656,6 @@ GameObject:
   - component: {fileID: 1557005710}
   - component: {fileID: 1557005709}
   - component: {fileID: 1557005708}
-  - component: {fileID: 1557005707}
   - component: {fileID: 1557005706}
   - component: {fileID: 1557005711}
   m_Layer: 0
@@ -3666,12 +3692,14 @@ MonoBehaviour:
       Data3: 421788828
       Data4: 1233414913
     Path: event:/Music/Bowsers Here
-  _speed: 800
+  _speed: 15
   _sprintMultiplier: 1.5
-  _jumpForce: 4
   _crouchSpeed: 8
   _groundCheckRadius: 1
-  _mouseSensitivity: 5
+  _mouseSensitivity: 0.04
+  _jumpVelocity: 1
+  _gravity: 2
+  _groundedGravity: 0.1
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -3685,20 +3713,6 @@ MonoBehaviour:
   _gameOverScreen: {fileID: 3902978500829916506}
   _victoryScreen: {fileID: 3872435}
   is2D: 0
---- !u!136 &1557005707
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1557005705}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1557005708
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3766,22 +3780,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1557005711
-Rigidbody:
+--- !u!143 &1557005711
+CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557005705}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
+  m_Height: 3.46
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0
+  m_Center: {x: 0, y: 0.69, z: 0}
 --- !u!1 &1583539344
 GameObject:
   m_ObjectHideFlags: 0
@@ -4005,6 +4021,10 @@ PrefabInstance:
       propertyPath: _subMeter
       value: 
       objectReference: {fileID: 408542782}
+    - target: {fileID: 1625915211671824171, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8393989081636153387, guid: c4e4b7ca9fa691741a34a653ebb807a9, type: 3}
     - target: {fileID: 1625915211723423601, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
       propertyPath: _subMeter
       value: 
