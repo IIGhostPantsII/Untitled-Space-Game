@@ -210,7 +210,6 @@ public class PlayerController : MonoBehaviour
 
     void LateUpdate()
     {
-        //Scuffed as hell
         if (!Globals.Movement) return;
 
         float grav = movement.y;
