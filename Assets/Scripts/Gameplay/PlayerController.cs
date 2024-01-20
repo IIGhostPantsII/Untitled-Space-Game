@@ -21,10 +21,12 @@ public class PlayerController : MonoBehaviour
     // Inspector Settings
     [SerializeField] private float _speed = 800f;
     [SerializeField] private float _sprintMultiplier = 1.5f;
-    [SerializeField] private float _jumpForce = 15f;
     [SerializeField] private float _crouchSpeed;
     [SerializeField] private float _groundCheckRadius = 1.0f;
     [SerializeField] private float _mouseSensitivity = 5f;
+    [SerializeField] private float _jumpVelocity = 1;
+    [SerializeField] private float _gravity = 0.5f;
+    [SerializeField] private float _groundedGravity = 0.1f;
     [SerializeField] private LayerMask _groundLayer;
     [SerializeField] private Transform _cameraTransform;
     [SerializeField] private Oxygen _oxygen;
@@ -38,7 +40,7 @@ public class PlayerController : MonoBehaviour
 
     // INPUT BOOLS
     private bool isSprinting;
-    private bool isJumping;
+    private bool jumpPressed;
     private bool isGrounded;
     private bool isMoving;
     private bool isCrouching;
@@ -49,11 +51,12 @@ public class PlayerController : MonoBehaviour
 
     // Other
     private bool delay;
-    private bool jumpOver = true;
+    private bool isJumping;
     private bool holdingSprint;
     private bool jumpSound = false;
     private float holdDuration = 0f;
-    private Rigidbody playerRigidbody;
+    private Vector3 movement;
+    private CharacterController _charController;
     private Animator playerAnimator;
 
     public bool is2D;
@@ -79,7 +82,7 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        playerRigidbody = gameObject.GetComponent<Rigidbody>();
+        _charController = gameObject.GetComponent<CharacterController>();
 
         moveEvent = RuntimeManager.CreateInstance(moveEventPath);
 
@@ -96,10 +99,9 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // INPUT VALUES
-        isJumping = input.Player.Jump.ReadValue<float>() > 0.1f;
+        jumpPressed = input.Player.Jump.ReadValue<float>() > 0.1f;
         isSprinting = input.Player.Sprint.ReadValue<float>() > 0.1f;
         isGrounded = Physics.SphereCast(transform.position, _groundCheckRadius, -Vector3.up, out RaycastHit hitInfo, 0.1f, _groundLayer);
-        Debug.Log(isGrounded);
 
         if(Globals.Movement)
         {
@@ -206,87 +208,90 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+    void LateUpdate()
     {
-        Vector3 movement = Vector3.zero;
-        
         //Scuffed as hell
-        if(Globals.Movement)
-        {
-            float horizontal = input.Player.Move.ReadValue<Vector2>().x;
-            float vertical = input.Player.Move.ReadValue<Vector2>().y;
+        if (!Globals.Movement) return;
 
-            if(is2D)
-            {
-                if (vertical != 0) movement = new Vector3(0, 0, vertical);
-                else movement = new Vector3(0, 0, horizontal);
-            }
-            else movement = new Vector3(horizontal, 0, vertical);
-            movement = transform.TransformDirection(movement);
-            movement.y = 0;
-            
-            if(Oxygen.NoSprint)
-            {
-                isSprinting = false;
-            }
-            else if(isSprinting && !isCrouching && !Oxygen.NoSprint)
-            {
-                eventInterval = 0.3f;
-                movement *= _sprintMultiplier;
-                _oxygen._depletionSpeed = _oxygen._sprintDepletionSpeed;
-                bobbingSpeed = 10f;
-                bobbingAmount = 0.2f;
-            }
-            else if(isCrouching)
-            {
-                eventInterval = 0.6f;
-                _oxygen._depletionSpeed = _oxygen._crouchDepletionSpeed;
-                bobbingSpeed = 3f;
-                bobbingAmount = 0.2f;
-            }
-            else if(!isSprinting)
-            {
-                eventInterval = 0.6f;
-                _oxygen._depletionSpeed = _oxygen._normalDepletionSpeed;
-                bobbingSpeed = 5f;
-                bobbingAmount = 0.1f;
-            }
+        float grav = movement.y;
+        Vector2 moveVector = input.Player.Move.ReadValue<Vector2>();
 
-            if(isCrouching)
-            {
-                movement /= _sprintMultiplier;
-                originalCameraPosition = Vector3.MoveTowards(originalCameraPosition, new Vector3(0f, 1f, 0f), Time.deltaTime * _crouchSpeed);
-                //transform.position = Vector3.MoveTowards(transform.position, target, step);
-            }
-            else
-            {
-                originalCameraPosition = Vector3.MoveTowards(originalCameraPosition, new Vector3(0f, 2f, 0f), Time.deltaTime * _crouchSpeed);
-            }
-
-            if(!isGrounded && jumpOver)
-            {
-                Vector3 gravityVector = -500f * Vector3.up; // Define the gravity vector
-                playerRigidbody.AddForce(gravityVector, ForceMode.Acceleration);
-            }
-
-            if(Mathf.Abs(horizontal) > 0.1f || Mathf.Abs(vertical) > 0.1f)
-            {
-                isMoving = true;
-            }
-            else
-            {
-                isMoving = false;
-            }
-
-            if(isJumping && !delay && isGrounded && Globals.Movement)
-            {
-                StartCoroutine(InputDelay(0.15f));
-                delay = true;
-                StartCoroutine(Jump());
-            }
-        }
+        movement = new Vector3(moveVector.x, movement.y, moveVector.y);
+        movement = transform.TransformDirection(movement);
         
-        playerRigidbody.velocity = movement * _speed * Time.deltaTime;
+        if(Oxygen.NoSprint)
+        {
+            isSprinting = false;
+        }
+        else if(isSprinting && !isCrouching && !Oxygen.NoSprint)
+        {
+            eventInterval = 0.3f;
+            movement *= _sprintMultiplier;
+            _oxygen._depletionSpeed = _oxygen._sprintDepletionSpeed;
+            bobbingSpeed = 10f;
+            bobbingAmount = 0.2f;
+        }
+        else if(isCrouching)
+        {
+            eventInterval = 0.6f;
+            _oxygen._depletionSpeed = _oxygen._crouchDepletionSpeed;
+            bobbingSpeed = 3f;
+            bobbingAmount = 0.2f;
+        }
+        else if(!isSprinting)
+        {
+            eventInterval = 0.6f;
+            _oxygen._depletionSpeed = _oxygen._normalDepletionSpeed;
+            bobbingSpeed = 5f;
+            bobbingAmount = 0.1f;
+        }
+
+        if(isCrouching)
+        {
+            movement /= _sprintMultiplier;
+            originalCameraPosition = Vector3.MoveTowards(originalCameraPosition, new Vector3(0f, 1f, 0f), Time.deltaTime * _crouchSpeed);
+            //transform.position = Vector3.MoveTowards(transform.position, target, step);
+        }
+        else
+        {
+            originalCameraPosition = Vector3.MoveTowards(originalCameraPosition, new Vector3(0f, 2f, 0f), Time.deltaTime * _crouchSpeed);
+        }
+
+        isMoving = moveVector != Vector2.zero;
+        
+        movement.y = grav;
+        
+        if (jumpPressed && !isJumping && _charController.isGrounded)
+        {
+            isJumping = true;
+            movement.y = _jumpVelocity;
+        } 
+        else if (!jumpPressed && _charController.isGrounded)
+        {
+            isJumping = false;
+        }
+
+        _charController.Move(movement * (_speed * Time.deltaTime));
+
+        HandleGravity();
+        
+        Debug.Log($@"The player <color=red>{_charController.isGrounded switch
+        {
+            true => "is",
+            false => "is not"
+        }}</color> grounded");
+    }
+
+    private void HandleGravity()
+    {
+        if (_charController.isGrounded)
+        {
+            movement.y = -_groundedGravity;
+        }
+        else
+        {
+            movement.y -= _gravity * Time.deltaTime;
+        }
     }
 
     [Button()]
@@ -325,30 +330,6 @@ public class PlayerController : MonoBehaviour
             yield return new WaitForSeconds(seconds / 15f);
         }
         delay = false;
-    }
-
-    IEnumerator Jump()
-    {
-        float currentForce = 0f;
-        float timeToReachMaxForce = 1.0f; // Adjust this value to control the speed of the jump
-
-        while (currentForce < _jumpForce)
-        {
-            float forceStep = _jumpForce / timeToReachMaxForce * Time.deltaTime * 6.0f;
-            currentForce = Mathf.Min(currentForce + forceStep, _jumpForce);
-
-            // Adjusting force application to simulate a more dynamic jump
-            float forceMultiplier = 1.0f - Mathf.Pow(1.0f - (currentForce / _jumpForce), 2);
-            playerRigidbody.AddForce(Vector3.up * _jumpForce * forceMultiplier, ForceMode.Impulse);
-
-            yield return null; // Wait for the next frame
-        }
-
-        jumpOver = false;
-
-        yield return new WaitForSeconds(0.25f);
-
-        jumpOver = true;
     }
 
     private void LoadGameOverMenu()
