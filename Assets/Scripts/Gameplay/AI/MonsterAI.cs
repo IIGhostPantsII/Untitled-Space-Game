@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MonsterAI : MonoBehaviour
 {
@@ -9,17 +10,14 @@ public class MonsterAI : MonoBehaviour
     [SerializeField] private float _rotationDuration = 3f;
     [SerializeField] private float _speed = 10f;
     [SerializeField] private float _rotationSpeed = 8f;
-
+    [SerializeField] private Transform _playerTransform;
     [SerializeField] private References _references;
-
-    //Different AI Modes
-    private bool idleMode = true;
-    private bool patrolMode;
-    private bool chaseMode;
 
     private bool isIdling;
     private bool isMoving;
     private bool turnBack;
+    private bool enteredChase;
+    private bool animationOver;
 
     private int currentIndex = 0;
     private int idleChance = 20;
@@ -30,10 +28,15 @@ public class MonsterAI : MonoBehaviour
 
     private Animator monsterAni;
 
+    private NavMeshAgent monsterPathing;
+
     void Start()
     {
         int spawnLength = _spawnPoints.Length;
         monsterAni = GetComponent<Animator>();
+        monsterPathing = GetComponent<NavMeshAgent>();
+        Globals.ChangeMonsterState("Idle");
+        
     }
 
     void Update()
@@ -47,7 +50,7 @@ public class MonsterAI : MonoBehaviour
             monsterAni.Play("walking");
         }
 
-        if(idleMode)
+        if(Globals.IdleMode)
         {
             if(_pointsOfInterest.Count > 0 && currentIndex >= 0)
             {
@@ -142,9 +145,20 @@ public class MonsterAI : MonoBehaviour
                 currentIndex = 0;
             }
         }
-        else if(patrolMode)
+        else if(Globals.ChaseMode)
         {
-            
+            if(!enteredChase)
+            {
+                isIdling = false;
+                isMoving = false;
+                monsterAni.Play("roar");
+                enteredChase = true;
+            }
+            else if(animationOver)
+            {
+                Debug.Log("Chasing");
+                monsterPathing.SetDestination(_playerTransform.position);
+            } 
         }
     }
 
@@ -199,5 +213,10 @@ public class MonsterAI : MonoBehaviour
         {
             transform.rotation = rightRotation;
         }
+    }
+
+    public void StartChase()
+    {
+        animationOver = true;
     }
 }
