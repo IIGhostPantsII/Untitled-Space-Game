@@ -69,4 +69,10 @@ public class AnimationFunctions : MonoBehaviour
         Debug.Log("Playing " + clip);
         _animator.Play(clip);
     }
+
+    //Let scripts know that animation is over
+    public void Finish()
+    {
+        Globals.FinishedAnimation();
+    }
 }

@@ -12,12 +12,12 @@ public class MonsterAI : MonoBehaviour
     [SerializeField] private float _rotationSpeed = 8f;
     [SerializeField] private Transform _playerTransform;
     [SerializeField] private References _references;
+    [SerializeField] private Animator monsterAni;
 
     private bool isIdling;
     private bool isMoving;
     private bool turnBack;
     private bool enteredChase;
-    private bool animationOver;
 
     private int currentIndex = 0;
     private int idleChance = 20;
@@ -26,14 +26,11 @@ public class MonsterAI : MonoBehaviour
 
     private Quaternion initialRotation;
 
-    private Animator monsterAni;
-
     private NavMeshAgent monsterPathing;
 
     void Start()
     {
         int spawnLength = _spawnPoints.Length;
-        monsterAni = GetComponent<Animator>();
         monsterPathing = GetComponent<NavMeshAgent>();
         Globals.ChangeMonsterState("Idle");
         
@@ -154,7 +151,7 @@ public class MonsterAI : MonoBehaviour
                 monsterAni.Play("roar");
                 enteredChase = true;
             }
-            else if(animationOver)
+            else if(Globals.AnimationOver)
             {
                 Debug.Log("Chasing");
                 monsterPathing.SetDestination(_playerTransform.position);
@@ -169,7 +166,7 @@ public class MonsterAI : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, target, step);
 
         //To flip the direction, flip transform and target around
-        Vector3 direction = (transform.position - target).normalized;
+        Vector3 direction = (target - transform.position).normalized;
 
         Quaternion targetRotation = Quaternion.LookRotation(direction);
 
@@ -213,10 +210,5 @@ public class MonsterAI : MonoBehaviour
         {
             transform.rotation = rightRotation;
         }
-    }
-
-    public void StartChase()
-    {
-        animationOver = true;
     }
 }

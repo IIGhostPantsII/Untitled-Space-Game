@@ -7,6 +7,7 @@ public static class Globals
     public static bool Movement = true;
     public static bool GameIsActive;
     public static bool Paused;
+    public static bool AnimationOver;
     public static bool GetOriginalTriggers;
     public static GameState GameState = GameState.Main;
 
@@ -33,6 +34,11 @@ public static class Globals
     public static void OriginalTriggersCompleted()
     {
         GetOriginalTriggers = true;
+    }
+
+    public static void FinishedAnimation()
+    {
+        AnimationOver = !AnimationOver;
     }
 
     public static void ChangeMonsterState(string Mode)

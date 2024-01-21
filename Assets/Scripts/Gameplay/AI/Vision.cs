@@ -15,7 +15,7 @@ public class Vision : MonoBehaviour
     void DetectPlayer()
     {
         Vector3 directionToPlayer = (_playerTransform.position - transform.position).normalized;
-        float angleToPlayer = Vector3.Angle(transform.forward * -1, directionToPlayer);
+        float angleToPlayer = Vector3.Angle(transform.forward, directionToPlayer);
 
         if(angleToPlayer < _monsterFOV / 2f)
         {
