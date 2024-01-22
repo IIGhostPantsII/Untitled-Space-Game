@@ -202,15 +202,17 @@ public class PlayerController : MonoBehaviour
         {
             Globals.GameState = GameState.Lost;
             LoadGameOverMenu();
-        } else if (Globals.GameState == GameState.Victory)
+        } 
+        else if (Globals.GameState == GameState.Victory)
         {
             LoadWinMenu();
         }
-    }
 
-    void LateUpdate()
-    {
-        if (!Globals.Movement) return;
+        if (!Globals.Movement)
+        {
+            movement = new Vector3(0, movement.y, 0);
+            return;
+        }
 
         float grav = movement.y;
         Vector2 moveVector = input.Player.Move.ReadValue<Vector2>();
@@ -218,11 +220,11 @@ public class PlayerController : MonoBehaviour
         movement = new Vector3(moveVector.x, movement.y, moveVector.y);
         movement = transform.TransformDirection(movement);
         
-        if(Oxygen.NoSprint)
+        if (Oxygen.NoSprint)
         {
             isSprinting = false;
         }
-        else if(isSprinting && !isCrouching && !Oxygen.NoSprint)
+        else if (isSprinting && !isCrouching && !Oxygen.NoSprint)
         {
             eventInterval = 0.3f;
             movement *= _sprintMultiplier;
@@ -230,14 +232,14 @@ public class PlayerController : MonoBehaviour
             bobbingSpeed = 10f;
             bobbingAmount = 0.2f;
         }
-        else if(isCrouching)
+        else if (isCrouching)
         {
             eventInterval = 0.6f;
             _oxygen._depletionSpeed = _oxygen._crouchDepletionSpeed;
             bobbingSpeed = 3f;
             bobbingAmount = 0.2f;
         }
-        else if(!isSprinting)
+        else if (!isSprinting)
         {
             eventInterval = 0.6f;
             _oxygen._depletionSpeed = _oxygen._normalDepletionSpeed;
@@ -245,7 +247,7 @@ public class PlayerController : MonoBehaviour
             bobbingAmount = 0.1f;
         }
 
-        if(isCrouching)
+        if (isCrouching)
         {
             movement /= _sprintMultiplier;
             originalCameraPosition = Vector3.MoveTowards(originalCameraPosition, new Vector3(0f, 1f, 0f), Time.deltaTime * _crouchSpeed);
@@ -269,7 +271,10 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = false;
         }
+    }
 
+    void LateUpdate()
+    {
         _charController.Move(movement * (_speed * Time.deltaTime));
 
         HandleGravity();
@@ -357,6 +362,8 @@ public class PlayerController : MonoBehaviour
     
     private void PauseGame(InputAction.CallbackContext obj)
     {
+        if (!_charController.isGrounded) return;
+        
         EventSystem.current.SetSelectedGameObject(null);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
