@@ -153,8 +153,11 @@ public class MonsterAI : MonoBehaviour
             }
             else if(Globals.AnimationOver)
             {
-                Debug.Log("Chasing");
                 monsterPathing.SetDestination(_playerTransform.position);
+                //Clamp these later
+                monsterAni.speed = (Time.time / 4.742749f) * 0.5f;
+                monsterPathing.speed = 15 * ((Time.time / 0.59284362f) * 0.125f);
+                //monsterPathing.acceleration = 50 * ((Time.time / 4.742749f) * 0.5f);
             } 
         }
     }

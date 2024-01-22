@@ -27,8 +27,8 @@ public class AreaTriggers : MonoBehaviour
             GameObject monsterObject = other.gameObject;
             MonsterAI monsterAIScript = monsterObject.GetComponent<MonsterAI>();
             int random = Random.Range(0, 2);
-            Debug.Log($"Random is {random}");
-            if(random == 0)
+            //if random == 0
+            if(true)
             {
                 for(int i = 0; i < _wonderingAreasLeft.Length; i++)
                 {
