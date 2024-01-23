@@ -35,7 +35,7 @@ public class PowerButton : MonoBehaviour
 
         if (!_isFilling && ButtonProgress > 0)
         {
-            ButtonProgress -= Time.deltaTime * ButtonSpeed * 2;
+            ButtonProgress -= (Time.deltaTime * 2) / ButtonSpeed;
             if (ButtonProgress <= 0) ButtonProgress = 0;
         }
 

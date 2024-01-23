@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public GameObject _gameOverScreen;
     [SerializeField] public GameObject _victoryScreen;
     [SerializeField] public GameObject _interactPrompt;
+    [SerializeField] public PowerButton[] _powerButtons;
 
     // INPUT BOOLS
     private bool isSprinting;
@@ -64,6 +65,7 @@ public class PlayerController : MonoBehaviour
     private PowerButton _currentButton;
 
     public bool is2D;
+    private int _winCounter = 0;
 
     // Rotation - used for mouse input
     private float xRotation = 0f;
@@ -93,10 +95,25 @@ public class PlayerController : MonoBehaviour
         jumpEvent = RuntimeManager.CreateInstance(jumpEventPath);
 
         originalCameraPosition = new Vector3(0f, 2f, 0f);
+
+        foreach (PowerButton button in _powerButtons)
+        {
+            button.OnActivate += IncrementWinCounter;
+        }
         
         if(_firstPersonCam != null)
         {
             StartCoroutine(TurnOn(4.5f));
+        }
+    }
+
+    void IncrementWinCounter()
+    {
+        _winCounter += 1;
+
+        if (_winCounter >= _powerButtons.Length)
+        {
+            WinGame();
         }
     }
 
@@ -123,6 +140,16 @@ public class PlayerController : MonoBehaviour
             if (input.Player.Interact.ReadValue<float>() > 0.1 && _currentButton != null)
             {
                 _currentButton.FillBar();
+                _interactPrompt.GetComponentInChildren<Image>().fillAmount = _currentButton.ButtonProgress;
+                if (_currentButton.IsOn)
+                {
+                    _interactPrompt.GetComponentInChildren<Image>().fillAmount = 0;
+                    _interactPrompt.SetActive(false);
+                }
+            } 
+            else if (_currentButton != null)
+            {
+                
                 _interactPrompt.GetComponentInChildren<Image>().fillAmount = _currentButton.ButtonProgress;
             }
 
@@ -456,6 +483,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Button"))
         {
+            _interactPrompt.GetComponentInChildren<Image>().fillAmount = 0;
             _interactPrompt.SetActive(false);
             _canInteract = false;
             _currentButton = null;
