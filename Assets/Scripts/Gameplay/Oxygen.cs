@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using FMODUnity;
+using UnityEngine.Rendering;
 using UnityEngine.Serialization;
 
 public class Oxygen : MonoBehaviour
@@ -32,6 +33,8 @@ public class Oxygen : MonoBehaviour
     [SerializeField] private Oxygen _mainOxygen;
     [SerializeField] private GameObject _lowOxy;
 
+    [Space] [SerializeField] private Volume _volume; [Space]
+    
     // FMOD Things
     public FMODUnity.EventReference eventPath;
     public FMOD.Studio.EventInstance eventInstance;
@@ -66,12 +69,12 @@ public class Oxygen : MonoBehaviour
     {
         if (PauseDepletion) return;
 
-        if(!NoSprint && !_subMeter || !GainOxygen.InStation && !_subMeter)
+        if (!NoSprint && !_subMeter || !GainOxygen.InStation && !_subMeter)
         {
             _oxygenMeter -= _depletionSpeed * Time.deltaTime;
         }
 
-        if(!_subMeter)
+        if (!_subMeter)
         {
             _oxygenMeter = Mathf.Clamp(_oxygenMeter, 0f, 100f);
 
@@ -82,50 +85,49 @@ public class Oxygen : MonoBehaviour
     
             NoSprint = _oxygenMeter <= 0;
         }
-        else
+        else if (_mainOxygen != null)
         {
-            if(_mainOxygen != null)
+            _volume.weight = 1 - (_oxygenMeter / 100f);
+            
+            if (_mainOxygen._oxygenMeter <= 0)
             {
-                if(_mainOxygen._oxygenMeter <= 0)
+                if(!NoOxygen || !GainOxygen.InStation)
                 {
-                    if(!NoOxygen || !GainOxygen.InStation)
-                    {
-                        _oxygenMeter -= _depletionSpeed * Time.deltaTime;
-                    }
-
-                    if(_playOnce)
-                    {
-                        _time = 0f;
-                        eventInstance.start();
-                        whiteNoiseEventInstance.start();
-                        heartbeatEventInstance.start();
-                        StartCoroutine(LowOxygen(3f));
-                        _lowOxy.SetActive(true);
-                        _playOnce = false;
-                    }
-
-                    if(NoSprint && eventInstance.isValid() || NoSprint && whiteNoiseEventInstance.isValid() || NoSprint && heartbeatEventInstance.isValid())
-                    {
-                        _time += Time.deltaTime;
-                        float clampedTime = Mathf.Clamp(_time * 4, 0f, 100f);
-                        eventInstance.setParameterByName("Lowpass",(_oxygenMeter * 220));
-                        whiteNoiseEventInstance.setParameterByName("Volume",(clampedTime));
-                        heartbeatEventInstance.setParameterByName("Volume",(clampedTime));
-                    }
-
-                    _oxygenMeter = Mathf.Clamp(_oxygenMeter, 0f, 100f);
-
-                    _rect.sizeDelta = new Vector2(_rect.sizeDelta.x, _oxygenMeter);
-                    _rect.anchoredPosition = new Vector2(_rect.anchoredPosition.x, -534.0f + ((_oxygenMeter * 1.105f))); // Set your desired position
-            
-                    UpdateColor();
-            
-                    NoOxygen = _oxygenMeter <= 0;
+                    _oxygenMeter -= _depletionSpeed * Time.deltaTime;
                 }
-                else
+
+                if(_playOnce)
                 {
-                    _playOnce = true;
+                    _time = 0f;
+                    eventInstance.start();
+                    whiteNoiseEventInstance.start();
+                    heartbeatEventInstance.start();
+                    StartCoroutine(LowOxygen(3f));
+                    _lowOxy.SetActive(true);
+                    _playOnce = false;
                 }
+
+                if(NoSprint && eventInstance.isValid() || NoSprint && whiteNoiseEventInstance.isValid() || NoSprint && heartbeatEventInstance.isValid())
+                {
+                    _time += Time.deltaTime;
+                    float clampedTime = Mathf.Clamp(_time * 4, 0f, 100f);
+                    eventInstance.setParameterByName("Lowpass",(_oxygenMeter * 220));
+                    whiteNoiseEventInstance.setParameterByName("Volume",(clampedTime));
+                    heartbeatEventInstance.setParameterByName("Volume",(clampedTime));
+                }
+
+                _oxygenMeter = Mathf.Clamp(_oxygenMeter, 0f, 100f);
+
+                _rect.sizeDelta = new Vector2(_rect.sizeDelta.x, _oxygenMeter);
+                _rect.anchoredPosition = new Vector2(_rect.anchoredPosition.x, -534.0f + ((_oxygenMeter * 1.105f))); // Set your desired position
+        
+                UpdateColor();
+        
+                NoOxygen = _oxygenMeter <= 0;
+            }
+            else
+            {
+                _playOnce = true;
             }
         }
     }
