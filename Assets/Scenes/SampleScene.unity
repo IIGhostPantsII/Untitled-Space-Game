@@ -744,6 +744,7 @@ MonoBehaviour:
   _subMeter: 0
   _mainOxygen: {fileID: 0}
   _lowOxy: {fileID: 0}
+  _volume: {fileID: 0}
   eventPath:
     Guid:
       Data1: 862677246
@@ -1238,6 +1239,7 @@ MonoBehaviour:
   _subMeter: 1
   _mainOxygen: {fileID: 211698226}
   _lowOxy: {fileID: 461647346}
+  _volume: {fileID: 963194232}
   eventPath:
     Guid:
       Data1: 862677246
@@ -2315,6 +2317,7 @@ GameObject:
   - component: {fileID: 963194229}
   - component: {fileID: 963194230}
   - component: {fileID: 963194231}
+  - component: {fileID: 963194232}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2450,7 +2453,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -2460,6 +2463,23 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &963194232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 0
+  sharedProfile: {fileID: 11400000, guid: aac2d03f7c1bfa04396a5a65ae290259, type: 2}
 --- !u!1 &1049046022 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d5aee54861bad9b4796433e19722799c, type: 3}
@@ -2505,6 +2525,7 @@ MonoBehaviour:
   _rotationDuration: 5
   _speed: 15
   _rotationSpeed: 8
+  _playerTransform: {fileID: 0}
   _references: {fileID: 530064397}
 --- !u!54 &1049046026
 Rigidbody:
@@ -5428,6 +5449,7 @@ MonoBehaviour:
   _rotationDuration: 3
   _speed: 15
   _rotationSpeed: 8
+  _playerTransform: {fileID: 0}
   _references: {fileID: 530064397}
 --- !u!95 &919132149515964248
 Animator:
