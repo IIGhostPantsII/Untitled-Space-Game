@@ -12,17 +12,26 @@ public class MonsterAI : MonoBehaviour
     [SerializeField] private float _rotationSpeed = 8f;
     [SerializeField] private Transform _playerTransform;
     [SerializeField] private References _references;
-    [SerializeField] private Animator monsterAni;
+    [SerializeField] private Animator _monsterAni;
+    [SerializeField] private Animator _hit;
 
     private bool isIdling;
     private bool isMoving;
     private bool turnBack;
     private bool enteredChase;
+    private bool hitDelay;
 
     private int currentIndex = 0;
     private int idleChance = 20;
 
+    //Note to self, change this logic later, it sucks but faster so can get everything done
+    int hitCounter = 0;
+
     private float rotationTimer = 0f;
+    private float tempMonsterSpeed = 0f;
+    private float tempMonsterAcceleration = 0f;
+    private float tempMonsterAniSpeed = 0f;
+    private float timeOffset = 0f;
 
     private Quaternion initialRotation;
 
@@ -33,18 +42,19 @@ public class MonsterAI : MonoBehaviour
         int spawnLength = _spawnPoints.Length;
         monsterPathing = GetComponent<NavMeshAgent>();
         Globals.ChangeMonsterState("Idle");
-        
+
+        hitCounter = 0;
     }
 
     void Update()
     {
         if(isIdling)
         {
-            monsterAni.Play("idle");
+            _monsterAni.Play("idle");
         }
         else if(isMoving)
         {
-            monsterAni.Play("walking");
+            _monsterAni.Play("walking");
         }
 
         if(Globals.IdleMode)
@@ -148,16 +158,21 @@ public class MonsterAI : MonoBehaviour
             {
                 isIdling = false;
                 isMoving = false;
-                monsterAni.Play("roar");
+                _monsterAni.Play("roar");
                 enteredChase = true;
+                monsterPathing.speed = 15;
+                tempMonsterSpeed = 15;
+                tempMonsterAcceleration = 85;
+                tempMonsterAniSpeed = 1;
+                timeOffset = Time.time + 2.166f;
             }
             else if(Globals.AnimationOver)
             {
+                float newTime = Time.time - timeOffset;
                 monsterPathing.SetDestination(_playerTransform.position);
-                //Clamp these later
-                monsterAni.speed = (Time.time / 4.742749f) * 0.5f;
-                monsterPathing.speed = 15 * ((Time.time / 0.59284362f) * 0.125f);
-                //monsterPathing.acceleration = 50 * ((Time.time / 4.742749f) * 0.5f);
+                _monsterAni.speed = Mathf.Clamp(tempMonsterAniSpeed + ((newTime) * 0.18f), 0.33f, 5f);
+                monsterPathing.speed = Mathf.Clamp(tempMonsterSpeed + ((newTime) * 2f), 5f, 50f);
+                monsterPathing.acceleration = Mathf.Clamp(tempMonsterAcceleration - ((newTime) * 7f), 35f, 100f);
             } 
         }
     }
@@ -213,5 +228,38 @@ public class MonsterAI : MonoBehaviour
         {
             transform.rotation = rightRotation;
         }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player") && Globals.ChaseMode && !hitDelay)
+        {
+            if(hitCounter == 3)
+            {
+                Globals.GameState = GameState.Lost;
+            }
+            else
+            {
+                hitDelay = true;
+                _monsterAni.Play("swipe");
+                monsterPathing.speed = 5f;
+                tempMonsterSpeed = 5f;
+                tempMonsterAcceleration = 100f;
+                tempMonsterAniSpeed = 1f;
+                timeOffset = Time.time;
+                StartCoroutine(Hit());
+            }
+        }
+    }
+
+    IEnumerator Hit()
+    {
+        hitCounter++;
+        yield return new WaitForSeconds(0.5f);
+        _hit.gameObject.SetActive(true);
+        tempMonsterAniSpeed = 0.33f;
+        yield return new WaitForSeconds(0.75f);
+        _hit.gameObject.SetActive(false);
+        hitDelay = false;
     }
 }

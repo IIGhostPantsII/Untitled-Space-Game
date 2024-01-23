@@ -208,6 +208,11 @@ public class PlayerController : MonoBehaviour
             LoadWinMenu();
         }
 
+        if(Globals.GameState == GameState.Lost)
+        {
+            LoadGameOverMenu();
+        }
+
         if (!Globals.Movement)
         {
             movement = new Vector3(0, movement.y, 0);
@@ -385,6 +390,7 @@ public class PlayerController : MonoBehaviour
 
     public void RestartGame()
     {
+        Globals.GameState = GameState.Main;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
