@@ -23,7 +23,7 @@ public class RandomChatter : MonoBehaviour
         {
             _speakers[i] = objectsFound[i].GetComponent<Speakers>();
         }
-        StartCoroutine(RandomDialogueRoutine());
+        //StartCoroutine(RandomDialogueRoutine());
     }
 
     public GameObject[] FindObjectsByTag(string tag)
