@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -37,6 +38,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public GameObject _pauseMenu;
     [SerializeField] public GameObject _gameOverScreen;
     [SerializeField] public GameObject _victoryScreen;
+    [SerializeField] public GameObject _interactPrompt;
+    [SerializeField] public PowerButton[] _powerButtons;
 
     // INPUT BOOLS
     private bool isSprinting;
@@ -58,8 +61,11 @@ public class PlayerController : MonoBehaviour
     private Vector3 movement;
     private CharacterController _charController;
     private Animator playerAnimator;
+    private bool _canInteract;
+    private PowerButton _currentButton;
 
     public bool is2D;
+    private int _winCounter = 0;
 
     // Rotation - used for mouse input
     private float xRotation = 0f;
@@ -89,10 +95,25 @@ public class PlayerController : MonoBehaviour
         jumpEvent = RuntimeManager.CreateInstance(jumpEventPath);
 
         originalCameraPosition = new Vector3(0f, 2f, 0f);
+
+        foreach (PowerButton button in _powerButtons)
+        {
+            button.OnActivate += IncrementWinCounter;
+        }
         
         if(_firstPersonCam != null)
         {
             StartCoroutine(TurnOn(4.5f));
+        }
+    }
+
+    void IncrementWinCounter()
+    {
+        _winCounter += 1;
+
+        if (_winCounter >= _powerButtons.Length)
+        {
+            WinGame();
         }
     }
 
@@ -116,7 +137,23 @@ public class PlayerController : MonoBehaviour
             _firstPersonCam.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
             transform.Rotate(Vector3.up * mouseX);
 
-            if(isMoving)
+            if (input.Player.Interact.ReadValue<float>() > 0.1 && _currentButton != null)
+            {
+                _currentButton.FillBar();
+                _interactPrompt.GetComponentInChildren<Image>().fillAmount = _currentButton.ButtonProgress;
+                if (_currentButton.IsOn)
+                {
+                    _interactPrompt.GetComponentInChildren<Image>().fillAmount = 0;
+                    _interactPrompt.SetActive(false);
+                }
+            } 
+            else if (_currentButton != null)
+            {
+                
+                _interactPrompt.GetComponentInChildren<Image>().fillAmount = _currentButton.ButtonProgress;
+            }
+
+            if (isMoving)
             {
                 bobbingTimer += Time.deltaTime * bobbingSpeed;
                 float bobbingOffset = Mathf.Sin(bobbingTimer) * bobbingAmount;
@@ -136,7 +173,7 @@ public class PlayerController : MonoBehaviour
                 _firstPersonCam.transform.localPosition = originalCameraPosition;
             }
 
-            if(isMoving && timeSinceLastPlay >= (isFirstInput ? eventInterval / 2 : eventInterval))
+            if (isMoving && timeSinceLastPlay >= (isFirstInput ? eventInterval / 2 : eventInterval))
             {
                 if(Globals.Movement && isGrounded && !isCrouching)
                 {
@@ -397,9 +434,9 @@ public class PlayerController : MonoBehaviour
     public void QuitGame()
     {
         #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
+            UnityEditor.EditorApplication.isPlaying = false;
         #else
-                     Application.Quit();
+            Application.Quit();
         #endif
     }
 
@@ -412,7 +449,7 @@ public class PlayerController : MonoBehaviour
 
     private void ToggleCrouch()
     {
-        if(Globals.Movement)
+        if (Globals.Movement)
         {
             isCrouching = !isCrouching;
         }
@@ -420,7 +457,7 @@ public class PlayerController : MonoBehaviour
 
     private void HoldingSprint()
     {
-        if(Globals.Movement)
+        if (Globals.Movement)
         {
             holdingSprint = true;
         }
@@ -428,10 +465,34 @@ public class PlayerController : MonoBehaviour
 
     private void ResetSprintTimer()
     {
-        if(Globals.Movement)
+        if (Globals.Movement)
         {
             holdingSprint = false;
             holdDuration = 0f;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Button"))
+        {
+            if (!other.gameObject.GetComponent<PowerButton>().IsOn)
+            {
+                _interactPrompt.SetActive(true);
+                _canInteract = true;
+                _currentButton = other.gameObject.GetComponent<PowerButton>();
+            }
+        }
+    }
+    
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Button"))
+        {
+            _interactPrompt.GetComponentInChildren<Image>().fillAmount = 0;
+            _interactPrompt.SetActive(false);
+            _canInteract = false;
+            _currentButton = null;
         }
     }
 }
