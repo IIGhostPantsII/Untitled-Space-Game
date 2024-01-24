@@ -75,4 +75,10 @@ public class AnimationFunctions : MonoBehaviour
     {
         Globals.FinishedAnimation();
     }
+
+    public void DisableAnimator()
+    {
+        Animator pain = gameObject.GetComponent<Animator>();
+        pain.enabled = false;
+    }
 }

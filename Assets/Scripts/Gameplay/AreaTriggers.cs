@@ -51,6 +51,7 @@ public class AreaTriggers : MonoBehaviour
         {
             for(int j = 0; j < _otherAreaTriggers.Length; j++)
             {
+                Debug.Log("FUCKING WORK");
                 _otherAreaTriggers[j].SetActive(false);
             }
         }

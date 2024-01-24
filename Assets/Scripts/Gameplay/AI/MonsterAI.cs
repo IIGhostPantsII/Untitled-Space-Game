@@ -156,6 +156,7 @@ public class MonsterAI : MonoBehaviour
         {
             if(!enteredChase)
             {
+                monsterPathing.enabled = true;
                 isIdling = false;
                 isMoving = false;
                 _monsterAni.Play("roar");
@@ -234,7 +235,7 @@ public class MonsterAI : MonoBehaviour
     {
         if (other.CompareTag("Player") && Globals.ChaseMode && !hitDelay)
         {
-            if(hitCounter == 3)
+            if(hitCounter == 6 && Globals.GameState != GameState.Victory)
             {
                 Globals.GameState = GameState.Lost;
             }

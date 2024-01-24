@@ -13,9 +13,9 @@ public class Oxygen : MonoBehaviour
     public static bool PauseDepletion;
 
     public float _oxygenMeter = 100.0f;
-    public float _normalDepletionSpeed = 0.1f;
-    public float _crouchDepletionSpeed = 0.05f;
-    public float _sprintDepletionSpeed = 0.25f;
+    public float _normalDepletionSpeed = 1f;
+    public float _crouchDepletionSpeed = 0.5f;
+    public float _sprintDepletionSpeed = 2.5f;
 
     [SerializeField] private Color goodState;
     [SerializeField] private Color warning;
@@ -87,7 +87,7 @@ public class Oxygen : MonoBehaviour
         }
         else if (_mainOxygen != null)
         {
-            _volume.weight = 1 - (_oxygenMeter / 100f);
+            //_volume.weight = 1 - (_oxygenMeter / 100f);
             
             if (_mainOxygen._oxygenMeter <= 0)
             {

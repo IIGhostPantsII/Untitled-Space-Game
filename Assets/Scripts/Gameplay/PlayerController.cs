@@ -175,7 +175,7 @@ public class PlayerController : MonoBehaviour
 
             if (isMoving && timeSinceLastPlay >= (isFirstInput ? eventInterval / 2 : eventInterval))
             {
-                if(Globals.Movement && isGrounded && !isCrouching)
+                if(Globals.Movement && _charController.isGrounded && !isCrouching)
                 {
                     moveEvent.start();
                     if(Oxygen.NoSprint)

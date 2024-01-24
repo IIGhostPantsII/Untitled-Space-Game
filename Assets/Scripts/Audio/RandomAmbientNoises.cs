@@ -36,17 +36,19 @@ public class RandomAmbientNoises : MonoBehaviour
     void PlayRandomAmbience()
     {
         random = Random.Range(0,100);
-        if(random < 5)
+        if(random < 51)
         {
+            Debug.Log("Playing 1");
             events[0].start();
         }
-        else if(random > 4 && random < 50)
-        {
-            events[1].start();
-        }
+        //else if(random > 4 && random < 50)
+        //{
+        //    events[1].start();
+        //}
         else
         {
-            events[2].start();
+            Debug.Log("Playing 2");
+            events[1].start();
         }
     }
 }
