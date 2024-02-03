@@ -19,13 +19,16 @@ public class MonsterAI : MonoBehaviour
     private bool isMoving;
     private bool turnBack;
     private bool enteredChase;
+    private bool enteredIdle;
     private bool hitDelay;
 
     private int currentIndex = 0;
     private int idleChance = 20;
 
+    //Counters
     //Note to self, change this logic later, it sucks but faster so can get everything done
-    int hitCounter = 0;
+    private int hitCounter = 0;
+    private int idleCounter = 0;
 
     private float rotationTimer = 0f;
     private float tempMonsterSpeed = 0f;
@@ -33,17 +36,26 @@ public class MonsterAI : MonoBehaviour
     private float tempMonsterAniSpeed = 0f;
     private float timeOffset = 0f;
 
+    //Floats for IdleMode
+    private float xMinPos;
+    private float xMaxPos;
+    private float zMinPos;
+    private float zMaxPos;
+
     private Quaternion initialRotation;
 
     private NavMeshAgent monsterPathing;
+
+    private AreaTriggers areaTrigger;
+
+    private Vector3 randomPosition;
 
     void Start()
     {
         int spawnLength = _spawnPoints.Length;
         monsterPathing = GetComponent<NavMeshAgent>();
         Globals.ChangeMonsterState("Idle");
-
-        hitCounter = 0;
+        enteredIdle = true;
     }
 
     void Update()
@@ -59,10 +71,18 @@ public class MonsterAI : MonoBehaviour
 
         if(Globals.IdleMode)
         {
-            if(_pointsOfInterest.Count > 0 && currentIndex >= 0)
+            if(enteredIdle)
             {
+                enteredIdle = false;
+                RandomizeDestination();
+            }
+
+            // Check if the agent has reached its destination
+            if(!monsterPathing.pathPending && monsterPathing.remainingDistance < 0.1f)
+            {
+                idleChance = Random.Range(0, 1);
                 if(idleChance == 0)
-                {
+                {   
                     if(rotationTimer <= _rotationDuration)
                     {
                         isMoving = false;
@@ -76,87 +96,19 @@ public class MonsterAI : MonoBehaviour
                         isIdling = false;
                         idleChance = 20;
                         rotationTimer = 0f;
+                        RandomizeDestination();
                     }
                 }
                 else
                 {
-                    if(isIdling)
-                    {
-                        //Turning the AI backwards is super mega broken rn, just ignore this bit
-                        //int random = Random.Range(0, 20);
-                        //int random = 1;
-                        //if(random == 0)
-                        //{
-                        //    Debug.Log("THIS SHOULDNT HAPPEN WAIT WHAT?");
-                        //    //turnBack = !turnBack;
-                        //    if(turnBack)
-                        //    {
-                        //        currentIndex -= 2;
-                        //    }
-                        //    else
-                        //    {
-                        //        if((currentIndex + 3) < _pointsOfInterest.Count)
-                        //        {
-                        //            for(int i = _pointsOfInterest.Count - 1; i > (currentIndex + 3); i--)
-                        //            {
-                        //                _pointsOfInterest.RemoveAt(i);
-                        //            }
-                        //        }
-                        //    }
-                        //}
-                        isIdling = false;
-                    }
-
-                    if(currentIndex >= 0)
-                    {
-                        MoveTowardsTarget(_pointsOfInterest[currentIndex]);
-                    }
-
-                    if(Vector3.Distance(transform.position, _pointsOfInterest[currentIndex]) < 0.1f)
-                    {
-                        idleChance = Random.Range(0, 15);
-                        if(turnBack)
-                        {
-                            if(currentIndex > 0)
-                            {
-                                currentIndex = (currentIndex - 1);
-                            }
-                            else
-                            {
-                                currentIndex = 1;
-                                //FOR THE FOR LOOP, I IS ONLY > 3 BECAUSE THE INITIAL SPAWN HAS 4 POINTS OF INTEREST, IF THIS CHANGES, ALSO CHANGE THE FOR LOOP
-                                for(int i = _pointsOfInterest.Count - 1; i > 3; i--)
-                                {
-                                    _pointsOfInterest.RemoveAt(i);
-                                }
-                                _references.ResetAI();
-                                turnBack = false;
-                            }
-                        }
-                        else
-                        {
-                            if(currentIndex < _pointsOfInterest.Count - 1)
-                            {
-                                currentIndex = (currentIndex + 1);
-                            }
-                        }
-                    }
+                    RandomizeDestination();
                 }
-            }
-            else
-            {
-                //Hard Reset
-                isIdling = false;
-                turnBack = false;
-                _references.ResetAI();
-                currentIndex = 0;
             }
         }
         else if(Globals.ChaseMode)
         {
             if(!enteredChase)
             {
-                monsterPathing.enabled = true;
                 isIdling = false;
                 isMoving = false;
                 _monsterAni.Play("roar");
@@ -171,25 +123,53 @@ public class MonsterAI : MonoBehaviour
             {
                 float newTime = Time.time - timeOffset;
                 monsterPathing.SetDestination(_playerTransform.position);
+                //These numbers scare me I dont remember what they mean
                 _monsterAni.speed = Mathf.Clamp(tempMonsterAniSpeed + ((newTime) * 0.18f), 0.33f, 5f);
                 monsterPathing.speed = Mathf.Clamp(tempMonsterSpeed + ((newTime) * 2f), 5f, 50f);
                 monsterPathing.acceleration = Mathf.Clamp(tempMonsterAcceleration - ((newTime) * 7f), 35f, 100f);
             } 
         }
     }
-
-    void MoveTowardsTarget(Vector3 target)
+    
+    void RandomizeDestination()
     {
-        isMoving = true;
-        float step = _speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, target, step);
+        if(areaTrigger != null)
+        {
+            xMinPos = areaTrigger.GetPositions("xMin");
+            xMaxPos = areaTrigger.GetPositions("xMax");
+            zMinPos = areaTrigger.GetPositions("zMin");
+            zMaxPos = areaTrigger.GetPositions("zMax");
 
-        //To flip the direction, flip transform and target around
-        Vector3 direction = (target - transform.position).normalized;
-
-        Quaternion targetRotation = Quaternion.LookRotation(direction);
-
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
+            randomPosition = new Vector3(Random.Range(xMinPos, xMaxPos), 0.67f, Random.Range(zMinPos, zMaxPos));
+            
+            NavMeshHit hit;
+            //If pos is on the navmesh
+            if(NavMesh.SamplePosition(randomPosition, out hit, 1.0f, NavMesh.AllAreas))
+            {
+                idleCounter++;
+                isMoving = true;
+                isIdling = false;
+                //The Y position doesn't matter for the navmesh
+                Vector3 newPosition = new Vector3(hit.position.x, 0.67f, hit.position.z);
+                if(idleCounter > 2)
+                {
+                    Vector3 leaving = areaTrigger.Leave();
+                    monsterPathing.SetDestination(leaving);
+                }
+                else
+                {
+                    monsterPathing.SetDestination(newPosition);
+                }
+            }
+            else
+            {
+                RandomizeDestination();
+            }
+        }
+        else
+        {
+            Debug.Log("Idle mode brokey");
+        }
     }
 
     public void SpawnTheMonster(int chance)
@@ -233,7 +213,7 @@ public class MonsterAI : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player") && Globals.ChaseMode && !hitDelay)
+        if(other.CompareTag("Player") && Globals.ChaseMode && !hitDelay)
         {
             if(hitCounter == 6 && Globals.GameState != GameState.Victory)
             {
@@ -250,6 +230,14 @@ public class MonsterAI : MonoBehaviour
                 timeOffset = Time.time;
                 StartCoroutine(Hit());
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("AreaTrigger"))
+        {
+            areaTrigger = other.GetComponent<AreaTriggers>();
         }
     }
 

@@ -47,11 +47,6 @@ public class Door : MonoBehaviour
             isInsideTrigger = false;
             isOutsideTrigger = true;
             StartCoroutine(Close());
-
-            if(other.CompareTag("Monster"))
-            {
-                References.TurnOnAllAreaTriggers();
-            }
         }
     }
 

@@ -4,56 +4,50 @@ using UnityEngine;
 
 public class AreaTriggers : MonoBehaviour
 {
-    [SerializeField] private Vector3[] _wonderingAreasLeft;
-    [SerializeField] private Vector3[] _wonderingAreasRight;
+    [SerializeField] private float _xMinPos;
+    [SerializeField] private float _xMaxPos;
+    [SerializeField] private float _zMinPos;
+    [SerializeField] private float _zMaxPos;
 
-    [SerializeField] private GameObject[] _otherAreaTriggers;
-
-    [SerializeField] private References _references;
- 
-    private void OnTriggerEnter(Collider other)
+    [SerializeField] private Vector3 _left;
+    [SerializeField] private Vector3 _right;
+    
+    public float GetPositions(string name)
     {
-        if(other.CompareTag("Monster"))
+        if(name == "xMin")
         {
-            if(_references != null && !Globals.GetOriginalTriggers)
-            {
-                for(int i = 0; i < _otherAreaTriggers.Length; i++)
-                {
-                    _references.AddTriggers(_otherAreaTriggers[i]);
-                }
-
-                Globals.OriginalTriggersCompleted();
-            }
-            GameObject monsterObject = other.gameObject;
-            MonsterAI monsterAIScript = monsterObject.GetComponent<MonsterAI>();
-            int random = Random.Range(0, 2);
-            //if random == 0
-            if(true)
-            {
-                for(int i = 0; i < _wonderingAreasLeft.Length; i++)
-                {
-                    monsterAIScript._pointsOfInterest.Add(_wonderingAreasLeft[i]);
-                }
-            }
-            else
-            {
-                for(int i = 0; i < _wonderingAreasRight.Length; i++)
-                {
-                    monsterAIScript._pointsOfInterest.Add(_wonderingAreasRight[i]);
-                }
-            }
+            return _xMinPos;
+        }
+        else if(name == "xMax")
+        {
+            return _xMaxPos;
+        }
+        else if(name == "zMin")
+        {
+            return _zMinPos;
+        }
+        else if(name == "zMax")
+        {
+            return _zMaxPos;
+        }
+        else
+        {
+            Debug.Log("GETPOS IS INVALID");
+            return 0f;
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    public Vector3 Leave()
     {
-        if(other.CompareTag("Monster"))
+        int random = Random.Range(0, 2);
+
+        if(random == 0)
         {
-            for(int j = 0; j < _otherAreaTriggers.Length; j++)
-            {
-                Debug.Log("FUCKING WORK");
-                _otherAreaTriggers[j].SetActive(false);
-            }
+            return _left;
+        }
+        else
+        {
+            return _right;
         }
     }
 }
