@@ -15894,13 +15894,20 @@ MonoBehaviour:
       Data3: -1870967662
       Data4: 1777116068
     Path: event:/Sounds/Footsteps
-  jumpEventPath:
+  jumpStartEventPath:
     Guid:
-      Data1: -384478593
-      Data2: 1307451911
-      Data3: 421788828
-      Data4: 1233414913
-    Path: event:/Music/Bowsers Here
+      Data1: -436799269
+      Data2: 1306620615
+      Data3: -1695890559
+      Data4: -1724371283
+    Path: event:/Sounds/Jump - Start
+  jumpEndEventPath:
+    Guid:
+      Data1: 748929312
+      Data2: 1202309236
+      Data3: 764961193
+      Data4: 1708161794
+    Path: event:/Sounds/Jump - End
   _speed: 15
   _sprintMultiplier: 1.5
   _crouchSpeed: 8

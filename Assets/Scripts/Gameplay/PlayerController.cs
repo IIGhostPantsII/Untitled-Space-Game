@@ -14,9 +14,11 @@ public class PlayerController : MonoBehaviour
     private float timeSinceLastPlay = 0.0f;
     private bool isFirstInput = true;
     public FMODUnity.EventReference moveEventPath;
-    public FMODUnity.EventReference jumpEventPath;
+    public FMODUnity.EventReference jumpStartEventPath;
+    public FMODUnity.EventReference jumpEndEventPath;
     public FMOD.Studio.EventInstance moveEvent;
-    public FMOD.Studio.EventInstance jumpEvent;
+    public FMOD.Studio.EventInstance jumpStartEvent;
+    public FMOD.Studio.EventInstance jumpEndEvent;
     private FMOD.Studio.PLAYBACK_STATE playbackState;
 
     // Inspector Settings
@@ -92,7 +94,9 @@ public class PlayerController : MonoBehaviour
 
         moveEvent = RuntimeManager.CreateInstance(moveEventPath);
 
-        jumpEvent = RuntimeManager.CreateInstance(jumpEventPath);
+        jumpStartEvent = RuntimeManager.CreateInstance(jumpStartEventPath);
+
+        jumpEndEvent = RuntimeManager.CreateInstance(jumpEndEventPath);
 
         originalCameraPosition = new Vector3(0f, 2f, 0f);
 
@@ -209,25 +213,6 @@ public class PlayerController : MonoBehaviour
                     isCrouching = false;
                 }
             }
-
-            if(isGrounded && jumpSound)
-            {
-                jumpSound = false;
-                jumpEvent.start();
-                Debug.Log("Hi!");
-                if(Oxygen.NoSprint)
-                {
-                    jumpEvent.setParameterByName("Lowpass",(_subOxygen._oxygenMeter * 220));
-                }
-                else
-                {
-                    jumpEvent.setParameterByName("Lowpass",22000);
-                }
-            }
-            else if(!isGrounded)
-            {
-                jumpSound = true;
-            }
         }
         else
         {
@@ -308,10 +293,33 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = true;
             movement.y = _jumpVelocity;
+            jumpStartEvent.start();
+            jumpSound = true;
+            if(Oxygen.NoSprint)
+            {
+                jumpStartEvent.setParameterByName("Lowpass",(_subOxygen._oxygenMeter * 220));
+            }
+            else
+            {
+                jumpStartEvent.setParameterByName("Lowpass",22000);
+            }
         } 
         else if (!jumpPressed && _charController.isGrounded)
         {
             isJumping = false;
+            if(jumpSound)
+            {
+                jumpEndEvent.start();
+                jumpSound = false;
+                if(Oxygen.NoSprint)
+                {
+                    jumpEndEvent.setParameterByName("Lowpass",(_subOxygen._oxygenMeter * 220));
+                }
+                else
+                {
+                    jumpEndEvent.setParameterByName("Lowpass",22000);
+                }
+            }
         }
     }
 

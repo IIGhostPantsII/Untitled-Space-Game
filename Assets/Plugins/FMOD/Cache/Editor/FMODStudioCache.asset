@@ -1,5 +1,33 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8637767959200861140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sounds/Jump - End
+  m_EditorClassIdentifier: 
+  Path: event:/Sounds/Jump - End
+  Guid:
+    Data1: 748929312
+    Data2: 1202309236
+    Data3: 764961193
+    Data4: 1708161794
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 5880731407819687891}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-7968007550661438565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39,10 +67,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638416931822349598
+  lastModified: 638426919711334199
   FileSizes:
   - Name: Desktop
-    Value: 731744
+    Value: 743648
   Exists: 1
 --- !u!114 &-7113298487564634590
 MonoBehaviour:
@@ -135,10 +163,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638416926599869296
+  lastModified: 638426913313085564
   FileSizes:
   - Name: Desktop
-    Value: 2046
+    Value: 2134
   Exists: 1
 --- !u!114 &-6408918529084494121
 MonoBehaviour:
@@ -358,6 +386,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-2920397346885303116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jump - Start/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-1606548628467542175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,12 +528,14 @@ MonoBehaviour:
   - {fileID: -2965522299428628141}
   - {fileID: 8338707156332072780}
   - {fileID: 7609577086557519686}
+  - {fileID: -8637767959200861140}
+  - {fileID: 4119339484419191396}
   EditorParameters: []
   MasterBanks:
   - {fileID: 6422365686012519055}
   StringsBanks:
   - {fileID: -6838026933355539509}
-  cacheTime: 638416931822349598
+  cacheTime: 638426919711334199
   cacheVersion: 131607
 --- !u!114 &1153465909347655859
 MonoBehaviour:
@@ -706,6 +760,34 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &4119339484419191396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sounds/Jump - Start
+  m_EditorClassIdentifier: 
+  Path: event:/Sounds/Jump - Start
+  Guid:
+    Data1: -436799269
+    Data2: 1306620615
+    Data3: -1695890559
+    Data4: -1724371283
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -2920397346885303116}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &4417711405366342180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -818,6 +900,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &5880731407819687891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jump - End/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &6309417162540684132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -881,7 +987,7 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638416926599824140
+  lastModified: 638426913313055883
   FileSizes:
   - Name: Desktop
     Value: 73248
