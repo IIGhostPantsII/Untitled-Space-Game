@@ -9,11 +9,10 @@ public class MonsterAI : MonoBehaviour
     [SerializeField] public Vector3[] _spawnPoints;
     [SerializeField] private float _rotationDuration = 3f;
     [SerializeField] private float _speed = 10f;
-    [SerializeField] private float _rotationSpeed = 8f;
     [SerializeField] private Transform _playerTransform;
     [SerializeField] private References _references;
     [SerializeField] private Animator _monsterAni;
-    [SerializeField] private Animator _hit;
+    [SerializeField] private Animator _hitPlayer;
 
     private bool isIdling;
     private bool isMoving;
@@ -55,7 +54,6 @@ public class MonsterAI : MonoBehaviour
         int spawnLength = _spawnPoints.Length;
         monsterPathing = GetComponent<NavMeshAgent>();
         Globals.ChangeMonsterState("Idle");
-        enteredIdle = true;
     }
 
     void Update()
@@ -71,9 +69,16 @@ public class MonsterAI : MonoBehaviour
 
         if(Globals.IdleMode)
         {
-            if(enteredIdle)
+            _monsterAni.speed = 1;
+            monsterPathing.speed = 15;
+            monsterPathing.acceleration = 50;
+
+            if(!enteredIdle)
             {
-                enteredIdle = false;
+                monsterPathing.ResetPath();
+                Globals.ResetAnimation();
+                enteredIdle = true;
+                enteredChase = false;
                 RandomizeDestination();
             }
 
@@ -87,8 +92,8 @@ public class MonsterAI : MonoBehaviour
                     {
                         isMoving = false;
                         isIdling = true;
-                        MonsterIdle();
                         rotationTimer += Time.deltaTime;
+                        MonsterIdle();
                     }
                     else
                     {
@@ -109,11 +114,15 @@ public class MonsterAI : MonoBehaviour
         {
             if(!enteredChase)
             {
+                Debug.Log($"Chase is {Globals.ChaseMode} in chasemode");
+                Debug.Log($"Idle is {Globals.IdleMode} in chasemode");
+                monsterPathing.ResetPath();
+                _monsterAni.Play("roar");
                 isIdling = false;
                 isMoving = false;
-                _monsterAni.Play("roar");
                 enteredChase = true;
-                monsterPathing.speed = 15;
+                enteredIdle = false;
+                monsterPathing.speed = 0;
                 tempMonsterSpeed = 15;
                 tempMonsterAcceleration = 85;
                 tempMonsterAniSpeed = 1;
@@ -245,10 +254,10 @@ public class MonsterAI : MonoBehaviour
     {
         hitCounter++;
         yield return new WaitForSeconds(0.5f);
-        _hit.gameObject.SetActive(true);
+        _hitPlayer.gameObject.SetActive(true);
         tempMonsterAniSpeed = 0.33f;
         yield return new WaitForSeconds(0.75f);
-        _hit.gameObject.SetActive(false);
+        _hitPlayer.gameObject.SetActive(false);
         hitDelay = false;
     }
 }

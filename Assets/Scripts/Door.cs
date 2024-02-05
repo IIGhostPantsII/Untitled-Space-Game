@@ -67,15 +67,8 @@ public class Door : MonoBehaviour
             MoveDoorUp();
         }
 
-        if (moveEventOpen.isValid())
-        {
-            moveEventOpen.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
-        }
-        
-        if(moveEventClose.isValid())
-        {
-            moveEventClose.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
-        }
+        Globals.SpatialSounds(moveEventOpen, gameObject);
+        Globals.SpatialSounds(moveEventClose, gameObject);
     }
 
     private void MoveDoorDown()

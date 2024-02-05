@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public static class Globals
 {
@@ -38,7 +39,12 @@ public static class Globals
 
     public static void FinishedAnimation()
     {
-        AnimationOver = !AnimationOver;
+        AnimationOver = true;
+    }
+
+    public static void ResetAnimation()
+    {
+        AnimationOver = false;
     }
 
     public static void ChangeMonsterState(string Mode)
@@ -60,6 +66,35 @@ public static class Globals
             ChaseMode = false;
             IdleMode = false;
             PatrolMode = true;
+        }
+    }
+
+    public static bool CheckMonsterState(string Mode)
+    {
+        if(Mode == "Chase")
+        {
+            return ChaseMode;
+        }
+        else if(Mode == "Idle")
+        {
+            return IdleMode;
+        }
+        else if(Mode == "Patrol")
+        {
+            return PatrolMode;
+        }
+        else
+        {
+            Debug.Log("ERROR WHEN CHECKING MONSTER STATE, RETURNING FALSE");
+            return false;
+        }
+    }
+
+    public static void SpatialSounds(FMOD.Studio.EventInstance eventInstance, GameObject pos)
+    {
+        if(eventInstance.isValid())
+        {
+            eventInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(pos.transform));
         }
     }
 }
