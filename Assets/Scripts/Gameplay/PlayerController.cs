@@ -30,7 +30,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _jumpVelocity = 1;
     [SerializeField] private float _gravity = 0.5f;
     [SerializeField] private float _groundedGravity = 0.1f;
-    [SerializeField] private LayerMask _groundLayer;
     [SerializeField] private Transform _cameraTransform;
     [SerializeField] private Oxygen _oxygen;
     [SerializeField] private Oxygen _subOxygen;
@@ -46,7 +45,6 @@ public class PlayerController : MonoBehaviour
     // INPUT BOOLS
     private bool isSprinting;
     private bool jumpPressed;
-    private bool isGrounded;
     private bool isMoving;
     private bool isCrouching;
 
@@ -65,6 +63,7 @@ public class PlayerController : MonoBehaviour
     private Animator playerAnimator;
     private bool _canInteract;
     private PowerButton _currentButton;
+    private AreaTriggers areaTrigger;
 
     public bool is2D;
     private int _winCounter = 0;
@@ -115,7 +114,7 @@ public class PlayerController : MonoBehaviour
     {
         _winCounter += 1;
 
-        if (_winCounter >= _powerButtons.Length)
+        if(_winCounter >= _powerButtons.Length)
         {
             WinGame();
         }
@@ -126,7 +125,6 @@ public class PlayerController : MonoBehaviour
         // INPUT VALUES
         jumpPressed = input.Player.Jump.ReadValue<float>() > 0.1f;
         isSprinting = input.Player.Sprint.ReadValue<float>() > 0.1f;
-        isGrounded = Physics.SphereCast(transform.position, _groundCheckRadius, -Vector3.up, out RaycastHit hitInfo, 0.1f, _groundLayer);
 
         if(Globals.Movement)
         {
@@ -141,23 +139,23 @@ public class PlayerController : MonoBehaviour
             _firstPersonCam.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
             transform.Rotate(Vector3.up * mouseX);
 
-            if (input.Player.Interact.ReadValue<float>() > 0.1 && _currentButton != null)
+            if(input.Player.Interact.ReadValue<float>() > 0.1 && _currentButton != null)
             {
                 _currentButton.FillBar();
                 _interactPrompt.GetComponentInChildren<Image>().fillAmount = _currentButton.ButtonProgress;
-                if (_currentButton.IsOn)
+                if(_currentButton.IsOn)
                 {
                     _interactPrompt.GetComponentInChildren<Image>().fillAmount = 0;
                     _interactPrompt.SetActive(false);
                 }
             } 
-            else if (_currentButton != null)
+            else if(_currentButton != null)
             {
                 
                 _interactPrompt.GetComponentInChildren<Image>().fillAmount = _currentButton.ButtonProgress;
             }
 
-            if (isMoving)
+            if(isMoving)
             {
                 bobbingTimer += Time.deltaTime * bobbingSpeed;
                 float bobbingOffset = Mathf.Sin(bobbingTimer) * bobbingAmount;
@@ -177,11 +175,12 @@ public class PlayerController : MonoBehaviour
                 _firstPersonCam.transform.localPosition = originalCameraPosition;
             }
 
-            if (isMoving && timeSinceLastPlay >= (isFirstInput ? eventInterval / 2 : eventInterval))
+            if(isMoving && timeSinceLastPlay >= (isFirstInput ? eventInterval / 2 : eventInterval))
             {
                 if(Globals.Movement && _charController.isGrounded && !isCrouching)
                 {
                     moveEvent.start();
+
                     if(Oxygen.NoSprint)
                     {
                         moveEvent.setParameterByName("Lowpass",(_subOxygen._oxygenMeter * 220));
@@ -208,7 +207,7 @@ public class PlayerController : MonoBehaviour
             if(holdingSprint)
             {
                 holdDuration += Time.deltaTime;
-                if (holdDuration >= 1f) // If hold duration is bigger then 1 second
+                if(holdDuration >= 1f) // If hold duration is bigger then 1 second
                 {
                     isCrouching = false;
                 }
@@ -220,12 +219,12 @@ public class PlayerController : MonoBehaviour
             Oxygen.PauseDepletion = true;
         }
 
-        if (_subOxygen._oxygenMeter <= 0)
+        if(_subOxygen._oxygenMeter <= 0)
         {
             Globals.GameState = GameState.Lost;
             LoadGameOverMenu();
         } 
-        else if (Globals.GameState == GameState.Victory)
+        else if(Globals.GameState == GameState.Victory)
         {
             LoadWinMenu();
         }
@@ -235,7 +234,7 @@ public class PlayerController : MonoBehaviour
             LoadGameOverMenu();
         }
 
-        if (!Globals.Movement)
+        if(!Globals.Movement)
         {
             movement = new Vector3(0, movement.y, 0);
             return;
@@ -247,11 +246,11 @@ public class PlayerController : MonoBehaviour
         movement = new Vector3(moveVector.x, movement.y, moveVector.y);
         movement = transform.TransformDirection(movement);
         
-        if (Oxygen.NoSprint)
+        if(Oxygen.NoSprint)
         {
             isSprinting = false;
         }
-        else if (isSprinting && !isCrouching && !Oxygen.NoSprint)
+        else if(isSprinting && !isCrouching && !Oxygen.NoSprint)
         {
             eventInterval = 0.3f;
             movement *= _sprintMultiplier;
@@ -259,14 +258,14 @@ public class PlayerController : MonoBehaviour
             bobbingSpeed = 10f;
             bobbingAmount = 0.2f;
         }
-        else if (isCrouching)
+        else if(isCrouching)
         {
             eventInterval = 0.6f;
             _oxygen._depletionSpeed = _oxygen._crouchDepletionSpeed;
             bobbingSpeed = 3f;
             bobbingAmount = 0.2f;
         }
-        else if (!isSprinting)
+        else if(!isSprinting)
         {
             eventInterval = 0.6f;
             _oxygen._depletionSpeed = _oxygen._normalDepletionSpeed;
@@ -274,7 +273,7 @@ public class PlayerController : MonoBehaviour
             bobbingAmount = 0.1f;
         }
 
-        if (isCrouching)
+        if(isCrouching)
         {
             movement /= _sprintMultiplier;
             originalCameraPosition = Vector3.MoveTowards(originalCameraPosition, new Vector3(0f, 1f, 0f), Time.deltaTime * _crouchSpeed);
@@ -289,7 +288,7 @@ public class PlayerController : MonoBehaviour
         
         movement.y = grav;
         
-        if (jumpPressed && !isJumping && _charController.isGrounded)
+        if(jumpPressed && !isJumping && _charController.isGrounded)
         {
             isJumping = true;
             movement.y = _jumpVelocity;
@@ -304,7 +303,7 @@ public class PlayerController : MonoBehaviour
                 jumpStartEvent.setParameterByName("Lowpass",22000);
             }
         } 
-        else if (!jumpPressed && _charController.isGrounded)
+        else if(!jumpPressed && _charController.isGrounded)
         {
             isJumping = false;
             if(jumpSound)
@@ -338,7 +337,7 @@ public class PlayerController : MonoBehaviour
 
     private void HandleGravity()
     {
-        if (_charController.isGrounded)
+        if(_charController.isGrounded)
         {
             movement.y = -_groundedGravity;
         }
@@ -412,7 +411,7 @@ public class PlayerController : MonoBehaviour
     
     private void PauseGame(InputAction.CallbackContext obj)
     {
-        if (!_charController.isGrounded) return;
+        if(!_charController.isGrounded) return;
         
         EventSystem.current.SetSelectedGameObject(null);
         Cursor.lockState = CursorLockMode.None;
@@ -457,7 +456,7 @@ public class PlayerController : MonoBehaviour
 
     private void ToggleCrouch()
     {
-        if (Globals.Movement)
+        if(Globals.Movement)
         {
             isCrouching = !isCrouching;
         }
@@ -465,7 +464,7 @@ public class PlayerController : MonoBehaviour
 
     private void HoldingSprint()
     {
-        if (Globals.Movement)
+        if(Globals.Movement)
         {
             holdingSprint = true;
         }
@@ -473,7 +472,7 @@ public class PlayerController : MonoBehaviour
 
     private void ResetSprintTimer()
     {
-        if (Globals.Movement)
+        if(Globals.Movement)
         {
             holdingSprint = false;
             holdDuration = 0f;
@@ -482,9 +481,9 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Button"))
+        if(other.gameObject.CompareTag("Button"))
         {
-            if (!other.gameObject.GetComponent<PowerButton>().IsOn)
+            if(!other.gameObject.GetComponent<PowerButton>().IsOn)
             {
                 _interactPrompt.SetActive(true);
                 _canInteract = true;
@@ -492,10 +491,22 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if(hit.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            moveEvent.setParameterByName("FootstepType", 0);
+        }
+        else if(hit.collider.gameObject.layer == LayerMask.NameToLayer("TiledGround"))
+        {
+            moveEvent.setParameterByName("FootstepType", 1);
+        }
+    }
     
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Button"))
+        if(other.gameObject.CompareTag("Button"))
         {
             _interactPrompt.GetComponentInChildren<Image>().fillAmount = 0;
             _interactPrompt.SetActive(false);

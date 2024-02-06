@@ -8,6 +8,7 @@ public class MonsterAI : MonoBehaviour
     [SerializeField] public List<Vector3> _pointsOfInterest;
     [SerializeField] public Vector3[] _spawnPoints;
     [SerializeField] private float _rotationDuration = 3f;
+    [SerializeField] private float _rotationSpeed = 8f;
     [SerializeField] private float _speed = 10f;
     [SerializeField] private Transform _playerTransform;
     [SerializeField] private References _references;
@@ -114,8 +115,6 @@ public class MonsterAI : MonoBehaviour
         {
             if(!enteredChase)
             {
-                Debug.Log($"Chase is {Globals.ChaseMode} in chasemode");
-                Debug.Log($"Idle is {Globals.IdleMode} in chasemode");
                 monsterPathing.ResetPath();
                 _monsterAni.Play("roar");
                 isIdling = false;
@@ -137,6 +136,10 @@ public class MonsterAI : MonoBehaviour
                 monsterPathing.speed = Mathf.Clamp(tempMonsterSpeed + ((newTime) * 2f), 5f, 50f);
                 monsterPathing.acceleration = Mathf.Clamp(tempMonsterAcceleration - ((newTime) * 7f), 35f, 100f);
             } 
+        }
+        else if(Globals.PatrolMode)
+        {
+
         }
     }
     
@@ -222,7 +225,7 @@ public class MonsterAI : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.CompareTag("Player") && Globals.ChaseMode && !hitDelay)
+        if(other.CompareTag("Player") && Globals.ChaseMode && !hitDelay && Globals.AnimationOver)
         {
             if(hitCounter == 6 && Globals.GameState != GameState.Victory)
             {
