@@ -502,8 +502,14 @@ public class PlayerController : MonoBehaviour
                 currentButton = other.gameObject.GetComponent<PowerButton>();
             }
         }
+
+        if(other.gameObject.CompareTag("AreaTrigger"))
+        {
+            areaTrigger = other.gameObject.GetComponent<AreaTriggers>();
+        }
     }
 
+    //So the footstep sounds changes
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         if(hit.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))

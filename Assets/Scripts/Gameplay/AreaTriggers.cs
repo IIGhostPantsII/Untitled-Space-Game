@@ -11,6 +11,11 @@ public class AreaTriggers : MonoBehaviour
 
     [SerializeField] private Vector3 _left;
     [SerializeField] private Vector3 _right;
+
+    [SerializeField] private bool _north;
+    [SerializeField] private bool _south;
+    [SerializeField] private bool _east;
+    [SerializeField] private bool _west;
     
     public float GetPositions(string name)
     {
@@ -49,5 +54,36 @@ public class AreaTriggers : MonoBehaviour
         {
             return _right;
         }
+    }
+
+    public int PickDirection()
+    {
+        List<int> directions = new List<int>();
+
+        if(_north)
+        {
+            directions.Add(0);
+        }
+        if(_south)
+        {
+            directions.Add(180);
+        }
+        if(_east)
+        {
+            directions.Add(90);
+        }
+        if(_west)
+        {
+            directions.Add(270);
+        }
+
+        if(directions.Count == 0)
+        {
+            return 0;
+        }
+        
+        int randomIndex = UnityEngine.Random.Range(0, directions.Count);
+
+        return directions[randomIndex];
     }
 }

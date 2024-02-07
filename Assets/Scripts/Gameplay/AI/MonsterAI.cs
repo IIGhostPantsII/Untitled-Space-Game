@@ -241,7 +241,15 @@ public class MonsterAI : MonoBehaviour
         {
             if(hitCounter == 6 && Globals.GameState != GameState.Victory)
             {
-                Globals.GameState = GameState.Lost;
+                //Globals.GameState = GameState.Lost;
+                GameObject player = other.gameObject;
+                Transform cinematicCameraTransform = player.transform.Find("CM vcamCinematicAttack");
+                GameObject cinematicCamera = cinematicCameraTransform.gameObject;
+                PlayerController pc = player.GetComponent<PlayerController>();
+                cinematicCamera.SetActive(true);
+                Globals.LockMovement();
+                int direction = areaTrigger.PickDirection();
+                player.transform.rotation = Quaternion.Euler(0f, direction, 0f);
             }
             else
             {
