@@ -2845,6 +2845,10 @@ MonoBehaviour:
   _zMaxPos: 77
   _left: {x: 30, y: 0.67, z: 64}
   _right: {x: 30, y: 0.67, z: 64}
+  _north: 0
+  _south: 0
+  _east: 0
+  _west: 0
 --- !u!64 &296015546
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4088,6 +4092,10 @@ MonoBehaviour:
   _zMaxPos: 0
   _left: {x: 0, y: 0, z: 0}
   _right: {x: 0, y: 0, z: 0}
+  _north: 0
+  _south: 0
+  _east: 0
+  _west: 0
 --- !u!65 &374894158
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10004,8 +10012,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0, y: 0.9914449, z: -0.13052616, w: 0}
-  m_LocalPosition: {x: 0, y: 5.9, z: 14.38}
+  m_LocalRotation: {x: 0.1304951, y: -0.021628173, z: 0.0028474021, w: 0.991209}
+  m_LocalPosition: {x: 0.62724435, y: 5.9, z: -14.366315}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13279,6 +13287,10 @@ MonoBehaviour:
   _zMaxPos: 0
   _left: {x: 0, y: 0, z: 0}
   _right: {x: 0, y: 0, z: 0}
+  _north: 0
+  _south: 0
+  _east: 0
+  _west: 0
 --- !u!65 &1257005455
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13805,6 +13817,10 @@ MonoBehaviour:
   _zMaxPos: 0
   _left: {x: 0, y: 0, z: 0}
   _right: {x: 0, y: 0, z: 0}
+  _north: 0
+  _south: 0
+  _east: 0
+  _west: 0
 --- !u!65 &1289225812
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15384,6 +15400,10 @@ MonoBehaviour:
   _zMaxPos: 0
   _left: {x: 0, y: 0, z: 0}
   _right: {x: 0, y: 0, z: 0}
+  _north: 0
+  _south: 0
+  _east: 0
+  _west: 0
 --- !u!65 &1434326542
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16474,7 +16494,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557005705}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.99976206, z: -0, w: -0.0218148}
   m_LocalPosition: {x: 0, y: 1.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -16485,7 +16505,7 @@ Transform:
   - {fileID: 1480245038}
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 182.5, z: 0}
 --- !u!143 &1557005711
 CharacterController:
   m_ObjectHideFlags: 0
@@ -18606,6 +18626,10 @@ MonoBehaviour:
   _zMaxPos: 0
   _left: {x: 0, y: 0, z: 0}
   _right: {x: 0, y: 0, z: 0}
+  _north: 0
+  _south: 0
+  _east: 0
+  _west: 0
 --- !u!65 &1694782009
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19829,6 +19853,10 @@ MonoBehaviour:
   _zMaxPos: 124
   _left: {x: 51.7, y: 0.67, z: 71.83}
   _right: {x: 156.99, y: 0.67, z: 131.6}
+  _north: 0
+  _south: 0
+  _east: 0
+  _west: 0
 --- !u!1 &1827643947
 GameObject:
   m_ObjectHideFlags: 0
