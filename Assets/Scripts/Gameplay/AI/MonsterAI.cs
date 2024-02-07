@@ -20,6 +20,7 @@ public class MonsterAI : MonoBehaviour
     private bool turnBack;
     private bool enteredChase;
     private bool enteredIdle;
+    private bool enteredPatrol;
     private bool hitDelay;
 
     private int currentIndex = 0;
@@ -80,6 +81,7 @@ public class MonsterAI : MonoBehaviour
                 Globals.ResetAnimation();
                 enteredIdle = true;
                 enteredChase = false;
+                enteredPatrol = false;
                 RandomizeDestination();
             }
 
@@ -121,6 +123,7 @@ public class MonsterAI : MonoBehaviour
                 isMoving = false;
                 enteredChase = true;
                 enteredIdle = false;
+                enteredPatrol = false;
                 monsterPathing.speed = 0;
                 tempMonsterSpeed = 15;
                 tempMonsterAcceleration = 85;
@@ -139,7 +142,16 @@ public class MonsterAI : MonoBehaviour
         }
         else if(Globals.PatrolMode)
         {
+            if(!enteredPatrol)
+            {
+                monsterPathing.ResetPath();
+                Globals.ResetAnimation();
+                enteredPatrol = true;
+                enteredChase = false;
+                enteredIdle = false;
+            }
 
+            
         }
     }
     

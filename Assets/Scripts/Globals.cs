@@ -97,6 +97,18 @@ public static class Globals
             eventInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(pos.transform));
         }
     }
+
+    public static void CheckLowpass(FMOD.Studio.EventInstance eventInstance, Oxygen subOxy)
+    {
+        if(Oxygen.NoSprint)
+        {
+            eventInstance.setParameterByName("Lowpass",(subOxy._oxygenMeter * 220));
+        }
+        else
+        {
+            eventInstance.setParameterByName("Lowpass",22000);
+        }
+    }
 }
 
 public enum GameState

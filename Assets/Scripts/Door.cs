@@ -28,15 +28,7 @@ public class Door : MonoBehaviour
             isOutsideTrigger = false; // Reset the flag when inside the trigger
             moveEventOpen.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             moveEventOpen.start();
-
-            if(Oxygen.NoSprint)
-            {
-                moveEventOpen.setParameterByName("Lowpass",(_subMeter._oxygenMeter * 220));
-            }
-            else
-            {
-                moveEventOpen.setParameterByName("Lowpass",22000);
-            }
+            Globals.CheckLowpass(moveEventOpen, _subMeter);
         }
     }
 
@@ -101,13 +93,6 @@ public class Door : MonoBehaviour
         yield return new WaitForSeconds(0.25f);
         moveEventClose.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         moveEventClose.start();
-        if(Oxygen.NoSprint)
-        {
-            moveEventClose.setParameterByName("Lowpass",(_subMeter._oxygenMeter * 220));
-        }
-        else
-        {
-            moveEventClose.setParameterByName("Lowpass",22000);
-        }
+        Globals.CheckLowpass(moveEventClose, _subMeter);
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Cinemachine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -35,12 +36,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Oxygen _subOxygen;
     [SerializeField] public GameObject _astronaut;
     [SerializeField] public GameObject _firstPersonCam;
-    [SerializeField] public GameObject _defaultUI;
-    [SerializeField] public GameObject _pauseMenu;
-    [SerializeField] public GameObject _gameOverScreen;
-    [SerializeField] public GameObject _victoryScreen;
-    [SerializeField] public GameObject _interactPrompt;
-    [SerializeField] public PowerButton[] _powerButtons;
+    [SerializeField] private GameObject _defaultUI;
+    [SerializeField] private GameObject _pauseMenu;
+    [SerializeField] private GameObject _gameOverScreen;
+    [SerializeField] private GameObject _victoryScreen;
+    [SerializeField] private GameObject _interactPrompt;
+    [SerializeField] private GameObject _camObject;
+    [SerializeField] private PowerButton[] _powerButtons;
 
     // INPUT BOOLS
     private bool isSprinting;
@@ -50,7 +52,7 @@ public class PlayerController : MonoBehaviour
 
     // Input system
     private PlayerInput input;
-    private InputAction _openMenu;
+    private InputAction openMenu;
 
     // Other
     private bool delay;
@@ -59,14 +61,14 @@ public class PlayerController : MonoBehaviour
     private bool jumpSound = false;
     private float holdDuration = 0f;
     private Vector3 movement;
-    private CharacterController _charController;
+    private CharacterController charController;
     private Animator playerAnimator;
-    private bool _canInteract;
-    private PowerButton _currentButton;
+    private bool canInteract;
+    private PowerButton currentButton;
     private AreaTriggers areaTrigger;
 
     public bool is2D;
-    private int _winCounter = 0;
+    private int winCounter = 0;
 
     // Rotation - used for mouse input
     private float xRotation = 0f;
@@ -76,6 +78,11 @@ public class PlayerController : MonoBehaviour
     private float bobbingAmount = 0.05f;
     private float bobbingTimer = 0f;
     private Vector3 originalCameraPosition;
+
+    //Cinematic Attack stuff
+    private CinemachineVirtualCamera cam;
+    private CinemachineTransposer transposer;
+    private float attackTimer = 0f;
 
     private void Awake()
     {
@@ -89,17 +96,15 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        _charController = gameObject.GetComponent<CharacterController>();
+        charController = gameObject.GetComponent<CharacterController>();
 
         moveEvent = RuntimeManager.CreateInstance(moveEventPath);
-
         jumpStartEvent = RuntimeManager.CreateInstance(jumpStartEventPath);
-
         jumpEndEvent = RuntimeManager.CreateInstance(jumpEndEventPath);
 
         originalCameraPosition = new Vector3(0f, 2f, 0f);
 
-        foreach (PowerButton button in _powerButtons)
+        foreach(PowerButton button in _powerButtons)
         {
             button.OnActivate += IncrementWinCounter;
         }
@@ -108,13 +113,16 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(TurnOn(4.5f));
         }
+
+        cam = _camObject.GetComponent<CinemachineVirtualCamera>();
+        transposer = cam.GetCinemachineComponent<CinemachineTransposer>();
     }
 
     void IncrementWinCounter()
     {
-        _winCounter += 1;
+        winCounter += 1;
 
-        if(_winCounter >= _powerButtons.Length)
+        if(winCounter >= _powerButtons.Length)
         {
             WinGame();
         }
@@ -139,20 +147,20 @@ public class PlayerController : MonoBehaviour
             _firstPersonCam.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
             transform.Rotate(Vector3.up * mouseX);
 
-            if(input.Player.Interact.ReadValue<float>() > 0.1 && _currentButton != null)
+            if(input.Player.Interact.ReadValue<float>() > 0.1 && currentButton != null)
             {
-                _currentButton.FillBar();
-                _interactPrompt.GetComponentInChildren<Image>().fillAmount = _currentButton.ButtonProgress;
-                if(_currentButton.IsOn)
+                currentButton.FillBar();
+                _interactPrompt.GetComponentInChildren<Image>().fillAmount = currentButton.ButtonProgress;
+                if(currentButton.IsOn)
                 {
                     _interactPrompt.GetComponentInChildren<Image>().fillAmount = 0;
                     _interactPrompt.SetActive(false);
                 }
             } 
-            else if(_currentButton != null)
+            else if(currentButton != null)
             {
                 
-                _interactPrompt.GetComponentInChildren<Image>().fillAmount = _currentButton.ButtonProgress;
+                _interactPrompt.GetComponentInChildren<Image>().fillAmount = currentButton.ButtonProgress;
             }
 
             if(isMoving)
@@ -177,18 +185,11 @@ public class PlayerController : MonoBehaviour
 
             if(isMoving && timeSinceLastPlay >= (isFirstInput ? eventInterval / 2 : eventInterval))
             {
-                if(Globals.Movement && _charController.isGrounded && !isCrouching)
+                if(Globals.Movement && charController.isGrounded && !isCrouching)
                 {
                     moveEvent.start();
-
-                    if(Oxygen.NoSprint)
-                    {
-                        moveEvent.setParameterByName("Lowpass",(_subOxygen._oxygenMeter * 220));
-                    }
-                    else
-                    {
-                        moveEvent.setParameterByName("Lowpass",22000);
-                    }
+                    Globals.SpatialSounds(moveEvent, gameObject);
+                    Globals.CheckLowpass(moveEvent, _subOxygen);
                     timeSinceLastPlay = 0.0f;
                 }
             }
@@ -288,47 +289,58 @@ public class PlayerController : MonoBehaviour
         
         movement.y = grav;
         
-        if(jumpPressed && !isJumping && _charController.isGrounded)
+        if(jumpPressed && !isJumping && charController.isGrounded)
         {
             isJumping = true;
             movement.y = _jumpVelocity;
             jumpStartEvent.start();
+            Globals.SpatialSounds(jumpStartEvent, gameObject);
+            Globals.CheckLowpass(jumpStartEvent, _subOxygen);
             jumpSound = true;
-            if(Oxygen.NoSprint)
-            {
-                jumpStartEvent.setParameterByName("Lowpass",(_subOxygen._oxygenMeter * 220));
-            }
-            else
-            {
-                jumpStartEvent.setParameterByName("Lowpass",22000);
-            }
         } 
-        else if(!jumpPressed && _charController.isGrounded)
+        else if(!jumpPressed && charController.isGrounded)
         {
             isJumping = false;
             if(jumpSound)
             {
                 jumpEndEvent.start();
+                Globals.SpatialSounds(jumpEndEvent, gameObject);
+                Globals.CheckLowpass(jumpEndEvent, _subOxygen);
                 jumpSound = false;
-                if(Oxygen.NoSprint)
-                {
-                    jumpEndEvent.setParameterByName("Lowpass",(_subOxygen._oxygenMeter * 220));
-                }
-                else
-                {
-                    jumpEndEvent.setParameterByName("Lowpass",22000);
-                }
             }
+        }
+
+        //Cinemachine Attack funcion
+        if(_camObject.activeSelf)
+        {
+            attackTimer += Time.deltaTime;
+            Vector3 originalPos = transposer.m_FollowOffset;
+            if(attackTimer < 2.5f)
+            {
+                transposer.m_FollowOffset = new Vector3(originalPos.x, originalPos.y, originalPos.z);
+            }
+            else if(attackTimer > 2.5f && attackTimer < 4.5f)
+            {
+
+            }
+            else if(attackTimer > 4.5f && attackTimer < 6.5f)
+            {
+
+            }
+        }
+        else
+        {
+            attackTimer = 0f;
         }
     }
 
     void LateUpdate()
     {
-        _charController.Move(movement * (_speed * Time.deltaTime));
+        charController.Move(movement * (_speed * Time.deltaTime));
 
         HandleGravity();
         
-        Debug.Log($@"The player <color=red>{_charController.isGrounded switch
+        Debug.Log($@"The player <color=red>{charController.isGrounded switch
         {
             true => "is",
             false => "is not"
@@ -337,7 +349,7 @@ public class PlayerController : MonoBehaviour
 
     private void HandleGravity()
     {
-        if(_charController.isGrounded)
+        if(charController.isGrounded)
         {
             movement.y = -_groundedGravity;
         }
@@ -411,7 +423,7 @@ public class PlayerController : MonoBehaviour
     
     private void PauseGame(InputAction.CallbackContext obj)
     {
-        if(!_charController.isGrounded) return;
+        if(!charController.isGrounded) return;
         
         EventSystem.current.SetSelectedGameObject(null);
         Cursor.lockState = CursorLockMode.None;
@@ -486,8 +498,8 @@ public class PlayerController : MonoBehaviour
             if(!other.gameObject.GetComponent<PowerButton>().IsOn)
             {
                 _interactPrompt.SetActive(true);
-                _canInteract = true;
-                _currentButton = other.gameObject.GetComponent<PowerButton>();
+                canInteract = true;
+                currentButton = other.gameObject.GetComponent<PowerButton>();
             }
         }
     }
@@ -510,8 +522,8 @@ public class PlayerController : MonoBehaviour
         {
             _interactPrompt.GetComponentInChildren<Image>().fillAmount = 0;
             _interactPrompt.SetActive(false);
-            _canInteract = false;
-            _currentButton = null;
+            canInteract = false;
+            currentButton = null;
         }
     }
 }
