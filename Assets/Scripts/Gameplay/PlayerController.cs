@@ -113,6 +113,10 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(TurnOn(4.5f));
         }
+        else
+        {
+            Debug.Log("Broken for some reason");
+        }
 
         cam = _camObject.GetComponent<CinemachineVirtualCamera>();
         transposer = cam.GetCinemachineComponent<CinemachineTransposer>();
@@ -311,9 +315,10 @@ public class PlayerController : MonoBehaviour
         }
 
         //Cinemachine Attack funcion
-        if(_camObject.activeSelf)
+        if(true)
         {
             attackTimer += Time.deltaTime;
+            Debug.Log(attackTimer);
             Vector3 originalPos = transposer.m_FollowOffset;
             if(attackTimer < 2.5f)
             {
@@ -321,11 +326,11 @@ public class PlayerController : MonoBehaviour
             }
             else if(attackTimer > 2.5f && attackTimer < 4.5f)
             {
-
+                transposer.m_FollowOffset = Vector3.Lerp(originalPos, new Vector3(originalPos.x - 4f, originalPos.y - 3f, originalPos.z + 2f), 2f);
             }
             else if(attackTimer > 4.5f && attackTimer < 6.5f)
             {
-
+                transposer.m_FollowOffset = Vector3.Lerp(new Vector3(originalPos.x - 4f, originalPos.y - 3f, originalPos.z + 2f), new Vector3(originalPos.x - 8f, originalPos.y, originalPos.z), 2f);
             }
         }
         else

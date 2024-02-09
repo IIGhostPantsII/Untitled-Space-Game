@@ -10,6 +10,8 @@ public class AnimationFunctions : MonoBehaviour
     public EventReference moveEventPath;
     private FMOD.Studio.EventInstance moveEvent;
 
+    [SerializeField] private GameObject _object;
+
     public void LockPlayerMovement()
     {
         Globals.LockMovement();
@@ -80,5 +82,11 @@ public class AnimationFunctions : MonoBehaviour
     {
         Animator pain = gameObject.GetComponent<Animator>();
         pain.enabled = false;
+    }
+
+    public void DeathAnimation(string name)
+    {
+        Animator animator = _object.GetComponent<Animator>();
+        animator.Play(name);
     }
 }

@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class MonsterAI : MonoBehaviour
 {
+    public static bool MoleRatDead;
+
     [SerializeField] public List<Vector3> _pointsOfInterest;
     [SerializeField] public Vector3[] _spawnPoints;
     [SerializeField] private float _rotationDuration = 3f;
@@ -22,6 +24,7 @@ public class MonsterAI : MonoBehaviour
     private bool enteredIdle;
     private bool enteredPatrol;
     private bool hitDelay;
+    private bool dead;
 
     private int currentIndex = 0;
     private int idleChance = 20;
@@ -239,9 +242,10 @@ public class MonsterAI : MonoBehaviour
     {
         if(other.CompareTag("Player") && Globals.ChaseMode && !hitDelay && Globals.AnimationOver)
         {
-            if(hitCounter == 6 && Globals.GameState != GameState.Victory)
+            if(hitCounter == 6 && Globals.GameState != GameState.Victory && !dead)
             {
                 //Globals.GameState = GameState.Lost;
+                dead = true;
                 GameObject player = other.gameObject;
                 Transform cinematicCameraTransform = player.transform.Find("CM vcamCinematicAttack");
                 GameObject cinematicCamera = cinematicCameraTransform.gameObject;
@@ -250,8 +254,10 @@ public class MonsterAI : MonoBehaviour
                 Globals.LockMovement();
                 int direction = areaTrigger.PickDirection();
                 player.transform.rotation = Quaternion.Euler(0f, direction, 0f);
+                gameObject.SetActive(false);
+                MoleRatDead = true;
             }
-            else
+            else if(!dead)
             {
                 hitDelay = true;
                 _monsterAni.Play("swipe");
