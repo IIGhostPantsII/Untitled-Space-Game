@@ -5902,7 +5902,6 @@ GameObject:
   - component: {fileID: 523607760}
   - component: {fileID: 523607759}
   - component: {fileID: 523607761}
-  - component: {fileID: 523607762}
   - component: {fileID: 523607763}
   m_Layer: 0
   m_Name: AudioManager
@@ -6013,56 +6012,6 @@ MonoBehaviour:
       Data3: 1651737751
       Data4: -414679227
     Path: event:/Secondary Sounds/White Noise
---- !u!114 &523607762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 523607758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6342331c7648e454a897f16907a19ef4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _dialogue:
-  - Guid:
-      Data1: -1454079840
-      Data2: 1302113909
-      Data3: 160043668
-      Data4: -1496633695
-    Path: event:/Dialogue Sounds/Dialogue1
-  - Guid:
-      Data1: -1323958526
-      Data2: 1170776964
-      Data3: -1326582370
-      Data4: 260084267
-    Path: event:/Dialogue Sounds/Dialogue2
-  - Guid:
-      Data1: -181821037
-      Data2: 1283681386
-      Data3: 1240027307
-      Data4: -1856569391
-    Path: event:/Dialogue Sounds/Dialogue3
-  _PASoundPath:
-  - Guid:
-      Data1: 458023594
-      Data2: 1202523352
-      Data3: -326271588
-      Data4: -1553909263
-    Path: event:/Dialogue Sounds/PA-Normal
-  - Guid:
-      Data1: -1276921461
-      Data2: 1328330613
-      Data3: -1456441178
-      Data4: -1107311141
-    Path: event:/Dialogue Sounds/PA-Minor
-  - Guid:
-      Data1: -1350579354
-      Data2: 1310290749
-      Data3: 740726951
-      Data4: 1506862592
-    Path: event:/Dialogue Sounds/PA-Celesta
 --- !u!114 &523607763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17915,7 +17864,7 @@ PrefabInstance:
     - target: {fileID: 1826950312984756953, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
       propertyPath: _chatter
       value: 
-      objectReference: {fileID: 523607762}
+      objectReference: {fileID: 0}
     - target: {fileID: 2489978999908863784, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -17927,7 +17876,7 @@ PrefabInstance:
     - target: {fileID: 4188024671252521468, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
       propertyPath: _chatter
       value: 
-      objectReference: {fileID: 523607762}
+      objectReference: {fileID: 0}
     - target: {fileID: 4445525100450859963, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
       propertyPath: _oxygenScript
       value: 
@@ -17967,7 +17916,7 @@ PrefabInstance:
     - target: {fileID: 6868849213617104659, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
       propertyPath: _chatter
       value: 
-      objectReference: {fileID: 523607762}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2475425000f5d9f428010c921a9b362c, type: 3}
 --- !u!1 &1629308636
@@ -20165,7 +20114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ac3f2dfa0dbb3546864737768e78653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _chatter: {fileID: 523607762}
+  _chatter: {fileID: 0}
   _subOxygen: {fileID: 408542782}
 --- !u!4 &1838761902
 Transform:
