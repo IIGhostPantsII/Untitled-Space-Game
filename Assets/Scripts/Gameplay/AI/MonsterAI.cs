@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using FMODUnity;
 
 public class MonsterAI : MonoBehaviour
 {
     public static bool MoleRatDead;
+
+    public FMOD.Studio.EventInstance moveEvent;
+    public FMODUnity.EventReference moveEventPath;
 
     [SerializeField] public List<Vector3> _pointsOfInterest;
     [SerializeField] public Vector3[] _spawnPoints;
@@ -16,9 +20,11 @@ public class MonsterAI : MonoBehaviour
     [SerializeField] private References _references;
     [SerializeField] private Animator _monsterAni;
     [SerializeField] private Animator _hitPlayer;
+    [SerializeField] private Oxygen _subOxygen;
 
     private bool isIdling;
     private bool isMoving;
+    private bool isRunning;
     private bool turnBack;
     private bool enteredChase;
     private bool enteredIdle;
@@ -39,6 +45,7 @@ public class MonsterAI : MonoBehaviour
     private float tempMonsterAcceleration = 0f;
     private float tempMonsterAniSpeed = 0f;
     private float timeOffset = 0f;
+    private float newTime = 0f;
 
     //Floats for IdleMode
     private float xMinPos;
@@ -59,6 +66,7 @@ public class MonsterAI : MonoBehaviour
         int spawnLength = _spawnPoints.Length;
         monsterPathing = GetComponent<NavMeshAgent>();
         Globals.ChangeMonsterState("Idle");
+        moveEvent = RuntimeManager.CreateInstance(moveEventPath);
     }
 
     void Update()
@@ -85,13 +93,14 @@ public class MonsterAI : MonoBehaviour
                 enteredIdle = true;
                 enteredChase = false;
                 enteredPatrol = false;
+                isRunning = false;
                 RandomizeDestination();
             }
 
             // Check if the agent has reached its destination
             if(!monsterPathing.pathPending && monsterPathing.remainingDistance < 0.1f)
             {
-                idleChance = Random.Range(0, 1);
+                idleChance = Random.Range(0, 20);
                 if(idleChance == 0)
                 {   
                     if(rotationTimer <= _rotationDuration)
@@ -127,6 +136,7 @@ public class MonsterAI : MonoBehaviour
                 enteredChase = true;
                 enteredIdle = false;
                 enteredPatrol = false;
+                isRunning = true;
                 monsterPathing.speed = 0;
                 tempMonsterSpeed = 15;
                 tempMonsterAcceleration = 85;
@@ -135,7 +145,7 @@ public class MonsterAI : MonoBehaviour
             }
             else if(Globals.AnimationOver)
             {
-                float newTime = Time.time - timeOffset;
+                newTime = Time.time - timeOffset;
                 monsterPathing.SetDestination(_playerTransform.position);
                 //These numbers scare me I dont remember what they mean
                 _monsterAni.speed = Mathf.Clamp(tempMonsterAniSpeed + ((newTime) * 0.18f), 0.33f, 5f);
@@ -152,9 +162,9 @@ public class MonsterAI : MonoBehaviour
                 enteredPatrol = true;
                 enteredChase = false;
                 enteredIdle = false;
-            }
-
-            
+                isRunning = false;
+                Debug.Log("We In Patrol Baby");
+            }            
         }
     }
     

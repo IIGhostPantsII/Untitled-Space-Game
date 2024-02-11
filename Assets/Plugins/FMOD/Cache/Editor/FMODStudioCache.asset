@@ -67,10 +67,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638428359992289047
+  lastModified: 638432412007766936
   FileSizes:
   - Name: Desktop
-    Value: 778144
+    Value: 832576
   Exists: 1
 --- !u!114 &-7113298487564634590
 MonoBehaviour:
@@ -163,10 +163,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638428359992179419
+  lastModified: 638432394994043129
   FileSizes:
   - Name: Desktop
-    Value: 2178
+    Value: 2224
   Exists: 1
 --- !u!114 &-6408918529084494121
 MonoBehaviour:
@@ -307,6 +307,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 10251
+--- !u!114 &-3543076909680011626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sounds/MonsterFootsteps
+  m_EditorClassIdentifier: 
+  Path: event:/Sounds/MonsterFootsteps
+  Guid:
+    Data1: -1499348842
+    Data2: 1199210466
+    Data3: -2045841992
+    Data4: 728338648
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-3112516764758841759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,12 +557,13 @@ MonoBehaviour:
   - {fileID: 7609577086557519686}
   - {fileID: -8637767959200861140}
   - {fileID: 4119339484419191396}
+  - {fileID: -3543076909680011626}
   EditorParameters: []
   MasterBanks:
   - {fileID: 6422365686012519055}
   StringsBanks:
   - {fileID: -6838026933355539509}
-  cacheTime: 638428359992289047
+  cacheTime: 638432412007766936
   cacheVersion: 131607
 --- !u!114 &1153465909347655859
 MonoBehaviour:
@@ -1012,7 +1040,7 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638421423739165463
+  lastModified: 638432394994013213
   FileSizes:
   - Name: Desktop
     Value: 73248
@@ -1139,7 +1167,7 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638421423739195400
+  lastModified: 638432394994876721
   FileSizes:
   - Name: Desktop
     Value: 710464

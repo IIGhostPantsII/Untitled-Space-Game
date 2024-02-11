@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject _victoryScreen;
     [SerializeField] private GameObject _interactPrompt;
     [SerializeField] private GameObject _camObject;
+    [SerializeField] private SoundPerception _monsterHearing;
     [SerializeField] private PowerButton[] _powerButtons;
 
     // INPUT BOOLS
@@ -192,6 +193,14 @@ public class PlayerController : MonoBehaviour
                 if(Globals.Movement && charController.isGrounded && !isCrouching)
                 {
                     moveEvent.start();
+                    if(isSprinting)
+                    {
+                        _monsterHearing.ActionPerformed(1.1f);
+                    }
+                    else
+                    {
+                        _monsterHearing.ActionPerformed(1f);
+                    }
                     Globals.SpatialSounds(moveEvent, gameObject);
                     Globals.CheckLowpass(moveEvent, _subOxygen);
                     timeSinceLastPlay = 0.0f;
@@ -298,6 +307,7 @@ public class PlayerController : MonoBehaviour
             isJumping = true;
             movement.y = _jumpVelocity;
             jumpStartEvent.start();
+            _monsterHearing.ActionPerformed(1.15f);
             Globals.SpatialSounds(jumpStartEvent, gameObject);
             Globals.CheckLowpass(jumpStartEvent, _subOxygen);
             jumpSound = true;
@@ -308,6 +318,7 @@ public class PlayerController : MonoBehaviour
             if(jumpSound)
             {
                 jumpEndEvent.start();
+                _monsterHearing.ActionPerformed(1.3f);
                 Globals.SpatialSounds(jumpEndEvent, gameObject);
                 Globals.CheckLowpass(jumpEndEvent, _subOxygen);
                 jumpSound = false;
@@ -315,28 +326,27 @@ public class PlayerController : MonoBehaviour
         }
 
         //Cinemachine Attack funcion
-        if(true)
-        {
-            attackTimer += Time.deltaTime;
-            Debug.Log(attackTimer);
-            Vector3 originalPos = transposer.m_FollowOffset;
-            if(attackTimer < 2.5f)
-            {
-                transposer.m_FollowOffset = new Vector3(originalPos.x, originalPos.y, originalPos.z);
-            }
-            else if(attackTimer > 2.5f && attackTimer < 4.5f)
-            {
-                transposer.m_FollowOffset = Vector3.Lerp(originalPos, new Vector3(originalPos.x - 4f, originalPos.y - 3f, originalPos.z + 2f), 2f);
-            }
-            else if(attackTimer > 4.5f && attackTimer < 6.5f)
-            {
-                transposer.m_FollowOffset = Vector3.Lerp(new Vector3(originalPos.x - 4f, originalPos.y - 3f, originalPos.z + 2f), new Vector3(originalPos.x - 8f, originalPos.y, originalPos.z), 2f);
-            }
-        }
-        else
-        {
-            attackTimer = 0f;
-        }
+        //if(true)
+        //{
+        //    attackTimer += Time.deltaTime;
+        //    Vector3 originalPos = transposer.m_FollowOffset;
+        //    if(attackTimer < 2.5f)
+        //    {
+        //        transposer.m_FollowOffset = new Vector3(originalPos.x, originalPos.y, originalPos.z);
+        //    }
+        //    else if(attackTimer > 2.5f && attackTimer < 4.5f)
+        //    {
+        //        transposer.m_FollowOffset = Vector3.Lerp(originalPos, new Vector3(originalPos.x - 4f, originalPos.y - 3f, originalPos.z + 2f), 2f);
+        //    }
+        //    else if(attackTimer > 4.5f && attackTimer < 6.5f)
+        //    {
+        //        transposer.m_FollowOffset = Vector3.Lerp(new Vector3(originalPos.x - 4f, originalPos.y - 3f, originalPos.z + 2f), new Vector3(originalPos.x - 8f, originalPos.y, originalPos.z), 2f);
+        //    }
+        //}
+        //else
+        //{
+        //    attackTimer = 0f;
+        //}
     }
 
     void LateUpdate()

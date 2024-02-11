@@ -100,13 +100,16 @@ public static class Globals
 
     public static void CheckLowpass(FMOD.Studio.EventInstance eventInstance, Oxygen subOxy)
     {
-        if(Oxygen.NoSprint)
+        if(eventInstance.isValid())
         {
-            eventInstance.setParameterByName("Lowpass",(subOxy._oxygenMeter * 220));
-        }
-        else
-        {
-            eventInstance.setParameterByName("Lowpass",22000);
+            if(Oxygen.NoSprint)
+            {
+                eventInstance.setParameterByName("Lowpass",(subOxy._oxygenMeter * 220));
+            }
+            else
+            {
+                eventInstance.setParameterByName("Lowpass",22000);
+            }
         }
     }
 }

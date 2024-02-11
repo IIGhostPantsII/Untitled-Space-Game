@@ -7,8 +7,8 @@ public class AnimationFunctions : MonoBehaviour
 {
     public static string Name;
 
-    public EventReference moveEventPath;
-    private FMOD.Studio.EventInstance moveEvent;
+    public EventReference[] events;
+    private FMOD.Studio.EventInstance eventInstance;
 
     [SerializeField] private GameObject _object;
 
@@ -21,7 +21,7 @@ public class AnimationFunctions : MonoBehaviour
     {
         Globals.UnlockMovement();
     }
-
+    
     public void Destroy()
     {
         Destroy(gameObject);
@@ -44,25 +44,25 @@ public class AnimationFunctions : MonoBehaviour
         animator.Play(name);
     }
     
-    public void PlayFMODEvent()
+    public void PlayFMODEvent(int value)
     {
-        moveEvent = FMODUnity.RuntimeManager.CreateInstance(moveEventPath);
-        moveEvent.start();
+        eventInstance = FMODUnity.RuntimeManager.CreateInstance(events[value]);
+        eventInstance.start();
     }
 
     private void Update()
     {
         // Update the FMOD event instance position based on the GameObject's position
-        if (moveEvent.isValid())
+        if (eventInstance.isValid())
         {
-            moveEvent.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
+            eventInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
         }
     }
 
     public void ReleaseFMODEvent()
     {
-        moveEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        moveEvent.release();
+        eventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        eventInstance.release();
     }
 
     public void PlayOtherAnimation(string clip)
