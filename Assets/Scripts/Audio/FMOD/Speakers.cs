@@ -5,7 +5,7 @@ using FMODUnity;
 
 public class Speakers : MonoBehaviour
 {
-    [SerializeField] private RandomChatter _chatter;
+    // [SerializeField] private RandomChatter _chatter;
     [SerializeField] private Oxygen _subOxygen;
 
     private FMOD.Studio.EventInstance eventInstance;
@@ -24,7 +24,7 @@ public class Speakers : MonoBehaviour
             if (playbackState == FMOD.Studio.PLAYBACK_STATE.STOPPED && DoSomething)
             {
                 DoSomething = false;
-                _chatter.GoAgain();
+                // _chatter.GoAgain();
             }
         }
 

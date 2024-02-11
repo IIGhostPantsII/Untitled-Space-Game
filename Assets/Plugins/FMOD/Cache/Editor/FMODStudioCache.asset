@@ -1,5 +1,33 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9061262441527467591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue5
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue5
+  Guid:
+    Data1: -577348791
+    Data2: 1087395726
+    Data3: 79133109
+    Data4: -175766985
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -8556810787477064417}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8000
 --- !u!114 &-8637767959200861140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28,6 +56,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-8556810787477064417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Dialogue5/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-7968007550661438565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,10 +119,62 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638432032353885973
+  lastModified: 638432626566642210
   FileSizes:
   - Name: Desktop
-    Value: 653920
+    Value: 1170560
+  Exists: 1
+--- !u!114 &-7357870670795919665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue4
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue4
+  Guid:
+    Data1: -199205777
+    Data2: 1151570252
+    Data3: 1443607208
+    Data4: 2016280926
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 2258769812808850534}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2166
+--- !u!114 &-7260192523083101703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/PA-Minor-Opening/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
   Exists: 1
 --- !u!114 &-7113298487564634590
 MonoBehaviour:
@@ -96,34 +200,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-7057765798221238544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Dialogue Sounds/PA-Celesta
-  m_EditorClassIdentifier: 
-  Path: event:/Dialogue Sounds/PA-Celesta
-  Guid:
-    Data1: -1350579354
-    Data2: 1310290749
-    Data3: 740726951
-    Data4: 1506862592
-  Banks:
-  - {fileID: -7964591791849441354}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters:
-  - {fileID: 2755463744275362769}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-6990726477867757227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,10 +267,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638432032315728743
+  lastModified: 638432626565174054
   FileSizes:
   - Name: Desktop
-    Value: 2210
+    Value: 2458
   Exists: 1
 --- !u!114 &-6408918529084494121
 MonoBehaviour:
@@ -251,34 +327,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 577
---- !u!114 &-5798815044608999465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Dialogue Sounds/PA-Minor
-  m_EditorClassIdentifier: 
-  Path: event:/Dialogue Sounds/PA-Minor
-  Guid:
-    Data1: -1276921461
-    Data2: 1328330613
-    Data3: -1456441178
-    Data4: -1107311141
-  Banks:
-  - {fileID: -7964591791849441354}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters:
-  - {fileID: 8852398602007752672}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-5294253419329591628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,6 +383,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2716
+--- !u!114 &-4512635146476590496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/PA-Normal-Opening/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-3112516764758841759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,6 +431,34 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-3089231946209977601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/PA Jingles/PA-Minor-Closing
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/PA Jingles/PA-Minor-Closing
+  Guid:
+    Data1: 391356538
+    Data2: 1242303807
+    Data3: -1047738711
+    Data4: -838473341
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 6034332345075257787}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-3012071330258881105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,6 +562,30 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-1270957063677961436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/PA-Celesta-Closing/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-451681116015055029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -489,7 +613,7 @@ MonoBehaviour:
   - {fileID: 8362275641834377791}
   MinDistance: 1
   MaxDistance: 20
-  Length: 3876
+  Length: 3037
 --- !u!114 &-364162369600267364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -548,9 +672,6 @@ MonoBehaviour:
   - {fileID: -5294253419329591628}
   - {fileID: 1515152268243502298}
   - {fileID: 5134652336758615756}
-  - {fileID: -7057765798221238544}
-  - {fileID: -5798815044608999465}
-  - {fileID: 8928480540026223355}
   - {fileID: -4952014416901435948}
   - {fileID: -451681116015055029}
   - {fileID: -2965522299428628141}
@@ -559,12 +680,20 @@ MonoBehaviour:
   - {fileID: -8637767959200861140}
   - {fileID: 4119339484419191396}
   - {fileID: -6990726477867757227}
+  - {fileID: 1778057848048679981}
+  - {fileID: -9061262441527467591}
+  - {fileID: 2106626189913815525}
+  - {fileID: -7357870670795919665}
+  - {fileID: -3089231946209977601}
+  - {fileID: 3404321586384968918}
+  - {fileID: 2893890516357817353}
+  - {fileID: 5045168027618121695}
   EditorParameters: []
   MasterBanks:
   - {fileID: 6422365686012519055}
   StringsBanks:
   - {fileID: -6838026933355539509}
-  cacheTime: 638432032353885973
+  cacheTime: 638432626566642210
   cacheVersion: 131607
 --- !u!114 &1153465909347655859
 MonoBehaviour:
@@ -642,6 +771,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5087
+--- !u!114 &1778057848048679981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/PA Jingles/PA-Normal-Closing
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/PA Jingles/PA-Normal-Closing
+  Guid:
+    Data1: 1438579479
+    Data2: 1215905436
+    Data3: -2067554175
+    Data4: 415413478
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 2546970608817011362}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &2070513984384087098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -666,7 +823,35 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &2755463744275362769
+--- !u!114 &2106626189913815525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/PA Jingles/PA-Celesta-Opening
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/PA Jingles/PA-Celesta-Opening
+  Guid:
+    Data1: -1350579354
+    Data2: 1310290749
+    Data3: 740726951
+    Data4: 1506862592
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 5176030506455300905}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2258769812808850534
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -676,7 +861,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/PA-Celesta/Lowpass
+  m_Name: parameter:/Dialogue4/Lowpass
   m_EditorClassIdentifier: 
   Name: Lowpass
   StudioPath: 
@@ -690,6 +875,58 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &2546970608817011362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/PA-Normal-Closing/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &2893890516357817353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/PA Jingles/PA-Normal-Opening
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/PA Jingles/PA-Normal-Opening
+  Guid:
+    Data1: 458023594
+    Data2: 1202523352
+    Data3: -326271588
+    Data4: -1553909263
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -4512635146476590496}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &2928972562413695546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -765,6 +1002,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 30348
+--- !u!114 &3404321586384968918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/PA Jingles/PA-Minor-Opening
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/PA Jingles/PA-Minor-Opening
+  Guid:
+    Data1: -1276921461
+    Data2: 1328330613
+    Data3: -1456441178
+    Data4: -1107311141
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -7260192523083101703}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &3516625198368199140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -896,6 +1161,34 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &5045168027618121695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/PA Jingles/PA-Celesta-Closing
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/PA Jingles/PA-Celesta-Closing
+  Guid:
+    Data1: -1254412361
+    Data2: 1135082394
+    Data3: 1034803880
+    Data4: 859599079
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -1270957063677961436}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &5134652336758615756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -924,6 +1217,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1438
+--- !u!114 &5176030506455300905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/PA-Celesta-Opening/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &5568616175274466761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1002,7 +1319,7 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &6309417162540684132
+--- !u!114 &6034332345075257787
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1012,7 +1329,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Hiss/Lowpass
+  m_Name: parameter:/PA-Minor-Closing/Lowpass
   m_EditorClassIdentifier: 
   Name: Lowpass
   StudioPath: 
@@ -1026,7 +1343,7 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &6331829871894154885
+--- !u!114 &6309417162540684132
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1036,7 +1353,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/PA-Normal/Lowpass
+  m_Name: parameter:/Hiss/Lowpass
   m_EditorClassIdentifier: 
   Name: Lowpass
   StudioPath: 
@@ -1065,7 +1382,7 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638432032315708908
+  lastModified: 638432626565154220
   FileSizes:
   - Name: Desktop
     Value: 73248
@@ -1192,60 +1509,8 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638432032344204057
+  lastModified: 638432626565694858
   FileSizes:
   - Name: Desktop
     Value: 2424288
   Exists: 1
---- !u!114 &8852398602007752672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/PA-Minor/Lowpass
-  m_EditorClassIdentifier: 
-  Name: Lowpass
-  StudioPath: 
-  Min: 0
-  Max: 22000
-  Default: 22000
-  ID:
-    data1: 2238647653
-    data2: 2004388847
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &8928480540026223355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Dialogue Sounds/PA-Normal
-  m_EditorClassIdentifier: 
-  Path: event:/Dialogue Sounds/PA-Normal
-  Guid:
-    Data1: 458023594
-    Data2: 1202523352
-    Data3: -326271588
-    Data4: -1553909263
-  Banks:
-  - {fileID: -7964591791849441354}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters:
-  - {fileID: 6331829871894154885}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
