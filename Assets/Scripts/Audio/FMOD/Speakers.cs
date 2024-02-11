@@ -6,7 +6,7 @@ using FMODUnity;
 public class Speakers : MonoBehaviour
 {
     [SerializeField] private RandomChatter _chatter;
-    [SerializeField] private Oxygen _oxygen;
+    [SerializeField] private Oxygen _subOxygen;
 
     private FMOD.Studio.EventInstance eventInstance;
 
@@ -30,7 +30,7 @@ public class Speakers : MonoBehaviour
 
         if(Oxygen.NoSprint)
         {
-            eventInstance.setParameterByName("Lowpass",(_oxygen._oxygenMeter * 220));
+            eventInstance.setParameterByName("Lowpass",(_subOxygen._oxygenMeter * 220));
         }
         else
         {

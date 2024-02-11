@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{5b9eeb62-6e04-441a-b471-a0ce198e729c}">
+		<property name="assetPath">
+			<value>EVT_09_090300_0140.dspadpcm.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>32.7280006</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.5350158885358107</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6e23de32-7231-43cf-b241-696699a1b37e}</destination>
+		</relationship>
+	</object>
+</objects>

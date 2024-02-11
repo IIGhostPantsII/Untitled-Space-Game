@@ -10,6 +10,7 @@ TagManager:
   - Wall
   - Button
   - TiledGround
+  - LowGravTrigger
   layers:
   - Default
   - TransparentFX

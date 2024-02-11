@@ -29,7 +29,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _groundCheckRadius = 1.0f;
     [SerializeField] private float _mouseSensitivity = 5f;
     [SerializeField] private float _jumpVelocity = 1;
+    [SerializeField] private float _jumpVelocityLowGrav = 1;
     [SerializeField] private float _gravity = 0.5f;
+    [SerializeField] private float _gravityLowGrav = 0.5f;
     [SerializeField] private float _groundedGravity = 0.1f;
     [SerializeField] private Transform _cameraTransform;
     [SerializeField] private Oxygen _oxygen;
@@ -57,6 +59,7 @@ public class PlayerController : MonoBehaviour
 
     // Other
     private bool delay;
+    private bool isInLowGravity;
     private bool isJumping;
     private bool holdingSprint;
     private bool jumpSound = false;
@@ -305,7 +308,7 @@ public class PlayerController : MonoBehaviour
         if(jumpPressed && !isJumping && charController.isGrounded)
         {
             isJumping = true;
-            movement.y = _jumpVelocity;
+            movement.y = isInLowGravity ? _jumpVelocityLowGrav : _jumpVelocity;
             jumpStartEvent.start();
             _monsterHearing.ActionPerformed(1.15f);
             Globals.SpatialSounds(jumpStartEvent, gameObject);
@@ -354,23 +357,19 @@ public class PlayerController : MonoBehaviour
         charController.Move(movement * (_speed * Time.deltaTime));
 
         HandleGravity();
-        
-        Debug.Log($@"The player <color=red>{charController.isGrounded switch
-        {
-            true => "is",
-            false => "is not"
-        }}</color> grounded");
     }
 
     private void HandleGravity()
     {
+        float gravity = isInLowGravity ? _gravityLowGrav : _gravity;
+
         if(charController.isGrounded)
         {
             movement.y = -_groundedGravity;
         }
         else
         {
-            movement.y -= _gravity * Time.deltaTime;
+            movement.y -= gravity * Time.deltaTime;
         }
     }
 
@@ -522,6 +521,11 @@ public class PlayerController : MonoBehaviour
         {
             areaTrigger = other.gameObject.GetComponent<AreaTriggers>();
         }
+
+        if (other.gameObject.CompareTag("LowGravTrigger"))
+        {
+            isInLowGravity = true;
+        }
     }
 
     //So the footstep sounds changes
@@ -546,5 +550,15 @@ public class PlayerController : MonoBehaviour
             canInteract = false;
             currentButton = null;
         }
+        
+        if (other.gameObject.CompareTag("LowGravTrigger"))
+        {
+            isInLowGravity = false;
+        }
+    }
+
+    public void OpenFeedbackForm()
+    {
+        Application.OpenURL("https://forms.gle/j7rSG9gnh5Kt5FGYA");
     }
 }

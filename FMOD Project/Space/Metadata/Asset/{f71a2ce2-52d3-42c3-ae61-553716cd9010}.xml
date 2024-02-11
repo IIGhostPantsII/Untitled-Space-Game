@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{f71a2ce2-52d3-42c3-ae61-553716cd9010}">
+		<property name="assetPath">
+			<value>Descole/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6e23de32-7231-43cf-b241-696699a1b37e}</destination>
+		</relationship>
+	</object>
+</objects>
