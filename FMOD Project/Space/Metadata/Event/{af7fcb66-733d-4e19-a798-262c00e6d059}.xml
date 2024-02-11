@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{af7fcb66-733d-4e19-a798-262c00e6d059}">
 		<property name="name">
-			<value>PA-Celesta</value>
+			<value>PA-Celesta-Opening</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
 		</property>
 		<relationship name="folder">
-			<destination>{13b2fb73-40bf-4bb3-ad46-0d13979a9746}</destination>
+			<destination>{791372bb-5cf0-459d-8563-212364946fdb}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{e15f6607-e821-4faf-a5d4-5095f737579f}</destination>
@@ -98,7 +98,7 @@
 	</object>
 	<object class="MultiSound" id="{9ab2b807-178c-4859-90e8-44e65b8dea28}">
 		<relationship name="sounds">
-			<destination>{3205fa90-8405-442f-b094-087355742cb3}</destination>
+			<destination>{f0a34ad9-85e0-425e-a979-6293a162a900}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{8ddebacc-f620-4232-b8a6-7632a5a65c1d}">
@@ -116,13 +116,9 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{bd5b59ab-332b-4e1b-bb9b-b3fee72e71ce}" />
-	<object class="MultiSound" id="{3205fa90-8405-442f-b094-087355742cb3}">
-		<property name="playlistMode">
-			<value>3</value>
-		</property>
-		<relationship name="sounds">
-			<destination>{8242de0f-9922-4d3c-bf2a-7d22d3ba4ed6}</destination>
-			<destination>{618080c8-4512-4e57-8da2-ed28af7e6520}</destination>
+	<object class="SingleSound" id="{f0a34ad9-85e0-425e-a979-6293a162a900}">
+		<relationship name="audioFile">
+			<destination>{f014e4ab-47ff-4ce9-abfd-2a83403c19ad}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{1957776a-8fc8-4008-90a2-54cd61794cc4}" />
@@ -159,16 +155,6 @@
 		<property name="soundSize">
 			<value>6</value>
 		</property>
-	</object>
-	<object class="SingleSound" id="{8242de0f-9922-4d3c-bf2a-7d22d3ba4ed6}">
-		<relationship name="audioFile">
-			<destination>{f014e4ab-47ff-4ce9-abfd-2a83403c19ad}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{618080c8-4512-4e57-8da2-ed28af7e6520}">
-		<relationship name="audioFile">
-			<destination>{ad823e4f-26d3-43e5-b2ab-4f3f077e55cb}</destination>
-		</relationship>
 	</object>
 	<object class="Automator" id="{96049ff4-f418-4894-b485-6aa151a1839d}">
 		<property name="nameOfPropertyBeingAutomated">

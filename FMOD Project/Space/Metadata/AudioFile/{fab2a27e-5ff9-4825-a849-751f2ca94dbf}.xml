@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{fab2a27e-5ff9-4825-a849-751f2ca94dbf}">
+		<property name="assetPath">
+			<value>Descole/10_100160_0080.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>32.7280006</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>7.7933268149596673</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6e23de32-7231-43cf-b241-696699a1b37e}</destination>
+		</relationship>
+	</object>
+</objects>

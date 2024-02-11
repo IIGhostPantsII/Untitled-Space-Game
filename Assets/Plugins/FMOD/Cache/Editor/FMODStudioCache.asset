@@ -67,10 +67,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638429625479428841
+  lastModified: 638432032353885973
   FileSizes:
   - Name: Desktop
-    Value: 778144
+    Value: 653920
   Exists: 1
 --- !u!114 &-7113298487564634590
 MonoBehaviour:
@@ -124,6 +124,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-6990726477867757227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue3
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue3
+  Guid:
+    Data1: -181821037
+    Data2: 1283681386
+    Data3: 1240027307
+    Data4: -1856569391
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 4466410859859481881}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3882
 --- !u!114 &-6948173380388079131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,10 +191,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638429625477935784
+  lastModified: 638432032315728743
   FileSizes:
   - Name: Desktop
-    Value: 2178
+    Value: 2210
   Exists: 1
 --- !u!114 &-6408918529084494121
 MonoBehaviour:
@@ -194,7 +222,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 43003
+  Length: 162866
 --- !u!114 &-6276951058794266847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,14 +327,14 @@ MonoBehaviour:
     Data4: 260084267
   Banks:
   - {fileID: -7964591791849441354}
-  IsStream: 1
+  IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters:
   - {fileID: 1369324665626644166}
   MinDistance: 1
   MaxDistance: 20
-  Length: 10251
+  Length: 2716
 --- !u!114 &-3112516764758841759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -461,7 +489,7 @@ MonoBehaviour:
   - {fileID: 8362275641834377791}
   MinDistance: 1
   MaxDistance: 20
-  Length: 9024
+  Length: 3876
 --- !u!114 &-364162369600267364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,12 +558,13 @@ MonoBehaviour:
   - {fileID: 7609577086557519686}
   - {fileID: -8637767959200861140}
   - {fileID: 4119339484419191396}
+  - {fileID: -6990726477867757227}
   EditorParameters: []
   MasterBanks:
   - {fileID: 6422365686012519055}
   StringsBanks:
   - {fileID: -6838026933355539509}
-  cacheTime: 638429625479428841
+  cacheTime: 638432032353885973
   cacheVersion: 131607
 --- !u!114 &1153465909347655859
 MonoBehaviour:
@@ -816,6 +845,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3727
+--- !u!114 &4466410859859481881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Dialogue3/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &4529178485175749104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1012,7 +1065,7 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638411230048718519
+  lastModified: 638432032315708908
   FileSizes:
   - Name: Desktop
     Value: 73248
@@ -1139,10 +1192,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638416200232828397
+  lastModified: 638432032344204057
   FileSizes:
   - Name: Desktop
-    Value: 710464
+    Value: 2424288
   Exists: 1
 --- !u!114 &8852398602007752672
 MonoBehaviour:

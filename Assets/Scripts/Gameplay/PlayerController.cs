@@ -541,4 +541,9 @@ public class PlayerController : MonoBehaviour
             isInLowGravity = false;
         }
     }
+
+    public void OpenFeedbackForm()
+    {
+        Application.OpenURL("https://forms.gle/j7rSG9gnh5Kt5FGYA");
+    }
 }
