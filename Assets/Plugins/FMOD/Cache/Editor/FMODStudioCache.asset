@@ -195,10 +195,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638432772332404384
+  lastModified: 638433014326300045
   FileSizes:
   - Name: Desktop
-    Value: 506976
+    Value: 560928
   Exists: 1
 --- !u!114 &-7709627357560079285
 MonoBehaviour:
@@ -439,10 +439,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638432954281292145
+  lastModified: 638433014325179328
   FileSizes:
   - Name: Desktop
-    Value: 3244
+    Value: 3290
   Exists: 1
 --- !u!114 &-6626345060655561047
 MonoBehaviour:
@@ -631,6 +631,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-4884954472242603237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sounds/MonsterFootsteps
+  m_EditorClassIdentifier: 
+  Path: event:/Sounds/MonsterFootsteps
+  Guid:
+    Data1: 2033535378
+    Data2: 1250723429
+    Data3: 29627805
+    Data4: -415859203
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-4512635146476590496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1297,12 +1324,13 @@ MonoBehaviour:
   - {fileID: -5266405579037399536}
   - {fileID: 4797474193480878223}
   - {fileID: 18963236150629117}
+  - {fileID: -4884954472242603237}
   EditorParameters: []
   MasterBanks:
   - {fileID: 6422365686012519055}
   StringsBanks:
   - {fileID: -6838026933355539509}
-  cacheTime: 638432987621549596
+  cacheTime: 638433014326300045
   cacheVersion: 131607
 --- !u!114 &18963236150629117
 MonoBehaviour:
@@ -2279,7 +2307,7 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638432954281272305
+  lastModified: 638433014325154299
   FileSizes:
   - Name: Desktop
     Value: 73248

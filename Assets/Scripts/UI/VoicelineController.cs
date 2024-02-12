@@ -93,7 +93,15 @@ public class VoicelineController : MonoBehaviour
                 
                 try
                 {
-                    _subtitles.SetText(_voicelines[tempSound][1].ToString());
+                    if (!string.IsNullOrEmpty(_voicelines[tempSound][2].ToString()))
+                    {
+                        _subtitles.SetText("[" + _voicelines[tempSound][2] + "] " + _voicelines[tempSound][1].ToString());
+                    }
+                    else
+                    {
+                        _subtitles.SetText(_voicelines[tempSound][1].ToString());
+                    }
+                    
                     RuntimeManager.StudioSystem.getEvent($"event:/Dialogue Sounds/Dialogue/{tempSound}", out var desc);
                     if (!desc.isValid())
                         tempSound = "err_not_recorded";
@@ -124,11 +132,27 @@ public class VoicelineController : MonoBehaviour
         {
             if (fakeLine)
             {
-                _subtitles.SetText(_voicelines[sound][1].ToString() + "\n(Failed to load voiceline <color=red>" + fakeSound + "</color>)");
+                if (!string.IsNullOrEmpty(_voicelines[sound][2].ToString()))
+                {
+                    _subtitles.SetText("[" + _voicelines[sound][2] + "] " + _voicelines[sound][1].ToString() +
+                                       "\n(Failed to load voiceline <color=red>" + fakeSound + "</color>)");
+                }
+                else
+                {
+                    _subtitles.SetText(_voicelines[sound][1].ToString() +
+                                       "\n(Failed to load voiceline <color=red>" + fakeSound + "</color>)");
+                }
             }
             else
             {
-                _subtitles.SetText(_voicelines[sound][1].ToString());
+                if (!string.IsNullOrEmpty(_voicelines[sound][2].ToString()))
+                {
+                    _subtitles.SetText("[" + _voicelines[sound][2] + "] " + _voicelines[sound][1].ToString());
+                }
+                else
+                {
+                    _subtitles.SetText(_voicelines[sound][1].ToString());
+                }
             }
         
             RuntimeManager.StudioSystem.getEvent($"event:/Dialogue Sounds/Dialogue/{sound}", out var desc);

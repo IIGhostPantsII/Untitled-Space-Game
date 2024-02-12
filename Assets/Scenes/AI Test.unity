@@ -16425,7 +16425,9 @@ MonoBehaviour:
   _groundCheckRadius: 1
   _mouseSensitivity: 0.04
   _jumpVelocity: 1
+  _jumpVelocityLowGrav: 1
   _gravity: 2
+  _gravityLowGrav: 0.5
   _groundedGravity: 0.1
   _cameraTransform: {fileID: 963194228}
   _oxygen: {fileID: 211698226}
@@ -23017,10 +23019,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveEventPath:
     Guid:
-      Data1: -1499348842
-      Data2: 1199210466
-      Data3: -2045841992
-      Data4: 728338648
+      Data1: 2033535378
+      Data2: 1250723429
+      Data3: 29627805
+      Data4: -415859203
     Path: event:/Sounds/MonsterFootsteps
   _pointsOfInterest: []
   _spawnPoints:

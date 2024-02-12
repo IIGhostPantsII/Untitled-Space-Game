@@ -1,27 +1,28 @@
-In-Game Name	Description/Context	Dialogue
-err_fake_voiceline	Debug dialogue that plays when the game tries to load a voiceline that doesn't exist in this document.	Sorry, the voiceline you tried to play doesn't actually exist.
-err_not_recorded	Debug dialogue that plays when the voiceline exists in this document, but hasn't actually been recorded yet.	This voiceline hasn't been recorded yet.
-msg_descole_test1	Test dialogue that's just stolen voicelines from the Professor Layton games.	I <i>knew</i> you would be an asset in my battle against them!
-msg_descole_test2	^^^	What an ugly, little man you are!
-msg_descole_test3	^^^	Apparently, I made a pact with a small-minded dullard!
-msg_descole_test4	^^^	The puzzle is clearly flawed.
-msg_descole_test5_1	Test dialogue to make sure that multiple sentence voicelines work properly.	I have been waiting patiently for the perfect moment to make my grand entrance.
-msg_descole_test5_2	^^^	The final act belongs to <i>me!</i>
-msg_descole_test6	The neat thing is, this one doesn't actually exist. Its sole purpose is to trigger the voiceline not recorded voiceline.	Surprise, assholes! Turns out I was the Big Dog the whole time!
-msg_descole_test7_1	Descole's opening monalogue in Professor Layton and the Last Specter. Mostly just to test how flexible multiple voicelines are.	Long ago, in a lawless age,
-msg_descole_test7_2	^^^	a pack of bandits invaded a small village.
-msg_descole_test7_3	^^^	Amidst the chaos, a terrified young farm girl
-msg_descole_test7_4	^^^	played her flute to drown out the madness.
-msg_descole_test7_5	^^^	As the music spiraled high into the sky,
-msg_descole_test7_6	^^^	a giant specter appeared above her.
-msg_descole_test7_7	^^^	She begged the specter to destroy the bandits, and it swiftly obeyed.
-msg_descole_test7_8	^^^	The town was saved;
-msg_descole_test7_9	^^^	and the specter vanished just as quickly as it had appeared.
-msg_descole_test7_10	^^^	But the farm girl knew that in times of danger,
-msg_descole_test7_11	^^^	she needed only to play the flute,
-msg_descole_test7_12	^^^	and the specter would appear again.
-msg_descole_test7_13	^^^	
-msg_descole_test7_14	^^^	<i>[Book shuts]</i>
-msg_descole_test7_15	^^^	A quaint tale, wouldn't you say?
-msg_descole_test7_16	^^^	I think the time has come
-msg_descole_test7_17	^^^	for us to pen the next chapter...
+In-Game Name	Description/Context	Dialogue	Speaker
+err_fake_voiceline	Debug dialogue that plays when the game tries to load a voiceline that doesn't exist in this document.	Sorry, the voiceline you tried to play doesn't actually exist.	Mabel
+err_not_recorded	Debug dialogue that plays when the voiceline exists in this document, but hasn't actually been recorded yet.	This voiceline hasn't been recorded yet.	Mabel
+Descole Test Lines			
+msg_descole_test1	Test dialogue that's just stolen voicelines from the Professor Layton games.	I <i>knew</i> you would be an asset in my battle against them!	Descole
+msg_descole_test2	^^^	What an ugly, little man you are!	Descole
+msg_descole_test3	^^^	Apparently, I made a pact with a small-minded dullard!	Descole
+msg_descole_test4	^^^	The puzzle is clearly flawed.	Descole
+msg_descole_test5_1	Test dialogue to make sure that multiple sentence voicelines work properly.	I have been waiting patiently for the perfect moment to make my grand entrance.	Descole
+msg_descole_test5_2	^^^	The final act belongs to <i>me!</i>	Descole
+msg_descole_test6	The neat thing is, this one doesn't actually exist. Its sole purpose is to trigger the voiceline not recorded voiceline.	Surprise, assholes! Turns out I was the Big Dog the whole time!	Descole
+msg_descole_test7_1	Descole's opening monalogue in Professor Layton and the Last Specter. Mostly just to test how flexible multiple voicelines are.	Long ago, in a lawless age,	Descole
+msg_descole_test7_2	^^^	a pack of bandits invaded a small village.	Descole
+msg_descole_test7_3	^^^	Amidst the chaos, a terrified young farm girl	Descole
+msg_descole_test7_4	^^^	played her flute to drown out the madness.	Descole
+msg_descole_test7_5	^^^	As the music spiraled high into the sky,	Descole
+msg_descole_test7_6	^^^	a giant specter appeared above her.	Descole
+msg_descole_test7_7	^^^	She begged the specter to destroy the bandits, and it swiftly obeyed.	Descole
+msg_descole_test7_8	^^^	The town was saved;	Descole
+msg_descole_test7_9	^^^	and the specter vanished just as quickly as it had appeared.	Descole
+msg_descole_test7_10	^^^	But the farm girl knew that in times of danger,	Descole
+msg_descole_test7_11	^^^	she needed only to play the flute,	Descole
+msg_descole_test7_12	^^^	and the specter would appear again.	Descole
+msg_descole_test7_13	^^^		
+msg_descole_test7_14	^^^	<i>[Book shuts]</i>	
+msg_descole_test7_15	^^^	A quaint tale, wouldn't you say?	Descole
+msg_descole_test7_16	^^^	I think the time has come	Descole
+msg_descole_test7_17	^^^	for us to pen the next chapter...	Descole
