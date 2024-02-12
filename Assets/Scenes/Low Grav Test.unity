@@ -2075,7 +2075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _oxygenMeter: 100
-  _normalDepletionSpeed: 1
+  _normalDepletionSpeed: 0
   _crouchDepletionSpeed: 0.5
   _sprintDepletionSpeed: 2.5
   goodState: {r: 0, g: 1, b: 1, a: 1}
@@ -7232,9 +7232,9 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 2.95
+  m_characterSpacing: -2
   m_wordSpacing: 0
-  m_lineSpacing: -81.87
+  m_lineSpacing: -75
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0

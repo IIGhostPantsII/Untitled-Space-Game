@@ -31,7 +31,7 @@ public class VoicelineController : MonoBehaviour
     void PlaySound()
     {
         System.Random rand = new System.Random();
-        StartCoroutine(PlayVoiceline($"msg_descole_test{Random.Range(1, 8)}"));
+        StartCoroutine(PlayVoiceline($"msg_descole_test{Random.Range(1, 9)}"));
     }
 
     public IEnumerator PlayVoiceline(string sound)
@@ -43,8 +43,16 @@ public class VoicelineController : MonoBehaviour
             yield break;
         }
 
+        bool fakeLine = false;
+        string fakeSound = "The error detection is broken somehow :/";
         _usedVoiceLines.Add(sound);
-        if (!_voicelines.ContainsKey(sound) && !_voicelines.ContainsKey(sound + "_1")) sound = "err_fake_voiceline";
+
+        if (!_voicelines.ContainsKey(sound) && !_voicelines.ContainsKey(sound + "_1"))
+        {
+            fakeLine = true;
+            fakeSound = sound;
+            sound = "err_fake_voiceline";
+        }
         
         _isPlaying = true;
         
@@ -114,7 +122,14 @@ public class VoicelineController : MonoBehaviour
         }
         else
         {
-            _subtitles.SetText(_voicelines[sound][1].ToString());
+            if (fakeLine)
+            {
+                _subtitles.SetText(_voicelines[sound][1].ToString() + "\n(Failed to load voiceline <color=red>" + fakeSound + "</color>)");
+            }
+            else
+            {
+                _subtitles.SetText(_voicelines[sound][1].ToString());
+            }
         
             RuntimeManager.StudioSystem.getEvent($"event:/Dialogue Sounds/Dialogue/{sound}", out var desc);
             if (!desc.isValid())

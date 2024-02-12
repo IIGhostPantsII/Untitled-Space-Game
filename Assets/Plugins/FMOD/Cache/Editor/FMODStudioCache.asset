@@ -606,7 +606,7 @@ MonoBehaviour:
   - {fileID: 3035009134958484832}
   MinDistance: 1
   MaxDistance: 20
-  Length: 2800
+  Length: 3180
 --- !u!114 &-4971998802340344541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1077,7 +1077,7 @@ MonoBehaviour:
   - {fileID: -9044422965976110235}
   MinDistance: 1
   MaxDistance: 20
-  Length: 3000
+  Length: 2640
 --- !u!114 &-1606548628467542175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1171,9 +1171,10 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
-  Parameters: []
+  Parameters:
+  - {fileID: 8307734475572994736}
   MinDistance: 1
   MaxDistance: 20
   Length: 3960
@@ -1301,7 +1302,7 @@ MonoBehaviour:
   - {fileID: 6422365686012519055}
   StringsBanks:
   - {fileID: -6838026933355539509}
-  cacheTime: 638432958164033376
+  cacheTime: 638432987621549596
   cacheVersion: 131607
 --- !u!114 &18963236150629117
 MonoBehaviour:
@@ -2438,10 +2439,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Voices.bank
   Name: Voices
   StudioPath: bank:/Voices
-  lastModified: 638432958164033376
+  lastModified: 638432987621549596
   FileSizes:
   - Name: Desktop
-    Value: 1471360
+    Value: 1472288
   Exists: 1
 --- !u!114 &8295062745087103246
 MonoBehaviour:
@@ -2470,6 +2471,30 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &8307734475572994736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/err_fake_voiceline/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &8338707156332072780
 MonoBehaviour:
   m_ObjectHideFlags: 0

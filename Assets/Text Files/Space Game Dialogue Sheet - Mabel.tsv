@@ -7,7 +7,7 @@ msg_descole_test3	^^^	Apparently, I made a pact with a small-minded dullard!
 msg_descole_test4	^^^	The puzzle is clearly flawed.
 msg_descole_test5_1	Test dialogue to make sure that multiple sentence voicelines work properly.	I have been waiting patiently for the perfect moment to make my grand entrance.
 msg_descole_test5_2	^^^	The final act belongs to <i>me!</i>
-msg_descole_test6	The neat thing is, this one doesn't actually exist. Its sole purpose is to trigger the voiceline not recorded voiceline.	Surprise, assholes! Turns out <i>I</i> was the Big Dog the whole time!
+msg_descole_test6	The neat thing is, this one doesn't actually exist. Its sole purpose is to trigger the voiceline not recorded voiceline.	Surprise, assholes! Turns out I was the Big Dog the whole time!
 msg_descole_test7_1	Descole's opening monalogue in Professor Layton and the Last Specter. Mostly just to test how flexible multiple voicelines are.	Long ago, in a lawless age,
 msg_descole_test7_2	^^^	a pack of bandits invaded a small village.
 msg_descole_test7_3	^^^	Amidst the chaos, a terrified young farm girl
