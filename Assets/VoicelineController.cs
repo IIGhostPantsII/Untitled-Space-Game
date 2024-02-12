@@ -108,13 +108,6 @@ public class VoicelineController : MonoBehaviour
                     _player);
 
                 yield return new WaitForSeconds(Mathf.Max((voicelineMilis / 1000f) - 0.075f, 0));
-                
-                // instance.getPlaybackState(out state);
-                // while (state != PLAYBACK_STATE.STOPPING && state != PLAYBACK_STATE.STOPPED)
-                // {
-                //     yield return null;
-                //     instance.getPlaybackState(out state);
-                // }
 
                 currentLine += 1;
             }
