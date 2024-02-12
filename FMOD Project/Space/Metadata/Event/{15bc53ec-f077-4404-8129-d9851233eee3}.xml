@@ -123,11 +123,11 @@
 	</object>
 	<object class="MultiSound" id="{dbead62a-5535-4bde-86db-9b29d3aea92f}">
 		<relationship name="sounds">
-			<destination>{17bc5f3a-f4e7-4d2e-8f20-cac4f1d52086}</destination>
-			<destination>{41d4dd42-b2bf-42f1-ab20-e67f335af0f1}</destination>
-			<destination>{7d3cdb87-225b-45f9-aa84-8134d8690dfc}</destination>
-			<destination>{88bd267c-d0c1-4162-8d14-f807632cb727}</destination>
-			<destination>{dcdc4068-a530-42b7-af0a-6761edc98697}</destination>
+			<destination>{494a54a0-db39-400b-8b28-550528bc6799}</destination>
+			<destination>{288f99c6-755d-4110-ad5f-a0267060da06}</destination>
+			<destination>{9f6218c1-0b68-400a-ad64-155616fa2d89}</destination>
+			<destination>{dd11eb1a-a0fb-4373-b54b-4c2eed2180fe}</destination>
+			<destination>{bbe31c5c-22d5-4054-aed0-1ecc43c2f1c0}</destination>
 		</relationship>
 	</object>
 	<object class="SilenceSound" id="{e120ae8f-d5f8-4701-945d-9f6cae047cd7}" />
@@ -171,44 +171,29 @@
 			<value>8</value>
 		</property>
 	</object>
-	<object class="EventSound" id="{17bc5f3a-f4e7-4d2e-8f20-cac4f1d52086}">
-		<relationship name="parameters">
-			<destination>{4ed44f93-e3cb-40da-b7eb-6601d4358aec}</destination>
-		</relationship>
+	<object class="EventSound" id="{494a54a0-db39-400b-8b28-550528bc6799}">
 		<relationship name="event">
-			<destination>{a95480a0-ae75-4d9c-9412-8a09a12ecba6}</destination>
+			<destination>{c89bd825-df19-4066-9fad-4d10c896c9c6}</destination>
 		</relationship>
 	</object>
-	<object class="EventSound" id="{41d4dd42-b2bf-42f1-ab20-e67f335af0f1}">
-		<relationship name="parameters">
-			<destination>{4fe1bc86-820a-4915-8175-aa9c48e90947}</destination>
-		</relationship>
+	<object class="EventSound" id="{288f99c6-755d-4110-ad5f-a0267060da06}">
 		<relationship name="event">
-			<destination>{b115ff02-a384-45c8-9ef5-edb02b92800f}</destination>
+			<destination>{2a648d19-7c93-4d27-ba2a-f480b73bedcd}</destination>
 		</relationship>
 	</object>
-	<object class="EventSound" id="{7d3cdb87-225b-45f9-aa84-8134d8690dfc}">
-		<relationship name="parameters">
-			<destination>{01e799de-b679-49ae-9637-3624568000ae}</destination>
-		</relationship>
+	<object class="EventSound" id="{9f6218c1-0b68-400a-ad64-155616fa2d89}">
 		<relationship name="event">
-			<destination>{f529a193-6c6a-4c83-ab50-e949d1ff5691}</destination>
+			<destination>{57792252-39f4-4485-92ce-c64ccf5deb70}</destination>
 		</relationship>
 	</object>
-	<object class="EventSound" id="{88bd267c-d0c1-4162-8d14-f807632cb727}">
-		<relationship name="parameters">
-			<destination>{c4190f31-f1a1-4120-9be8-7efad60a4430}</destination>
-		</relationship>
+	<object class="EventSound" id="{dd11eb1a-a0fb-4373-b54b-4c2eed2180fe}">
 		<relationship name="event">
-			<destination>{f4205c6f-914c-44a3-a8b2-0b565e012e78}</destination>
+			<destination>{d7c67006-7285-4439-b6d9-135eb1c42d73}</destination>
 		</relationship>
 	</object>
-	<object class="EventSound" id="{dcdc4068-a530-42b7-af0a-6761edc98697}">
-		<relationship name="parameters">
-			<destination>{b8d23216-5dbe-49dc-a3c3-608b0d9d0068}</destination>
-		</relationship>
+	<object class="EventSound" id="{bbe31c5c-22d5-4054-aed0-1ecc43c2f1c0}">
 		<relationship name="event">
-			<destination>{dd965b49-578e-40d0-b579-b704370286f5}</destination>
+			<destination>{58a98a4b-1e0b-41c5-81b7-8149c8fa8dc9}</destination>
 		</relationship>
 	</object>
 	<object class="Automator" id="{f3ef81cc-47ce-4c1a-86ae-2f4de4012faa}">
@@ -217,31 +202,6 @@
 		</property>
 		<relationship name="automationCurves">
 			<destination>{963ba7bb-9a9e-4c79-bfb5-3d0be806a782}</destination>
-		</relationship>
-	</object>
-	<object class="ParameterProperty" id="{4ed44f93-e3cb-40da-b7eb-6601d4358aec}">
-		<relationship name="parameter">
-			<destination>{8fc249ca-482e-40e2-a6c3-8d774f061d70}</destination>
-		</relationship>
-	</object>
-	<object class="ParameterProperty" id="{4fe1bc86-820a-4915-8175-aa9c48e90947}">
-		<relationship name="parameter">
-			<destination>{ebff74c3-70dc-4c3a-a2b6-5484a732670a}</destination>
-		</relationship>
-	</object>
-	<object class="ParameterProperty" id="{01e799de-b679-49ae-9637-3624568000ae}">
-		<relationship name="parameter">
-			<destination>{6386941b-76bf-489e-bf4d-af8a21523fed}</destination>
-		</relationship>
-	</object>
-	<object class="ParameterProperty" id="{c4190f31-f1a1-4120-9be8-7efad60a4430}">
-		<relationship name="parameter">
-			<destination>{1b30b796-07d2-41fd-8bc5-a3ceb1082852}</destination>
-		</relationship>
-	</object>
-	<object class="ParameterProperty" id="{b8d23216-5dbe-49dc-a3c3-608b0d9d0068}">
-		<relationship name="parameter">
-			<destination>{1bc13a63-7013-4e7b-8a62-ad190989af5b}</destination>
 		</relationship>
 	</object>
 	<object class="AutomationCurve" id="{963ba7bb-9a9e-4c79-bfb5-3d0be806a782}">
