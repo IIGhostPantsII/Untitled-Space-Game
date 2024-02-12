@@ -7171,7 +7171,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -431.314}
-  m_SizeDelta: {x: 801.6508, y: 156.5782}
+  m_SizeDelta: {x: 1284.3972, y: 156.5782}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &668409487
 MonoBehaviour:
@@ -7222,12 +7222,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 71.88
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -14880,7 +14880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _subtitles: {fileID: 668409487}
-  _voicelineTSV: {fileID: -5083506665051972701, guid: 181b64b65beabbb48ba4b09b0c2d6d8b, type: 3}
+  _voicelineTSV: {fileID: 5853663468407258516, guid: 2cf470be3c883454d954c88d99a7a44c, type: 3}
 --- !u!1 &1360455646
 GameObject:
   m_ObjectHideFlags: 0

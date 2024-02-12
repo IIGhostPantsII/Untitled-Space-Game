@@ -34,7 +34,7 @@ public class VoicelineController : MonoBehaviour
         StartCoroutine(PlayVoiceline($"msg_descole_test{Random.Range(1, 8)}"));
     }
 
-    private IEnumerator PlayVoiceline(string sound)
+    public IEnumerator PlayVoiceline(string sound)
     {
         if (_isPlaying) yield break;
         if (_usedVoiceLines.Contains(sound))
@@ -80,6 +80,7 @@ public class VoicelineController : MonoBehaviour
         {
             while (true)
             {
+                int voicelineMilis = 0;
                 string tempSound = sound + "_" + currentLine;
                 
                 try
@@ -88,8 +89,13 @@ public class VoicelineController : MonoBehaviour
                     RuntimeManager.StudioSystem.getEvent($"event:/Dialogue Sounds/Dialogue/{tempSound}", out var desc);
                     if (!desc.isValid())
                         tempSound = "err_not_recorded";
-                    RuntimeManager.PlayOneShotAttached($"event:/Dialogue Sounds/Dialogue/{tempSound}",
-                        _player);
+
+                    desc.getLength(out voicelineMilis);
+                    
+                    instance = RuntimeManager.CreateInstance($"event:/Dialogue Sounds/Dialogue/{tempSound}");
+                    RuntimeManager.AttachInstanceToGameObject(instance, _player.transform, _player.GetComponent<Rigidbody>());
+                    instance.start();
+                    instance.release();
                 }
                 catch
                 {
@@ -98,17 +104,17 @@ public class VoicelineController : MonoBehaviour
                 
                 yield return new WaitForSeconds(0.075f);
         
-                instance = RuntimeManager.CreateInstance($"event:/Dialogue Sounds/Dialogue/{tempSound}");
-                RuntimeManager.AttachInstanceToGameObject(instance, _player.transform, _player.GetComponent<Rigidbody>());
-                instance.start();
-                instance.release();
+                RuntimeManager.PlayOneShotAttached($"event:/Dialogue Sounds/Dialogue/{tempSound}",
+                    _player);
 
-                instance.getPlaybackState(out state);
-                while (state != PLAYBACK_STATE.STOPPING && state != PLAYBACK_STATE.STOPPED)
-                {
-                    yield return null;
-                    instance.getPlaybackState(out state);
-                }
+                yield return new WaitForSeconds(Mathf.Max((voicelineMilis / 1000f) - 0.075f, 0));
+                
+                // instance.getPlaybackState(out state);
+                // while (state != PLAYBACK_STATE.STOPPING && state != PLAYBACK_STATE.STOPPED)
+                // {
+                //     yield return null;
+                //     instance.getPlaybackState(out state);
+                // }
 
                 currentLine += 1;
             }

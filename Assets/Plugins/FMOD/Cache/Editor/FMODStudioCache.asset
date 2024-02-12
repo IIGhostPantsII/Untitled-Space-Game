@@ -1,5 +1,81 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9044422965976110235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_5/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-9026619649869136791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_descole_test7_4
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_descole_test7_4
+  Guid:
+    Data1: 2024532564
+    Data2: 1236895367
+    Data3: -1383494013
+    Data4: -226025085
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -2046197742950598576}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3300
+--- !u!114 &-8719850393351795324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_15/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-8637767959200861140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28,6 +104,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-8595235739954948433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_descole_test7_3
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_descole_test7_3
+  Guid:
+    Data1: 513424891
+    Data2: 1263776245
+    Data3: -573768279
+    Data4: -957752536
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 1481174801230745457}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2800
 --- !u!114 &-8497777817789361309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39,30 +143,6 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/msg_descole_test1/Lowpass
-  m_EditorClassIdentifier: 
-  Name: Lowpass
-  StudioPath: 
-  Min: 0
-  Max: 22000
-  Default: 22000
-  ID:
-    data1: 2238647653
-    data2: 2004388847
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-8170756975471183369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/err_fake_voiceline/Lowpass
   m_EditorClassIdentifier: 
   Name: Lowpass
   StudioPath: 
@@ -196,6 +276,54 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-7255227667335211535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_7/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-7198814511053598942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_9/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-7113298487564634590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,6 +335,58 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Teeth/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-6994105799272648675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_descole_test7_17
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_descole_test7_17
+  Guid:
+    Data1: -1985060845
+    Data2: 1190086458
+    Data3: 1754932908
+    Data4: -1045828664
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 5677323735578933175}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3145
+--- !u!114 &-6977665359089928673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_2/Lowpass
   m_EditorClassIdentifier: 
   Name: Lowpass
   StudioPath: 
@@ -259,10 +439,34 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638432796812896029
+  lastModified: 638432954281292145
   FileSizes:
   - Name: Desktop
-    Value: 2674
+    Value: 3244
+  Exists: 1
+--- !u!114 &-6626345060655561047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_13/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
   Exists: 1
 --- !u!114 &-6408918529084494121
 MonoBehaviour:
@@ -347,6 +551,86 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 998
+--- !u!114 &-5266405579037399536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_descole_test7_16
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_descole_test7_16
+  Guid:
+    Data1: -1673135252
+    Data2: 1222211762
+    Data3: -1329348703
+    Data4: 1650838806
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -4971998802340344541}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1655
+--- !u!114 &-5234047073101507594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_descole_test7_6
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_descole_test7_6
+  Guid:
+    Data1: 1401887926
+    Data2: 1248595551
+    Data3: 1177620624
+    Data4: 888794312
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 3035009134958484832}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2800
+--- !u!114 &-4971998802340344541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_16/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-4512635146476590496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,6 +679,62 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-4136007722108668650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_descole_test7_1
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_descole_test7_1
+  Guid:
+    Data1: 536378091
+    Data2: 1178143883
+    Data3: -1449293380
+    Data4: 216710248
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 2072397278805539245}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2312
+--- !u!114 &-3186987211789751924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_descole_test7_10
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_descole_test7_10
+  Guid:
+    Data1: 2061780120
+    Data2: 1155447620
+    Data3: 1036605584
+    Data4: -681709958
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 5146207988501291753}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2400
 --- !u!114 &-3157802976680612726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,6 +759,34 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-3138003738882824045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_descole_test7_12
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_descole_test7_12
+  Guid:
+    Data1: -1627325443
+    Data2: 1149570777
+    Data3: 1253090438
+    Data4: -692800330
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 2759895267932265909}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2600
 --- !u!114 &-3112516764758841759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -550,6 +918,62 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-2482684290807860406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_descole_test7_8
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_descole_test7_8
+  Guid:
+    Data1: 134696623
+    Data2: 1244258567
+    Data3: -1850289500
+    Data4: -783629901
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -1095926875927948611}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1650
+--- !u!114 &-2177960442406716950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_descole_test7_9
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_descole_test7_9
+  Guid:
+    Data1: -1286179032
+    Data2: 1160957500
+    Data3: 1307472786
+    Data4: -2077703865
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -7198814511053598942}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3550
 --- !u!114 &-2142131061142234367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -602,6 +1026,58 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-2046197742950598576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_4/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-1862912741678784324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_descole_test7_5
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_descole_test7_5
+  Guid:
+    Data1: 2067871578
+    Data2: 1078398223
+    Data3: -583613803
+    Data4: 791437300
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -9044422965976110235}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3000
 --- !u!114 &-1606548628467542175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -622,6 +1098,30 @@ MonoBehaviour:
   ID:
     data1: 1520370274
     data2: 4211924693
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-1391265386028858722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_11/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
   Type: 0
   IsGlobal: 0
   Labels: []
@@ -671,13 +1171,36 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
-  Parameters:
-  - {fileID: -8170756975471183369}
+  Parameters: []
   MinDistance: 1
   MaxDistance: 20
   Length: 3960
+--- !u!114 &-1095926875927948611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_8/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-364162369600267364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -756,13 +1279,58 @@ MonoBehaviour:
   - {fileID: 7308534932530657107}
   - {fileID: 2828916659341480523}
   - {fileID: -1248789296817858815}
+  - {fileID: 8530786219127250617}
+  - {fileID: -2177960442406716950}
+  - {fileID: 7771450691823555795}
+  - {fileID: -9026619649869136791}
+  - {fileID: -1862912741678784324}
+  - {fileID: -3186987211789751924}
+  - {fileID: -2482684290807860406}
+  - {fileID: -5234047073101507594}
+  - {fileID: -4136007722108668650}
+  - {fileID: 7993012909234956466}
+  - {fileID: -8595235739954948433}
+  - {fileID: -3138003738882824045}
+  - {fileID: -6994105799272648675}
+  - {fileID: 7990179123165344175}
+  - {fileID: -5266405579037399536}
+  - {fileID: 4797474193480878223}
+  - {fileID: 18963236150629117}
   EditorParameters: []
   MasterBanks:
   - {fileID: 6422365686012519055}
   StringsBanks:
   - {fileID: -6838026933355539509}
-  cacheTime: 638432796816040727
+  cacheTime: 638432958164033376
   cacheVersion: 131607
+--- !u!114 &18963236150629117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_descole_test7_15
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_descole_test7_15
+  Guid:
+    Data1: 459403502
+    Data2: 1115968979
+    Data3: 17640113
+    Data4: -1934317278
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -8719850393351795324}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2900
 --- !u!114 &1153465909347655859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -774,6 +1342,30 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Clanking/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &1481174801230745457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_3/Lowpass
   m_EditorClassIdentifier: 
   Name: Lowpass
   StudioPath: 
@@ -815,6 +1407,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5087
+--- !u!114 &1601143442483672933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_14/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &1778057848048679981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -867,6 +1483,30 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &2072397278805539245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_1/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &2106626189913815525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -906,6 +1546,30 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/PA-Normal-Closing/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &2759895267932265909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_12/Lowpass
   m_EditorClassIdentifier: 
   Name: Lowpass
   StudioPath: 
@@ -1010,6 +1674,30 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/LowOxygen/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &3035009134958484832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_6/Lowpass
   m_EditorClassIdentifier: 
   Name: Lowpass
   StudioPath: 
@@ -1269,6 +1957,34 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &4797474193480878223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_descole_test7_13
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_descole_test7_13
+  Guid:
+    Data1: 670791041
+    Data2: 1083123197
+    Data3: 112541078
+    Data4: 1471221441
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -6626345060655561047}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1500
 --- !u!114 &4957461297133782951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1349,6 +2065,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1438
+--- !u!114 &5146207988501291753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_10/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &5176030506455300905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1394,6 +2134,30 @@ MonoBehaviour:
     data1: 1012733828
     data2: 1917263650
   Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &5677323735578933175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_17/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
   IsGlobal: 0
   Labels: []
   Exists: 1
@@ -1514,7 +2278,7 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638432796812876255
+  lastModified: 638432954281272305
   FileSizes:
   - Name: Desktop
     Value: 73248
@@ -1575,6 +2339,90 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &7771450691823555795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_descole_test7_11
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_descole_test7_11
+  Guid:
+    Data1: 1951255878
+    Data2: 1221236738
+    Data3: -1827866719
+    Data4: -1854888873
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -1391265386028858722}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2050
+--- !u!114 &7990179123165344175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_descole_test7_14
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_descole_test7_14
+  Guid:
+    Data1: 1678158622
+    Data2: 1195648510
+    Data3: 114137767
+    Data4: -2046349445
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 1601143442483672933}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1720
+--- !u!114 &7993012909234956466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_descole_test7_2
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_descole_test7_2
+  Guid:
+    Data1: 1967001327
+    Data2: 1198298560
+    Data3: -1301930061
+    Data4: 13313327
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -6977665359089928673}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3375
 --- !u!114 &8111687369947124944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1590,10 +2438,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Voices.bank
   Name: Voices
   StudioPath: bank:/Voices
-  lastModified: 638432796816040727
+  lastModified: 638432958164033376
   FileSizes:
   - Name: Desktop
-    Value: 736896
+    Value: 1471360
   Exists: 1
 --- !u!114 &8295062745087103246
 MonoBehaviour:
@@ -1694,3 +2542,31 @@ MonoBehaviour:
   - Name: Desktop
     Value: 2424832
   Exists: 1
+--- !u!114 &8530786219127250617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_descole_test7_7
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_descole_test7_7
+  Guid:
+    Data1: 324160292
+    Data2: 1342173503
+    Data3: 696562842
+    Data4: 2141724594
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -7255227667335211535}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5150
