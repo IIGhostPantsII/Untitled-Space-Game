@@ -52,6 +52,30 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-8170756975471183369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/err_fake_voiceline/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-7968007550661438565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,10 +259,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638432772331863743
+  lastModified: 638432796812896029
   FileSizes:
   - Name: Desktop
-    Value: 2558
+    Value: 2674
   Exists: 1
 --- !u!114 &-6408918529084494121
 MonoBehaviour:
@@ -626,6 +650,34 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-1248789296817858815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/err_fake_voiceline
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/err_fake_voiceline
+  Guid:
+    Data1: -1069959581
+    Data2: 1321553427
+    Data3: -348029788
+    Data4: 1105979883
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -8170756975471183369}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3960
 --- !u!114 &-364162369600267364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -702,12 +754,14 @@ MonoBehaviour:
   - {fileID: 3317295219850491243}
   - {fileID: -7617780577738843086}
   - {fileID: 7308534932530657107}
+  - {fileID: 2828916659341480523}
+  - {fileID: -1248789296817858815}
   EditorParameters: []
   MasterBanks:
   - {fileID: 6422365686012519055}
   StringsBanks:
   - {fileID: -6838026933355539509}
-  cacheTime: 638432772332736693
+  cacheTime: 638432796816040727
   cacheVersion: 131607
 --- !u!114 &1153465909347655859
 MonoBehaviour:
@@ -865,6 +919,34 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &2828916659341480523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/err_not_recorded
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/err_not_recorded
+  Guid:
+    Data1: -936529082
+    Data2: 1195757782
+    Data3: -1041195900
+    Data4: 1610680430
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 4957461297133782951}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2376
 --- !u!114 &2893890516357817353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1187,6 +1269,30 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &4957461297133782951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/err_not_recorded/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &5045168027618121695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1408,7 +1514,7 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638432772331843901
+  lastModified: 638432796812876255
   FileSizes:
   - Name: Desktop
     Value: 73248
@@ -1484,10 +1590,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Voices.bank
   Name: Voices
   StudioPath: bank:/Voices
-  lastModified: 638432772332736693
+  lastModified: 638432796816040727
   FileSizes:
   - Name: Desktop
-    Value: 666304
+    Value: 736896
   Exists: 1
 --- !u!114 &8295062745087103246
 MonoBehaviour:

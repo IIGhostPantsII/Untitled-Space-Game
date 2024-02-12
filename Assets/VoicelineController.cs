@@ -43,6 +43,7 @@ public class VoicelineController : MonoBehaviour
             yield break;
         }
 
+        _usedVoiceLines.Add(sound);
         if (!_voicelines.ContainsKey(sound) && !_voicelines.ContainsKey(sound + "_1")) sound = "err_fake_voiceline";
         
         _isPlaying = true;
@@ -84,6 +85,9 @@ public class VoicelineController : MonoBehaviour
                 try
                 {
                     _subtitles.SetText(_voicelines[tempSound][1].ToString());
+                    RuntimeManager.StudioSystem.getEvent($"event:/Dialogue Sounds/Dialogue/{tempSound}", out var desc);
+                    if (!desc.isValid())
+                        tempSound = "err_not_recorded";
                     RuntimeManager.PlayOneShotAttached($"event:/Dialogue Sounds/Dialogue/{tempSound}",
                         _player);
                 }
@@ -113,6 +117,10 @@ public class VoicelineController : MonoBehaviour
         {
             _subtitles.SetText(_voicelines[sound][1].ToString());
         
+            RuntimeManager.StudioSystem.getEvent($"event:/Dialogue Sounds/Dialogue/{sound}", out var desc);
+            if (!desc.isValid())
+                sound = "err_not_recorded";
+            
             RuntimeManager.PlayOneShotAttached($"event:/Dialogue Sounds/Dialogue/{sound}", _player);
             yield return new WaitForSeconds(0.075f);
         
