@@ -29,7 +29,7 @@ public class Vision : MonoBehaviour
             RaycastHit hit;
             if(Physics.Raycast(transform.position, directionToPlayer, out hit, 100000000f))
             {
-                if(hit.collider.CompareTag("Player") && Globals.CheckMonsterState("Idle"))
+                if(hit.collider.CompareTag("Player") && Globals.CheckMonsterState("Idle") || hit.collider.CompareTag("Player") && Globals.CheckMonsterState("Patrol"))
                 {
                     Globals.ChangeMonsterState("Chase");
                     Debug.Log("Player detected!");

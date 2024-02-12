@@ -30,6 +30,7 @@
 		</relationship>
 		<relationship name="parameters">
 			<destination>{f29a7942-16bc-4df3-90ee-a038b1dbd6eb}</destination>
+			<destination>{bba8355c-1bc2-465d-8f2b-3a275a9bb088}</destination>
 		</relationship>
 		<relationship name="banks">
 			<destination>{e96bcc48-5502-422b-a21d-1b4b9bc76a5d}</destination>
@@ -41,6 +42,9 @@
 		</relationship>
 	</object>
 	<object class="MasterTrack" id="{5661fa83-d489-488a-9ba0-4d2ba146b34c}">
+		<relationship name="automationTracks">
+			<destination>{33a0315c-053b-4f8e-972e-839c1e018631}</destination>
+		</relationship>
 		<relationship name="modules">
 			<destination>{91ff75e2-8ac1-470e-90c8-debefbbef463}</destination>
 		</relationship>
@@ -71,6 +75,11 @@
 			<destination>{91ff75e2-8ac1-470e-90c8-debefbbef463}</destination>
 		</relationship>
 	</object>
+	<object class="ParameterProxy" id="{bba8355c-1bc2-465d-8f2b-3a275a9bb088}">
+		<relationship name="preset">
+			<destination>{b6e67181-942a-48b8-b8b5-2b7f6f261ed5}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerMaster" id="{401f4f1b-e6a7-4921-a6e2-c81a92ad213e}">
 		<relationship name="effectChain">
 			<destination>{5e1cbeb9-dbad-433d-a818-96fe2fdf6114}</destination>
@@ -80,6 +89,11 @@
 		</relationship>
 		<relationship name="mixer">
 			<destination>{53833c89-471f-4590-a22f-13cd6bba21fe}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationTrack" id="{33a0315c-053b-4f8e-972e-839c1e018631}">
+		<relationship name="automator">
+			<destination>{c06d7da4-928c-4574-9dc7-25464d9aae2b}</destination>
 		</relationship>
 	</object>
 	<object class="MultiSound" id="{91ff75e2-8ac1-470e-90c8-debefbbef463}">
@@ -97,6 +111,7 @@
 		<relationship name="effects">
 			<destination>{0a58b5fa-c85c-4042-8a35-a297a6290667}</destination>
 			<destination>{c56404d4-a267-47ab-ae5d-8b28a1285f7c}</destination>
+			<destination>{0cf74663-154f-4f1b-a836-a233f81d63fd}</destination>
 			<destination>{6c0baecd-40be-4fa1-9222-84c7b77874fe}</destination>
 		</relationship>
 	</object>
@@ -117,6 +132,14 @@
 		<property name="decayTime">
 			<value>100</value>
 		</property>
+	</object>
+	<object class="LowpassEffect" id="{0cf74663-154f-4f1b-a836-a233f81d63fd}">
+		<property name="cutoff">
+			<value>22000</value>
+		</property>
+		<relationship name="automators">
+			<destination>{c06d7da4-928c-4574-9dc7-25464d9aae2b}</destination>
+		</relationship>
 	</object>
 	<object class="SpatialiserEffect" id="{6c0baecd-40be-4fa1-9222-84c7b77874fe}">
 		<property name="distanceRolloffType">
@@ -167,5 +190,47 @@
 		<relationship name="audioFile">
 			<destination>{34c79497-d772-4835-8933-11d396cb7e0c}</destination>
 		</relationship>
+	</object>
+	<object class="Automator" id="{c06d7da4-928c-4574-9dc7-25464d9aae2b}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>cutoff</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{512b7948-d0ee-48ab-a6fc-f21f2415bffc}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{512b7948-d0ee-48ab-a6fc-f21f2415bffc}">
+		<relationship name="parameter">
+			<destination>{b6e67181-942a-48b8-b8b5-2b7f6f261ed5}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{c29717c3-9272-4413-92aa-34630ac6c31f}</destination>
+			<destination>{1725d405-31c0-45f9-835e-416a28ce3c04}</destination>
+			<destination>{b4ef0e95-e638-4a02-ac1f-a0b55f40c370}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{c29717c3-9272-4413-92aa-34630ac6c31f}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>10</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{1725d405-31c0-45f9-835e-416a28ce3c04}">
+		<property name="position">
+			<value>22000</value>
+		</property>
+		<property name="value">
+			<value>22000</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{b4ef0e95-e638-4a02-ac1f-a0b55f40c370}">
+		<property name="position">
+			<value>10000</value>
+		</property>
+		<property name="value">
+			<value>1000</value>
+		</property>
 	</object>
 </objects>

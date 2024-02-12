@@ -8,8 +8,8 @@ public class MonsterAI : MonoBehaviour
 {
     public static bool MoleRatDead;
 
-    public FMOD.Studio.EventInstance moveEvent;
-    public FMODUnity.EventReference moveEventPath;
+    public FMOD.Studio.EventInstance growlEvent;
+    public FMODUnity.EventReference[] events;
 
     [SerializeField] public List<Vector3> _pointsOfInterest;
     [SerializeField] public Vector3[] _spawnPoints;
@@ -24,7 +24,6 @@ public class MonsterAI : MonoBehaviour
 
     private bool isIdling;
     private bool isMoving;
-    private bool isRunning;
     private bool turnBack;
     private bool enteredChase;
     private bool enteredIdle;
@@ -61,12 +60,15 @@ public class MonsterAI : MonoBehaviour
 
     private Vector3 randomPosition;
 
+    private SoundPerception soundPerception;
+
     void Start()
     {
         int spawnLength = _spawnPoints.Length;
         monsterPathing = GetComponent<NavMeshAgent>();
+        soundPerception = GetComponent<SoundPerception>();
         Globals.ChangeMonsterState("Idle");
-        moveEvent = RuntimeManager.CreateInstance(moveEventPath);
+        growlEvent = RuntimeManager.CreateInstance(events[0]);
     }
 
     void Update()
@@ -93,22 +95,21 @@ public class MonsterAI : MonoBehaviour
                 enteredIdle = true;
                 enteredChase = false;
                 enteredPatrol = false;
-                isRunning = false;
                 RandomizeDestination();
             }
 
             // Check if the agent has reached its destination
             if(!monsterPathing.pathPending && monsterPathing.remainingDistance < 0.1f)
             {
-                idleChance = Random.Range(0, 20);
+                idleChance = Random.Range(0, 10);
                 if(idleChance == 0)
                 {   
                     if(rotationTimer <= _rotationDuration)
                     {
                         isMoving = false;
                         isIdling = true;
-                        rotationTimer += Time.deltaTime;
                         MonsterIdle();
+                        rotationTimer += Time.deltaTime;
                     }
                     else
                     {
@@ -136,7 +137,6 @@ public class MonsterAI : MonoBehaviour
                 enteredChase = true;
                 enteredIdle = false;
                 enteredPatrol = false;
-                isRunning = true;
                 monsterPathing.speed = 0;
                 tempMonsterSpeed = 15;
                 tempMonsterAcceleration = 85;
@@ -162,9 +162,34 @@ public class MonsterAI : MonoBehaviour
                 enteredPatrol = true;
                 enteredChase = false;
                 enteredIdle = false;
-                isRunning = false;
-                Debug.Log("We In Patrol Baby");
-            }            
+                randomPosition = soundPerception.RandomizedPlayerPos();
+                monsterPathing.SetDestination(randomPosition);
+                isMoving = true;
+                isIdling = false;
+                rotationTimer = 0f;
+                growlEvent.start();
+            }
+
+            Globals.SpatialSounds(growlEvent, gameObject);
+            Globals.CheckLowpass(growlEvent, _subOxygen);
+
+            if(!monsterPathing.pathPending && monsterPathing.remainingDistance < 0.1f)
+            {
+                if(rotationTimer <= _rotationDuration * 1.5f)
+                {
+                    isMoving = false;
+                    isIdling = true;
+                    MonsterIdle();
+                    rotationTimer += Time.deltaTime;
+                }
+                else
+                {
+                    isMoving = true;
+                    isIdling = false;
+                    rotationTimer = 0f;
+                    Globals.ChangeMonsterState("Idle");
+                }
+            }
         }
     }
     
