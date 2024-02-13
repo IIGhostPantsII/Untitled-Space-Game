@@ -108,10 +108,10 @@ public class PlayerController : MonoBehaviour
 
         originalCameraPosition = new Vector3(0f, 2f, 0f);
 
-        foreach(PowerButton button in _powerButtons)
-        {
-            button.OnActivate += IncrementWinCounter;
-        }
+        //foreach(PowerButton button in _powerButtons)
+        //{
+        //    button.OnActivate += IncrementWinCounter;
+        //}
         
         if(_firstPersonCam != null)
         {
