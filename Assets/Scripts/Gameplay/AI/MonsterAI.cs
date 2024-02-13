@@ -63,7 +63,7 @@ public class MonsterAI : MonoBehaviour
     void Start()
     {
         int spawnLength = _spawnPoints.Length;
-        SpawnTheMonster(spawnLength);
+        //SpawnTheMonster(spawnLength);
         monsterPathing = GetComponent<NavMeshAgent>();
         soundPerception = GetComponent<SoundPerception>();
         Globals.ChangeMonsterState("Idle");
@@ -320,6 +320,7 @@ public class MonsterAI : MonoBehaviour
         {
             areaTrigger = other.GetComponent<AreaTriggers>();
             triggerName = other.gameObject.name;
+            Debug.Log(triggerName);
         }
     }
 
