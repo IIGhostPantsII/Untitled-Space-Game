@@ -115,10 +115,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638432772332404384
+  lastModified: 638433789714083005
   FileSizes:
   - Name: Desktop
-    Value: 506976
+    Value: 590816
   Exists: 1
 --- !u!114 &-7709627357560079285
 MonoBehaviour:
@@ -259,10 +259,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638432796812896029
+  lastModified: 638433789675367431
   FileSizes:
   - Name: Desktop
-    Value: 2674
+    Value: 2770
   Exists: 1
 --- !u!114 &-6408918529084494121
 MonoBehaviour:
@@ -347,6 +347,58 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 998
+--- !u!114 &-4969993044613933801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MonsterFootsteps/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-4960968217734572833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sounds/MonsterFootsteps
+  m_EditorClassIdentifier: 
+  Path: event:/Sounds/MonsterFootsteps
+  Guid:
+    Data1: -1499348842
+    Data2: 1199210466
+    Data3: -2045841992
+    Data4: 728338648
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -4969993044613933801}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-4512635146476590496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -756,12 +808,14 @@ MonoBehaviour:
   - {fileID: 7308534932530657107}
   - {fileID: 2828916659341480523}
   - {fileID: -1248789296817858815}
+  - {fileID: 3179740896734807514}
+  - {fileID: -4960968217734572833}
   EditorParameters: []
   MasterBanks:
   - {fileID: 6422365686012519055}
   StringsBanks:
   - {fileID: -6838026933355539509}
-  cacheTime: 638432796816040727
+  cacheTime: 638433789723367602
   cacheVersion: 131607
 --- !u!114 &1153465909347655859
 MonoBehaviour:
@@ -1051,6 +1105,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2716
+--- !u!114 &3179740896734807514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sounds/MonsterGrowl
+  m_EditorClassIdentifier: 
+  Path: event:/Sounds/MonsterGrowl
+  Guid:
+    Data1: 606509451
+    Data2: 1145596833
+    Data3: 150505123
+    Data4: 558456694
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 4698583522595004084}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &3295579543783037433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1269,6 +1351,30 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &4698583522595004084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MonsterGrowl/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &4957461297133782951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1514,7 +1620,7 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638432796812876255
+  lastModified: 638433789675327546
   FileSizes:
   - Name: Desktop
     Value: 73248
@@ -1590,7 +1696,7 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Voices.bank
   Name: Voices
   StudioPath: bank:/Voices
-  lastModified: 638432796816040727
+  lastModified: 638433789723367602
   FileSizes:
   - Name: Desktop
     Value: 736896
@@ -1689,7 +1795,7 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638432751597539092
+  lastModified: 638433789710898249
   FileSizes:
   - Name: Desktop
     Value: 2424832

@@ -11,13 +11,9 @@ public class MonsterAI : MonoBehaviour
     public FMOD.Studio.EventInstance growlEvent;
     public FMODUnity.EventReference[] events;
 
-    [SerializeField] public List<Vector3> _pointsOfInterest;
     [SerializeField] public Vector3[] _spawnPoints;
     [SerializeField] private float _rotationDuration = 3f;
-    [SerializeField] private float _rotationSpeed = 8f;
-    [SerializeField] private float _speed = 10f;
     [SerializeField] private Transform _playerTransform;
-    [SerializeField] private References _references;
     [SerializeField] private Animator _monsterAni;
     [SerializeField] private Animator _hitPlayer;
     [SerializeField] private Oxygen _subOxygen;
@@ -52,6 +48,8 @@ public class MonsterAI : MonoBehaviour
     private float zMinPos;
     private float zMaxPos;
 
+    private string triggerName;
+
     private Quaternion initialRotation;
 
     private NavMeshAgent monsterPathing;
@@ -65,6 +63,7 @@ public class MonsterAI : MonoBehaviour
     void Start()
     {
         int spawnLength = _spawnPoints.Length;
+        SpawnTheMonster(spawnLength);
         monsterPathing = GetComponent<NavMeshAgent>();
         soundPerception = GetComponent<SoundPerception>();
         Globals.ChangeMonsterState("Idle");
@@ -84,9 +83,6 @@ public class MonsterAI : MonoBehaviour
 
         if(Globals.IdleMode)
         {
-            _monsterAni.speed = 1;
-            monsterPathing.speed = 15;
-            monsterPathing.acceleration = 50;
 
             if(!enteredIdle)
             {
@@ -95,6 +91,9 @@ public class MonsterAI : MonoBehaviour
                 enteredIdle = true;
                 enteredChase = false;
                 enteredPatrol = false;
+                _monsterAni.speed = 1;
+                monsterPathing.speed = 12;
+                monsterPathing.acceleration = 50;
                 RandomizeDestination();
             }
 
@@ -213,10 +212,19 @@ public class MonsterAI : MonoBehaviour
                 isIdling = false;
                 //The Y position doesn't matter for the navmesh
                 Vector3 newPosition = new Vector3(hit.position.x, 0.67f, hit.position.z);
-                if(idleCounter > 2)
+                if(idleCounter > 3)
                 {
-                    Vector3 leaving = areaTrigger.Leave();
+                    Vector3 leaving;
+                    if(triggerName == "TutorialAreaTrigger" || triggerName == "HallwayTriggers")
+                    {
+                        leaving = areaTrigger.Leave(3);
+                    }
+                    else
+                    {
+                        leaving = areaTrigger.Leave(2);
+                    }
                     monsterPathing.SetDestination(leaving);
+                    idleCounter = 0;
                 }
                 else
                 {
@@ -311,6 +319,7 @@ public class MonsterAI : MonoBehaviour
         if(other.CompareTag("AreaTrigger"))
         {
             areaTrigger = other.GetComponent<AreaTriggers>();
+            triggerName = other.gameObject.name;
         }
     }
 

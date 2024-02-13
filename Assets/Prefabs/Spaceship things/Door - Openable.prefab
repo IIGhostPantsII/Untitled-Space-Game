@@ -74,8 +74,8 @@ MonoBehaviour:
       Data3: 1806041263
       Data4: -2004512656
     Path: event:/Sounds/Close
-  doorSpeed: 2
-  maxYPosition: 7.5
+  doorSpeed: 75
+  maxYPosition: 5.4
   lowYPosition: -30
   _subMeter: {fileID: 0}
 --- !u!1 &8593645285772936417
