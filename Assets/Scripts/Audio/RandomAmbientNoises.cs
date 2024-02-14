@@ -9,7 +9,7 @@ public class RandomAmbientNoises : MonoBehaviour
 
     private FMOD.Studio.EventInstance[] events;
 
-    private float minDelay = 20f;
+    private float minDelay = 40f;
     private float maxDelay = 60f;
 
     int random;
