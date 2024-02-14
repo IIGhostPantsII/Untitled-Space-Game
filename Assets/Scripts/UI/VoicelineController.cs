@@ -8,6 +8,7 @@ using NaughtyAttributes;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
 
 public class VoicelineController : MonoBehaviour
@@ -26,12 +27,18 @@ public class VoicelineController : MonoBehaviour
         _player = GameObject.FindWithTag("MainCamera");
         _subtitles.SetText("");
     }
+
+    private void Update() {
+        if (Keyboard.current[Key.T].wasPressedThisFrame) {
+            PlaySound();
+        }
+    }
     
     [Button]
     void PlaySound()
     {
         System.Random rand = new System.Random();
-        StartCoroutine(PlayVoiceline($"msg_descole_test{Random.Range(1, 9)}"));
+        StartCoroutine(PlayVoiceline($"msg_descole_test{Random.Range(1, 6)}"));
     }
 
     public IEnumerator PlayVoiceline(string sound)
