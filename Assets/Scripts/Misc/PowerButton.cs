@@ -8,6 +8,8 @@ public class PowerButton : MonoBehaviour
 {
     // Time in seconds it takes to press the power button
     public static float ButtonSpeed = 2f;
+
+    [SerializeField] private string _taskName;
     
     public bool IsOn;
     public float ButtonProgress;
@@ -25,6 +27,7 @@ public class PowerButton : MonoBehaviour
         {
             IsOn = true;
             ButtonProgress = 1;
+            FindObjectOfType<TaskManager>().IncrementTask(_taskName);
             OnActivate?.Invoke();
         }
     }

@@ -11,6 +11,7 @@ TagManager:
   - Button
   - TiledGround
   - LowGravTrigger
+  - RoomTask
   layers:
   - Default
   - TransparentFX

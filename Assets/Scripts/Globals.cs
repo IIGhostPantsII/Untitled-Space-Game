@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using FMODUnity;
+using UnityEngine.Serialization;
 
 public static class Globals
 {
@@ -12,6 +14,8 @@ public static class Globals
     public static bool AnimationOver;
     public static bool GetOriginalTriggers;
     public static GameState GameState = GameState.Main;
+
+    public static List<RoomTasks> RoomTasks = new List<RoomTasks>();
 
     //Monster Modes
     public static bool ChaseMode;
@@ -145,4 +149,19 @@ public enum GameState
     Paused,
     Lost,
     Victory
+}
+
+[Serializable]
+public struct RoomTasks
+{
+    public string RoomName;
+    public Task[] Tasks;
+}
+
+[Serializable]
+public struct Task
+{
+    public string TaskName;
+    public int TotalSteps;
+    public int CompletedSteps;
 }
