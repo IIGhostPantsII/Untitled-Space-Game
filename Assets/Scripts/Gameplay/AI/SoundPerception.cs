@@ -13,16 +13,18 @@ public class SoundPerception : MonoBehaviour
 
     private int counter;
 
+    private bool goBackToIdle;
+
     public void ActionPerformed(float value)
     {
         distance = Vector3.Distance(gameObject.transform.position, _playerTransform.position);
-        Debug.Log("Distance between object1 and object2: " + distance);
+        //Debug.Log("Distance between object1 and object2: " + distance);
         combined = distance / value;
-        if(_threshold / 5 > combined && !Globals.ChaseMode)
+        if(_threshold / 4 > combined && !Globals.ChaseMode)
         {
             Globals.ChangeMonsterState("Chase");
         }
-        else if(_threshold > combined && !Globals.ChaseMode)
+        else if(_threshold > combined && !Globals.ChaseMode && !Globals.PatrolMode)
         {
             Globals.ChangeMonsterState("Patrol");
         }
@@ -30,7 +32,7 @@ public class SoundPerception : MonoBehaviour
 
     public bool ChaseCheck()
     {
-        if(_threshold / 2 > combined)
+        if(_threshold / 2.2f > combined)
         {
             return true;
         }
@@ -48,6 +50,7 @@ public class SoundPerception : MonoBehaviour
         if(NavMesh.SamplePosition(randomPosition, out hit, 1.0f, NavMesh.AllAreas))
         {
             Vector3 newPosition = new Vector3(hit.position.x, 0.67f, hit.position.z);
+            goBackToIdle = false;
             return newPosition;
         }
         else
@@ -58,9 +61,22 @@ public class SoundPerception : MonoBehaviour
                 counter = 0;
                 Debug.Log("Player Not In Walkable Area, Resetting...");
                 Globals.ChangeMonsterState("Idle");
+                goBackToIdle = true;
                 return Vector3.zero;
             }
             return RandomizedPlayerPos();
+        }
+    }
+
+    public bool IfIdle()
+    {
+        if(goBackToIdle)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }

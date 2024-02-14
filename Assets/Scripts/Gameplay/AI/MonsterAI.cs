@@ -162,11 +162,14 @@ public class MonsterAI : MonoBehaviour
                 enteredChase = false;
                 enteredIdle = false;
                 randomPosition = soundPerception.RandomizedPlayerPos();
-                monsterPathing.SetDestination(randomPosition);
                 isMoving = true;
                 isIdling = false;
                 rotationTimer = 0f;
-                growlEvent.start();
+                if(!soundPerception.IfIdle())
+                {
+                    growlEvent.start();
+                    monsterPathing.SetDestination(randomPosition);
+                }
             }
 
             Globals.SpatialSounds(growlEvent, gameObject);
@@ -320,7 +323,6 @@ public class MonsterAI : MonoBehaviour
         {
             areaTrigger = other.GetComponent<AreaTriggers>();
             triggerName = other.gameObject.name;
-            Debug.Log(triggerName);
         }
     }
 
@@ -333,5 +335,10 @@ public class MonsterAI : MonoBehaviour
         yield return new WaitForSeconds(0.75f);
         _hitPlayer.gameObject.SetActive(false);
         hitDelay = false;
+    }
+
+    public static void Reset()
+    {
+        MoleRatDead = false;
     }
 }

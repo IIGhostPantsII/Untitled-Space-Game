@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using FullscreenEditor;
 using UnityEngine;
 
 public class PowerButton : MonoBehaviour

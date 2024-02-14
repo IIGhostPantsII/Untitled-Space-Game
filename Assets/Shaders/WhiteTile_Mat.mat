@@ -52,5 +52,5 @@ Material:
     m_Colors:
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
     - _TileColour: {r: 1, g: 1, b: 1, a: 0}
-    - _Tiling: {r: 200, g: 150, b: 0, a: 0}
+    - _Tiling: {r: 500, g: 300, b: 0, a: 0}
   m_BuildTextureStacks: []

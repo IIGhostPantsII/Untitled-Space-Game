@@ -87,4 +87,9 @@ public class AnimationFunctions : MonoBehaviour
         Animator animator = _object.GetComponent<Animator>();
         animator.Play(name);
     }
+
+    public void Lose()
+    {
+        Globals.GameState = GameState.Lost;
+    }
 }

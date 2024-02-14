@@ -461,6 +461,7 @@ public class PlayerController : MonoBehaviour
     public void RestartGame()
     {
         Globals.GameState = GameState.Main;
+        MonsterAI.Reset();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
