@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MetalGrate_Mat
+  m_Name: Hallways-MetalGrateMat
   m_Shader: {fileID: -6465566751694194690, guid: d1a4c739a3b7bc64ebba9dab43a74c67, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -51,5 +51,5 @@ Material:
     - _QueueOffset: 0
     m_Colors:
     - _Offset: {r: 22.2, g: 23.8, b: 0, a: 0}
-    - _Tiling: {r: 45, g: 45, b: 0, a: 0}
+    - _Tiling: {r: 500, g: 500, b: 0, a: 0}
   m_BuildTextureStacks: []
