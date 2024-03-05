@@ -22,6 +22,8 @@ public static class Globals
     public static bool IdleMode;
     public static bool PatrolMode;
 
+    public static int Money;
+
     public static void LockMovement()
     {
         Movement = false;
@@ -32,9 +34,16 @@ public static class Globals
         Movement = true;
     }
 
-    public static void ResetGame()
+    public static void ResetGame(bool isGameOver)
     {
         //Turn off all Bools that get turned on mid-game
+        if(isGameOver)
+        {
+            Money = 0;
+        }
+        PatrolMode = false;
+        IdleMode = true;
+        ChaseMode = false;
     }
 
     public static void OriginalTriggersCompleted()
@@ -116,6 +125,16 @@ public static class Globals
                 eventInstance.setParameterByName("Lowpass",22000);
             }
         }
+    }
+
+    public static void AddMoney(int value)
+    {
+        Money += value;
+    }
+
+    public static void LoseMoney(int value)
+    {
+        Money -= value;
     }
     
     public static Dictionary<string, ArrayList> LoadTSV(TextAsset file) {

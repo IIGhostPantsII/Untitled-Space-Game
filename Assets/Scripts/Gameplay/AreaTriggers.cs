@@ -9,8 +9,7 @@ public class AreaTriggers : MonoBehaviour
     [SerializeField] private float _zMinPos;
     [SerializeField] private float _zMaxPos;
 
-    [SerializeField] private Vector3 _left;
-    [SerializeField] private Vector3 _right;
+    [SerializeField] private Vector3[] _directions;
 
     [SerializeField] private bool _north;
     [SerializeField] private bool _south;
@@ -42,17 +41,25 @@ public class AreaTriggers : MonoBehaviour
         }
     }
 
-    public Vector3 Leave()
+    public Vector3 Leave(int value)
     {
-        int random = Random.Range(0, 2);
+        int random = Random.Range(0, value);
 
         if(random == 0)
         {
-            return _left;
+            return _directions[random];
+        }
+        else if(random == 1)
+        {
+            return _directions[random];
+        }
+        else if(random == 2)
+        {
+            return _directions[random];
         }
         else
         {
-            return _right;
+            return _directions[0];
         }
     }
 

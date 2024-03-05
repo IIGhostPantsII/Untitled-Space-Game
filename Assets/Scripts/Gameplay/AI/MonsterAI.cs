@@ -8,23 +8,18 @@ public class MonsterAI : MonoBehaviour
 {
     public static bool MoleRatDead;
 
-    public FMOD.Studio.EventInstance moveEvent;
-    public FMODUnity.EventReference moveEventPath;
+    public FMOD.Studio.EventInstance growlEvent;
+    public FMODUnity.EventReference[] events;
 
-    [SerializeField] public List<Vector3> _pointsOfInterest;
     [SerializeField] public Vector3[] _spawnPoints;
     [SerializeField] private float _rotationDuration = 3f;
-    [SerializeField] private float _rotationSpeed = 8f;
-    [SerializeField] private float _speed = 10f;
     [SerializeField] private Transform _playerTransform;
-    [SerializeField] private References _references;
     [SerializeField] private Animator _monsterAni;
     [SerializeField] private Animator _hitPlayer;
     [SerializeField] private Oxygen _subOxygen;
 
     private bool isIdling;
     private bool isMoving;
-    private bool isRunning;
     private bool turnBack;
     private bool enteredChase;
     private bool enteredIdle;
@@ -53,6 +48,8 @@ public class MonsterAI : MonoBehaviour
     private float zMinPos;
     private float zMaxPos;
 
+    private string triggerName;
+
     private Quaternion initialRotation;
 
     private NavMeshAgent monsterPathing;
@@ -61,12 +58,16 @@ public class MonsterAI : MonoBehaviour
 
     private Vector3 randomPosition;
 
+    private SoundPerception soundPerception;
+
     void Start()
     {
         int spawnLength = _spawnPoints.Length;
+        //SpawnTheMonster(spawnLength);
         monsterPathing = GetComponent<NavMeshAgent>();
+        soundPerception = GetComponent<SoundPerception>();
         Globals.ChangeMonsterState("Idle");
-        moveEvent = RuntimeManager.CreateInstance(moveEventPath);
+        growlEvent = RuntimeManager.CreateInstance(events[0]);
     }
 
     void Update()
@@ -82,9 +83,6 @@ public class MonsterAI : MonoBehaviour
 
         if(Globals.IdleMode)
         {
-            _monsterAni.speed = 1;
-            monsterPathing.speed = 15;
-            monsterPathing.acceleration = 50;
 
             if(!enteredIdle)
             {
@@ -93,22 +91,24 @@ public class MonsterAI : MonoBehaviour
                 enteredIdle = true;
                 enteredChase = false;
                 enteredPatrol = false;
-                isRunning = false;
+                _monsterAni.speed = 1;
+                monsterPathing.speed = 12;
+                monsterPathing.acceleration = 50;
                 RandomizeDestination();
             }
 
             // Check if the agent has reached its destination
             if(!monsterPathing.pathPending && monsterPathing.remainingDistance < 0.1f)
             {
-                idleChance = Random.Range(0, 20);
+                idleChance = Random.Range(0, 10);
                 if(idleChance == 0)
                 {   
                     if(rotationTimer <= _rotationDuration)
                     {
                         isMoving = false;
                         isIdling = true;
-                        rotationTimer += Time.deltaTime;
                         MonsterIdle();
+                        rotationTimer += Time.deltaTime;
                     }
                     else
                     {
@@ -136,7 +136,6 @@ public class MonsterAI : MonoBehaviour
                 enteredChase = true;
                 enteredIdle = false;
                 enteredPatrol = false;
-                isRunning = true;
                 monsterPathing.speed = 0;
                 tempMonsterSpeed = 15;
                 tempMonsterAcceleration = 85;
@@ -162,9 +161,37 @@ public class MonsterAI : MonoBehaviour
                 enteredPatrol = true;
                 enteredChase = false;
                 enteredIdle = false;
-                isRunning = false;
-                Debug.Log("We In Patrol Baby");
-            }            
+                randomPosition = soundPerception.RandomizedPlayerPos();
+                isMoving = true;
+                isIdling = false;
+                rotationTimer = 0f;
+                if(!soundPerception.IfIdle())
+                {
+                    growlEvent.start();
+                    monsterPathing.SetDestination(randomPosition);
+                }
+            }
+
+            Globals.SpatialSounds(growlEvent, gameObject);
+            Globals.CheckLowpass(growlEvent, _subOxygen);
+
+            if(!monsterPathing.pathPending && monsterPathing.remainingDistance < 0.1f)
+            {
+                if(rotationTimer <= _rotationDuration * 1.5f)
+                {
+                    isMoving = false;
+                    isIdling = true;
+                    MonsterIdle();
+                    rotationTimer += Time.deltaTime;
+                }
+                else
+                {
+                    isMoving = true;
+                    isIdling = false;
+                    rotationTimer = 0f;
+                    Globals.ChangeMonsterState("Idle");
+                }
+            }
         }
     }
     
@@ -188,10 +215,19 @@ public class MonsterAI : MonoBehaviour
                 isIdling = false;
                 //The Y position doesn't matter for the navmesh
                 Vector3 newPosition = new Vector3(hit.position.x, 0.67f, hit.position.z);
-                if(idleCounter > 2)
+                if(idleCounter > 3)
                 {
-                    Vector3 leaving = areaTrigger.Leave();
+                    Vector3 leaving;
+                    if(triggerName == "TutorialAreaTrigger" || triggerName == "HallwayTriggers")
+                    {
+                        leaving = areaTrigger.Leave(3);
+                    }
+                    else
+                    {
+                        leaving = areaTrigger.Leave(2);
+                    }
                     monsterPathing.SetDestination(leaving);
+                    idleCounter = 0;
                 }
                 else
                 {
@@ -286,6 +322,7 @@ public class MonsterAI : MonoBehaviour
         if(other.CompareTag("AreaTrigger"))
         {
             areaTrigger = other.GetComponent<AreaTriggers>();
+            triggerName = other.gameObject.name;
         }
     }
 
@@ -298,5 +335,10 @@ public class MonsterAI : MonoBehaviour
         yield return new WaitForSeconds(0.75f);
         _hitPlayer.gameObject.SetActive(false);
         hitDelay = false;
+    }
+
+    public static void Reset()
+    {
+        MoleRatDead = false;
     }
 }

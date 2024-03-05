@@ -87,7 +87,7 @@ public class Oxygen : MonoBehaviour
         }
         else if (_mainOxygen != null)
         {
-            //_volume.weight = 1 - (_oxygenMeter / 100f);
+            _volume.weight = (1 - (_oxygenMeter / 100f)) * 3;
             
             if (_mainOxygen._oxygenMeter <= 0)
             {

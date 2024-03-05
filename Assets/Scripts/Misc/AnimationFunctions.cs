@@ -11,6 +11,7 @@ public class AnimationFunctions : MonoBehaviour
     private FMOD.Studio.EventInstance eventInstance;
 
     [SerializeField] private GameObject _object;
+    [SerializeField] private Oxygen _subOxygen;
 
     public void LockPlayerMovement()
     {
@@ -52,11 +53,8 @@ public class AnimationFunctions : MonoBehaviour
 
     private void Update()
     {
-        // Update the FMOD event instance position based on the GameObject's position
-        if (eventInstance.isValid())
-        {
-            eventInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
-        }
+        Globals.SpatialSounds(eventInstance, gameObject);
+        Globals.CheckLowpass(eventInstance, _subOxygen);
     }
 
     public void ReleaseFMODEvent()
@@ -88,5 +86,10 @@ public class AnimationFunctions : MonoBehaviour
     {
         Animator animator = _object.GetComponent<Animator>();
         animator.Play(name);
+    }
+
+    public void Lose()
+    {
+        Globals.GameState = GameState.Lost;
     }
 }

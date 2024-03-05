@@ -82,7 +82,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{084a9394-802f-4005-a774-be5f3db9821b}">
 		<property name="volume">
-			<value>-5</value>
+			<value>-3.5</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{c91801c7-f6fb-45bc-a280-5f23c661d746}</destination>
@@ -101,7 +101,7 @@
 	</object>
 	<object class="MultiSound" id="{bc8b1ee7-58db-4a40-8248-85921388a932}">
 		<relationship name="sounds">
-			<destination>{96706c32-1f1e-4d0b-8330-e491dd60b335}</destination>
+			<destination>{b4528714-59fb-4850-b23f-482dd8fba163}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{a5d5095d-3f72-4e92-a593-906879a196a0}">
@@ -115,12 +115,14 @@
 			<destination>{5f7fd5ba-0969-43b1-a000-639ff985b9a0}</destination>
 			<destination>{9eef7a05-f15d-486a-8851-989a929f0c94}</destination>
 			<destination>{7ef145a9-6786-44b8-a715-fc9797e5de0e}</destination>
+			<destination>{d6238b61-fbf9-4ed7-a5bf-59c43888d8da}</destination>
+			<destination>{86101264-4590-4e8a-a7dd-064312a2edeb}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{688b5b62-ed77-472e-bbb8-db0bc89ea4e7}" />
-	<object class="SingleSound" id="{96706c32-1f1e-4d0b-8330-e491dd60b335}">
+	<object class="SingleSound" id="{b4528714-59fb-4850-b23f-482dd8fba163}">
 		<relationship name="audioFile">
-			<destination>{d9008545-13cc-4c42-91c4-40fefb3636d5}</destination>
+			<destination>{e2b986f6-49eb-4353-b72d-1457743576fb}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{46067df6-a8d2-4452-bec1-d2544fb3a255}" />
@@ -152,6 +154,25 @@
 		<relationship name="automators">
 			<destination>{a45b4e4a-305f-4be4-8305-401e69d30dca}</destination>
 		</relationship>
+	</object>
+	<object class="ThreeEQEffect" id="{d6238b61-fbf9-4ed7-a5bf-59c43888d8da}">
+		<property name="lowGain">
+			<value>10</value>
+		</property>
+		<property name="highGain">
+			<value>10</value>
+		</property>
+		<property name="lowCrossover">
+			<value>22000</value>
+		</property>
+		<property name="highCrossover">
+			<value>200</value>
+		</property>
+	</object>
+	<object class="SFXReverbEffect" id="{86101264-4590-4e8a-a7dd-064312a2edeb}">
+		<property name="decayTime">
+			<value>1000</value>
+		</property>
 	</object>
 	<object class="Automator" id="{a45b4e4a-305f-4be4-8305-401e69d30dca}">
 		<property name="nameOfPropertyBeingAutomated">

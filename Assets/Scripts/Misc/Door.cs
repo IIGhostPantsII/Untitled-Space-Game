@@ -17,12 +17,13 @@ public class Door : MonoBehaviour
 
     [SerializeField] private Oxygen _subMeter;
  
-    private bool isInsideTrigger = false;
-    private bool isOutsideTrigger = false;
+    [HideInInspector] public bool isInsideTrigger = false;
+    [HideInInspector] public bool isOutsideTrigger = false;
+    private bool doorState = true;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") || other.CompareTag("Monster"))
+        if(other.CompareTag("Player") && doorState || other.CompareTag("Monster") && doorState)
         {
             isInsideTrigger = true;
             isOutsideTrigger = false; // Reset the flag when inside the trigger
@@ -34,7 +35,7 @@ public class Door : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player") || other.CompareTag("Monster"))
+        if(other.CompareTag("Player") && doorState || other.CompareTag("Monster") && doorState)
         {
             isInsideTrigger = false;
             isOutsideTrigger = true;
@@ -50,11 +51,11 @@ public class Door : MonoBehaviour
 
     private void Update()
     {
-        if (isInsideTrigger)
+        if(isInsideTrigger)
         {
             MoveDoorDown();
         }
-        else if (isOutsideTrigger)
+        else if(isOutsideTrigger)
         {
             MoveDoorUp();
         }
@@ -65,7 +66,7 @@ public class Door : MonoBehaviour
 
     private void MoveDoorDown()
     {
-        if (transform.position.y > lowYPosition)
+        if(transform.position.y > lowYPosition)
         {
             transform.Translate(Vector3.down * doorSpeed * Time.deltaTime);
         }
@@ -77,7 +78,7 @@ public class Door : MonoBehaviour
 
     private void MoveDoorUp()
     {
-        if (transform.position.y < maxYPosition)
+        if(transform.position.y < maxYPosition)
         {
             transform.Translate(Vector3.up * doorSpeed * Time.deltaTime);
         }
@@ -94,5 +95,26 @@ public class Door : MonoBehaviour
         moveEventClose.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         moveEventClose.start();
         Globals.CheckLowpass(moveEventClose, _subMeter);
+    }
+
+    public void ChangeDoorState()
+    {
+        doorState = !doorState;
+        
+        if(doorState)
+        {
+            isInsideTrigger = true;
+            isOutsideTrigger = false;
+            moveEventOpen.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            moveEventOpen.start();
+            Globals.CheckLowpass(moveEventOpen, _subMeter);
+        }
+        else if(doorState == false)
+        {
+            //Close the door
+            isInsideTrigger = false;
+            isOutsideTrigger = true;
+            StartCoroutine(Close());
+        }
     }
 }

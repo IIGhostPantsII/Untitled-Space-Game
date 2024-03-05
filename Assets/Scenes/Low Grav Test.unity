@@ -3369,8 +3369,7 @@ MonoBehaviour:
   _xMaxPos: 63
   _zMinPos: 64
   _zMaxPos: 77
-  _left: {x: 30, y: 0.67, z: 64}
-  _right: {x: 30, y: 0.67, z: 64}
+  _directions: []
   _north: 0
   _south: 0
   _east: 0
@@ -4788,8 +4787,7 @@ MonoBehaviour:
   _xMaxPos: 0
   _zMinPos: 0
   _zMaxPos: 0
-  _left: {x: 0, y: 0, z: 0}
-  _right: {x: 0, y: 0, z: 0}
+  _directions: []
   _north: 0
   _south: 0
   _east: 0
@@ -7354,23 +7352,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 930e3c6a8a1452541b3755a8d650fe18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveEventPath:
-    Guid:
-      Data1: 2033535378
-      Data2: 1250723429
-      Data3: 29627805
-      Data4: -415859203
-    Path: event:/Sounds/MonsterFootsteps
-  _pointsOfInterest: []
+  events: []
   _spawnPoints:
   - {x: 402.6, y: 4.35, z: 539}
   - {x: -416.31, y: 4.35, z: 512.1}
   - {x: -24.1, y: 4.35, z: 709}
   _rotationDuration: 5
-  _rotationSpeed: 8
-  _speed: 15
   _playerTransform: {fileID: 1557005710}
-  _references: {fileID: 530064397}
   _monsterAni: {fileID: 1825240123}
   _hitPlayer: {fileID: 1920978328}
   _subOxygen: {fileID: 0}
@@ -14656,8 +14644,7 @@ MonoBehaviour:
   _xMaxPos: 0
   _zMinPos: 0
   _zMaxPos: 0
-  _left: {x: 0, y: 0, z: 0}
-  _right: {x: 0, y: 0, z: 0}
+  _directions: []
   _north: 0
   _south: 0
   _east: 0
@@ -15248,8 +15235,7 @@ MonoBehaviour:
   _xMaxPos: 0
   _zMinPos: 0
   _zMaxPos: 0
-  _left: {x: 0, y: 0, z: 0}
-  _right: {x: 0, y: 0, z: 0}
+  _directions: []
   _north: 0
   _south: 0
   _east: 0
@@ -16416,6 +16402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   events: []
   _object: {fileID: 0}
+  _subOxygen: {fileID: 0}
 --- !u!95 &1392856062
 Animator:
   serializedVersion: 5
@@ -17009,8 +16996,7 @@ MonoBehaviour:
   _xMaxPos: 0
   _zMinPos: 0
   _zMaxPos: 0
-  _left: {x: 0, y: 0, z: 0}
-  _right: {x: 0, y: 0, z: 0}
+  _directions: []
   _north: 0
   _south: 0
   _east: 0
@@ -17923,6 +17909,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   events: []
   _object: {fileID: 0}
+  _subOxygen: {fileID: 0}
 --- !u!95 &1526904110
 Animator:
   serializedVersion: 5
@@ -18474,6 +18461,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   events: []
   _object: {fileID: 0}
+  _subOxygen: {fileID: 0}
 --- !u!1 &1591877038
 GameObject:
   m_ObjectHideFlags: 0
@@ -20367,8 +20355,7 @@ MonoBehaviour:
   _xMaxPos: 0
   _zMinPos: 0
   _zMaxPos: 0
-  _left: {x: 0, y: 0, z: 0}
-  _right: {x: 0, y: 0, z: 0}
+  _directions: []
   _north: 0
   _south: 0
   _east: 0
@@ -21344,8 +21331,7 @@ MonoBehaviour:
   _xMaxPos: 175
   _zMinPos: 18
   _zMaxPos: 124
-  _left: {x: 51.7, y: 0.67, z: 71.83}
-  _right: {x: 156.99, y: 0.67, z: 131.6}
+  _directions: []
   _north: 0
   _south: 0
   _east: 0
@@ -21414,6 +21400,7 @@ MonoBehaviour:
       Data4: 728338648
     Path: event:/Sounds/MonsterFootsteps
   _object: {fileID: 0}
+  _subOxygen: {fileID: 0}
 --- !u!4 &1825240125
 Transform:
   m_ObjectHideFlags: 0
@@ -25413,6 +25400,10 @@ PrefabInstance:
     - target: {fileID: 2744174990037333389, guid: 2dec1f52873391a46bd69e0c24745309, type: 3}
       propertyPath: m_Name
       value: Chaos
+      objectReference: {fileID: 0}
+    - target: {fileID: 2744174990037333389, guid: 2dec1f52873391a46bd69e0c24745309, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3193427449780919144, guid: 2dec1f52873391a46bd69e0c24745309, type: 3}
       propertyPath: m_StaticEditorFlags
