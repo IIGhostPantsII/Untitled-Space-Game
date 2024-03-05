@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject _gameOverScreen;
     [SerializeField] private GameObject _victoryScreen;
     [SerializeField] private GameObject _interactPrompt;
+    [SerializeField] private GameObject _interactPromptDoor;
     [SerializeField] private GameObject _camObject;
     [SerializeField] private SoundPerception _monsterHearing;
     [SerializeField] private PowerButton[] _powerButtons;
@@ -510,7 +511,21 @@ public class PlayerController : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Button"))
         {
-            if(!other.gameObject.GetComponent<PowerButton>().IsOn)
+            if(other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.Door)
+            {
+                if(other.gameObject.GetComponent<PowerButton>()._isDoorOn)
+                {
+                    other.gameObject.GetComponent<PowerButton>()._text.SetText("Close Door");
+                }
+                else
+                {
+                    other.gameObject.GetComponent<PowerButton>()._text.SetText("Open Door");
+                }
+                _interactPromptDoor.SetActive(true);
+                canInteract = true;
+                currentButton = other.gameObject.GetComponent<PowerButton>();
+            }
+            else if(!other.gameObject.GetComponent<PowerButton>().IsOn)
             {
                 _interactPrompt.SetActive(true);
                 canInteract = true;
@@ -548,6 +563,7 @@ public class PlayerController : MonoBehaviour
         {
             _interactPrompt.GetComponentInChildren<Image>().fillAmount = 0;
             _interactPrompt.SetActive(false);
+            _interactPromptDoor.SetActive(false);
             canInteract = false;
             currentButton = null;
         }
