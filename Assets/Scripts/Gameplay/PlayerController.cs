@@ -160,16 +160,19 @@ public class PlayerController : MonoBehaviour
             {
                 currentButton.FillBar();
                 _interactPrompt.GetComponentInChildren<Image>().fillAmount = currentButton.ButtonProgress;
+                _interactPromptDoor.GetComponentInChildren<Image>().fillAmount = currentButton.ButtonProgress;
                 if(currentButton.IsOn)
                 {
                     _interactPrompt.GetComponentInChildren<Image>().fillAmount = 0;
+                    _interactPromptDoor.GetComponentInChildren<Image>().fillAmount = 0;
                     _interactPrompt.SetActive(false);
+                    _interactPromptDoor.SetActive(false);
                 }
             } 
             else if(currentButton != null)
             {
-                
                 _interactPrompt.GetComponentInChildren<Image>().fillAmount = currentButton.ButtonProgress;
+                _interactPromptDoor.GetComponentInChildren<Image>().fillAmount = currentButton.ButtonProgress;
             }
 
             if(isMoving)
@@ -513,14 +516,6 @@ public class PlayerController : MonoBehaviour
         {
             if(other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.Door)
             {
-                if(other.gameObject.GetComponent<PowerButton>()._isDoorOn)
-                {
-                    other.gameObject.GetComponent<PowerButton>()._text.SetText("Close Door");
-                }
-                else
-                {
-                    other.gameObject.GetComponent<PowerButton>()._text.SetText("Open Door");
-                }
                 _interactPromptDoor.SetActive(true);
                 canInteract = true;
                 currentButton = other.gameObject.GetComponent<PowerButton>();

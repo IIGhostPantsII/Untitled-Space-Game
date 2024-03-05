@@ -9,6 +9,7 @@ using UnityEngine.Serialization;
 public static class Globals
 {
     public static bool Movement = true;
+    public static bool MonsterMovement = true;
     public static bool GameIsActive;
     public static bool Paused;
     public static bool AnimationOver;
@@ -32,6 +33,16 @@ public static class Globals
     public static void UnlockMovement()
     {
         Movement = true;
+    }
+
+    public static void LockMonsterMovement()
+    {
+        MonsterMovement = false;
+    }
+
+    public static void UnlockMonsterMovement()
+    {
+        MonsterMovement = true;
     }
 
     public static void ResetGame(bool isGameOver)
