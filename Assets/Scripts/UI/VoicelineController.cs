@@ -38,7 +38,7 @@ public class VoicelineController : MonoBehaviour
     void PlaySound()
     {
         System.Random rand = new System.Random();
-        StartCoroutine(PlayVoiceline($"msg_descole_test{Random.Range(1, 6)}"));
+        StartCoroutine(PlayVoiceline($"msg_descole_test{Random.Range(1, 9)}"));
     }
 
     public IEnumerator PlayVoiceline(string sound)

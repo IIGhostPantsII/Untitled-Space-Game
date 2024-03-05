@@ -12,6 +12,7 @@ TagManager:
   - TiledGround
   - LowGravTrigger
   - RoomTask
+  - Ladder
   layers:
   - Default
   - TransparentFX
