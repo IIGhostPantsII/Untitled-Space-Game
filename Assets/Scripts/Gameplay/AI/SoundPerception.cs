@@ -9,20 +9,36 @@ public class SoundPerception : MonoBehaviour
     [SerializeField] private float _threshold;
 
     private float distance;
+    private float combined;
+
+    private int counter;
+
+    private bool goBackToIdle;
 
     public void ActionPerformed(float value)
     {
         distance = Vector3.Distance(gameObject.transform.position, _playerTransform.position);
-        Debug.Log("Distance between object1 and object2: " + distance);
-        float combined = distance / value;
-        Debug.Log(combined);
-        if(_threshold / 5 > combined && !Globals.ChaseMode)
+        //Debug.Log("Distance between object1 and object2: " + distance);
+        combined = distance / value;
+        if(_threshold / 4 > combined && !Globals.ChaseMode)
         {
             Globals.ChangeMonsterState("Chase");
         }
-        else if(_threshold > combined && !Globals.ChaseMode)
+        else if(_threshold > combined && !Globals.ChaseMode && !Globals.PatrolMode)
         {
             Globals.ChangeMonsterState("Patrol");
+        }
+    }
+
+    public bool ChaseCheck()
+    {
+        if(_threshold / 2.2f > combined)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 
@@ -31,17 +47,36 @@ public class SoundPerception : MonoBehaviour
         Vector3 randomPosition = new Vector3(Random.Range(_playerTransform.position.x - 10f, _playerTransform.position.x + 10f), 0.67f, Random.Range(_playerTransform.position.z - 10f, _playerTransform.position.z + 10f));
         
         NavMeshHit hit;
-        // If pos is on the navmesh
         if(NavMesh.SamplePosition(randomPosition, out hit, 1.0f, NavMesh.AllAreas))
         {
-            // The Y position doesn't matter for the navmesh
             Vector3 newPosition = new Vector3(hit.position.x, 0.67f, hit.position.z);
+            goBackToIdle = false;
             return newPosition;
         }
         else
         {
-            // Return the result of the recursive call
+            counter++;
+            if(counter > 99)
+            {
+                counter = 0;
+                Debug.Log("Player Not In Walkable Area, Resetting...");
+                Globals.ChangeMonsterState("Idle");
+                goBackToIdle = true;
+                return Vector3.zero;
+            }
             return RandomizedPlayerPos();
+        }
+    }
+
+    public bool IfIdle()
+    {
+        if(goBackToIdle)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }

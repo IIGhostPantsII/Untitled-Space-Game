@@ -9,9 +9,12 @@ public class Vision : MonoBehaviour
 
     private float timeNotSeen;
 
+    private SoundPerception _sound;
+
     void Start()
     {
         timeNotSeen = 0f;
+        _sound = GetComponent<SoundPerception>();
     }
 
     void Update()
@@ -32,7 +35,6 @@ public class Vision : MonoBehaviour
                 if(hit.collider.CompareTag("Player") && Globals.CheckMonsterState("Idle") || hit.collider.CompareTag("Player") && Globals.CheckMonsterState("Patrol"))
                 {
                     Globals.ChangeMonsterState("Chase");
-                    Debug.Log("Player detected!");
                 }
                 else if(hit.collider.CompareTag("Player"))
                 {
@@ -42,10 +44,9 @@ public class Vision : MonoBehaviour
         }
         else
         {
-            if(Globals.CheckMonsterState("Chase") && timeNotSeen > 5f)
+            if(Globals.CheckMonsterState("Chase") && timeNotSeen > 5f && !_sound.ChaseCheck())
             {
                 Globals.ChangeMonsterState("Idle");
-                Debug.Log("Switching Back");
             }
             else if(Globals.CheckMonsterState("Chase"))
             {

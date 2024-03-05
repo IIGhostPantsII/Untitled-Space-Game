@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using FMODUnity;
+using UnityEngine.Serialization;
 
 public static class Globals
 {
@@ -13,10 +15,14 @@ public static class Globals
     public static bool GetOriginalTriggers;
     public static GameState GameState = GameState.Main;
 
+    public static List<RoomTasks> RoomTasks = new List<RoomTasks>();
+
     //Monster Modes
     public static bool ChaseMode;
     public static bool IdleMode;
     public static bool PatrolMode;
+
+    public static int Money;
 
     public static void LockMovement()
     {
@@ -28,9 +34,16 @@ public static class Globals
         Movement = true;
     }
 
-    public static void ResetGame()
+    public static void ResetGame(bool isGameOver)
     {
         //Turn off all Bools that get turned on mid-game
+        if(isGameOver)
+        {
+            Money = 0;
+        }
+        PatrolMode = false;
+        IdleMode = true;
+        ChaseMode = false;
     }
 
     public static void OriginalTriggersCompleted()
@@ -113,6 +126,16 @@ public static class Globals
             }
         }
     }
+
+    public static void AddMoney(int value)
+    {
+        Money += value;
+    }
+
+    public static void LoseMoney(int value)
+    {
+        Money -= value;
+    }
     
     public static Dictionary<string, ArrayList> LoadTSV(TextAsset file) {
         Dictionary<string, ArrayList> dictionary = new Dictionary<string, ArrayList>();
@@ -145,4 +168,19 @@ public enum GameState
     Paused,
     Lost,
     Victory
+}
+
+[Serializable]
+public struct RoomTasks
+{
+    public string RoomName;
+    public Task[] Tasks;
+}
+
+[Serializable]
+public struct Task
+{
+    public string TaskName;
+    public int TotalSteps;
+    public int CompletedSteps;
 }
