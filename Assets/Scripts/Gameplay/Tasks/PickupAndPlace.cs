@@ -8,28 +8,42 @@ public class PickupAndPlace : MonoBehaviour
     [SerializeField] private GameObject[] _items;
 
     private List<GameObject> inactiveItems = new List<GameObject>();
+    private List<Transform> inactiveTransforms = new List<Transform>();
+
+    [HideInInspector] public int counter = 0;
 
     public void Pickup(int value)
     {
         _items[value].SetActive(false);
     }
 
-    public void Place(int value)
+    public void Place()
     {
-        gameObject.transform.position = _placedTransforms[value].position;
-        gameObject.transform.rotation = _placedTransforms[value].rotation;
-        _items[value].SetActive(true);
+        GetInactiveItems();
+        TurnOn();
     }
 
-    public List<GameObject> GetInactiveItems()
+    public void GetInactiveItems()
     {
         for (int i = 0; i < _items.Length; i++)
         {
             if (!_items[i].activeSelf)
             {
-                _inactiveItems.Add(_items[i]);
+                inactiveItems.Add(_items[i]);
+                inactiveTransforms.Add(_placedTransforms[i]);
             }
         }
-        return _inactiveItems;
+    }
+
+    public void TurnOn()
+    {
+        for(int i = 0; i < inactiveItems.Count; i++)
+        {
+            counter++;
+
+            inactiveItems[i].transform.position = inactiveTransforms[i].position;
+            inactiveItems[i].transform.rotation = inactiveTransforms[i].rotation;
+            inactiveItems[i].SetActive(true);
+        }
     }
 }
