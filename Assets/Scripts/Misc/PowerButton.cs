@@ -27,7 +27,8 @@ public class PowerButton : MonoBehaviour
     public float ButtonProgress;
 
     private bool _isFilling;
-    private bool doorState = true;
+
+    [HideInInspector] public bool doorState = true;
 
     public event Action OnActivate;
 
@@ -60,6 +61,7 @@ public class PowerButton : MonoBehaviour
             ButtonProgress = 1;
             if (!string.IsNullOrEmpty(_taskName) && _buttonType != ButtonType.Place) FindObjectOfType<TaskManager>().IncrementTask(_taskName);
             doorState = !doorState;
+
             if(doorState && _buttonType == ButtonType.Door)
             {
                 _text.SetText("Close Door");
@@ -68,6 +70,7 @@ public class PowerButton : MonoBehaviour
             {
                 _text.SetText("Open Door");
             }
+            
             OnActivate?.Invoke();
 
             if(_taskName != null && _buttonType == ButtonType.Place)
@@ -76,6 +79,7 @@ public class PowerButton : MonoBehaviour
                 {
                     FindObjectOfType<TaskManager>().IncrementTask(_taskName);
                 }
+                _pickUp.counter = 0;
             }
         }
     }

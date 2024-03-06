@@ -11,9 +11,11 @@ public class PickupAndPlace : MonoBehaviour
     private List<Transform> inactiveTransforms = new List<Transform>();
 
     [HideInInspector] public int counter = 0;
+    [HideInInspector] public bool pickedUp;
 
     public void Pickup(int value)
     {
+        pickedUp = true;
         _items[value].SetActive(false);
     }
 
@@ -21,6 +23,7 @@ public class PickupAndPlace : MonoBehaviour
     {
         GetInactiveItems();
         TurnOn();
+        pickedUp = false;
     }
 
     public void GetInactiveItems()
@@ -37,13 +40,19 @@ public class PickupAndPlace : MonoBehaviour
 
     public void TurnOn()
     {
-        for(int i = 0; i < inactiveItems.Count; i++)
+        if(inactiveItems.Count > 0)
         {
-            counter++;
+            for(int i = 0; i < inactiveItems.Count; i++)
+            {
+                counter++;
 
-            inactiveItems[i].transform.position = inactiveTransforms[i].position;
-            inactiveItems[i].transform.rotation = inactiveTransforms[i].rotation;
-            inactiveItems[i].SetActive(true);
+                inactiveItems[i].transform.position = inactiveTransforms[i].position;
+                inactiveItems[i].transform.rotation = inactiveTransforms[i].rotation;
+                inactiveItems[i].SetActive(true);
+            }
+
+            inactiveItems = new List<GameObject>();
+            inactiveTransforms = new List<Transform>();
         }
     }
 }

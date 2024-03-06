@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 using Cinemachine;
 
 public class PlayerController : MonoBehaviour
@@ -43,7 +44,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject _gameOverScreen;
     [SerializeField] private GameObject _victoryScreen;
     [SerializeField] private GameObject _interactPrompt;
-    [SerializeField] private GameObject _interactPromptDoor;
+    [SerializeField] private GameObject _interactPromptText;
+    [SerializeField] private TMP_Text _interactText;
     [SerializeField] private GameObject _camObject;
     [SerializeField] private SoundPerception _monsterHearing;
     [SerializeField] private PowerButton[] _powerButtons;
@@ -71,6 +73,7 @@ public class PlayerController : MonoBehaviour
     private bool canInteract;
     private PowerButton currentButton;
     private AreaTriggers areaTrigger;
+    private PickupAndPlace pickupAndPlace;
 
     public bool is2D;
     private int winCounter = 0;
@@ -160,19 +163,19 @@ public class PlayerController : MonoBehaviour
             {
                 currentButton.FillBar();
                 _interactPrompt.GetComponentInChildren<Image>().fillAmount = currentButton.ButtonProgress;
-                _interactPromptDoor.GetComponentInChildren<Image>().fillAmount = currentButton.ButtonProgress;
+                _interactPromptText.GetComponentInChildren<Image>().fillAmount = currentButton.ButtonProgress;
                 if(currentButton.IsOn)
                 {
                     _interactPrompt.GetComponentInChildren<Image>().fillAmount = 0;
-                    _interactPromptDoor.GetComponentInChildren<Image>().fillAmount = 0;
+                    _interactPromptText.GetComponentInChildren<Image>().fillAmount = 0;
                     _interactPrompt.SetActive(false);
-                    _interactPromptDoor.SetActive(false);
+                    _interactPromptText.SetActive(false);
                 }
             } 
             else if(currentButton != null)
             {
                 _interactPrompt.GetComponentInChildren<Image>().fillAmount = currentButton.ButtonProgress;
-                _interactPromptDoor.GetComponentInChildren<Image>().fillAmount = currentButton.ButtonProgress;
+                _interactPromptText.GetComponentInChildren<Image>().fillAmount = currentButton.ButtonProgress;
             }
 
             if(isMoving)
@@ -514,18 +517,37 @@ public class PlayerController : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Button"))
         {
-            if(other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.Door)
+            if(other.gameObject.GetComponent<PowerButton>()._buttonType != ButtonType.Power)
             {
-                _interactPromptDoor.SetActive(true);
-                canInteract = true;
-                currentButton = other.gameObject.GetComponent<PowerButton>();
+                _interactPromptText.SetActive(true);
+                if(other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.Place)
+                {
+                    pickupAndPlace = other.gameObject.GetComponent<PickupAndPlace>();
+                    _interactText.SetText("Place Item");
+                }
+                else if(other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.Pickup)
+                {
+                    _interactText.SetText("Pickup Item");
+                }
+                else if(other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.Door)
+                {
+                    if(other.gameObject.GetComponent<PowerButton>().doorState)
+                    {
+                        _interactText.SetText("Close Door");
+                    }
+                    else if(!other.gameObject.GetComponent<PowerButton>().doorState)
+                    {
+                        _interactText.SetText("Open Door");
+                    }
+                }
             }
             else if(!other.gameObject.GetComponent<PowerButton>().IsOn)
             {
                 _interactPrompt.SetActive(true);
-                canInteract = true;
-                currentButton = other.gameObject.GetComponent<PowerButton>();
             }
+
+            canInteract = true;
+            currentButton = other.gameObject.GetComponent<PowerButton>();
         }
 
         if(other.gameObject.CompareTag("AreaTrigger"))
@@ -558,7 +580,7 @@ public class PlayerController : MonoBehaviour
         {
             _interactPrompt.GetComponentInChildren<Image>().fillAmount = 0;
             _interactPrompt.SetActive(false);
-            _interactPromptDoor.SetActive(false);
+            _interactPromptText.SetActive(false);
             canInteract = false;
             currentButton = null;
         }
