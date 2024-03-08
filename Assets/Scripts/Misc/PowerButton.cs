@@ -22,7 +22,10 @@ public class PowerButton : MonoBehaviour
     [ShowIf("_buttonType", ButtonType.Door)] [AllowNesting] [SerializeField] public TMP_Text _text;
 
     [ShowIf("ShouldShowPickup")] [AllowNesting] [SerializeField] private PickupAndPlace _pickUp;
+     [ShowIf("_buttonType", ButtonType.Pickup)] [AllowNesting] [SerializeField] private bool _automatic;
     [ShowIf("_buttonType", ButtonType.Pickup)] [AllowNesting] [SerializeField] private int _value;
+
+    [ShowIf("ShouldShowTextPrompt")] [AllowNesting] [SerializeField] public string _taskText;
 
     public float ButtonProgress;
 
@@ -41,11 +44,20 @@ public class PowerButton : MonoBehaviour
         }
         else if(_buttonType == ButtonType.Pickup)
         {
-            OnActivate += () => _pickUp.Pickup(_value);
+            OnActivate += () => _pickUp.Pickup(_value, _automatic);
         }
         else if(_buttonType == ButtonType.Place)
         {
             OnActivate += () => _pickUp.Place();
+        }
+        else if(_buttonType == ButtonType.Disappear)
+        {
+            OnActivate += () => gameObject.SetActive(false);
+        }
+        else if(_buttonType == ButtonType.Fill)
+        {
+            GameObject child = gameObject.transform.GetChild(0).gameObject;
+            OnActivate += () => child.SetActive(true);
         }
     }
 
@@ -59,7 +71,6 @@ public class PowerButton : MonoBehaviour
         {
             IsOn = true;
             ButtonProgress = 1;
-            if (!string.IsNullOrEmpty(_taskName) && _buttonType != ButtonType.Place) FindObjectOfType<TaskManager>().IncrementTask(_taskName);
             doorState = !doorState;
 
             if(doorState && _buttonType == ButtonType.Door)
@@ -73,14 +84,18 @@ public class PowerButton : MonoBehaviour
             
             OnActivate?.Invoke();
 
-            if(_taskName != null && _buttonType == ButtonType.Place)
+            if(_taskName != null && _buttonType == ButtonType.Place || _taskName != null && _buttonType == ButtonType.Pickup && _automatic)
             {
                 for(int i = 0; i < _pickUp.counter; i++)
                 {
                     FindObjectOfType<TaskManager>().IncrementTask(_taskName);
                 }
                 _pickUp.counter = 0;
+                return;
             }
+
+            if (!string.IsNullOrEmpty(_taskName)) FindObjectOfType<TaskManager>().IncrementTask(_taskName);
+
         }
     }
 
@@ -110,12 +125,17 @@ public class PowerButton : MonoBehaviour
 
     private bool ShouldShowTasks()
     {
-        return _buttonType == ButtonType.Place || _buttonType == ButtonType.Power;
+        return _buttonType == ButtonType.Place || _buttonType == ButtonType.Power || _buttonType == ButtonType.Disappear || _buttonType == ButtonType.Pickup && _automatic || _buttonType == ButtonType.Fill;
     }
 
     private bool ShouldShowPickup()
     {
         return _buttonType == ButtonType.Place || _buttonType == ButtonType.Pickup;
+    }
+
+    private bool ShouldShowTextPrompt()
+    {
+        return _buttonType == ButtonType.Disappear || _buttonType == ButtonType.Fill;
     }
 }
 
@@ -125,4 +145,6 @@ public enum ButtonType
     Door,
     Pickup,
     Place,
+    Disappear,
+    Fill
 }

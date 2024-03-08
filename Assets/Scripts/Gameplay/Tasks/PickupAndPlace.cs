@@ -13,10 +13,22 @@ public class PickupAndPlace : MonoBehaviour
     [HideInInspector] public int counter = 0;
     [HideInInspector] public bool pickedUp;
 
-    public void Pickup(int value)
+    public void Pickup(int value, bool automatic)
     {
         pickedUp = true;
+        
+        if(_items[value].transform.childCount > 0)
+        {
+            GameObject child = _items[value].transform.GetChild(0).gameObject;
+            child.SetActive(false);
+        }
+        
         _items[value].SetActive(false);
+
+        if(automatic)
+        {
+            Place();
+        }
     }
 
     public void Place()

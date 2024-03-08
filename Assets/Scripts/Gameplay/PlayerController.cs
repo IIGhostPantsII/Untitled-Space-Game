@@ -517,7 +517,7 @@ public class PlayerController : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Button"))
         {
-            if(other.gameObject.GetComponent<PowerButton>()._buttonType != ButtonType.Power)
+            if(other.gameObject.GetComponent<PowerButton>()._buttonType != ButtonType.Power && !other.gameObject.GetComponent<PowerButton>().IsOn)
             {
                 _interactPromptText.SetActive(true);
                 if(other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.Place)
@@ -539,6 +539,10 @@ public class PlayerController : MonoBehaviour
                     {
                         _interactText.SetText("Open Door");
                     }
+                }
+                else if(other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.Disappear || other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.Fill)
+                {
+                    _interactText.SetText(other.gameObject.GetComponent<PowerButton>()._taskText);
                 }
             }
             else if(!other.gameObject.GetComponent<PowerButton>().IsOn)
