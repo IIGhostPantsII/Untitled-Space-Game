@@ -28,6 +28,7 @@ public class GainOxygen : MonoBehaviour
         {
             InStation = true;
             eventInstance.start();
+            Oxygen.PauseDepletion = true;
             if(Oxygen.NoSprint)
             {
                 eventInstance.setParameterByName("Lowpass",(_subOxygenScript._oxygenMeter * 220));
@@ -43,6 +44,7 @@ public class GainOxygen : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+            Oxygen.PauseDepletion = false;
             InStation = false;
         }
     }

@@ -1,4 +1,5 @@
 using System.Collections;
+using System.IO;
 using FMODUnity;
 using NaughtyAttributes;
 using UnityEngine;
@@ -95,6 +96,8 @@ public class PlayerController : MonoBehaviour
         input = new PlayerInput();
         
         input.Player.Pause.performed += PauseGame;
+        input.Player.Screenshot.performed += Screenshot;
+        input.UI.Screenshot.performed += Screenshot;
     }
 
     void Start()
@@ -584,6 +587,17 @@ public class PlayerController : MonoBehaviour
         {
             _ladderMode = false;
         }
+    }
+    
+    private void Screenshot(InputAction.CallbackContext obj)
+    {
+        Globals.Screenshot();
+    }
+    
+    [Button()]
+    public void OpenSaveDataFolder()
+    {
+        System.Diagnostics.Process.Start(Globals.SaveDataPath);
     }
 
     public void OpenFeedbackForm()
