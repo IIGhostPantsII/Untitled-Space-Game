@@ -145,7 +145,10 @@ public class MonsterAI : MonoBehaviour
             else if(Globals.AnimationOver)
             {
                 newTime = Time.time - timeOffset;
-                monsterPathing.SetDestination(_playerTransform.position);
+                if(Globals.MonsterMovement)
+                {
+                    monsterPathing.SetDestination(_playerTransform.position);
+                }
                 //These numbers scare me I dont remember what they mean
                 _monsterAni.speed = Mathf.Clamp(tempMonsterAniSpeed + ((newTime) * 0.18f), 0.33f, 5f);
                 monsterPathing.speed = Mathf.Clamp(tempMonsterSpeed + ((newTime) * 2f), 5f, 50f);
@@ -167,8 +170,11 @@ public class MonsterAI : MonoBehaviour
                 rotationTimer = 0f;
                 if(!soundPerception.IfIdle())
                 {
-                    growlEvent.start();
-                    monsterPathing.SetDestination(randomPosition);
+                    if(Globals.MonsterMovement)
+                    {
+                        growlEvent.start();
+                        monsterPathing.SetDestination(randomPosition);
+                    }
                 }
             }
 
@@ -226,12 +232,20 @@ public class MonsterAI : MonoBehaviour
                     {
                         leaving = areaTrigger.Leave(2);
                     }
-                    monsterPathing.SetDestination(leaving);
+
+                    if(Globals.MonsterMovement)
+                    {
+                        monsterPathing.SetDestination(leaving);
+                    }
+
                     idleCounter = 0;
                 }
                 else
                 {
-                    monsterPathing.SetDestination(newPosition);
+                    if(Globals.MonsterMovement)
+                    {
+                        monsterPathing.SetDestination(newPosition);
+                    }
                 }
             }
             else

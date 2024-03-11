@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
+using UnityEngine.AI;
 
 public class Door : MonoBehaviour
 {
@@ -15,11 +16,39 @@ public class Door : MonoBehaviour
     public float maxYPosition = 7.5f;
     public float lowYPosition = -30f;
 
+    private float timer = 0.0f;
+    private float doorDuration;
+
     [SerializeField] private Oxygen _subMeter;
  
     [HideInInspector] public bool isInsideTrigger = false;
     [HideInInspector] public bool isOutsideTrigger = false;
+
     private bool doorState = true;
+
+    public static bool PauseMovement;
+
+    void Start()
+    {
+        doorDuration = Random.Range(2f, 3f);
+        moveEventOpen = RuntimeManager.CreateInstance(moveEventPathOpen);
+        moveEventClose = RuntimeManager.CreateInstance(moveEventPathClose);
+    }
+
+    void Update()
+    {
+        if(isInsideTrigger)
+        {
+            MoveDoorDown();
+        }
+        else if(isOutsideTrigger)
+        {
+            MoveDoorUp();
+        }
+
+        Globals.SpatialSounds(moveEventOpen, gameObject);
+        Globals.SpatialSounds(moveEventClose, gameObject);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -33,6 +62,30 @@ public class Door : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.CompareTag("Monster") && !doorState)
+        {
+            NavMeshAgent monsterPathing = other.gameObject.GetComponent<NavMeshAgent>();
+            timer += Time.deltaTime;
+            Globals.LockMonsterMovement();
+            monsterPathing.SetDestination(other.gameObject.transform.position);
+
+            if(timer > doorDuration)
+            {
+                Globals.UnlockMonsterMovement();
+                doorDuration = Random.Range(2f, 3f);
+                timer = 0;
+                doorState = true;
+                isInsideTrigger = true;
+                isOutsideTrigger = false;
+                moveEventOpen.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+                moveEventOpen.start();
+                Globals.CheckLowpass(moveEventOpen, _subMeter);
+            }
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
         if(other.CompareTag("Player") && doorState || other.CompareTag("Monster") && doorState)
@@ -41,27 +94,6 @@ public class Door : MonoBehaviour
             isOutsideTrigger = true;
             StartCoroutine(Close());
         }
-    }
-
-    void Start()
-    {
-        moveEventOpen = RuntimeManager.CreateInstance(moveEventPathOpen);
-        moveEventClose = RuntimeManager.CreateInstance(moveEventPathClose);
-    }
-
-    private void Update()
-    {
-        if(isInsideTrigger)
-        {
-            MoveDoorDown();
-        }
-        else if(isOutsideTrigger)
-        {
-            MoveDoorUp();
-        }
-
-        Globals.SpatialSounds(moveEventOpen, gameObject);
-        Globals.SpatialSounds(moveEventClose, gameObject);
     }
 
     private void MoveDoorDown()

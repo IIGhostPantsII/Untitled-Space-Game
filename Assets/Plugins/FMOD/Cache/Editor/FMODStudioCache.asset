@@ -215,7 +215,7 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638452354306163122
+  lastModified: 638445623091118599
   FileSizes:
   - Name: Desktop
     Value: 610912
@@ -407,10 +407,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638452386397480887
+  lastModified: 638445623090969144
   FileSizes:
   - Name: Desktop
-    Value: 3408
+    Value: 3376
   Exists: 1
 --- !u!114 &-6729406449828546326
 MonoBehaviour:
@@ -595,6 +595,7 @@ MonoBehaviour:
   - {fileID: 8111687369947124944}
   - {fileID: 8111687369947124944}
   - {fileID: 8111687369947124944}
+  - {fileID: 8111687369947124944}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -631,30 +632,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 998
---- !u!114 &-5145313513009751817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/msg_descole_test8/Lowpass
-  m_EditorClassIdentifier: 
-  Name: Lowpass
-  StudioPath: 
-  Min: 0
-  Max: 22000
-  Default: 22000
-  ID:
-    data1: 2238647653
-    data2: 2004388847
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &-4960968217734572833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -783,34 +760,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-4014128769453512228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Dialogue Sounds/Dialogue/msg_descole_test8
-  m_EditorClassIdentifier: 
-  Path: event:/Dialogue Sounds/Dialogue/msg_descole_test8
-  Guid:
-    Data1: -1277493385
-    Data2: 1238593798
-    Data3: -1587533168
-    Data4: 1849786219
-  Banks:
-  - {fileID: 8111687369947124944}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 1
-  Parameters:
-  - {fileID: -5145313513009751817}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 162866
 --- !u!114 &-3157802976680612726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1273,7 +1222,7 @@ MonoBehaviour:
   - {fileID: -8170756975471183369}
   MinDistance: 1
   MaxDistance: 20
-  Length: 4100
+  Length: 3960
 --- !u!114 &-736891307919907582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1454,13 +1403,12 @@ MonoBehaviour:
   - {fileID: 103095151630882486}
   - {fileID: 8030287591198080668}
   - {fileID: 4953556118182916092}
-  - {fileID: -4014128769453512228}
   EditorParameters: []
   MasterBanks:
   - {fileID: 6422365686012519055}
   StringsBanks:
   - {fileID: -6838026933355539509}
-  cacheTime: 638452386400863615
+  cacheTime: 638445623091168432
   cacheVersion: 131607
 --- !u!114 &103095151630882486
 MonoBehaviour:
@@ -1641,6 +1589,7 @@ MonoBehaviour:
     Data3: 1253090438
     Data4: -692800330
   Banks:
+  - {fileID: 8111687369947124944}
   - {fileID: 8111687369947124944}
   - {fileID: 8111687369947124944}
   - {fileID: 8111687369947124944}
@@ -1900,7 +1849,7 @@ MonoBehaviour:
   - {fileID: 4957461297133782951}
   MinDistance: 1
   MaxDistance: 20
-  Length: 3250
+  Length: 2376
 --- !u!114 &2893890516357817353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2600,7 +2549,7 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638452386397461045
+  lastModified: 638445623090919266
   FileSizes:
   - Name: Desktop
     Value: 73248
@@ -2804,10 +2753,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Voices.bank
   Name: Voices
   StudioPath: bank:/Voices
-  lastModified: 638452386400863615
+  lastModified: 638445623091168432
   FileSizes:
   - Name: Desktop
-    Value: 3716896
+    Value: 1472288
   Exists: 1
 --- !u!114 &8179596511907740439
 MonoBehaviour:
@@ -2931,7 +2880,7 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638452354302234791
+  lastModified: 638445623091058798
   FileSizes:
   - Name: Desktop
     Value: 2424832
