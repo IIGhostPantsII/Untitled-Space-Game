@@ -20,9 +20,10 @@ public class Oxygen : MonoBehaviour
     [SerializeField] private Color goodState;
     [SerializeField] private Color warning;
     [SerializeField] private Color low;
+    private Color _currentCol;
 
-    private RectTransform _rect;
-    private Image _image;
+    private Slider _oxyLevel;
+    [SerializeField] private Image _image;
     [HideInInspector] public float _depletionSpeed = 1.0f;
 
     // thresholds for color transitions
@@ -46,8 +47,7 @@ public class Oxygen : MonoBehaviour
 
     void Start()
     {
-        _rect = gameObject.GetComponent<RectTransform>();
-        _image = GetComponent<Image>();
+        _oxyLevel = gameObject.GetComponent<Slider>();
 
         if(eventPath.ToString() != null)
         {
@@ -67,6 +67,8 @@ public class Oxygen : MonoBehaviour
 
     void Update()
     {
+        UpdateColor();
+        
         if (PauseDepletion) return;
 
         if (!NoSprint && !_subMeter || !GainOxygen.InStation && !_subMeter)
@@ -78,11 +80,8 @@ public class Oxygen : MonoBehaviour
         {
             _oxygenMeter = Mathf.Clamp(_oxygenMeter, 0f, 100f);
 
-            _rect.sizeDelta = new Vector2(_rect.sizeDelta.x, _oxygenMeter);
-            _rect.anchoredPosition = new Vector2(_rect.anchoredPosition.x, -534.0f + ((_oxygenMeter * 2.221f))); // Set your desired position
-    
-            UpdateColor();
-    
+            _oxyLevel.value = _oxygenMeter / 100f;
+
             NoSprint = _oxygenMeter <= 0;
         }
         else if (_mainOxygen != null)
@@ -118,11 +117,8 @@ public class Oxygen : MonoBehaviour
 
                 _oxygenMeter = Mathf.Clamp(_oxygenMeter, 0f, 100f);
 
-                _rect.sizeDelta = new Vector2(_rect.sizeDelta.x, _oxygenMeter);
-                _rect.anchoredPosition = new Vector2(_rect.anchoredPosition.x, -534.0f + ((_oxygenMeter * 1.105f))); // Set your desired position
-        
-                UpdateColor();
-        
+                _oxyLevel.value = _oxygenMeter / 100f;
+
                 NoOxygen = _oxygenMeter <= 0;
             }
             else
@@ -135,20 +131,40 @@ public class Oxygen : MonoBehaviour
     void UpdateColor()
     {
         float alpha = _image.color.a;
-        if(_oxygenMeter > warningThreshold)
+        
+        if(_oxygenMeter <= lowThreshold && (_currentCol != low))
         {
-            _image.color = goodState;
+            _currentCol = low;
+            StartCoroutine(TransitionColor(_image.color, low));
         }
-        else if(_oxygenMeter > lowThreshold)
+        else if(_oxygenMeter <= warningThreshold && _oxygenMeter > lowThreshold && (_currentCol != warning))
         {
-            _image.color = warning;
+            _currentCol = warning;
+            StartCoroutine(TransitionColor(_image.color, warning));
         }
-        else
+        else if (_oxygenMeter > warningThreshold && _currentCol != goodState)
         {
-            _image.color = low;
+            _currentCol = goodState;
+            StartCoroutine(TransitionColor(_image.color, goodState));
         }
 
         _image.color = new Color(_image.color.r, _image.color.g, _image.color.b, alpha);
+    }
+
+    private IEnumerator TransitionColor(Color col1, Color col2)
+    {
+        float time = 0f;
+        float duration = 0.2f;
+
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+
+            _image.color = Color.Lerp(col1, col2, time / duration);
+            yield return null;
+        }
+
+        _image.color = col2;
     }
 
     IEnumerator LowOxygen(float seconds)

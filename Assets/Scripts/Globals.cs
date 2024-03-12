@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEngine;
 using FMODUnity;
@@ -17,6 +18,9 @@ public static class Globals
     public static GameState GameState = GameState.Main;
 
     public static List<RoomTasks> RoomTasks = new List<RoomTasks>();
+    public static List<string> StoryFlags = new List<string>();
+    
+    public static readonly string SaveDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/Occupational Hazards ~ The Trials and Tribulations of the Stellar United Systems";
 
     //Monster Modes
     public static bool ChaseMode;
@@ -170,6 +174,20 @@ public static class Globals
         }
 
         return dictionary;
+    }
+    
+    public static void Screenshot()
+    {
+        string folderPath = Globals.SaveDataPath + "/Screenshots/";
+        string screenshotName =
+            "Screenshot " + System.DateTime.UtcNow.ToLocalTime().ToString("yyyy-MM-dd-HHmmss") + ".png";
+        
+        if (!Directory.Exists(folderPath))
+        {
+            Directory.CreateDirectory(folderPath);
+        }
+        
+        ScreenCapture.CaptureScreenshot(System.IO.Path.Combine(folderPath, screenshotName));
     }
 }
 

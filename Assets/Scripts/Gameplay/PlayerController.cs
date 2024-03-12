@@ -1,4 +1,5 @@
 using System.Collections;
+using System.IO;
 using FMODUnity;
 using NaughtyAttributes;
 using UnityEngine;
@@ -77,6 +78,7 @@ public class PlayerController : MonoBehaviour
 
     public bool is2D;
     private int winCounter = 0;
+    private bool _ladderMode;
 
     // Rotation - used for mouse input
     private float xRotation = 0f;
@@ -97,6 +99,8 @@ public class PlayerController : MonoBehaviour
         input = new PlayerInput();
         
         input.Player.Pause.performed += PauseGame;
+        input.Player.Screenshot.performed += Screenshot;
+        input.UI.Screenshot.performed += Screenshot;
     }
 
     void Start()
@@ -267,7 +271,9 @@ public class PlayerController : MonoBehaviour
         float grav = movement.y;
         Vector2 moveVector = input.Player.Move.ReadValue<Vector2>();
 
-        movement = new Vector3(moveVector.x, movement.y, moveVector.y);
+        if (!_ladderMode) movement = new Vector3(moveVector.x, movement.y, moveVector.y); 
+        else movement = new Vector3(moveVector.x, moveVector.y, 0);
+        
         movement = transform.TransformDirection(movement);
         
         if(Oxygen.NoSprint)
@@ -310,6 +316,8 @@ public class PlayerController : MonoBehaviour
 
         isMoving = moveVector != Vector2.zero;
         
+        if (_ladderMode) return;
+
         movement.y = grav;
         
         if(jumpPressed && !isJumping && charController.isGrounded)
@@ -368,6 +376,8 @@ public class PlayerController : MonoBehaviour
 
     private void HandleGravity()
     {
+        if (_ladderMode) return;
+        
         float gravity = isInLowGravity ? _gravityLowGrav : _gravity;
 
         if(charController.isGrounded)
@@ -515,53 +525,55 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Button"))
+        switch (other.gameObject.tag)
         {
-            if(other.gameObject.GetComponent<PowerButton>()._buttonType != ButtonType.Power && !other.gameObject.GetComponent<PowerButton>().IsOn)
-            {
-                _interactPromptText.SetActive(true);
-                if(other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.Place)
+            case "Button":
+                if(other.gameObject.GetComponent<PowerButton>()._buttonType != ButtonType.Power && !other.gameObject.GetComponent<PowerButton>().IsOn)
                 {
-                    pickupAndPlace = other.gameObject.GetComponent<PickupAndPlace>();
-                    _interactText.SetText("Place Item");
-                }
-                else if(other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.Pickup)
-                {
-                    _interactText.SetText("Pickup Item");
-                }
-                else if(other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.Door)
-                {
-                    if(other.gameObject.GetComponent<PowerButton>().doorState)
+                    _interactPromptText.SetActive(true);
+                    if(other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.Place)
                     {
-                        _interactText.SetText("Close Door");
+                        pickupAndPlace = other.gameObject.GetComponent<PickupAndPlace>();
+                        _interactText.SetText("Place Item");
                     }
-                    else if(!other.gameObject.GetComponent<PowerButton>().doorState)
+                    else if(other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.Pickup)
                     {
-                        _interactText.SetText("Open Door");
+                        _interactText.SetText("Pickup Item");
+                    }
+                    else if(other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.Door)
+                    {
+                        if(other.gameObject.GetComponent<PowerButton>().doorState)
+                        {
+                            _interactText.SetText("Close Door");
+                        }
+                        else if(!other.gameObject.GetComponent<PowerButton>().doorState)
+                        {
+                            _interactText.SetText("Open Door");
+                        }
+                    }
+                    else if(other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.Disappear || other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.Fill)
+                    {
+                        _interactText.SetText(other.gameObject.GetComponent<PowerButton>()._taskText);
                     }
                 }
-                else if(other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.Disappear || other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.Fill)
+                else if(!other.gameObject.GetComponent<PowerButton>().IsOn)
                 {
-                    _interactText.SetText(other.gameObject.GetComponent<PowerButton>()._taskText);
+                    _interactPrompt.SetActive(true);
                 }
-            }
-            else if(!other.gameObject.GetComponent<PowerButton>().IsOn)
-            {
-                _interactPrompt.SetActive(true);
-            }
 
-            canInteract = true;
-            currentButton = other.gameObject.GetComponent<PowerButton>();
-        }
+                canInteract = true;
+                currentButton = other.gameObject.GetComponent<PowerButton>();
 
-        if(other.gameObject.CompareTag("AreaTrigger"))
-        {
-            areaTrigger = other.gameObject.GetComponent<AreaTriggers>();
-        }
-
-        if (other.gameObject.CompareTag("LowGravTrigger"))
-        {
-            isInLowGravity = true;
+                break;
+            case "AreaTrigger":
+                areaTrigger = other.gameObject.GetComponent<AreaTriggers>();
+                break;
+            case "LowGravTrigger":
+                isInLowGravity = true;
+                break;
+            case "Ladder":
+                _ladderMode = true;
+                break;
         }
     }
 
@@ -588,11 +600,25 @@ public class PlayerController : MonoBehaviour
             canInteract = false;
             currentButton = null;
         }
-        
-        if (other.gameObject.CompareTag("LowGravTrigger"))
+        else if (other.gameObject.CompareTag("LowGravTrigger"))
         {
             isInLowGravity = false;
+        } 
+        else if (other.gameObject.CompareTag("Ladder"))
+        {
+            _ladderMode = false;
         }
+    }
+    
+    private void Screenshot(InputAction.CallbackContext obj)
+    {
+        Globals.Screenshot();
+    }
+    
+    [Button()]
+    public void OpenSaveDataFolder()
+    {
+        System.Diagnostics.Process.Start(Globals.SaveDataPath);
     }
 
     public void OpenFeedbackForm()
