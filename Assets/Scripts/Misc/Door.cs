@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
+using NaughtyAttributes;
 using UnityEngine.AI;
 
 public class Door : MonoBehaviour
@@ -13,8 +14,8 @@ public class Door : MonoBehaviour
     public FMOD.Studio.EventInstance moveEventClose;
 
     public float doorSpeed = 2.0f;
-    public float maxYPosition = 7.5f;
-    public float lowYPosition = -30f;
+    [ReadOnly] public float maxYPosition = 7.5f;
+    [ReadOnly] public float lowYPosition = -30f;
 
     private float timer = 0.0f;
     private float doorDuration;
@@ -33,6 +34,7 @@ public class Door : MonoBehaviour
         doorDuration = Random.Range(2f, 3f);
         moveEventOpen = RuntimeManager.CreateInstance(moveEventPathOpen);
         moveEventClose = RuntimeManager.CreateInstance(moveEventPathClose);
+        maxYPosition = transform.position.y;
     }
 
     void Update()
