@@ -7,6 +7,7 @@ using Random = UnityEngine.Random;
 public class VoicelineTriggerAlwaysCheck : MonoBehaviour
 {
     [SerializeField] private string[] _voicelines;
+    [SerializeField] private string[] _flags;
 
     private bool _playerColliding;
     private VoicelineController _voiceineController;
@@ -19,6 +20,8 @@ public class VoicelineTriggerAlwaysCheck : MonoBehaviour
     private void Update()
     {
         if (!_playerColliding) return;
+        if (_flags.Length >= 1)
+            if (!Globals.CheckStoryFlags(_flags)) return;
 
         _voiceineController.PlaySound(_voicelines[Random.Range(0, _voicelines.Length)]);
     }

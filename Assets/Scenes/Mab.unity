@@ -26901,7 +26901,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _voicelines:
-  - msg_marb_skip_opening
+  - msg_marb_opening
+  _flags: []
 --- !u!65 &493897944
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -60304,6 +60305,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _voicelines:
   - msg_marb_open_door
+  _flags:
+  - '!flg_skipped_opening'
 --- !u!1 &1103296114
 GameObject:
   m_ObjectHideFlags: 0
@@ -108889,6 +108892,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _voicelines:
   - msg_marb_explain_cleanup
+  _flags:
+  - '!flg_skipped_opening'
 --- !u!1 &1987658066
 GameObject:
   m_ObjectHideFlags: 0

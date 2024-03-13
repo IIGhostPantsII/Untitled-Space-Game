@@ -75,6 +75,44 @@ public static class Globals
     {
         AnimationOver = false;
     }
+    
+    public static bool CheckStoryFlags(string[] flags)
+    {
+        if (flags == null) return true;
+        if (flags.Length == 0) return true; 
+        bool[] bools = new bool[flags.Length];
+        for (int i = 0; i < flags.Length; i++)
+        {
+            bools[i] = false;
+            string flag = flags[i];
+            bool not = false;
+                
+            if (flag[0] == '!')
+            {
+                not = true;
+                flag = flag.Remove(0, 1);
+            }
+
+            if (not)
+            {
+                if (!StoryFlags.Contains(flag))
+                {
+                    bools[i] = true;
+                }  
+            }
+            else if (StoryFlags.Contains(flag))
+            {
+                bools[i] = true;
+            }
+        }
+
+        foreach (bool bowl in bools)
+        {
+            if (!bowl) return false;
+        }
+        
+        return true;
+    }
 
     public static void ChangeMonsterState(string Mode)
     {
