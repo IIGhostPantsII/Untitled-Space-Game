@@ -19,7 +19,6 @@ public class VoicelineFlagDoorActivation : MonoBehaviour
     private void Update()
     {
         if (_hasUpdated) return;
-
         if (!Globals.StoryFlags.Contains(_flagForActivation)) return;
         
         _hasUpdated = true;

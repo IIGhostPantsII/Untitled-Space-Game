@@ -52,6 +52,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-9144998221625137173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_open_door_2
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_open_door_2
+  Guid:
+    Data1: 139938981
+    Data2: 1314317745
+    Data3: -531277403
+    Data4: 400514014
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 3113677730608857784}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 816
 --- !u!114 &-8891195552605005499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,6 +104,34 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-8848985551570738916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_open_door_3
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_open_door_3
+  Guid:
+    Data1: -1070285073
+    Data2: 1155434652
+    Data3: -955231615
+    Data4: 583406989
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -7981552488631543178}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 576
 --- !u!114 &-8637767959200861140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,6 +184,30 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-8444010455946429272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_12/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-8329214748786363825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,6 +232,58 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-8269334151465260046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_13/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-8238816331520447951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_opening_14
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_opening_14
+  Guid:
+    Data1: -339973502
+    Data2: 1091476904
+    Data3: -278712669
+    Data4: -639397863
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -535370342327024196}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1872
 --- !u!114 &-8170756975471183369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,6 +295,30 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/err_fake_voiceline/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-7981552488631543178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_open_door_3/Lowpass
   m_EditorClassIdentifier: 
   Name: Lowpass
   StudioPath: 
@@ -215,10 +371,62 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638452354306163122
+  lastModified: 638459056088112203
   FileSizes:
   - Name: Desktop
     Value: 610912
+  Exists: 1
+--- !u!114 &-7931402118236997697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_opening_20
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_opening_20
+  Guid:
+    Data1: -1469961422
+    Data2: 1159867582
+    Data3: 1136161457
+    Data4: 696090205
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -2131621759392211400}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4128
+--- !u!114 &-7877453435277274592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_15/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
   Exists: 1
 --- !u!114 &-7873978612017786955
 MonoBehaviour:
@@ -231,6 +439,58 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/MonsterBreath/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-7745743566946024955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_opening_27
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_opening_27
+  Guid:
+    Data1: -1937218382
+    Data2: 1253925237
+    Data3: 1718682768
+    Data4: -887604063
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -7721968441561439203}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2448
+--- !u!114 &-7721968441561439203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_27/Lowpass
   m_EditorClassIdentifier: 
   Name: Lowpass
   StudioPath: 
@@ -320,6 +580,82 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3882
+--- !u!114 &-7557799657846230697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_1/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-7337892799064439590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_opening_5
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_opening_5
+  Guid:
+    Data1: 1056396086
+    Data2: 1152253125
+    Data3: 1685011868
+    Data4: 203956706
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 2590280952900908387}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2616
+--- !u!114 &-7282400483835557073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_17/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-7260192523083101703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,6 +704,30 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-7004689917289320254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_skip_opening_4/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-6948173380388079131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,6 +752,34 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-6890790190129349532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_skip_opening_1
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_skip_opening_1
+  Guid:
+    Data1: 730790062
+    Data2: 1170446374
+    Data3: 694853804
+    Data4: 2006337700
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -2560770143801026990}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2376
 --- !u!114 &-6838026933355539509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,10 +795,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638452386397480887
+  lastModified: 638459134620967165
   FileSizes:
   - Name: Desktop
-    Value: 3408
+    Value: 5472
   Exists: 1
 --- !u!114 &-6729406449828546326
 MonoBehaviour:
@@ -423,6 +811,82 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/MonsterFootsteps/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-6719809985365168474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_30/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-6515836774363932812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_10
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_10
+  Guid:
+    Data1: 1362617501
+    Data2: 1259279874
+    Data3: 292674984
+    Data4: -1123412025
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 6223624162545629782}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1368
+--- !u!114 &-6423785612838072958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_skip_opening_5/Lowpass
   m_EditorClassIdentifier: 
   Name: Lowpass
   StudioPath: 
@@ -463,6 +927,58 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 162866
+--- !u!114 &-6393717345255776756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_opening_8
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_opening_8
+  Guid:
+    Data1: 742485190
+    Data2: 1242429190
+    Data3: 444507800
+    Data4: 1602318682
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 1303504313687681846}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3600
+--- !u!114 &-6341969297123168230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_15/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-6276951058794266847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -491,6 +1007,62 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 577
+--- !u!114 &-5979154763279628421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_opening_3
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_opening_3
+  Guid:
+    Data1: -433046532
+    Data2: 1229512572
+    Data3: -378672220
+    Data4: -287336535
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 4915137595963996181}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1296
+--- !u!114 &-5740203246487632345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_8
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_8
+  Guid:
+    Data1: -1228944663
+    Data2: 1297564882
+    Data3: -574808693
+    Data4: -821274239
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 5168639718860438677}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1200
 --- !u!114 &-5693332877674859693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -502,6 +1074,58 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/msg_descole_test7_16/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-5656374083673726221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_opening_12
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_opening_12
+  Guid:
+    Data1: -69557130
+    Data2: 1296206827
+    Data3: -692023407
+    Data4: 215070503
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -5533820479304567436}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2064
+--- !u!114 &-5533820479304567436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_12/Lowpass
   m_EditorClassIdentifier: 
   Name: Lowpass
   StudioPath: 
@@ -539,6 +1163,62 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-5437206477556605734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_12
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_12
+  Guid:
+    Data1: -1584466139
+    Data2: 1312523654
+    Data3: -172257381
+    Data4: 37332525
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -8444010455946429272}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3360
+--- !u!114 &-5431071379325481369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_opening_21
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_opening_21
+  Guid:
+    Data1: 422836561
+    Data2: 1078745874
+    Data3: 1044579242
+    Data4: -583669415
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -2876418649474517133}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2640
 --- !u!114 &-5412459830549742065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -585,14 +1265,6 @@ MonoBehaviour:
   - {fileID: 8111687369947124944}
   - {fileID: 8111687369947124944}
   - {fileID: 8111687369947124944}
-  - {fileID: 8111687369947124944}
-  - {fileID: 8111687369947124944}
-  - {fileID: 8111687369947124944}
-  - {fileID: 8111687369947124944}
-  - {fileID: 8111687369947124944}
-  - {fileID: 8111687369947124944}
-  - {fileID: 8111687369947124944}
-  - {fileID: 8111687369947124944}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -629,6 +1301,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 998
+--- !u!114 &-5284206660419367066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_7
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_7
+  Guid:
+    Data1: -2134091861
+    Data2: 1233876214
+    Data3: 1900663962
+    Data4: -2140828761
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 2238965664706705251}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2640
 --- !u!114 &-4960968217734572833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,6 +1357,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-4738297766231592217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_opening_30
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_opening_30
+  Guid:
+    Data1: 1287729975
+    Data2: 1136784173
+    Data3: -14535269
+    Data4: 1370572328
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -6719809985365168474}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1464
 --- !u!114 &-4663168943304491654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -685,6 +1413,54 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2400
+--- !u!114 &-4655746416602514754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_25/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-4574147078407458218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_7/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-4569560354361289266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -733,6 +1509,54 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-4412665838852984545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_1/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-4259891832415775897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_29/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-4171281820855717892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -744,6 +1568,86 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/msg_descole_test2/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-3553931742073454697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_skip_opening_3
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_skip_opening_3
+  Guid:
+    Data1: 1637450366
+    Data2: 1318275135
+    Data3: -246428528
+    Data4: 1786830194
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 5507051596095043310}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 960
+--- !u!114 &-3468348555611794484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_opening_7
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_opening_7
+  Guid:
+    Data1: 892105881
+    Data2: 1330903319
+    Data3: 1095919001
+    Data4: 996301767
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -4574147078407458218}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2880
+--- !u!114 &-3424639337115310348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_skip_opening_2/Lowpass
   m_EditorClassIdentifier: 
   Name: Lowpass
   StudioPath: 
@@ -857,6 +1761,86 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-3084950793757776700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_2/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-3080928071370116995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_skip_opening_4
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_skip_opening_4
+  Guid:
+    Data1: -2027866165
+    Data2: 1217562222
+    Data3: 888424067
+    Data4: -395827874
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -7004689917289320254}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 984
+--- !u!114 &-3016783050125897872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_opening_9
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_opening_9
+  Guid:
+    Data1: -1527630052
+    Data2: 1324700689
+    Data3: 131462548
+    Data4: 1173374606
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 6141267046088838151}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1080
 --- !u!114 &-3012071330258881105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -936,6 +1920,106 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-2901407366523932158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_opening_31
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_opening_31
+  Guid:
+    Data1: -187774820
+    Data2: 1278777901
+    Data3: 1506633349
+    Data4: -1217920593
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -2599599277953580491}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1224
+--- !u!114 &-2876418649474517133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_21/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-2855457049728272392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_4/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-2736453581791515621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_26/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-2728630625335876519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -947,6 +2031,54 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/msg_descole_test7_8/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-2706398240955534966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_16/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-2687956109453807278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_24/Lowpass
   m_EditorClassIdentifier: 
   Name: Lowpass
   StudioPath: 
@@ -1016,6 +2148,102 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2312
+--- !u!114 &-2599599277953580491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_31/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-2565144098001038001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_23/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-2560770143801026990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_skip_opening_1/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-2455088200118003874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_3/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-2447469431885711951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1068,6 +2296,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3037
+--- !u!114 &-2131621759392211400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_20/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-2084931039029219058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1120,6 +2372,34 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-1842281016436567305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_opening_1
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_opening_1
+  Guid:
+    Data1: -863098635
+    Data2: 1075009794
+    Data3: -922750290
+    Data4: -2146797413
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -7557799657846230697}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 960
 --- !u!114 &-1795060678702484279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1168,6 +2448,34 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-1495510863009549477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_opening_6
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_opening_6
+  Guid:
+    Data1: 1780537145
+    Data2: 1178026869
+    Data3: 1548553371
+    Data4: -2035287768
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 7482766971595638585}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1680
 --- !u!114 &-1270957063677961436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1219,7 +2527,31 @@ MonoBehaviour:
   - {fileID: -8170756975471183369}
   MinDistance: 1
   MaxDistance: 20
-  Length: 4100
+  Length: 4721
+--- !u!114 &-1008361953800681362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_6/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-736891307919907582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1231,6 +2563,30 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/msg_descole_test7_9/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-678483997961040861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_17/Lowpass
   m_EditorClassIdentifier: 
   Name: Lowpass
   StudioPath: 
@@ -1272,6 +2628,58 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3550
+--- !u!114 &-535370342327024196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_14/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-478941478338669761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_17
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_17
+  Guid:
+    Data1: -534202719
+    Data2: 1099638594
+    Data3: -862423650
+    Data4: 966009074
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -7282400483835557073}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3936
 --- !u!114 &-400419592196845815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1300,6 +2708,54 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1500
+--- !u!114 &-393730095589700757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_11/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-391133409553248617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_skip_opening_6/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-364162369600267364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1401,13 +2857,124 @@ MonoBehaviour:
   - {fileID: 8030287591198080668}
   - {fileID: 4953556118182916092}
   - {fileID: 5035388305544965139}
+  - {fileID: 128495338573363551}
+  - {fileID: 1879788650803056818}
+  - {fileID: -9144998221625137173}
+  - {fileID: 1574647206817142536}
+  - {fileID: -8848985551570738916}
+  - {fileID: 6576699246895877644}
+  - {fileID: 6286586196014407164}
+  - {fileID: 1293871768374423873}
+  - {fileID: -3016783050125897872}
+  - {fileID: 1129785423414676264}
+  - {fileID: -7337892799064439590}
+  - {fileID: -6393717345255776756}
+  - {fileID: -7931402118236997697}
+  - {fileID: -7745743566946024955}
+  - {fileID: -1842281016436567305}
+  - {fileID: -8238816331520447951}
+  - {fileID: 47766769699558631}
+  - {fileID: 8542133070842245230}
+  - {fileID: 6170885717932813548}
+  - {fileID: 6539532066865177501}
+  - {fileID: -5979154763279628421}
+  - {fileID: 8569941058801577757}
+  - {fileID: 7062131947964841740}
+  - {fileID: -5656374083673726221}
+  - {fileID: -5431071379325481369}
+  - {fileID: -4738297766231592217}
+  - {fileID: -3468348555611794484}
+  - {fileID: 9039714463859316356}
+  - {fileID: 8062896786942795079}
+  - {fileID: 8504027542873425082}
+  - {fileID: 4867533366152774682}
+  - {fileID: 4736104408210226079}
+  - {fileID: -2901407366523932158}
+  - {fileID: 6508892409081981532}
+  - {fileID: 8625783473357881161}
+  - {fileID: -1495510863009549477}
+  - {fileID: 6100107867637965918}
+  - {fileID: 4674999666582432614}
+  - {fileID: 5599741302370271924}
+  - {fileID: 2617116739878046400}
+  - {fileID: -5284206660419367066}
+  - {fileID: 4301614812361917411}
+  - {fileID: 1383565216990046699}
+  - {fileID: 1522084304083697250}
+  - {fileID: -5437206477556605734}
+  - {fileID: 3047532409254995116}
+  - {fileID: 5336272730599305719}
+  - {fileID: 5377078774572738882}
+  - {fileID: 9043054395365647698}
+  - {fileID: -3080928071370116995}
+  - {fileID: -3553931742073454697}
+  - {fileID: 3443846357265393438}
+  - {fileID: 5240111201513761731}
+  - {fileID: -6890790190129349532}
+  - {fileID: 6188314011192427339}
+  - {fileID: 8024585530740037044}
+  - {fileID: -5740203246487632345}
+  - {fileID: -478941478338669761}
+  - {fileID: -6515836774363932812}
   EditorParameters: []
   MasterBanks:
   - {fileID: 6422365686012519055}
   StringsBanks:
   - {fileID: -6838026933355539509}
-  cacheTime: 638452386400863615
+  cacheTime: 638459134627673089
   cacheVersion: 131607
+--- !u!114 &47766769699558631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_opening_22
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_opening_22
+  Guid:
+    Data1: -462523448
+    Data2: 1259699439
+    Data3: 964340864
+    Data4: -136789365
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 6133644601788155959}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2184
+--- !u!114 &67229615107245625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_28/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &103095151630882486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1436,6 +3003,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3375
+--- !u!114 &128495338573363551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_open_door_5
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_open_door_5
+  Guid:
+    Data1: 529876565
+    Data2: 1112284598
+    Data3: 1896385939
+    Data4: 83556503
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 8795277820015207282}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1992
 --- !u!114 &289163773836013343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1492,6 +3087,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1720
+--- !u!114 &849561880529703167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_open_door_1/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &903924994842233412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1516,6 +3135,34 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &1129785423414676264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_opening_13
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_opening_13
+  Guid:
+    Data1: 42760031
+    Data2: 1230148988
+    Data3: -251503955
+    Data4: -392148227
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -8269334151465260046}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2880
 --- !u!114 &1153465909347655859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1589,14 +3236,6 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   - {fileID: 8111687369947124944}
-  - {fileID: 8111687369947124944}
-  - {fileID: 8111687369947124944}
-  - {fileID: 8111687369947124944}
-  - {fileID: 8111687369947124944}
-  - {fileID: 8111687369947124944}
-  - {fileID: 8111687369947124944}
-  - {fileID: 8111687369947124944}
-  - {fileID: 8111687369947124944}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1605,6 +3244,86 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2600
+--- !u!114 &1293871768374423873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_opening_16
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_opening_16
+  Guid:
+    Data1: 1871927245
+    Data2: 1098891937
+    Data3: -1620771931
+    Data4: -1937467756
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -2706398240955534966}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2544
+--- !u!114 &1303504313687681846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_8/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &1383565216990046699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_9
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_9
+  Guid:
+    Data1: 1826698281
+    Data2: 1235055780
+    Data3: 907856550
+    Data4: -598535762
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 8927744719147083473}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1800
 --- !u!114 &1515152268243502298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1633,6 +3352,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5087
+--- !u!114 &1522084304083697250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_skip_opening_2
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_skip_opening_2
+  Guid:
+    Data1: 844055320
+    Data2: 1207008395
+    Data3: 444038303
+    Data4: -272653844
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -3424639337115310348}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1464
 --- !u!114 &1528019691268258031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1661,6 +3408,58 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2050
+--- !u!114 &1574647206817142536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_open_door_4
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_open_door_4
+  Guid:
+    Data1: 1673302731
+    Data2: 1326433124
+    Data3: -919111803
+    Data4: 2126769792
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 8290235344645714134}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 672
+--- !u!114 &1639789959567122649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_4/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &1752694236396065267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1741,6 +3540,58 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2687
+--- !u!114 &1879788650803056818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_open_door_1
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_open_door_1
+  Guid:
+    Data1: -1360277567
+    Data2: 1113333695
+    Data3: -873036924
+    Data4: 912797585
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 849561880529703167}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2184
+--- !u!114 &1929560916422219236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_16/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &2070513984384087098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1793,6 +3644,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &2238965664706705251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_7/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &2305298809185299030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1841,6 +3716,82 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &2554450394945410492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_18/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &2590280952900908387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_5/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &2617116739878046400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_3
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_3
+  Guid:
+    Data1: 1219504433
+    Data2: 1162808263
+    Data3: 1580630151
+    Data4: -457739730
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -2455088200118003874}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2424
 --- !u!114 &2828916659341480523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1868,7 +3819,7 @@ MonoBehaviour:
   - {fileID: 4957461297133782951}
   MinDistance: 1
   MaxDistance: 20
-  Length: 3250
+  Length: 4530
 --- !u!114 &2893890516357817353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1945,6 +3896,34 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &3047532409254995116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_5
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_5
+  Guid:
+    Data1: -1343323854
+    Data2: 1309838372
+    Data3: 85345713
+    Data4: -222639992
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 4381340757872584401}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2064
 --- !u!114 &3056881369573189403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1973,6 +3952,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2716
+--- !u!114 &3113677730608857784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_open_door_2/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &3179740896734807514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2084,6 +4087,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &3443846357265393438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_13
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_13
+  Guid:
+    Data1: 1100150887
+    Data2: 1079943589
+    Data3: -2046327107
+    Data4: 618747617
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 6860102624880737947}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2712
 --- !u!114 &3516625198368199140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2188,6 +4219,58 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &4301614812361917411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_1
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_1
+  Guid:
+    Data1: -1085278109
+    Data2: 1321228350
+    Data3: 1425875378
+    Data4: 1862473545
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -4412665838852984545}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1776
+--- !u!114 &4381340757872584401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_5/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &4417711405366342180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2243,6 +4326,34 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &4674999666582432614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_6
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_6
+  Guid:
+    Data1: -1922679066
+    Data2: 1138794654
+    Data3: -1634039656
+    Data4: -964092973
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -1008361953800681362}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2880
 --- !u!114 &4698583522595004084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2254,6 +4365,86 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/MonsterGrowl/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &4736104408210226079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_opening_28
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_opening_28
+  Guid:
+    Data1: -510097336
+    Data2: 1283844321
+    Data3: -175088962
+    Data4: -295897100
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 67229615107245625}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2064
+--- !u!114 &4867533366152774682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_opening_10
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_opening_10
+  Guid:
+    Data1: -2019157389
+    Data2: 1331096813
+    Data3: -689110894
+    Data4: -216066075
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 5265288691581955203}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2352
+--- !u!114 &4915137595963996181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_3/Lowpass
   m_EditorClassIdentifier: 
   Name: Lowpass
   StudioPath: 
@@ -2403,6 +4594,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1438
+--- !u!114 &5168639718860438677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_8/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &5176030506455300905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2414,6 +4629,138 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/PA-Celesta-Opening/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &5240111201513761731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_15
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_15
+  Guid:
+    Data1: 327055771
+    Data2: 1320659479
+    Data3: 541438641
+    Data4: -2047855790
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -7877453435277274592}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2280
+--- !u!114 &5265288691581955203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_10/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &5336272730599305719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_14
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_14
+  Guid:
+    Data1: 487677648
+    Data2: 1102216165
+    Data3: 98246584
+    Data4: -142847688
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 8708265583239835260}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2976
+--- !u!114 &5377078774572738882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_skip_opening_5
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_skip_opening_5
+  Guid:
+    Data1: -1162823938
+    Data2: 1186484351
+    Data3: -796350020
+    Data4: 1579468570
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -6423785612838072958}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3144
+--- !u!114 &5507051596095043310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_skip_opening_3/Lowpass
   m_EditorClassIdentifier: 
   Name: Lowpass
   StudioPath: 
@@ -2479,6 +4826,34 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &5599741302370271924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_skip_opening_6
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_skip_opening_6
+  Guid:
+    Data1: 463277063
+    Data2: 1152745100
+    Data3: 7453092
+    Data4: 1266940838
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -391133409553248617}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1392
 --- !u!114 &5787792691496073840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2557,6 +4932,190 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &6100107867637965918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_2
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_2
+  Guid:
+    Data1: 349021631
+    Data2: 1177783672
+    Data3: -1751712114
+    Data4: 937774358
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 9097553957243996344}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2136
+--- !u!114 &6133644601788155959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_22/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &6141267046088838151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_9/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &6170885717932813548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_opening_29
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_opening_29
+  Guid:
+    Data1: -1909213198
+    Data2: 1211531819
+    Data3: -41578366
+    Data4: 1009940540
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -4259891832415775897}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3744
+--- !u!114 &6188314011192427339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_11
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_11
+  Guid:
+    Data1: -534902828
+    Data2: 1147556870
+    Data3: -173263214
+    Data4: -1394840797
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 6393119807040341549}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3240
+--- !u!114 &6223624162545629782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_10/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &6286586196014407164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_opening_2
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_opening_2
+  Guid:
+    Data1: 1064973447
+    Data2: 1294559504
+    Data3: 2024302476
+    Data4: -1265268849
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -3084950793757776700}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3000
 --- !u!114 &6309417162540684132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2568,6 +5127,30 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Hiss/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &6393119807040341549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_11/Lowpass
   m_EditorClassIdentifier: 
   Name: Lowpass
   StudioPath: 
@@ -2596,7 +5179,7 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638452386397461045
+  lastModified: 638459134620937398
   FileSizes:
   - Name: Desktop
     Value: 73248
@@ -2612,6 +5195,114 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/msg_descole_test7_14/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &6508892409081981532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_opening_25
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_opening_25
+  Guid:
+    Data1: -1693623901
+    Data2: 1104148356
+    Data3: -2043534433
+    Data4: 464014343
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -4655746416602514754}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2376
+--- !u!114 &6539532066865177501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_opening_24
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_opening_24
+  Guid:
+    Data1: 53593914
+    Data2: 1342115337
+    Data3: -2023051369
+    Data4: -1744068154
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -2687956109453807278}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2040
+--- !u!114 &6576699246895877644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_opening_23
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_opening_23
+  Guid:
+    Data1: 2108978436
+    Data2: 1276219522
+    Data3: -1309076830
+    Data4: 913114519
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -2565144098001038001}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1152
+--- !u!114 &6860102624880737947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_13/Lowpass
   m_EditorClassIdentifier: 
   Name: Lowpass
   StudioPath: 
@@ -2677,6 +5368,34 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &7062131947964841740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_opening_26
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_opening_26
+  Guid:
+    Data1: -142710906
+    Data2: 1228004722
+    Data3: 1328672175
+    Data4: -1837327318
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -2736453581791515621}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2592
 --- !u!114 &7173107947735101656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2729,6 +5448,54 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3000
+--- !u!114 &7482766971595638585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_6/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &7545926193427757175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_19/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &7609577086557519686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2757,6 +5524,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &8024585530740037044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_4
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_4
+  Guid:
+    Data1: 2094308272
+    Data2: 1083977983
+    Data3: -1567060844
+    Data4: 830603805
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -2855457049728272392}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1128
 --- !u!114 &8030287591198080668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2785,6 +5580,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2800
+--- !u!114 &8062896786942795079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_opening_17
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_opening_17
+  Guid:
+    Data1: -1061629279
+    Data2: 1305059948
+    Data3: -639568970
+    Data4: 423577416
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -678483997961040861}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2304
 --- !u!114 &8111687369947124944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2800,10 +5623,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Voices.bank
   Name: Voices
   StudioPath: bank:/Voices
-  lastModified: 638452386400863615
+  lastModified: 638459134627673089
   FileSizes:
   - Name: Desktop
-    Value: 3716896
+    Value: 5117408
   Exists: 1
 --- !u!114 &8179596511907740439
 MonoBehaviour:
@@ -2833,6 +5656,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1655
+--- !u!114 &8290235344645714134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_open_door_4/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &8295062745087103246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2931,4 +5778,268 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 2424832
+  Exists: 1
+--- !u!114 &8504027542873425082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_opening_19
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_opening_19
+  Guid:
+    Data1: -71233287
+    Data2: 1268221181
+    Data3: 314607240
+    Data4: -411567254
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 7545926193427757175}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2160
+--- !u!114 &8542133070842245230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_opening_15
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_opening_15
+  Guid:
+    Data1: 1735207436
+    Data2: 1227654978
+    Data3: -1247332703
+    Data4: 1217733747
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -6341969297123168230}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3576
+--- !u!114 &8569941058801577757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_opening_18
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_opening_18
+  Guid:
+    Data1: 1549045057
+    Data2: 1328548002
+    Data3: -1560514171
+    Data4: -716965532
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 2554450394945410492}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3192
+--- !u!114 &8625783473357881161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_opening_11
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_opening_11
+  Guid:
+    Data1: 168731044
+    Data2: 1183251846
+    Data3: -1581864035
+    Data4: 1952626780
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -393730095589700757}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1488
+--- !u!114 &8708265583239835260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_14/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &8795277820015207282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_open_door_5/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &8927744719147083473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_9/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &9039714463859316356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_opening_4
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_opening_4
+  Guid:
+    Data1: -1288416054
+    Data2: 1254438396
+    Data3: -380923250
+    Data4: -522125767
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 1639789959567122649}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1992
+--- !u!114 &9043054395365647698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_16
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/Dialogue/msg_marb_explain_cleanup_16
+  Guid:
+    Data1: -149564568
+    Data2: 1143701029
+    Data3: -1711592059
+    Data4: 2058203135
+  Banks:
+  - {fileID: 8111687369947124944}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 1929560916422219236}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1488
+--- !u!114 &9097553957243996344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_2/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
   Exists: 1
