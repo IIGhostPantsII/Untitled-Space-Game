@@ -14,17 +14,28 @@ public class Door : MonoBehaviour
     public FMOD.Studio.EventInstance moveEventClose;
 
     public float doorSpeed = 2.0f;
+    public GameObject doorObj;
     [ReadOnly] public float maxYPosition = 7.5f;
-    [ReadOnly] public float lowYPosition = -30f;
+    [ReadOnly] public float lowYPosition = -1.1f;
 
     private float timer = 0.0f;
     private float doorDuration;
-
-    [SerializeField] private Oxygen _subMeter;
+    private PlayerController _player;
  
     [HideInInspector] public bool isInsideTrigger = false;
     [HideInInspector] public bool isOutsideTrigger = false;
 
+    [SerializeField] [ColorUsageAttribute(true, true)]
+    private Color UnlockedColor;
+    [SerializeField] [ColorUsageAttribute(true, true)]
+    private Color LockedColor;
+    
+    [SerializeField] private Light[] _lights;
+    [SerializeField] private MeshRenderer[] _lightObjects;
+
+    [SerializeField] public bool IsLocked = false;
+
+    private bool LockedLights = false;
     private bool doorState = true;
 
     public static bool PauseMovement;
@@ -34,19 +45,23 @@ public class Door : MonoBehaviour
         doorDuration = Random.Range(2f, 3f);
         moveEventOpen = RuntimeManager.CreateInstance(moveEventPathOpen);
         moveEventClose = RuntimeManager.CreateInstance(moveEventPathClose);
-        maxYPosition = transform.position.y;
+        maxYPosition = doorObj.transform.position.y;
+        lowYPosition -= maxYPosition;
+        _player = FindObjectOfType<PlayerController>();
     }
 
     void Update()
     {
-        if(isInsideTrigger)
-        {
-            MoveDoorDown();
-        }
-        else if(isOutsideTrigger)
+        if(isOutsideTrigger || IsLocked)
         {
             MoveDoorUp();
         }
+        else if(isInsideTrigger)
+        {
+            MoveDoorDown();
+        }
+
+        UpdateLockedLights();
 
         Globals.SpatialSounds(moveEventOpen, gameObject);
         Globals.SpatialSounds(moveEventClose, gameObject);
@@ -58,9 +73,45 @@ public class Door : MonoBehaviour
         {
             isInsideTrigger = true;
             isOutsideTrigger = false; // Reset the flag when inside the trigger
-            moveEventOpen.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-            moveEventOpen.start();
-            Globals.CheckLowpass(moveEventOpen, _subMeter);
+            if (!IsLocked)
+            {
+                moveEventOpen.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+                moveEventOpen.start();
+            }
+
+            Globals.CheckLowpass(moveEventOpen, _player._subOxygen);
+        }
+    }
+
+    private void UpdateLockedLights()
+    {
+        if (IsLocked && !LockedLights)
+        {
+            LockedLights = true;
+
+            foreach (Light light in _lights)
+            {
+                light.color = LockedColor;
+            }
+
+            foreach (MeshRenderer renderer in _lightObjects)
+            {
+                renderer.material.SetColor("_EmissionColor", LockedColor);
+            }
+        } 
+        else if (!IsLocked && LockedLights)
+        {
+            LockedLights = false;
+            
+            foreach (Light light in _lights)
+            {
+                light.color = UnlockedColor;
+            }
+            foreach (MeshRenderer renderer in _lightObjects)
+            {
+                renderer.material.SetColor("_EmissionColor", UnlockedColor);
+            }
+            
         }
     }
 
@@ -81,9 +132,14 @@ public class Door : MonoBehaviour
                 doorState = true;
                 isInsideTrigger = true;
                 isOutsideTrigger = false;
-                moveEventOpen.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-                moveEventOpen.start();
-                Globals.CheckLowpass(moveEventOpen, _subMeter);
+                if (!IsLocked)
+                {
+                    moveEventOpen.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+                    moveEventOpen.start();
+                }
+
+                Globals.CheckLowpass(moveEventOpen, _player._subOxygen);
+                
             }
         }
     }
@@ -100,35 +156,43 @@ public class Door : MonoBehaviour
 
     private void MoveDoorDown()
     {
-        if(transform.position.y > lowYPosition)
+        if(doorObj.transform.position.y > lowYPosition)
         {
-            transform.Translate(Vector3.down * doorSpeed * Time.deltaTime);
+            var position = doorObj.transform.position;
+            position = new Vector3(position.x, position.y - (doorSpeed * Time.deltaTime), position.z);
+            doorObj.transform.position = position;
         }
         else
         {
-            transform.position = new Vector3(transform.position.x, lowYPosition, transform.position.z);
+            doorObj.transform.position = new Vector3(doorObj.transform.position.x, lowYPosition, doorObj.transform.position.z);
         }
     }
 
     private void MoveDoorUp()
     {
-        if(transform.position.y < maxYPosition)
+        if(doorObj.transform.position.y < maxYPosition)
         {
-            transform.Translate(Vector3.up * doorSpeed * Time.deltaTime);
+            var position = doorObj.transform.position;
+            position = new Vector3(position.x, position.y + (doorSpeed * Time.deltaTime), position.z);
+            doorObj.transform.position = position;
         }
         else
         {
             isOutsideTrigger = false;
-            transform.position = new Vector3(transform.position.x, maxYPosition, transform.position.z);
+            doorObj.transform.position = new Vector3(doorObj.transform.position.x, maxYPosition, doorObj.transform.position.z);
         }
     }
 
     IEnumerator Close()
     {
         yield return new WaitForSeconds(0.25f);
-        moveEventClose.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-        moveEventClose.start();
-        Globals.CheckLowpass(moveEventClose, _subMeter);
+        if (!IsLocked)
+        {
+            moveEventClose.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            moveEventClose.start();
+        }
+
+        Globals.CheckLowpass(moveEventClose, _player._subOxygen);
     }
 
     public void ChangeDoorState()
@@ -139,9 +203,13 @@ public class Door : MonoBehaviour
         {
             isInsideTrigger = true;
             isOutsideTrigger = false;
-            moveEventOpen.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-            moveEventOpen.start();
-            Globals.CheckLowpass(moveEventOpen, _subMeter);
+            if (!IsLocked)
+            {
+                moveEventOpen.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+                moveEventOpen.start();
+            }
+
+            Globals.CheckLowpass(moveEventOpen, _player._subOxygen);
         }
         else if(doorState == false)
         {
