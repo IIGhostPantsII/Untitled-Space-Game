@@ -116,9 +116,7 @@
 	<object class="MixerBusEffectChain" id="{3d895624-2e81-4dd5-9a18-cc8568036e0b}">
 		<relationship name="effects">
 			<destination>{e5955c97-3b11-48ae-af90-e779ef0c4f42}</destination>
-			<destination>{f636f97f-f3c9-4ab1-8038-ed5fd5b8e333}</destination>
-			<destination>{ff82c190-c1fd-424d-bede-78a487a562f8}</destination>
-			<destination>{f1053063-4f06-4c00-bcb1-8d7ef16d2e55}</destination>
+			<destination>{7a7a443e-4893-4c62-a79b-5e98e8a1c6e6}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{ec999561-16b2-4421-b4f7-9b3d5308f85b}" />
@@ -130,86 +128,13 @@
 	</object>
 	<object class="MixerBusPanner" id="{8b552c1a-da80-442b-947f-d5720bf6ce67}" />
 	<object class="MixerBusFader" id="{e5955c97-3b11-48ae-af90-e779ef0c4f42}" />
-	<object class="SFXReverbEffect" id="{f636f97f-f3c9-4ab1-8038-ed5fd5b8e333}">
-		<property name="decayTime">
-			<value>2000</value>
-		</property>
-	</object>
-	<object class="SpatialiserEffect" id="{ff82c190-c1fd-424d-bede-78a487a562f8}">
-		<property name="minimumDistance">
-			<value>0</value>
-		</property>
-		<property name="maximumDistance">
-			<value>100</value>
-		</property>
-		<property name="overrideRange">
-			<value>true</value>
-		</property>
-		<property name="extentMode">
+	<object class="ProxyEffect" id="{7a7a443e-4893-4c62-a79b-5e98e8a1c6e6}">
+		<property name="inputFormat">
 			<value>1</value>
 		</property>
-		<property name="soundSize">
-			<value>8</value>
-		</property>
-	</object>
-	<object class="LowpassEffect" id="{f1053063-4f06-4c00-bcb1-8d7ef16d2e55}">
-		<property name="cutoff">
-			<value>22000</value>
-		</property>
-		<relationship name="automators">
-			<destination>{aaee4556-b759-4fee-b92d-314b0487387a}</destination>
+		<relationship name="preset">
+			<destination>{dbbcdebd-7452-4134-889c-86cf02e88dd1}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{7c7500f7-a493-4b33-971f-58a502a33b01}" />
-	<object class="Automator" id="{aaee4556-b759-4fee-b92d-314b0487387a}">
-		<property name="nameOfPropertyBeingAutomated">
-			<value>cutoff</value>
-		</property>
-		<relationship name="automationCurves">
-			<destination>{f41baa44-d307-410b-9cb3-35fa974a8f5c}</destination>
-		</relationship>
-	</object>
-	<object class="AutomationCurve" id="{f41baa44-d307-410b-9cb3-35fa974a8f5c}">
-		<relationship name="parameter">
-			<destination>{b6e67181-942a-48b8-b8b5-2b7f6f261ed5}</destination>
-		</relationship>
-		<relationship name="automationPoints">
-			<destination>{6b173e89-8712-4e1b-93b7-26dd811f8069}</destination>
-			<destination>{65b2ad7a-6525-439c-b3d7-5b1cbb3473ca}</destination>
-			<destination>{300eca6e-725b-4ffe-8ad9-e22e191518f7}</destination>
-			<destination>{745cbb52-207c-4449-ab58-76cc4b0c35ef}</destination>
-		</relationship>
-	</object>
-	<object class="AutomationPoint" id="{6b173e89-8712-4e1b-93b7-26dd811f8069}">
-		<property name="position">
-			<value>0</value>
-		</property>
-		<property name="value">
-			<value>175</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{65b2ad7a-6525-439c-b3d7-5b1cbb3473ca}">
-		<property name="position">
-			<value>22000</value>
-		</property>
-		<property name="value">
-			<value>3099.99976</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{300eca6e-725b-4ffe-8ad9-e22e191518f7}">
-		<property name="position">
-			<value>2000</value>
-		</property>
-		<property name="value">
-			<value>175</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{745cbb52-207c-4449-ab58-76cc4b0c35ef}">
-		<property name="position">
-			<value>10000</value>
-		</property>
-		<property name="value">
-			<value>175</value>
-		</property>
-	</object>
 </objects>
