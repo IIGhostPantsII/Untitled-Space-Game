@@ -53710,6 +53710,38 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: -7054327729260539188, guid: a609609cd6fd8a4498b88610f265bacb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.00000013113022
+      objectReference: {fileID: 0}
+    - target: {fileID: -7054327729260539188, guid: a609609cd6fd8a4498b88610f265bacb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.015452168
+      objectReference: {fileID: 0}
+    - target: {fileID: -7054327729260539188, guid: a609609cd6fd8a4498b88610f265bacb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.000000013038516
+      objectReference: {fileID: 0}
+    - target: {fileID: -7054327729260539188, guid: a609609cd6fd8a4498b88610f265bacb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9509164
+      objectReference: {fileID: 0}
+    - target: {fileID: -7054327729260539188, guid: a609609cd6fd8a4498b88610f265bacb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.30944794
+      objectReference: {fileID: 0}
+    - target: {fileID: -7054327729260539188, guid: a609609cd6fd8a4498b88610f265bacb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -1.7763564e-15
+      objectReference: {fileID: 0}
+    - target: {fileID: -7054327729260539188, guid: a609609cd6fd8a4498b88610f265bacb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.000000037252896
+      objectReference: {fileID: 0}
+    - target: {fileID: -7054327729260539188, guid: a609609cd6fd8a4498b88610f265bacb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 36.052
+      objectReference: {fileID: 0}
     - target: {fileID: -6708562113353753370, guid: a609609cd6fd8a4498b88610f265bacb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -110488,6 +110520,7 @@ GameObject:
   - component: {fileID: 2067569169}
   - component: {fileID: 2067569171}
   - component: {fileID: 2067569172}
+  - component: {fileID: 2067569173}
   m_Layer: 0
   m_Name: TutHallToTutNode_TwoSided_Archway
   m_TagString: Untagged
@@ -110627,6 +110660,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.5, y: 100, z: 1}
   m_Center: {x: 0, y: -0.5, z: 0}
+--- !u!114 &2067569173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067569167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64c0a5d0093134e4f962bbcac864a8db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flagForActivation: flg_open_first_door
+  _turnOn: 1
+  _door: {fileID: 2067569171}
 --- !u!1 &2069061247
 GameObject:
   m_ObjectHideFlags: 0
