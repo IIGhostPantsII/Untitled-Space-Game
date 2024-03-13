@@ -160,6 +160,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-8546337646106354850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sounds/CrocRoar
+  m_EditorClassIdentifier: 
+  Path: event:/Sounds/CrocRoar
+  Guid:
+    Data1: -1372364588
+    Data2: 1263068807
+    Data3: -1265136502
+    Data4: -1739784409
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -4149353898032523592}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-8497777817789361309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,10 +399,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638459056088112203
+  lastModified: 638459215562919812
   FileSizes:
   - Name: Desktop
-    Value: 610912
+    Value: 754080
   Exists: 1
 --- !u!114 &-7931402118236997697
 MonoBehaviour:
@@ -795,10 +823,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638459134620967165
+  lastModified: 638459215524609724
   FileSizes:
   - Name: Desktop
-    Value: 5472
+    Value: 5646
   Exists: 1
 --- !u!114 &-6729406449828546326
 MonoBehaviour:
@@ -1263,8 +1291,6 @@ MonoBehaviour:
     Data4: -692800330
   Banks:
   - {fileID: 8111687369947124944}
-  - {fileID: 8111687369947124944}
-  - {fileID: 8111687369947124944}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1581,6 +1607,30 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-4149353898032523592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/CrocRoar/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-3553931742073454697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1609,6 +1659,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 960
+--- !u!114 &-3511201076885120123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sounds/CrocFootsteps
+  m_EditorClassIdentifier: 
+  Path: event:/Sounds/CrocFootsteps
+  Guid:
+    Data1: -527927722
+    Data2: 1302570591
+    Data3: -448460097
+    Data4: 1863862895
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 8727820358844968101}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-3468348555611794484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1661,6 +1739,58 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-3260895749075973379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/CrocBreath/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-3233618208768273198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sounds/CrocGrowl
+  m_EditorClassIdentifier: 
+  Path: event:/Sounds/CrocGrowl
+  Guid:
+    Data1: 1925508550
+    Data2: 1218986057
+    Data3: -1727565137
+    Data4: -758291081
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 5239249257194420001}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-3157802976680612726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2244,30 +2374,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-2447469431885711951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter://Lowpass
-  m_EditorClassIdentifier: 
-  Name: Lowpass
-  StudioPath: 
-  Min: 0
-  Max: 22000
-  Default: 22000
-  ID:
-    data1: 2238647653
-    data2: 2004388847
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &-2142131061142234367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2837,7 +2943,6 @@ MonoBehaviour:
   - {fileID: 3179740896734807514}
   - {fileID: -4960968217734572833}
   - {fileID: -9158876333024256918}
-  - {fileID: 1225019365892680025}
   - {fileID: -5371262871745412100}
   - {fileID: 1768208098545882160}
   - {fileID: 327984532610325553}
@@ -2916,12 +3021,16 @@ MonoBehaviour:
   - {fileID: -5740203246487632345}
   - {fileID: -478941478338669761}
   - {fileID: -6515836774363932812}
+  - {fileID: -3511201076885120123}
+  - {fileID: -3233618208768273198}
+  - {fileID: -8546337646106354850}
+  - {fileID: 6440463152025095243}
   EditorParameters: []
   MasterBanks:
   - {fileID: 6422365686012519055}
   StringsBanks:
   - {fileID: -6838026933355539509}
-  cacheTime: 638459134627673089
+  cacheTime: 638459215582732759
   cacheVersion: 131607
 --- !u!114 &47766769699558631
 MonoBehaviour:
@@ -3215,35 +3324,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1650
---- !u!114 &1225019365892680025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: 
-  Guid:
-    Data1: -1627325443
-    Data2: 1149570777
-    Data3: 1253090438
-    Data4: -692800330
-  Banks:
-  - {fileID: 8111687369947124944}
-  - {fileID: 8111687369947124944}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters:
-  - {fileID: -2447469431885711951}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2600
 --- !u!114 &1293871768374423873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4642,6 +4722,30 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &5239249257194420001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/CrocGrowl/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &5240111201513761731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5179,11 +5283,39 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638459134620937398
+  lastModified: 638459215524569855
   FileSizes:
   - Name: Desktop
     Value: 73248
   Exists: 1
+--- !u!114 &6440463152025095243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sounds/CrocBreath
+  m_EditorClassIdentifier: 
+  Path: event:/Sounds/CrocBreath
+  Guid:
+    Data1: 215833070
+    Data2: 1113859890
+    Data3: -1988091492
+    Data4: -345984990
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -3260895749075973379}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &6451497504533989877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5623,7 +5755,7 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Voices.bank
   Name: Voices
   StudioPath: bank:/Voices
-  lastModified: 638459134627673089
+  lastModified: 638459215582732759
   FileSizes:
   - Name: Desktop
     Value: 5117408
@@ -5774,7 +5906,7 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638452354302234791
+  lastModified: 638459215556367217
   FileSizes:
   - Name: Desktop
     Value: 2424832
@@ -5902,6 +6034,30 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/msg_marb_explain_cleanup_14/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &8727820358844968101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/CrocFootsteps/Lowpass
   m_EditorClassIdentifier: 
   Name: Lowpass
   StudioPath: 
