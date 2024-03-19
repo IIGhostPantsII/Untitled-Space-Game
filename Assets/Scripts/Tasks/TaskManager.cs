@@ -39,7 +39,7 @@ public class TaskManager : MonoBehaviour
                 _currentTaskList.Tasks[i].CompletedSteps += 1;
             }
         }
-    }
+    } 
     
     public void EnterTaskArea(RoomTasks taskList)
     {

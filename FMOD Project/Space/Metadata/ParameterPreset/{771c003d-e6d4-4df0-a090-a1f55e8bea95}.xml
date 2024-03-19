@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{771c003d-e6d4-4df0-a090-a1f55e8bea95}">
+		<property name="name">
+			<value>Walkie-Talkie</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a750637d-3450-4132-a22b-42f5180c6f31}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{0792f446-b249-4cc9-9b97-dbbee53d5d3c}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{0792f446-b249-4cc9-9b97-dbbee53d5d3c}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

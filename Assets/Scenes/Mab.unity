@@ -26901,7 +26901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _voicelines:
-  - msg_marb_opening
+  - msg_marb_skip_opening
   _flags: []
 --- !u!65 &493897944
 BoxCollider:

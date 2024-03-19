@@ -5,7 +5,7 @@
 			<value>msg_descole_test5_1</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{93170858-cbb7-4f76-ba65-a637988c8cbd}</destination>
@@ -116,7 +116,8 @@
 	<object class="MixerBusEffectChain" id="{cf5226df-ce11-44cb-97da-1227c8107fd7}">
 		<relationship name="effects">
 			<destination>{698a6d6c-73f5-4f14-82a9-24fcca8f0414}</destination>
-			<destination>{eb444d94-10f5-46e2-964f-cd578b4d491a}</destination>
+			<destination>{5cea44f4-acec-454b-96b6-034b0ad94dce}</destination>
+			<destination>{c9de3bc3-f9b0-4556-939e-f510e2e3df4f}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{4aae94ed-4b34-4b6c-ac5b-3381673c1f36}" />
@@ -128,12 +129,20 @@
 	</object>
 	<object class="MixerBusPanner" id="{322f9a1c-01eb-46ec-a709-5efefec01b9d}" />
 	<object class="MixerBusFader" id="{698a6d6c-73f5-4f14-82a9-24fcca8f0414}" />
-	<object class="ProxyEffect" id="{eb444d94-10f5-46e2-964f-cd578b4d491a}">
+	<object class="ProxyEffect" id="{5cea44f4-acec-454b-96b6-034b0ad94dce}">
 		<property name="inputFormat">
 			<value>1</value>
 		</property>
 		<relationship name="preset">
 			<destination>{dbbcdebd-7452-4134-889c-86cf02e88dd1}</destination>
+		</relationship>
+	</object>
+	<object class="ProxyEffect" id="{c9de3bc3-f9b0-4556-939e-f510e2e3df4f}">
+		<property name="inputFormat">
+			<value>1</value>
+		</property>
+		<relationship name="preset">
+			<destination>{b5d8ba38-dfe7-45a3-9135-8df9f1e39f15}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{9938014c-127b-4d81-a68f-206f649f705b}" />
