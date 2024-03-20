@@ -17,13 +17,18 @@ public class TaskAreaController : MonoBehaviour
         _voiceline = FindObjectOfType<VoicelineController>();
     }
 
+    public void UpdatePAMode()
+    {
+        _voiceline.TogglePAMode(!_roomPower);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             _taskManager.EnterTaskArea(_tasks);
-            if (_roomPower) _voiceline.TogglePAMode(true);
-            else _voiceline.TogglePAMode(false);
+            
+            _voiceline.TogglePAMode(!_roomPower);
         }
     }
 

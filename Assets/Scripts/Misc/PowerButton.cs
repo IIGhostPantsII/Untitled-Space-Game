@@ -96,6 +96,8 @@ public class PowerButton : MonoBehaviour
 
             if (!string.IsNullOrEmpty(_taskName)) FindObjectOfType<TaskManager>().IncrementTask(_taskName);
 
+            if (!_multiPress) enabled = false;
+
         }
     }
 

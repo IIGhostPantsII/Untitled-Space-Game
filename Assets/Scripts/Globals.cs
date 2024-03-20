@@ -19,6 +19,7 @@ public static class Globals
 
     public static List<RoomTasks> RoomTasks = new List<RoomTasks>();
     public static List<string> StoryFlags = new List<string>();
+    public static bool[] RoomPower = new bool[6];
     
     public static readonly string SaveDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/Occupational Hazards ~ The Trials and Tribulations of the Stellar United Systems";
 
