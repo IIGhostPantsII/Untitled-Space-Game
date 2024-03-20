@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{a52f4993-2662-4389-ae8e-767c73ab785b}">
+		<property name="assetPath">
+			<value>Croc &amp; Funny Man/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6e23de32-7231-43cf-b241-696699a1b37e}</destination>
+		</relationship>
+	</object>
+</objects>

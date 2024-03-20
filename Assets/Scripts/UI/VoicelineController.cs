@@ -4,9 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using FMOD.Studio;
 using FMODUnity;
-using NaughtyAttributes;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
@@ -20,7 +18,7 @@ public class VoicelineController : MonoBehaviour
     private GameObject _player;
     private Dictionary<string, ArrayList> _voicelines = new Dictionary<string, ArrayList>();
     private List<string> _usedVoiceLines = new List<string>();
-    
+
     private void Start()
     {
         _voicelines = Globals.LoadTSV(_voicelineTSV);
@@ -30,18 +28,22 @@ public class VoicelineController : MonoBehaviour
 
     private void Update() {
         if (Keyboard.current[Key.T].wasPressedThisFrame) {
-            PlaySound();
+            PlaySound($"msg_descole_test{Random.Range(1, 9)}");
         }
     }
-    
-    [Button]
-    void PlaySound()
+
+    public bool PlaySound(string sound)
     {
         System.Random rand = new System.Random();
-        StartCoroutine(PlayVoiceline($"msg_descole_test{Random.Range(1, 6)}"));
+
+        bool canPlay = !_usedVoiceLines.Contains(sound);
+
+        StartCoroutine(PlayVoiceline(sound));
+
+        return canPlay;
     }
 
-    public IEnumerator PlayVoiceline(string sound)
+    private IEnumerator PlayVoiceline(string sound)
     {
         if (_isPlaying) yield break;
         if (_usedVoiceLines.Contains(sound))
@@ -63,7 +65,7 @@ public class VoicelineController : MonoBehaviour
         
         _isPlaying = true;
         
-        FMOD.Studio.EventInstance instance = RuntimeManager.CreateInstance($"event:/Dialogue Sounds/PA Jingles/PA-Normal-Opening");
+        EventInstance instance = RuntimeManager.CreateInstance($"event:/Dialogue Sounds/PA Jingles/PA-Normal-Opening");
         RuntimeManager.AttachInstanceToGameObject(instance, _player.transform, _player.GetComponent<Rigidbody>());
         instance.start();
         instance.release();
@@ -108,11 +110,15 @@ public class VoicelineController : MonoBehaviour
                     {
                         _subtitles.SetText(_voicelines[tempSound][1].ToString());
                     }
-                    
+
+                    if (!Globals.StoryFlags.Contains(_voicelines[tempSound][3])) Globals.StoryFlags.Add((string) _voicelines[tempSound][3]);
+
                     RuntimeManager.StudioSystem.getEvent($"event:/Dialogue Sounds/Dialogue/{tempSound}", out var desc);
                     if (!desc.isValid())
+                    {
                         tempSound = "err_not_recorded";
-
+                        RuntimeManager.StudioSystem.getEvent($"event:/Dialogue Sounds/Dialogue/{tempSound}", out desc);
+                    }
                     desc.getLength(out voicelineMilis);
                     
                     instance = RuntimeManager.CreateInstance($"event:/Dialogue Sounds/Dialogue/{tempSound}");
@@ -161,6 +167,8 @@ public class VoicelineController : MonoBehaviour
                     _subtitles.SetText(_voicelines[sound][1].ToString());
                 }
             }
+            
+            if (!Globals.StoryFlags.Contains(_voicelines[sound][3])) Globals.StoryFlags.Add((string) _voicelines[sound][3]);
         
             RuntimeManager.StudioSystem.getEvent($"event:/Dialogue Sounds/Dialogue/{sound}", out var desc);
             if (!desc.isValid())
@@ -198,6 +206,10 @@ public class VoicelineController : MonoBehaviour
             instance.getPlaybackState(out state);
         }
 
+        foreach (string flag in Globals.StoryFlags)
+        {
+            Debug.Log(flag);
+        }
         _isPlaying = false;
     }
 }

@@ -1,28 +1,88 @@
-In-Game Name	Description/Context	Dialogue	Speaker
-err_fake_voiceline	Debug dialogue that plays when the game tries to load a voiceline that doesn't exist in this document.	Sorry, the voiceline you tried to play doesn't actually exist.	Mabel
-err_not_recorded	Debug dialogue that plays when the voiceline exists in this document, but hasn't actually been recorded yet.	This voiceline hasn't been recorded yet.	Mabel
-Descole Test Lines			
-msg_descole_test1	Test dialogue that's just stolen voicelines from the Professor Layton games.	I <i>knew</i> you would be an asset in my battle against them!	Descole
-msg_descole_test2	^^^	What an ugly, little man you are!	Descole
-msg_descole_test3	^^^	Apparently, I made a pact with a small-minded dullard!	Descole
-msg_descole_test4	^^^	The puzzle is clearly flawed.	Descole
-msg_descole_test5_1	Test dialogue to make sure that multiple sentence voicelines work properly.	I have been waiting patiently for the perfect moment to make my grand entrance.	Descole
-msg_descole_test5_2	^^^	The final act belongs to <i>me!</i>	Descole
-msg_descole_test6	The neat thing is, this one doesn't actually exist. Its sole purpose is to trigger the voiceline not recorded voiceline.	Surprise, assholes! Turns out I was the Big Dog the whole time!	Descole
-msg_descole_test7_1	Descole's opening monalogue in Professor Layton and the Last Specter. Mostly just to test how flexible multiple voicelines are.	Long ago, in a lawless age,	Descole
-msg_descole_test7_2	^^^	a pack of bandits invaded a small village.	Descole
-msg_descole_test7_3	^^^	Amidst the chaos, a terrified young farm girl	Descole
-msg_descole_test7_4	^^^	played her flute to drown out the madness.	Descole
-msg_descole_test7_5	^^^	As the music spiraled high into the sky,	Descole
-msg_descole_test7_6	^^^	a giant specter appeared above her.	Descole
-msg_descole_test7_7	^^^	She begged the specter to destroy the bandits, and it swiftly obeyed.	Descole
-msg_descole_test7_8	^^^	The town was saved;	Descole
-msg_descole_test7_9	^^^	and the specter vanished just as quickly as it had appeared.	Descole
-msg_descole_test7_10	^^^	But the farm girl knew that in times of danger,	Descole
-msg_descole_test7_11	^^^	she needed only to play the flute,	Descole
-msg_descole_test7_12	^^^	and the specter would appear again.	Descole
-msg_descole_test7_13	^^^		
-msg_descole_test7_14	^^^	<i>[Book shuts]</i>	
-msg_descole_test7_15	^^^	A quaint tale, wouldn't you say?	Descole
-msg_descole_test7_16	^^^	I think the time has come	Descole
-msg_descole_test7_17	^^^	for us to pen the next chapter...	Descole
+In-Game Name	Description/Context	Dialogue	Speaker	Flags
+err_fake_voiceline	Debug dialogue that plays when the game tries to load a voiceline that doesn't exist in this document.	ERROR: The voiceline that you tried to load is not in the database.	Mabel	
+err_not_recorded	Debug dialogue that plays when the voiceline exists in this document, but hasn't actually been recorded yet.	This voiceline hasn't been recorded yet.	Mabel	
+Descole Test Lines				
+msg_descole_test1	Test dialogue that's just stolen voicelines from the Professor Layton games.	I <i>knew</i> you would be an asset in my battle against them!	Descole	
+msg_descole_test2	^^^	What an ugly, little man you are!	Descole	
+msg_descole_test3	^^^	Apparently, I made a pact with a small-minded dullard!	Descole	
+msg_descole_test4	^^^	The puzzle is clearly flawed.	Descole	
+msg_descole_test5_1	Test dialogue to make sure that multiple sentence voicelines work properly.	I have been waiting patiently for the perfect moment to make my grand entrance.	Descole	
+msg_descole_test5_2	^^^	The final act belongs to <i>me!</i>	Descole	
+msg_descole_test6	The neat thing is, this one doesn't actually exist. Its sole purpose is to trigger the voiceline not recorded voiceline.	Surprise, assholes! Turns out I was the Big Dog the whole time!	Descole	
+msg_descole_test7_1	Descole's opening monalogue in Professor Layton and the Last Specter. Mostly just to test how flexible multiple voicelines are.	Long ago, in a lawless age,	Descole	
+msg_descole_test7_2	^^^	a pack of bandits invaded a small village.	Descole	
+msg_descole_test7_3	^^^	Amidst the chaos, a terrified young farm girl	Descole	
+msg_descole_test7_4	^^^	played her flute to drown out the madness.	Descole	
+msg_descole_test7_5	^^^	As the music spiraled high into the sky,	Descole	
+msg_descole_test7_6	^^^	a giant specter appeared above her.	Descole	
+msg_descole_test7_7	^^^	She begged the specter to destroy the bandits, and it swiftly obeyed.	Descole	
+msg_descole_test7_8	^^^	The town was saved;	Descole	
+msg_descole_test7_9	^^^	and the specter vanished just as quickly as it had appeared.	Descole	
+msg_descole_test7_10	^^^	But the farm girl knew that in times of danger,	Descole	
+msg_descole_test7_11	^^^	she needed only to play the flute,	Descole	
+msg_descole_test7_12	^^^	and the specter would appear again.	Descole	
+msg_descole_test7_13	^^^			
+msg_descole_test7_14	^^^	<i>[Book shuts]</i>		
+msg_descole_test7_15	^^^	A quaint tale, wouldn't you say?	Descole	
+msg_descole_test7_16	^^^	I think the time has come	Descole	
+msg_descole_test7_17	^^^	for us to pen the next chapter...	Descole	
+Marb Lines				
+msg_marb_opening_1	Opening monalogue that Marb gives the player on their first run about who they are and what their task is.	Hello?	???	
+msg_marb_opening_2	^^^	Uh... Is this thing on?	???	
+msg_marb_opening_3	^^^	Hmmm...	???	
+msg_marb_opening_4	^^^	It says here you're not able to respond at all,	???	
+msg_marb_opening_5	^^^	so I'm just gonna assume everything's working.	???	
+msg_marb_opening_6	^^^	So... Hi!	???	
+msg_marb_opening_7	^^^	My name's Marb, and I'll be your Watcher for this mission!	Marb	
+msg_marb_opening_8	^^^	You're probably wondering what the mission is, aren'tcha?	Marb	
+msg_marb_opening_9	^^^	Well,	Marb	
+msg_marb_opening_10	^^^	let's just take a look here...	Marb	
+msg_marb_opening_11	^^^	Ah!	Marb	
+msg_marb_opening_12	^^^	It says here that not too long ago, 	Marb	
+msg_marb_opening_13	^^^	the space station you're on now, the S.S. Burya, 	Marb	
+msg_marb_opening_14	^^^	called out for help.	Marb	
+msg_marb_opening_15	^^^	Apparently, something broke into the ship and killed everyone on board.	Marb	
+msg_marb_opening_16	^^^	Don't worry though, you're not in any danger!	Marb	
+msg_marb_opening_17	^^^	I'm not picking up any life signals other than you,	Marb	
+msg_marb_opening_18	^^^	so whatever it was, it's gone now.	Marb	
+msg_marb_opening_19	^^^	Anyways, here's where you come in.	Marb	
+msg_marb_opening_20	^^^	The something that got on to the ship knocked out the power supply,	Marb	
+msg_marb_opening_21	^^^	uh, and now you get to repair it!	Marb	
+msg_marb_opening_22	^^^	(Okay, let's just...)	Marb	
+msg_marb_opening_23	^^^			flg_activate_hud
+msg_marb_opening_24	^^^	(Hope that worked...)	Marb	
+msg_marb_opening_25	^^^	A map of the ship should've appeared on your HUD just now.	Marb	
+msg_marb_opening_26	^^^	So just bring power to each of the rooms,	Marb	
+msg_marb_opening_27	^^^	and that'll activate, uh, the main engines!	Marb	
+msg_marb_opening_28	^^^	And, once the engine's on, uh,	Marb	
+msg_marb_opening_29	^^^	you can get out and get your paycheck!	Marb	
+msg_marb_opening_30	^^^	So...	Marb	
+msg_marb_opening_31	^^^	Good luck!	Marb	
+msg_marb_open_door_1	Plays right before Marb opens the initial door to the space station for the first time.	Oh wait, I was supposed to unlock that door.	Marb	
+msg_marb_open_door_2	^^^	My bad.	Marb	
+msg_marb_open_door_3	^^^			
+msg_marb_open_door_4	^^^			flg_open_first_door
+msg_marb_open_door_5	^^^	There, NOW you can do your job.	Marb	
+msg_marb_skip_opening_1	Plays when starting a run after clearing out the tutorial for the first time.	Oh, uh, you have the Completion Key!	Marb	
+msg_marb_skip_opening_2	^^^	Guess you already know what's going on then.	Marb	
+msg_marb_skip_opening_3	^^^			flg_activate_hud
+msg_marb_skip_opening_4	^^^			flg_open_first_door
+msg_marb_skip_opening_5	^^^	Kay, uh, your HUD's up and the door's open, so,	Marb	
+msg_marb_skip_opening_6	^^^	Good luck!	Marb	
+msg_marb_explain_cleanup_1	Plays when the player enters the first node for the first time. Explains how the cleanup system works.	Oh yeah, one more thing.	Marb	
+msg_marb_explain_cleanup_2	^^^	Since you're here, the higher-ups figured	Marb	
+msg_marb_explain_cleanup_3	^^^	you might as well clean the place up.	Marb	
+msg_marb_explain_cleanup_4	^^^	In each room you enter, 	Marb	
+msg_marb_explain_cleanup_5	^^^	you should see everything that has to be done	Marb	
+msg_marb_explain_cleanup_6	^^^	in order to make the place presentable for rehabilitation.	Marb	
+msg_marb_explain_cleanup_7	^^^	That's why you have those cleaning supplies on you.	Marb	
+msg_marb_explain_cleanup_8	^^^			
+msg_marb_explain_cleanup_9	^^^	In case you were wondering.	Marb	
+msg_marb_explain_cleanup_10	^^^			
+msg_marb_explain_cleanup_11	^^^	I-It's not like you're getting nothing for cleaning up or anything!	Marb	
+msg_marb_explain_cleanup_12	^^^	The more you clean up, the more I can add to your paycheck!	Marb	
+msg_marb_explain_cleanup_13	^^^	So there's, uh, that.	Marb	
+msg_marb_explain_cleanup_14	^^^	A-And you don't have to clean up or anything if you don't want to!	Marb	
+msg_marb_explain_cleanup_15	^^^	Th-They just thought it'd be efficient.	Marb	
+msg_marb_explain_cleanup_16	^^^			
+msg_marb_explain_cleanup_17	^^^	(Man, not being able to hear the person I'm talking to <i>really</i> sucks.)	Marb	

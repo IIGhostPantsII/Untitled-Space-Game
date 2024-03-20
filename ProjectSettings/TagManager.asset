@@ -12,6 +12,8 @@ TagManager:
   - TiledGround
   - LowGravTrigger
   - RoomTask
+  - Ladder
+  - Voiceline Controller
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - Water
   - UI
   - TiledGround
-  - 
+  - IgnoreLighting
   - 
   - 
   - 
@@ -48,4 +50,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 3265855151
     locked: 0
