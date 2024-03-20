@@ -81,6 +81,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 816
+--- !u!114 &-9040390618103252792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/PA-Portable-Opening/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-8891195552605005499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,10 +542,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638459056088112203
+  lastModified: 638464945999680321
   FileSizes:
   - Name: Desktop
-    Value: 610912
+    Value: 655232
   Exists: 1
 --- !u!114 &-7931402118236997697
 MonoBehaviour:
@@ -1139,10 +1163,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638463199963979922
+  lastModified: 638464945995880960
   FileSizes:
   - Name: Desktop
-    Value: 5516
+    Value: 5612
   Exists: 1
 --- !u!114 &-6808477022153283704
 MonoBehaviour:
@@ -1584,6 +1608,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2064
+--- !u!114 &-5551674232999022297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/PA Jingles/PA-Portable-Closing
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/PA Jingles/PA-Portable-Closing
+  Guid:
+    Data1: -1828583088
+    Data2: 1145258716
+    Data3: 259761335
+    Data4: 1689922139
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 7231345183980440621}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 400
 --- !u!114 &-5533820479304567436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1734,7 +1786,6 @@ MonoBehaviour:
     Data4: -692800330
   Banks:
   - {fileID: 8111687369947124944}
-  - {fileID: 8111687369947124944}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1824,6 +1875,34 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &-4984125031769240098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/PA Jingles/PA-Portable-Opening
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/PA Jingles/PA-Portable-Opening
+  Guid:
+    Data1: -1067533493
+    Data2: 1096031293
+    Data3: -1699688014
+    Data4: -2106377408
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -9040390618103252792}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 400
 --- !u!114 &-4960968217734572833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2988,30 +3067,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-2447469431885711951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter://Lowpass
-  m_EditorClassIdentifier: 
-  Name: Lowpass
-  StudioPath: 
-  Min: 0
-  Max: 22000
-  Default: 22000
-  ID:
-    data1: 2238647653
-    data2: 2004388847
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &-2256560316256648404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3757,7 +3812,6 @@ MonoBehaviour:
   - {fileID: 3179740896734807514}
   - {fileID: -4960968217734572833}
   - {fileID: -9158876333024256918}
-  - {fileID: 1225019365892680025}
   - {fileID: -5371262871745412100}
   - {fileID: 1768208098545882160}
   - {fileID: 327984532610325553}
@@ -3836,13 +3890,15 @@ MonoBehaviour:
   - {fileID: -5740203246487632345}
   - {fileID: -478941478338669761}
   - {fileID: -6515836774363932812}
+  - {fileID: -4984125031769240098}
+  - {fileID: -5551674232999022297}
   EditorParameters:
   - {fileID: -4378669881315573467}
   MasterBanks:
   - {fileID: 6422365686012519055}
   StringsBanks:
   - {fileID: -6838026933355539509}
-  cacheTime: 638463199983264095
+  cacheTime: 638464946033869571
   cacheVersion: 131607
 --- !u!114 &11466826389644830
 MonoBehaviour:
@@ -4431,34 +4487,6 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &1225019365892680025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: 
-  Guid:
-    Data1: -1627325443
-    Data2: 1149570777
-    Data3: 1253090438
-    Data4: -692800330
-  Banks:
-  - {fileID: 8111687369947124944}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters:
-  - {fileID: -2447469431885711951}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2600
 --- !u!114 &1278728262558374907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6084,7 +6112,7 @@ MonoBehaviour:
   - {fileID: -4423602226601235490}
   MinDistance: 1
   MaxDistance: 20
-  Length: 162866
+  Length: 70661
 --- !u!114 &5037527407699050812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6831,7 +6859,7 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638463199963960086
+  lastModified: 638464945995856171
   FileSizes:
   - Name: Desktop
     Value: 73408
@@ -7293,6 +7321,30 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &7231345183980440621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/PA-Portable-Closing/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &7287005871472305238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7620,10 +7672,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Voices.bank
   Name: Voices
   StudioPath: bank:/Voices
-  lastModified: 638463199983264095
+  lastModified: 638464946033869571
   FileSizes:
   - Name: Desktop
-    Value: 5145600
+    Value: 3841536
   Exists: 1
 --- !u!114 &8176028172918406867
 MonoBehaviour:
