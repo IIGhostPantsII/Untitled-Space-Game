@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
-using UnityEngine.UI;
 using NaughtyAttributes;
 using UnityEditor;
 using UnityEngine;
@@ -16,8 +14,9 @@ public class RandomEvents : MonoBehaviour
 
     [ShowIf("_eventType", EventType.Reposition)] [AllowNesting] [SerializeField] public Vector3 _pos;
     [ShowIf("_eventType", EventType.Reposition)] [AllowNesting] [SerializeField] public Quaternion _rotation;
+    [ShowIf("_eventType", EventType.Reposition)] [AllowNesting] [SerializeField] public GameObject[] _anyObjectToGetRidOf;
 
-    void Start()
+    void Awake()
     {
         int random = Random.Range(0, _odds);
         if(random == _odds - 1)
@@ -42,6 +41,10 @@ public class RandomEvents : MonoBehaviour
             {
                 gameObject.transform.position = _pos;
                 gameObject.transform.rotation = _rotation;
+                for(int i = 0; i < _anyObjectToGetRidOf.Length; i++)
+                {
+                    Destroy(_anyObjectToGetRidOf[i]);
+                }
             }
         }
     }
@@ -50,5 +53,9 @@ public class RandomEvents : MonoBehaviour
 public enum EventType
 {
     Move,
-    Reposition
+    Reposition,
+    Steam,
+    Sparks,
+    Layout,
+    Dialogue
 }
