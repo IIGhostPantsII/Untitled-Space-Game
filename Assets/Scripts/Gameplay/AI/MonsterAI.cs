@@ -66,7 +66,6 @@ public class MonsterAI : MonoBehaviour
         //SpawnTheMonster(spawnLength);
         monsterPathing = GetComponent<NavMeshAgent>();
         soundPerception = GetComponent<SoundPerception>();
-        Globals.ChangeMonsterState("Idle");
         growlEvent = RuntimeManager.CreateInstance(events[0]);
     }
 

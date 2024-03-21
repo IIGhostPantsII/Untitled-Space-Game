@@ -24,7 +24,7 @@ public static class Globals
 
     //Monster Modes
     public static bool ChaseMode;
-    public static bool IdleMode;
+    public static bool IdleMode = true;
     public static bool PatrolMode;
 
     public static int Money;
