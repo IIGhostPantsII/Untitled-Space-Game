@@ -44,7 +44,7 @@ public class Vision : MonoBehaviour
         }
         else
         {
-            if(Globals.CheckMonsterState("Chase") && timeNotSeen > 5f && !_sound.ChaseCheck())
+            if(Globals.CheckMonsterState("Chase") && timeNotSeen > 5f && !_sound.ChaseCheck() && !EndgameLogic.Started)
             {
                 Globals.ChangeMonsterState("Idle");
             }

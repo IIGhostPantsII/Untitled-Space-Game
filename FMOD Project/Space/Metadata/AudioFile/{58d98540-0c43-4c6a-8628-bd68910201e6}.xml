@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{58d98540-0c43-4c6a-8628-bd68910201e6}">
+		<property name="assetPath">
+			<value>Croc &amp; Funny Man/croc_walk_2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.69777777777777783</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6e23de32-7231-43cf-b241-696699a1b37e}</destination>
+		</relationship>
+	</object>
+</objects>
