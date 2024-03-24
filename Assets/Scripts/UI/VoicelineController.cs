@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using FMOD.Studio;
 using FMODUnity;
+using NaughtyAttributes;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -19,11 +20,27 @@ public class VoicelineController : MonoBehaviour
     private Dictionary<string, ArrayList> _voicelines = new Dictionary<string, ArrayList>();
     private List<string> _usedVoiceLines = new List<string>();
 
+    private bool _walkieTalkie = true;
+
     private void Start()
     {
         _voicelines = Globals.LoadTSV(_voicelineTSV);
         _player = GameObject.FindWithTag("MainCamera");
         _subtitles.SetText("");
+        TogglePAMode(_walkieTalkie);
+    }
+
+    [Button]
+    public void TogglePAMode()
+    {
+        TogglePAMode(!_walkieTalkie);
+    }
+    
+    public void TogglePAMode(bool PAMode)
+    {
+        _walkieTalkie = PAMode;
+
+        RuntimeManager.StudioSystem.setParameterByName("Walkie-Talkie", PAMode ? 1 : 0);
     }
 
     private void Update() {
@@ -65,7 +82,11 @@ public class VoicelineController : MonoBehaviour
         
         _isPlaying = true;
         
-        EventInstance instance = RuntimeManager.CreateInstance($"event:/Dialogue Sounds/PA Jingles/PA-Normal-Opening");
+        EventInstance instance;
+        
+        if (_walkieTalkie) instance = RuntimeManager.CreateInstance($"event:/Dialogue Sounds/PA Jingles/PA-Portable-Opening");
+        else instance = RuntimeManager.CreateInstance($"event:/Dialogue Sounds/PA Jingles/PA-Normal-Opening");
+        
         RuntimeManager.AttachInstanceToGameObject(instance, _player.transform, _player.GetComponent<Rigidbody>());
         instance.start();
         instance.release();
@@ -194,7 +215,10 @@ public class VoicelineController : MonoBehaviour
         yield return new WaitForSeconds(0.75f);
         
         _subtitles.SetText("");
-        instance = RuntimeManager.CreateInstance($"event:/Dialogue Sounds/PA Jingles/PA-Normal-Closing");
+        
+        if (_walkieTalkie) instance = RuntimeManager.CreateInstance($"event:/Dialogue Sounds/PA Jingles/PA-Portable-Closing");
+        else instance = RuntimeManager.CreateInstance($"event:/Dialogue Sounds/PA Jingles/PA-Normal-Closing");
+        
         RuntimeManager.AttachInstanceToGameObject(instance, _player.transform, _player.GetComponent<Rigidbody>());
         instance.start();
         instance.release();

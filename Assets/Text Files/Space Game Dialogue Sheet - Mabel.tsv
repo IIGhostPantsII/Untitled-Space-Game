@@ -63,7 +63,7 @@ msg_marb_open_door_2	^^^	My bad.	Marb
 msg_marb_open_door_3	^^^			
 msg_marb_open_door_4	^^^			flg_open_first_door
 msg_marb_open_door_5	^^^	There, NOW you can do your job.	Marb	
-msg_marb_skip_opening_1	Plays when starting a run after clearing out the tutorial for the first time.	Oh, uh, you have the Completion Key!	Marb	
+msg_marb_skip_opening_1	Plays when starting a run after clearing out the tutorial for the first time.	Oh, uh, you have the Completion Key!	Marb	flg_skipped_opening
 msg_marb_skip_opening_2	^^^	Guess you already know what's going on then.	Marb	
 msg_marb_skip_opening_3	^^^			flg_activate_hud
 msg_marb_skip_opening_4	^^^			flg_open_first_door

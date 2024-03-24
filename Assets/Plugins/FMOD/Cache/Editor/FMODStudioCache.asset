@@ -73,13 +73,38 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 3113677730608857784}
+  - {fileID: 4874605671684645820}
   MinDistance: 1
   MaxDistance: 20
   Length: 816
+--- !u!114 &-9040390618103252792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/PA-Portable-Opening/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-8891195552605005499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,10 +150,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -7981552488631543178}
+  - {fileID: 7532083969500433890}
   MinDistance: 1
   MaxDistance: 20
   Length: 576
@@ -160,7 +186,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-8546337646106354850
+--- !u!114 &-8604428612007219305
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,25 +195,69 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sounds/CrocRoar
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_7/Walkie-Talkie
   m_EditorClassIdentifier: 
-  Path: event:/Sounds/CrocRoar
-  Guid:
-    Data1: -1372364588
-    Data2: 1263068807
-    Data3: -1265136502
-    Data4: -1739784409
-  Banks:
-  - {fileID: -7964591791849441354}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters:
-  - {fileID: -4149353898032523592}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-8602575186767720659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test2/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-8559039759817808723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_1/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-8497777817789361309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,6 +282,58 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-8477788108400654481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_30/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-8467815073345812184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sounds/CrocRoar
+  m_EditorClassIdentifier: 
+  Path: event:/Sounds/CrocRoar
+  Guid:
+    Data1: -1372364588
+    Data2: 1263068807
+    Data3: -1265136502
+    Data4: -1739784409
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -6936066407701615938}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-8444010455946429272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,10 +427,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -535370342327024196}
+  - {fileID: -5249274619080337940}
   MinDistance: 1
   MaxDistance: 20
   Length: 1872
@@ -336,6 +459,30 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-8019239112612981175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_23/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-7981552488631543178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,6 +505,30 @@ MonoBehaviour:
     data2: 2004388847
   Type: 0
   IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-7977117698171773908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_28/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
   Labels: []
   Exists: 1
 --- !u!114 &-7968007550661438565
@@ -399,10 +570,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638466400352480312
+  lastModified: 638468198604613702
   FileSizes:
   - Name: Desktop
-    Value: 754080
+    Value: 798432
   Exists: 1
 --- !u!114 &-7931402118236997697
 MonoBehaviour:
@@ -425,10 +596,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -2131621759392211400}
+  - {fileID: 6644673900439834784}
   MinDistance: 1
   MaxDistance: 20
   Length: 4128
@@ -480,6 +652,30 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-7854782406349215901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_9/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-7745743566946024955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,10 +697,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -7721968441561439203}
+  - {fileID: -4564860285276081422}
   MinDistance: 1
   MaxDistance: 20
   Length: 2448
@@ -556,6 +753,30 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-7696447441031232238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_31/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-7623003854578107283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -601,10 +822,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -3157802976680612726}
+  - {fileID: -61598819278672535}
   MinDistance: 1
   MaxDistance: 20
   Length: 3882
@@ -653,13 +875,38 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 2590280952900908387}
+  - {fileID: 6010830927477241629}
   MinDistance: 1
   MaxDistance: 20
   Length: 2616
+--- !u!114 &-7324895496176404632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_open_door_5/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-7282400483835557073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -708,6 +955,54 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-7242920487977811451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_11/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-7172594050637156492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_skip_opening_1/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-7113298487564634590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -730,6 +1025,30 @@ MonoBehaviour:
     data2: 2004388847
   Type: 0
   IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-7005272670608262831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_17/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
   Labels: []
   Exists: 1
 --- !u!114 &-7004689917289320254
@@ -780,6 +1099,78 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-6936066407701615938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/CrocRoar/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-6929019637619323001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_14/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-6909027455701546932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_16/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-6890790190129349532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -801,10 +1192,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -2560770143801026990}
+  - {fileID: -7172594050637156492}
   MinDistance: 1
   MaxDistance: 20
   Length: 2376
@@ -823,10 +1215,58 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638466399822257081
+  lastModified: 638468198586668452
   FileSizes:
   - Name: Desktop
-    Value: 5646
+    Value: 5788
+  Exists: 1
+--- !u!114 &-6808477022153283704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_24/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-6782400198818992943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_13/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
   Exists: 1
 --- !u!114 &-6729406449828546326
 MonoBehaviour:
@@ -876,6 +1316,30 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-6699465003688394718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_15/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-6515836774363932812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -897,10 +1361,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 6223624162545629782}
+  - {fileID: 8519762069682711429}
   MinDistance: 1
   MaxDistance: 20
   Length: 1368
@@ -976,13 +1441,38 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 1303504313687681846}
+  - {fileID: 564211323901588942}
   MinDistance: 1
   MaxDistance: 20
   Length: 3600
+--- !u!114 &-6382520133166195256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_12/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-6341969297123168230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1056,13 +1546,38 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 4915137595963996181}
+  - {fileID: 6964674094933719876}
   MinDistance: 1
   MaxDistance: 20
   Length: 1296
+--- !u!114 &-5844724389407692182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_15/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-5740203246487632345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1084,10 +1599,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 5168639718860438677}
+  - {fileID: 3792000526193779776}
   MinDistance: 1
   MaxDistance: 20
   Length: 1200
@@ -1136,13 +1652,42 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -5533820479304567436}
+  - {fileID: 1218833980971420870}
   MinDistance: 1
   MaxDistance: 20
   Length: 2064
+--- !u!114 &-5551674232999022297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/PA Jingles/PA-Portable-Closing
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/PA Jingles/PA-Portable-Closing
+  Guid:
+    Data1: -1828583088
+    Data2: 1145258716
+    Data3: 259761335
+    Data4: 1689922139
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 7231345183980440621}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 400
 --- !u!114 &-5533820479304567436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1212,10 +1757,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -8444010455946429272}
+  - {fileID: -6382520133166195256}
   MinDistance: 1
   MaxDistance: 20
   Length: 3360
@@ -1240,10 +1786,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -2876418649474517133}
+  - {fileID: 415937217375839551}
   MinDistance: 1
   MaxDistance: 20
   Length: 2640
@@ -1320,13 +1867,66 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 2238965664706705251}
+  - {fileID: -8604428612007219305}
   MinDistance: 1
   MaxDistance: 20
   Length: 2640
+--- !u!114 &-5249274619080337940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_14/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-4984125031769240098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue Sounds/PA Jingles/PA-Portable-Opening
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue Sounds/PA Jingles/PA-Portable-Opening
+  Guid:
+    Data1: -1067533493
+    Data2: 1096031293
+    Data3: -1699688014
+    Data4: -2106377408
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -9040390618103252792}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 400
 --- !u!114 &-4960968217734572833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1376,10 +1976,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -6719809985365168474}
+  - {fileID: -8477788108400654481}
   MinDistance: 1
   MaxDistance: 20
   Length: 1464
@@ -1404,10 +2005,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 903924994842233412}
+  - {fileID: 11466826389644830}
   MinDistance: 1
   MaxDistance: 20
   Length: 2400
@@ -1483,6 +2085,54 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-4564860285276081422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_27/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-4541991556837758668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_2/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-4512635146476590496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1507,6 +2157,30 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-4423602226601235490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test8/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-4412665838852984545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1529,6 +2203,54 @@ MonoBehaviour:
     data2: 2004388847
   Type: 0
   IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-4378669881315573467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: parameter:/Walkie-Talkie
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-4277961556329036974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_26/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
   Labels: []
   Exists: 1
 --- !u!114 &-4259891832415775897
@@ -1579,30 +2301,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-4149353898032523592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/CrocRoar/Lowpass
-  m_EditorClassIdentifier: 
-  Name: Lowpass
-  StudioPath: 
-  Min: 0
-  Max: 22000
-  Default: 22000
-  ID:
-    data1: 2238647653
-    data2: 2004388847
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &-3553931742073454697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1624,41 +2322,14 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 5507051596095043310}
+  - {fileID: -3051505474012059609}
   MinDistance: 1
   MaxDistance: 20
   Length: 960
---- !u!114 &-3511201076885120123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sounds/CrocFootsteps
-  m_EditorClassIdentifier: 
-  Path: event:/Sounds/CrocFootsteps
-  Guid:
-    Data1: -527927722
-    Data2: 1302570591
-    Data3: -448460097
-    Data4: 1863862895
-  Banks:
-  - {fileID: -7964591791849441354}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters:
-  - {fileID: 8727820358844968101}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-3468348555611794484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1680,13 +2351,42 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -4574147078407458218}
+  - {fileID: -1694778054073212418}
   MinDistance: 1
   MaxDistance: 20
   Length: 2880
+--- !u!114 &-3445004566158327011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sounds/CrocBreath
+  m_EditorClassIdentifier: 
+  Path: event:/Sounds/CrocBreath
+  Guid:
+    Data1: 215833070
+    Data2: 1113859890
+    Data3: -1988091492
+    Data4: -345984990
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 8471774473841721567}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-3424639337115310348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1711,7 +2411,7 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-3260895749075973379
+--- !u!114 &-3393974397444057193
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1721,48 +2421,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/CrocBreath/Lowpass
+  m_Name: parameter:/msg_marb_opening_29/Walkie-Talkie
   m_EditorClassIdentifier: 
-  Name: Lowpass
+  Name: Walkie-Talkie
   StudioPath: 
   Min: 0
-  Max: 22000
-  Default: 22000
+  Max: 1
+  Default: 0
   ID:
-    data1: 2238647653
-    data2: 2004388847
+    data1: 1709586370
+    data2: 3120848383
   Type: 0
-  IsGlobal: 0
+  IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &-3233618208768273198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sounds/CrocGrowl
-  m_EditorClassIdentifier: 
-  Path: event:/Sounds/CrocGrowl
-  Guid:
-    Data1: 1925508550
-    Data2: 1218986057
-    Data3: -1727565137
-    Data4: -758291081
-  Banks:
-  - {fileID: -7964591791849441354}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters:
-  - {fileID: 5239249257194420001}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-3157802976680612726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1833,6 +2505,30 @@ MonoBehaviour:
     data2: 4211924693
   Type: 0
   IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-3096517205494616811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test4/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
   Labels: []
   Exists: 1
 --- !u!114 &-3089231946209977601
@@ -1908,13 +2604,38 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -7004689917289320254}
+  - {fileID: 7287005871472305238}
   MinDistance: 1
   MaxDistance: 20
   Length: 984
+--- !u!114 &-3051505474012059609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_skip_opening_3/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-3016783050125897872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1936,10 +2657,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 6141267046088838151}
+  - {fileID: -2810342920432651550}
   MinDistance: 1
   MaxDistance: 20
   Length: 1080
@@ -1998,6 +2720,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-2926293052713299521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_2/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-2920397346885303116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2043,10 +2789,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -2599599277953580491}
+  - {fileID: -7696447441031232238}
   MinDistance: 1
   MaxDistance: 20
   Length: 1224
@@ -2096,6 +2843,30 @@ MonoBehaviour:
     data2: 2004388847
   Type: 0
   IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-2810342920432651550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_9/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
   Labels: []
   Exists: 1
 --- !u!114 &-2736453581791515621
@@ -2215,10 +2986,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -7623003854578107283}
+  - {fileID: 3718213312346567984}
   MinDistance: 1
   MaxDistance: 20
   Length: 5150
@@ -2243,10 +3015,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -5500904309647235497}
+  - {fileID: -8559039759817808723}
   MinDistance: 1
   MaxDistance: 20
   Length: 2312
@@ -2346,6 +3119,82 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-2258235444839102085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sounds/CrocGrowl
+  m_EditorClassIdentifier: 
+  Path: event:/Sounds/CrocGrowl
+  Guid:
+    Data1: 1925508550
+    Data2: 1218986057
+    Data3: -1727565137
+    Data4: -758291081
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 6955141689224998430}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2256560316256648404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test5_2/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-2165276037391431015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/CrocFootsteps/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-2142131061142234367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2367,10 +3216,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -8497777817789361309}
+  - {fileID: 6666062105515652211}
   MinDistance: 1
   MaxDistance: 20
   Length: 3037
@@ -2419,10 +3269,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -3136531806672042961}
+  - {fileID: -6699465003688394718}
   MinDistance: 1
   MaxDistance: 20
   Length: 2900
@@ -2471,10 +3322,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -7557799657846230697}
+  - {fileID: 6778989125296467439}
   MinDistance: 1
   MaxDistance: 20
   Length: 960
@@ -2500,6 +3352,54 @@ MonoBehaviour:
     data2: 2004388847
   Type: 0
   IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-1766883208177219588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_16/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-1694778054073212418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_7/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
   Labels: []
   Exists: 1
 --- !u!114 &-1606548628467542175
@@ -2547,10 +3447,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 7482766971595638585}
+  - {fileID: 937148305512279089}
   MinDistance: 1
   MaxDistance: 20
   Length: 1680
@@ -2599,13 +3500,62 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -8170756975471183369}
+  - {fileID: -1221297021446739400}
   MinDistance: 1
   MaxDistance: 20
   Length: 4721
+--- !u!114 &-1221297021446739400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/err_fake_voiceline/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-1121633172995055990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_13/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-1008361953800681362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2628,6 +3578,30 @@ MonoBehaviour:
     data2: 2004388847
   Type: 0
   IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-754112924851732658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_skip_opening_5/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
   Labels: []
   Exists: 1
 --- !u!114 &-736891307919907582
@@ -2699,10 +3673,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -736891307919907582}
+  - {fileID: 540871327696535550}
   MinDistance: 1
   MaxDistance: 20
   Length: 3550
@@ -2751,10 +3726,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -7282400483835557073}
+  - {fileID: 8063349535619182302}
   MinDistance: 1
   MaxDistance: 20
   Length: 3936
@@ -2779,10 +3755,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -1795060678702484279}
+  - {fileID: -6782400198818992943}
   MinDistance: 1
   MaxDistance: 20
   Length: 1500
@@ -2862,6 +3839,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1850
+--- !u!114 &-61598819278672535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test3/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2992,17 +3993,44 @@ MonoBehaviour:
   - {fileID: -5740203246487632345}
   - {fileID: -478941478338669761}
   - {fileID: -6515836774363932812}
-  - {fileID: -3511201076885120123}
-  - {fileID: -3233618208768273198}
-  - {fileID: -8546337646106354850}
-  - {fileID: 6440463152025095243}
-  EditorParameters: []
+  - {fileID: -4984125031769240098}
+  - {fileID: -5551674232999022297}
+  - {fileID: 1841322044602820924}
+  - {fileID: -2258235444839102085}
+  - {fileID: -8467815073345812184}
+  - {fileID: -3445004566158327011}
+  EditorParameters:
+  - {fileID: -4378669881315573467}
   MasterBanks:
   - {fileID: 6422365686012519055}
   StringsBanks:
   - {fileID: -6838026933355539509}
-  cacheTime: 638466400352480312
+  cacheTime: 638468198639467830
   cacheVersion: 131607
+--- !u!114 &11466826389644830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_10/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &47766769699558631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3024,10 +4052,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 6133644601788155959}
+  - {fileID: 8176028172918406867}
   MinDistance: 1
   MaxDistance: 20
   Length: 2184
@@ -3076,10 +4105,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 4153389389098735110}
+  - {fileID: -2926293052713299521}
   MinDistance: 1
   MaxDistance: 20
   Length: 3375
@@ -3104,13 +4134,38 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 8795277820015207282}
+  - {fileID: -7324895496176404632}
   MinDistance: 1
   MaxDistance: 20
   Length: 1992
+--- !u!114 &192101685721296401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_6/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &289163773836013343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3132,10 +4187,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -4569560354361289266}
+  - {fileID: 557689603253835313}
   MinDistance: 1
   MaxDistance: 20
   Length: 3300
@@ -3160,13 +4216,158 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 6451497504533989877}
+  - {fileID: 3341807937794920250}
   MinDistance: 1
   MaxDistance: 20
   Length: 1720
+--- !u!114 &415937217375839551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_21/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &540871327696535550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_9/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &557689603253835313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_4/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &564211323901588942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_8/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &683374150895530117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_18/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &756588443394812458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_12/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &849561880529703167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3215,6 +4416,54 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &937148305512279089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_6/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &943646028401666951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_skip_opening_2/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &1129785423414676264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3236,13 +4485,38 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -8269334151465260046}
+  - {fileID: -1121633172995055990}
   MinDistance: 1
   MaxDistance: 20
   Length: 2880
+--- !u!114 &1144435447033060655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_6/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &1153465909347655859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3288,13 +4562,62 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -2728630625335876519}
+  - {fileID: 6600847494858625960}
   MinDistance: 1
   MaxDistance: 20
   Length: 1650
+--- !u!114 &1218833980971420870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_12/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &1278728262558374907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_10/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &1293871768374423873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3316,10 +4639,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -2706398240955534966}
+  - {fileID: 7201919029959040725}
   MinDistance: 1
   MaxDistance: 20
   Length: 2544
@@ -3368,10 +4692,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 8927744719147083473}
+  - {fileID: -7854782406349215901}
   MinDistance: 1
   MaxDistance: 20
   Length: 1800
@@ -3424,10 +4749,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -3424639337115310348}
+  - {fileID: 943646028401666951}
   MinDistance: 1
   MaxDistance: 20
   Length: 1464
@@ -3452,10 +4778,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 2305298809185299030}
+  - {fileID: 8649060299932718447}
   MinDistance: 1
   MaxDistance: 20
   Length: 2050
@@ -3480,10 +4807,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 8290235344645714134}
+  - {fileID: 4786486357291639269}
   MinDistance: 1
   MaxDistance: 20
   Length: 672
@@ -3556,10 +4884,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -8891195552605005499}
+  - {fileID: 3745769430880772088}
   MinDistance: 1
   MaxDistance: 20
   Length: 3145
@@ -3591,6 +4920,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2687
+--- !u!114 &1841322044602820924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sounds/CrocFootsteps
+  m_EditorClassIdentifier: 
+  Path: event:/Sounds/CrocFootsteps
+  Guid:
+    Data1: -527927722
+    Data2: 1302570591
+    Data3: -448460097
+    Data4: 1863862895
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -2165276037391431015}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &1879788650803056818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3612,10 +4969,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 849561880529703167}
+  - {fileID: 6912917629040596344}
   MinDistance: 1
   MaxDistance: 20
   Length: 2184
@@ -3695,6 +5053,54 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &2135031193040986601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_2/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &2232636234361061871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_15/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &2238965664706705251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3741,6 +5147,54 @@ MonoBehaviour:
     data2: 2004388847
   Type: 0
   IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &2310012603485362863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test5_1/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &2431020963698266450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_13/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
   Labels: []
   Exists: 1
 --- !u!114 &2546970608817011362
@@ -3836,10 +5290,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -2455088200118003874}
+  - {fileID: 8649877194162410341}
   MinDistance: 1
   MaxDistance: 20
   Length: 2424
@@ -3864,10 +5319,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 4957461297133782951}
+  - {fileID: 9162325799272958453}
   MinDistance: 1
   MaxDistance: 20
   Length: 4530
@@ -3968,10 +5424,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 4381340757872584401}
+  - {fileID: 5411222870283047179}
   MinDistance: 1
   MaxDistance: 20
   Length: 2064
@@ -3996,10 +5453,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -4171281820855717892}
+  - {fileID: -8602575186767720659}
   MinDistance: 1
   MaxDistance: 20
   Length: 2716
@@ -4103,13 +5561,38 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 1
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -2054466917487544343}
+  - {fileID: 2310012603485362863}
   MinDistance: 1
   MaxDistance: 20
   Length: 5000
+--- !u!114 &3341807937794920250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_14/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &3404321586384968918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4159,10 +5642,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 6860102624880737947}
+  - {fileID: 2431020963698266450}
   MinDistance: 1
   MaxDistance: 20
   Length: 2712
@@ -4190,6 +5674,126 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &3543834457312212545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_25/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &3718213312346567984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_7/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &3745769430880772088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_17/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &3792000526193779776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_8/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &3994906586754859412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_3/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &4116109642334950053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4211,10 +5815,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 8458408920697025821}
+  - {fileID: -3096517205494616811}
   MinDistance: 1
   MaxDistance: 20
   Length: 2166
@@ -4291,10 +5896,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -4412665838852984545}
+  - {fileID: 8689625758924089619}
   MinDistance: 1
   MaxDistance: 20
   Length: 1776
@@ -4398,10 +6004,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -1008361953800681362}
+  - {fileID: 1144435447033060655}
   MinDistance: 1
   MaxDistance: 20
   Length: 2880
@@ -4450,13 +6057,38 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 67229615107245625}
+  - {fileID: -7977117698171773908}
   MinDistance: 1
   MaxDistance: 20
   Length: 2064
+--- !u!114 &4786486357291639269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_open_door_4/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &4867533366152774682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4478,13 +6110,38 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 5265288691581955203}
+  - {fileID: 1278728262558374907}
   MinDistance: 1
   MaxDistance: 20
   Length: 2352
+--- !u!114 &4874605671684645820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_open_door_2/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &4915137595963996181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4530,10 +6187,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 7173107947735101656}
+  - {fileID: 756588443394812458}
   MinDistance: 1
   MaxDistance: 20
   Length: 2600
@@ -4582,13 +6240,38 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 1
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 1752694236396065267}
+  - {fileID: -4423602226601235490}
   MinDistance: 1
   MaxDistance: 20
-  Length: 162866
+  Length: 70661
+--- !u!114 &5037527407699050812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_4/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &5045168027618121695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4693,30 +6376,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &5239249257194420001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/CrocGrowl/Lowpass
-  m_EditorClassIdentifier: 
-  Name: Lowpass
-  StudioPath: 
-  Min: 0
-  Max: 22000
-  Default: 22000
-  ID:
-    data1: 2238647653
-    data2: 2004388847
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &5240111201513761731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4738,10 +6397,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -7877453435277274592}
+  - {fileID: -5844724389407692182}
   MinDistance: 1
   MaxDistance: 20
   Length: 2280
@@ -4790,10 +6450,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 8708265583239835260}
+  - {fileID: -6929019637619323001}
   MinDistance: 1
   MaxDistance: 20
   Length: 2976
@@ -4818,13 +6479,38 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -6423785612838072958}
+  - {fileID: -754112924851732658}
   MinDistance: 1
   MaxDistance: 20
   Length: 3144
+--- !u!114 &5411222870283047179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_5/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &5507051596095043310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4870,10 +6556,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -8329214748786363825}
+  - {fileID: 192101685721296401}
   MinDistance: 1
   MaxDistance: 20
   Length: 3180
@@ -4922,10 +6609,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -391133409553248617}
+  - {fileID: 7583537202053675663}
   MinDistance: 1
   MaxDistance: 20
   Length: 1392
@@ -4983,6 +6671,30 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &6010830927477241629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_5/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &6034332345075257787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5028,10 +6740,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 9097553957243996344}
+  - {fileID: -4541991556837758668}
   MinDistance: 1
   MaxDistance: 20
   Length: 2136
@@ -5104,10 +6817,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -4259891832415775897}
+  - {fileID: -3393974397444057193}
   MinDistance: 1
   MaxDistance: 20
   Length: 3744
@@ -5132,10 +6846,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 6393119807040341549}
+  - {fileID: 6625466872797801327}
   MinDistance: 1
   MaxDistance: 20
   Length: 3240
@@ -5184,10 +6899,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -3084950793757776700}
+  - {fileID: 2135031193040986601}
   MinDistance: 1
   MaxDistance: 20
   Length: 3000
@@ -5213,6 +6929,30 @@ MonoBehaviour:
     data2: 2004388847
   Type: 0
   IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &6311766761819497353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_5/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
   Labels: []
   Exists: 1
 --- !u!114 &6393119807040341549
@@ -5254,12 +6994,12 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638466399822222057
+  lastModified: 638468198586643736
   FileSizes:
   - Name: Desktop
-    Value: 73248
+    Value: 73408
   Exists: 1
---- !u!114 &6440463152025095243
+--- !u!114 &6440236448928978518
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5268,25 +7008,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sounds/CrocBreath
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_4/Walkie-Talkie
   m_EditorClassIdentifier: 
-  Path: event:/Sounds/CrocBreath
-  Guid:
-    Data1: 215833070
-    Data2: 1113859890
-    Data3: -1988091492
-    Data4: -345984990
-  Banks:
-  - {fileID: -7964591791849441354}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters:
-  - {fileID: -3260895749075973379}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &6451497504533989877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5332,10 +7068,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -4655746416602514754}
+  - {fileID: 3543834457312212545}
   MinDistance: 1
   MaxDistance: 20
   Length: 2376
@@ -5360,10 +7097,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -2687956109453807278}
+  - {fileID: -6808477022153283704}
   MinDistance: 1
   MaxDistance: 20
   Length: 2040
@@ -5388,13 +7126,134 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -2565144098001038001}
+  - {fileID: -8019239112612981175}
   MinDistance: 1
   MaxDistance: 20
   Length: 1152
+--- !u!114 &6600847494858625960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_8/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &6625466872797801327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_11/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &6644673900439834784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_20/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &6666062105515652211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test1/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &6778989125296467439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_1/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &6860102624880737947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5440,13 +7299,86 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -9183211168548121284}
+  - {fileID: 6311766761819497353}
   MinDistance: 1
   MaxDistance: 20
   Length: 2640
+--- !u!114 &6912917629040596344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_open_door_1/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &6955141689224998430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/CrocGrowl/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &6964674094933719876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_3/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &7062131947964841740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5468,10 +7400,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -2736453581791515621}
+  - {fileID: -4277961556329036974}
   MinDistance: 1
   MaxDistance: 20
   Length: 2592
@@ -5499,6 +7432,78 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &7201919029959040725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_16/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &7231345183980440621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/PA-Portable-Closing/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &7287005871472305238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_skip_opening_4/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &7308534932530657107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5520,10 +7525,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 1
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -7709627357560079285}
+  - {fileID: -2256560316256648404}
   MinDistance: 1
   MaxDistance: 20
   Length: 3000
@@ -5551,6 +7557,30 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &7532083969500433890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_open_door_3/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &7545926193427757175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5573,6 +7603,54 @@ MonoBehaviour:
     data2: 2004388847
   Type: 0
   IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &7546648936803035811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_19/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &7583537202053675663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_skip_opening_6/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
   Labels: []
   Exists: 1
 --- !u!114 &7609577086557519686
@@ -5624,10 +7702,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -2855457049728272392}
+  - {fileID: 6440236448928978518}
   MinDistance: 1
   MaxDistance: 20
   Length: 1128
@@ -5652,10 +7731,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -5412459830549742065}
+  - {fileID: 3994906586754859412}
   MinDistance: 1
   MaxDistance: 20
   Length: 2800
@@ -5680,13 +7760,38 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -678483997961040861}
+  - {fileID: -7005272670608262831}
   MinDistance: 1
   MaxDistance: 20
   Length: 2304
+--- !u!114 &8063349535619182302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_17/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &8111687369947124944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5702,10 +7807,34 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Voices.bank
   Name: Voices
   StudioPath: bank:/Voices
-  lastModified: 638466399846142776
+  lastModified: 638468198639467830
   FileSizes:
   - Name: Desktop
-    Value: 5117408
+    Value: 3841536
+  Exists: 1
+--- !u!114 &8176028172918406867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_opening_22/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
   Exists: 1
 --- !u!114 &8179596511907740439
 MonoBehaviour:
@@ -5728,10 +7857,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -5693332877674859693}
+  - {fileID: -1766883208177219588}
   MinDistance: 1
   MaxDistance: 20
   Length: 1655
@@ -5838,6 +7968,30 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &8471774473841721567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/CrocBreath/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  StudioPath: 
+  Min: 0
+  Max: 22000
+  Default: 22000
+  ID:
+    data1: 2238647653
+    data2: 2004388847
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &8499201432690538995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5853,7 +8007,7 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638459215556367217
+  lastModified: 638468198598805557
   FileSizes:
   - Name: Desktop
     Value: 2424832
@@ -5879,13 +8033,38 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 7545926193427757175}
+  - {fileID: 7546648936803035811}
   MinDistance: 1
   MaxDistance: 20
   Length: 2160
+--- !u!114 &8519762069682711429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_10/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &8542133070842245230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5907,10 +8086,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -6341969297123168230}
+  - {fileID: 2232636234361061871}
   MinDistance: 1
   MaxDistance: 20
   Length: 3576
@@ -5935,10 +8115,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 2554450394945410492}
+  - {fileID: 683374150895530117}
   MinDistance: 1
   MaxDistance: 20
   Length: 3192
@@ -5963,13 +8144,86 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -393730095589700757}
+  - {fileID: -7242920487977811451}
   MinDistance: 1
   MaxDistance: 20
   Length: 1488
+--- !u!114 &8649060299932718447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_descole_test7_11/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &8649877194162410341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_3/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &8689625758924089619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/msg_marb_explain_cleanup_1/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &8708265583239835260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5981,30 +8235,6 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/msg_marb_explain_cleanup_14/Lowpass
-  m_EditorClassIdentifier: 
-  Name: Lowpass
-  StudioPath: 
-  Min: 0
-  Max: 22000
-  Default: 22000
-  ID:
-    data1: 2238647653
-    data2: 2004388847
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &8727820358844968101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/CrocFootsteps/Lowpass
   m_EditorClassIdentifier: 
   Name: Lowpass
   StudioPath: 
@@ -6087,10 +8317,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 1639789959567122649}
+  - {fileID: 5037527407699050812}
   MinDistance: 1
   MaxDistance: 20
   Length: 1992
@@ -6115,10 +8346,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8111687369947124944}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 1929560916422219236}
+  - {fileID: -6909027455701546932}
   MinDistance: 1
   MaxDistance: 20
   Length: 1488
@@ -6144,5 +8376,29 @@ MonoBehaviour:
     data2: 2004388847
   Type: 0
   IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &9162325799272958453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/err_not_recorded/Walkie-Talkie
+  m_EditorClassIdentifier: 
+  Name: Walkie-Talkie
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1709586370
+    data2: 3120848383
+  Type: 0
+  IsGlobal: 1
   Labels: []
   Exists: 1
