@@ -85,6 +85,7 @@ public class PowerButton : MonoBehaviour
             }
             
             OnActivate?.Invoke();
+            if (!_multiPress) gameObject.SetActive(false);
 
             if(_taskName != null && _buttonType == ButtonType.Place || _taskName != null && _buttonType == ButtonType.Pickup && _automatic)
             {
@@ -97,9 +98,6 @@ public class PowerButton : MonoBehaviour
             }
 
             if (!string.IsNullOrEmpty(_taskName)) FindObjectOfType<TaskManager>().IncrementTask(_taskName);
-
-            if (!_multiPress) enabled = false;
-
         }
     }
 
