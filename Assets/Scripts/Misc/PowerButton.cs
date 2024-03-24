@@ -75,10 +75,12 @@ public class PowerButton : MonoBehaviour
 
             if(doorState && _buttonType == ButtonType.Door)
             {
+                _door.IsLocked = false;
                 _text.SetText("Close Door");
             }
             else if(_buttonType == ButtonType.Door)
             {
+                _door.IsLocked = true;
                 _text.SetText("Open Door");
             }
             
