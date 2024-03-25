@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{b33e8e4f-05b5-4cc1-ad6c-b784203ea56f}">
+		<property name="name">
+			<value>Title Screen Volume</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a750637d-3450-4132-a22b-42f5180c6f31}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{89d8b1ff-b224-4349-b41d-725da162fe22}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{89d8b1ff-b224-4349-b41d-725da162fe22}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>1.8999999761581421</value>
+		</property>
+	</object>
+</objects>
