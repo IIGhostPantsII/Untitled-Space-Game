@@ -29,6 +29,10 @@ public class PowerButton : MonoBehaviour
 
     [ShowIf("ShouldShowTextPrompt")] [AllowNesting] [SerializeField] public string _taskText;
 
+    [ShowIf("_buttonType", ButtonType.End)] [AllowNesting] [SerializeField] public EndgameLogic _end;
+    [ShowIf("_buttonType", ButtonType.End)] [AllowNesting] [SerializeField] public GameObject _light;
+    [ShowIf("_buttonType", ButtonType.End)] [AllowNesting] [SerializeField] public GameObject _lowGrav;
+
     public float ButtonProgress;
 
     private bool _isFilling;
@@ -61,6 +65,12 @@ public class PowerButton : MonoBehaviour
         {
             GameObject child = gameObject.transform.GetChild(0).gameObject;
             OnActivate += () => child.SetActive(true);
+        }
+        else if(_buttonType == ButtonType.End)
+        {
+            OnActivate += () => _light.SetActive(true);
+            OnActivate += () => _lowGrav.SetActive(false);
+            OnActivate += () => _end.StartEndgame();
         }
     }
 
@@ -152,7 +162,7 @@ public class PowerButton : MonoBehaviour
 
     private bool ShouldShowTextPrompt()
     {
-        return _buttonType == ButtonType.Disappear || _buttonType == ButtonType.Fill;
+        return _buttonType == ButtonType.Disappear || _buttonType == ButtonType.Fill || _buttonType == ButtonType.End;
     }
 }
 
@@ -162,5 +172,6 @@ public enum ButtonType
     Pickup,
     Place,
     Disappear,
-    Fill
+    Fill,
+    End
 }

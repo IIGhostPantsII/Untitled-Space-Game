@@ -12,6 +12,7 @@ public class ShipLight : MonoBehaviour
     [SerializeField] private TaskAreaController _linkedTaskArea;
     [SerializeField] private PowerButton _linkedButton;
     [SerializeField] private GameObject[] _lights;
+    [SerializeField] private MoveObject _move;
 
     private void Start()
     {
@@ -40,6 +41,13 @@ public class ShipLight : MonoBehaviour
         foreach (GameObject light in _lights)
         {
             light.SetActive(true);
+        }
+        
+        Globals.PowerCheck();
+
+        if(Globals.AllPowerOn)
+        {
+            _move.Move();
         }
     }
 }

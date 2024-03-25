@@ -27,7 +27,7 @@ public class EndgameLogic : MonoBehaviour
         }
     }
 
-    public static void StartEndgame()
+    public void StartEndgame()
     {
         Started = true;
         Globals.ChangeMonsterState("Chase");

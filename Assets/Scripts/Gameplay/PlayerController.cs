@@ -561,7 +561,7 @@ public class PlayerController : MonoBehaviour
                             _interactText.SetText("Open Door");
                         }
                     }
-                    else if(other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.Disappear || other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.Fill)
+                    else if(other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.Disappear || other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.Fill || other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.End)
                     {
                         _interactText.SetText(other.gameObject.GetComponent<PowerButton>()._taskText);
                     }
