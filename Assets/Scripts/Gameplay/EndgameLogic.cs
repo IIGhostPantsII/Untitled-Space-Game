@@ -20,7 +20,7 @@ public class EndgameLogic : MonoBehaviour
         Monsters = new GameObject[_monsters.Length];
         EndgameCam = _cam;
         DonutAni = _donutAni;
-        StartEndgame();
+        //StartEndgame();
         for(int i = 0; i < _monsters.Length; i++)
         {
             Monsters[i] = _monsters[i];

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.IO;
+using System.Linq;
 using FMODUnity;
 using NaughtyAttributes;
 using UnityEngine;
@@ -528,13 +529,22 @@ public class PlayerController : MonoBehaviour
         switch (other.gameObject.tag)
         {
             case "Button":
-                if(other.gameObject.GetComponent<PowerButton>()._buttonType != ButtonType.Power && !other.gameObject.GetComponent<PowerButton>().IsOn)
+                if(!other.gameObject.GetComponent<PowerButton>().IsOn)
                 {
                     _interactPromptText.SetActive(true);
                     if(other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.Place)
                     {
-                        pickupAndPlace = other.gameObject.GetComponent<PickupAndPlace>();
-                        _interactText.SetText("Place Item");
+                        if(other.gameObject.GetComponent<PowerButton>()._pickupItems.Any(item => item.pickedUp))
+                        {
+                            pickupAndPlace = other.gameObject.GetComponent<PickupAndPlace>();
+                            _interactText.SetText("Place Item");
+                        }
+                        else
+                        {
+                            _interactPrompt.SetActive(false);
+                            _interactPromptText.SetActive(false);
+                            return;
+                        }
                     }
                     else if(other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.Pickup)
                     {

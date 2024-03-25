@@ -58,11 +58,11 @@ public class GainOxygen : MonoBehaviour
             _player._subOxygen._time -= Time.deltaTime * 2;
             if(_player._subOxygen._oxygenMeter >= 100f)
             {
-                _player._oxygen._oxygenMeter += 4.0f * Time.deltaTime;
+                _player._oxygen._oxygenMeter += 8.0f * Time.deltaTime;
             }
             else
             {
-                _player._subOxygen._oxygenMeter += 8.0f * Time.deltaTime;
+                _player._subOxygen._oxygenMeter += 16.0f * Time.deltaTime;
             }
         }
     }
