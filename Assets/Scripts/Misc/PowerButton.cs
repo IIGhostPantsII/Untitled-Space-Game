@@ -32,6 +32,7 @@ public class PowerButton : MonoBehaviour
     [ShowIf("_buttonType", ButtonType.End)] [AllowNesting] [SerializeField] public EndgameLogic _end;
     [ShowIf("_buttonType", ButtonType.End)] [AllowNesting] [SerializeField] public GameObject _light;
     [ShowIf("_buttonType", ButtonType.End)] [AllowNesting] [SerializeField] public GameObject _lowGrav;
+    [ShowIf("_buttonType", ButtonType.End)] [AllowNesting] [SerializeField] public PlayerController _player;
 
     public float ButtonProgress;
 
@@ -70,6 +71,7 @@ public class PowerButton : MonoBehaviour
         {
             OnActivate += () => _light.SetActive(true);
             OnActivate += () => _lowGrav.SetActive(false);
+            _player.isInLowGravity = false;
             OnActivate += () => _end.StartEndgame();
         }
     }
@@ -108,7 +110,7 @@ public class PowerButton : MonoBehaviour
 
             
             OnActivate?.Invoke();
-            if (!_multiPress) gameObject.SetActive(false);
+            //if (!_multiPress) gameObject.SetActive(false);
 
             if(_taskName != null && _buttonType == ButtonType.Place || _taskName != null && _buttonType == ButtonType.Pickup && _automatic)
             {

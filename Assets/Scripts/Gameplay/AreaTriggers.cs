@@ -11,10 +11,10 @@ public class AreaTriggers : MonoBehaviour
 
     [SerializeField] private Vector3[] _leavingPoints;
 
-    [SerializeField] private bool _north;
-    [SerializeField] private bool _south;
-    [SerializeField] private bool _east;
-    [SerializeField] private bool _west;
+    [SerializeField] private bool _north = true;
+    [SerializeField] private bool _south = true;
+    [SerializeField] private bool _east = true;
+    [SerializeField] private bool _west = true;
     
     public float GetPositions(string name)
     {

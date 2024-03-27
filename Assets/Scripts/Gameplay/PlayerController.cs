@@ -63,8 +63,9 @@ public class PlayerController : MonoBehaviour
     private InputAction openMenu;
 
     // Other
+    [HideInInspector] public bool isInLowGravity;
+
     private bool delay;
-    private bool isInLowGravity;
     private bool isJumping;
     private bool holdingSprint;
     private bool jumpSound = false;
