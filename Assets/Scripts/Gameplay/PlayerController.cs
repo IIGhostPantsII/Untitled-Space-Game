@@ -1,5 +1,6 @@
 using System.Collections;
 using System.IO;
+using System.Linq;
 using FMODUnity;
 using NaughtyAttributes;
 using UnityEngine;
@@ -62,8 +63,9 @@ public class PlayerController : MonoBehaviour
     private InputAction openMenu;
 
     // Other
+    [HideInInspector] public bool isInLowGravity;
+
     private bool delay;
-    private bool isInLowGravity;
     private bool isJumping;
     private bool holdingSprint;
     private bool jumpSound = false;
@@ -528,13 +530,22 @@ public class PlayerController : MonoBehaviour
         switch (other.gameObject.tag)
         {
             case "Button":
-                if(other.gameObject.GetComponent<PowerButton>()._buttonType != ButtonType.Power && !other.gameObject.GetComponent<PowerButton>().IsOn)
+                if(!other.gameObject.GetComponent<PowerButton>().IsOn)
                 {
                     _interactPromptText.SetActive(true);
                     if(other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.Place)
                     {
-                        pickupAndPlace = other.gameObject.GetComponent<PickupAndPlace>();
-                        _interactText.SetText("Place Item");
+                        if(other.gameObject.GetComponent<PowerButton>()._pickupItems.Any(item => item.pickedUp))
+                        {
+                            pickupAndPlace = other.gameObject.GetComponent<PickupAndPlace>();
+                            _interactText.SetText("Place Item");
+                        }
+                        else
+                        {
+                            _interactPrompt.SetActive(false);
+                            _interactPromptText.SetActive(false);
+                            return;
+                        }
                     }
                     else if(other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.Pickup)
                     {
@@ -551,7 +562,7 @@ public class PlayerController : MonoBehaviour
                             _interactText.SetText("Open Door");
                         }
                     }
-                    else if(other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.Disappear || other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.Fill)
+                    else if(other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.Disappear || other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.Fill || other.gameObject.GetComponent<PowerButton>()._buttonType == ButtonType.End)
                     {
                         _interactText.SetText(other.gameObject.GetComponent<PowerButton>()._taskText);
                     }

@@ -5,7 +5,7 @@
 			<value>msg_marb_opening_15</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{93170858-cbb7-4f76-ba65-a637988c8cbd}</destination>
@@ -113,7 +113,8 @@
 	<object class="MixerBusEffectChain" id="{8b69ec6d-509e-4e1f-8f87-7940c8b3d490}">
 		<relationship name="effects">
 			<destination>{771969fc-89cc-445e-81ec-30155061d5d2}</destination>
-			<destination>{dabe3b1b-22a3-4979-8788-dd7e5de859da}</destination>
+			<destination>{bea78e24-181d-473b-8189-411d8b8d9fbd}</destination>
+			<destination>{452faec3-d099-456d-a32b-7bb70f043fd0}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{8b6a3473-b55a-4dcb-8239-4026059d985b}" />
@@ -125,12 +126,20 @@
 	</object>
 	<object class="MixerBusPanner" id="{2562a584-1b38-4dc1-adc9-78d470f456df}" />
 	<object class="MixerBusFader" id="{771969fc-89cc-445e-81ec-30155061d5d2}" />
-	<object class="ProxyEffect" id="{dabe3b1b-22a3-4979-8788-dd7e5de859da}">
+	<object class="ProxyEffect" id="{bea78e24-181d-473b-8189-411d8b8d9fbd}">
 		<property name="inputFormat">
 			<value>1</value>
 		</property>
 		<relationship name="preset">
 			<destination>{dbbcdebd-7452-4134-889c-86cf02e88dd1}</destination>
+		</relationship>
+	</object>
+	<object class="ProxyEffect" id="{452faec3-d099-456d-a32b-7bb70f043fd0}">
+		<property name="inputFormat">
+			<value>1</value>
+		</property>
+		<relationship name="preset">
+			<destination>{b5d8ba38-dfe7-45a3-9135-8df9f1e39f15}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{ffa57e72-5cd3-4756-9120-700b211e12c1}" />

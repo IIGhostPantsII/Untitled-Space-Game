@@ -100,17 +100,17 @@ AnimationClip:
       - serializedVersion: 3
         time: 2
         value: {x: -5.55, y: 4.22, z: 5.17}
-        inSlope: {x: -2.0571415, y: 0, z: -10.177142}
-        outSlope: {x: -2.0571415, y: 0, z: -10.177142}
+        inSlope: {x: 0, y: 0, z: -10.177142}
+        outSlope: {x: 0, y: 0, z: -10.177142}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 2.75
-        value: {x: -6.45, y: 4.22, z: -2.81}
-        inSlope: {x: 0, y: 0, z: -7.4466667}
-        outSlope: {x: 0, y: 0, z: -7.4466667}
+        value: {x: -4.48, y: 4.22, z: -2.81}
+        inSlope: {x: 2.8533337, y: 0, z: -7.4466667}
+        outSlope: {x: 2.8533337, y: 0, z: -7.4466667}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
@@ -230,17 +230,17 @@ AnimationClip:
       - serializedVersion: 3
         time: 2
         value: -5.55
-        inSlope: -2.0571415
-        outSlope: -2.0571415
+        inSlope: 0
+        outSlope: 0
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2.75
-        value: -6.45
-        inSlope: 0
-        outSlope: 0
+        value: -4.48
+        inSlope: 2.8533337
+        outSlope: 2.8533337
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
@@ -698,20 +698,6 @@ AnimationClip:
   - time: 0
     functionName: LockPlayerMovement
     data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 1
-    functionName: SetStringName
-    data: Door - CUTSCENE
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 1.1666666
-    functionName: TriggerAnimation
-    data: Close
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

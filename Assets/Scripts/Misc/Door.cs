@@ -119,27 +119,35 @@ public class Door : MonoBehaviour
     {
         if(other.CompareTag("Monster") && !doorState)
         {
-            NavMeshAgent monsterPathing = other.gameObject.GetComponent<NavMeshAgent>();
-            timer += Time.deltaTime;
             Globals.LockMonsterMovement();
-            monsterPathing.SetDestination(other.gameObject.transform.position);
-
-            if(timer > doorDuration)
+            
+            if(gameObject.CompareTag("EndgameDoor") && EndgameLogic.Started && EndgameLogic.CanEndGame)
             {
-                Globals.UnlockMonsterMovement();
-                doorDuration = Random.Range(2f, 3f);
-                timer = 0;
-                doorState = true;
-                isInsideTrigger = true;
-                isOutsideTrigger = false;
-                if (!IsLocked)
+                EndgameLogic.EndGame();
+            }
+            else
+            {
+                NavMeshAgent monsterPathing = other.gameObject.GetComponent<NavMeshAgent>();
+                timer += Time.deltaTime;
+                monsterPathing.SetDestination(other.gameObject.transform.position);
+
+                if(timer > doorDuration)
                 {
+                    Globals.UnlockMonsterMovement();
+                    doorDuration = Random.Range(2f, 3f);
+                    timer = 0;
+                    doorState = true;
+                    isInsideTrigger = true;
+                    isOutsideTrigger = false;
+
+                    IsLocked = false;
+
                     moveEventOpen.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
                     moveEventOpen.start();
-                }
 
-                Globals.CheckLowpass(moveEventOpen, _player._subOxygen);
-                
+                    Globals.CheckLowpass(moveEventOpen, _player._subOxygen);
+                    
+                }
             }
         }
     }
@@ -197,25 +205,10 @@ public class Door : MonoBehaviour
 
     public void ChangeDoorState()
     {
-        doorState = !doorState;
-        
-        if(doorState)
-        {
-            isInsideTrigger = true;
-            isOutsideTrigger = false;
-            if (!IsLocked)
-            {
-                moveEventOpen.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-                moveEventOpen.start();
-            }
+        doorState = !IsLocked;
 
-            Globals.CheckLowpass(moveEventOpen, _player._subOxygen);
-        }
-        else if(doorState == false)
+        if(doorState == false)
         {
-            //Close the door
-            isInsideTrigger = false;
-            isOutsideTrigger = true;
             StartCoroutine(Close());
         }
     }

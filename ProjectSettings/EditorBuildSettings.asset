@@ -5,10 +5,28 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
+    path: Assets/Scenes/Title Screen.unity
+    guid: 3067bd98c9134aa4f876eb81808ddc5d
+  - enabled: 1
+    path: Assets/Scenes/Dab.unity
+    guid: 4f95f9dc231096d41bbd7ed3331d8db6
+  - enabled: 0
     path: Assets/Scenes/AI Test.unity
     guid: 26ec29f51d918d144b71e85689237a73
+  - enabled: 0
+    path: Assets/Scenes/Hub.unity
+    guid: d009af9cef9254a4bb994b9590a3cb54
+  - enabled: 0
+    path: Assets/Scenes/LaurensTestScene.unity
+    guid: d2f1c97a4637165459b3c06a2b2f9b03
+  - enabled: 0
+    path: Assets/Scenes/Mab.unity
+    guid: bda50b83700d40b419cabc7a79e8090a
+  - enabled: 0
+    path: Assets/Scenes/Transition to 2D Test.unity
+    guid: 826594bca0c6b584f90505c8c6b9b498
+  - enabled: 0
+    path: Assets/Scenes/UI Test.unity
+    guid: 9adef21ef539ede449da52be0222e35f
   m_configObjects: {}

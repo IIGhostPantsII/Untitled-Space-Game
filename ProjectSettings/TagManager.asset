@@ -14,6 +14,7 @@ TagManager:
   - RoomTask
   - Ladder
   - Voiceline Controller
+  - EndgameDoor
   layers:
   - Default
   - TransparentFX

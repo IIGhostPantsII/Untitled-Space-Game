@@ -66,7 +66,6 @@ public class MonsterAI : MonoBehaviour
         //SpawnTheMonster(spawnLength);
         monsterPathing = GetComponent<NavMeshAgent>();
         soundPerception = GetComponent<SoundPerception>();
-        Globals.ChangeMonsterState("Idle");
         growlEvent = RuntimeManager.CreateInstance(events[0]);
     }
 
@@ -224,7 +223,7 @@ public class MonsterAI : MonoBehaviour
                 if(idleCounter > 3)
                 {
                     Vector3 leaving;
-                    if(triggerName == "TutorialAreaTrigger" || triggerName == "HallwayTriggers")
+                    if(triggerName == "Breakroom Trigger")
                     {
                         leaving = areaTrigger.Leave(3);
                     }

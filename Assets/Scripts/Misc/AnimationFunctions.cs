@@ -92,4 +92,9 @@ public class AnimationFunctions : MonoBehaviour
     {
         Globals.GameState = GameState.Lost;
     }
+
+    public void Win()
+    {
+        Globals.GameState = GameState.Victory;
+    }
 }

@@ -15,16 +15,18 @@ public static class Globals
     public static bool Paused;
     public static bool AnimationOver;
     public static bool GetOriginalTriggers;
+    public static bool AllPowerOn;
     public static GameState GameState = GameState.Main;
 
     public static List<RoomTasks> RoomTasks = new List<RoomTasks>();
     public static List<string> StoryFlags = new List<string>();
+    public static bool[] RoomPower = new bool[6];
     
     public static readonly string SaveDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/Occupational Hazards ~ The Trials and Tribulations of the Stellar United Systems";
 
     //Monster Modes
     public static bool ChaseMode;
-    public static bool IdleMode;
+    public static bool IdleMode = true;
     public static bool PatrolMode;
 
     public static int Money;
@@ -59,6 +61,7 @@ public static class Globals
         PatrolMode = false;
         IdleMode = true;
         ChaseMode = false;
+        AllPowerOn = false;
     }
 
     public static void OriginalTriggersCompleted()
@@ -74,6 +77,44 @@ public static class Globals
     public static void ResetAnimation()
     {
         AnimationOver = false;
+    }
+    
+    public static bool CheckStoryFlags(string[] flags)
+    {
+        if (flags == null) return true;
+        if (flags.Length == 0) return true; 
+        bool[] bools = new bool[flags.Length];
+        for (int i = 0; i < flags.Length; i++)
+        {
+            bools[i] = false;
+            string flag = flags[i];
+            bool not = false;
+                
+            if (flag[0] == '!')
+            {
+                not = true;
+                flag = flag.Remove(0, 1);
+            }
+
+            if (not)
+            {
+                if (!StoryFlags.Contains(flag))
+                {
+                    bools[i] = true;
+                }  
+            }
+            else if (StoryFlags.Contains(flag))
+            {
+                bools[i] = true;
+            }
+        }
+
+        foreach (bool bowl in bools)
+        {
+            if (!bowl) return false;
+        }
+        
+        return true;
     }
 
     public static void ChangeMonsterState(string Mode)
@@ -96,6 +137,20 @@ public static class Globals
             IdleMode = false;
             PatrolMode = true;
         }
+    }
+
+    public static void PowerCheck()
+    {
+        for(int i = 0; i < RoomPower.Length; i++)
+        {
+            if(!RoomPower[i])
+            {
+                return;
+            }
+        }
+
+        Debug.Log("ALL POWER IS ON");
+        AllPowerOn = true;
     }
 
     public static bool CheckMonsterState(string Mode)
