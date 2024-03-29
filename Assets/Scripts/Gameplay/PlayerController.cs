@@ -36,8 +36,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _gravityLowGrav = 0.5f;
     [SerializeField] private float _groundedGravity = 0.1f;
     [SerializeField] private Transform _cameraTransform;
-    [SerializeField] private Oxygen _oxygen;
-    [SerializeField] private Oxygen _subOxygen;
+    [SerializeField] public Oxygen _oxygen;
+    [SerializeField] public Oxygen _subOxygen;
     [SerializeField] public GameObject _astronaut;
     [SerializeField] public GameObject _firstPersonCam;
     [SerializeField] private GameObject _defaultUI;
