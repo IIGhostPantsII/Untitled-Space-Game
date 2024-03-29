@@ -223,7 +223,7 @@ public class MonsterAI : MonoBehaviour
                 if(idleCounter > 3)
                 {
                     Vector3 leaving;
-                    if(triggerName == "TutorialAreaTrigger" || triggerName == "HallwayTriggers")
+                    if(triggerName == "Breakroom Trigger")
                     {
                         leaving = areaTrigger.Leave(3);
                     }

@@ -10,7 +10,7 @@ using UnityEngine;
 public class PowerButton : MonoBehaviour
 {
     // Time in seconds it takes to press the power button
-    public static float ButtonSpeed = 2f;
+    public static float ButtonSpeed = 1.5f;
 
     [SerializeField] public ButtonType _buttonType;
     [SerializeField] private bool _multiPress = false;
@@ -22,15 +22,23 @@ public class PowerButton : MonoBehaviour
     [ShowIf("_buttonType", ButtonType.Door)] [AllowNesting] [SerializeField] public TMP_Text _text;
 
     [ShowIf("ShouldShowPickup")] [AllowNesting] [SerializeField] private PickupAndPlace _pickUp;
-     [ShowIf("_buttonType", ButtonType.Pickup)] [AllowNesting] [SerializeField] private bool _automatic;
+    [ShowIf("_buttonType", ButtonType.Pickup)] [AllowNesting] [SerializeField] private bool _automatic;
     [ShowIf("_buttonType", ButtonType.Pickup)] [AllowNesting] [SerializeField] private int _value;
 
+    [ShowIf("_buttonType", ButtonType.Place)] [AllowNesting] [SerializeField] public PowerButton[] _pickupItems;
+
     [ShowIf("ShouldShowTextPrompt")] [AllowNesting] [SerializeField] public string _taskText;
+
+    [ShowIf("_buttonType", ButtonType.End)] [AllowNesting] [SerializeField] public EndgameLogic _end;
+    [ShowIf("_buttonType", ButtonType.End)] [AllowNesting] [SerializeField] public GameObject _light;
+    [ShowIf("_buttonType", ButtonType.End)] [AllowNesting] [SerializeField] public GameObject _lowGrav;
+    [ShowIf("_buttonType", ButtonType.End)] [AllowNesting] [SerializeField] public PlayerController _player;
 
     public float ButtonProgress;
 
     private bool _isFilling;
 
+    [HideInInspector] public bool pickedUp;
     [HideInInspector] public bool doorState = true;
 
     public event Action OnActivate;
@@ -59,6 +67,13 @@ public class PowerButton : MonoBehaviour
             GameObject child = gameObject.transform.GetChild(0).gameObject;
             OnActivate += () => child.SetActive(true);
         }
+        else if(_buttonType == ButtonType.End)
+        {
+            OnActivate += () => _light.SetActive(true);
+            OnActivate += () => _lowGrav.SetActive(false);
+            _player.isInLowGravity = false;
+            OnActivate += () => _end.StartEndgame();
+        }
     }
 
     public void FillBar()
@@ -73,19 +88,29 @@ public class PowerButton : MonoBehaviour
             ButtonProgress = 1;
             doorState = !doorState;
 
-            if(doorState && _buttonType == ButtonType.Door)
+            switch(_buttonType)
             {
-                _door.IsLocked = false;
-                _text.SetText("Close Door");
+                case ButtonType.Door:
+                    if(doorState)
+                    {
+                        _door.IsLocked = false;
+                        _text.SetText("Close Door");
+                    }
+                    else
+                    {
+                        _door.IsLocked = true;
+                        _text.SetText("Open Door");
+                    }
+                    break;
+
+                case ButtonType.Pickup:
+                    pickedUp = true;
+                    break;
             }
-            else if(_buttonType == ButtonType.Door)
-            {
-                _door.IsLocked = true;
-                _text.SetText("Open Door");
-            }
+
             
             OnActivate?.Invoke();
-            if (!_multiPress) gameObject.SetActive(false);
+            //if (!_multiPress) gameObject.SetActive(false);
 
             if(_taskName != null && _buttonType == ButtonType.Place || _taskName != null && _buttonType == ButtonType.Pickup && _automatic)
             {
@@ -127,7 +152,7 @@ public class PowerButton : MonoBehaviour
 
     private bool ShouldShowTasks()
     {
-        return _buttonType == ButtonType.Place || _buttonType == ButtonType.Power || _buttonType == ButtonType.Disappear || _buttonType == ButtonType.Pickup && _automatic || _buttonType == ButtonType.Fill;
+        return _buttonType == ButtonType.Place || _buttonType == ButtonType.Disappear || _buttonType == ButtonType.Pickup && _automatic || _buttonType == ButtonType.Fill;
     }
 
     private bool ShouldShowPickup()
@@ -137,16 +162,16 @@ public class PowerButton : MonoBehaviour
 
     private bool ShouldShowTextPrompt()
     {
-        return _buttonType == ButtonType.Disappear || _buttonType == ButtonType.Fill;
+        return _buttonType == ButtonType.Disappear || _buttonType == ButtonType.Fill || _buttonType == ButtonType.End;
     }
 }
 
 public enum ButtonType
 {
-    Power,
     Door,
     Pickup,
     Place,
     Disappear,
-    Fill
+    Fill,
+    End
 }

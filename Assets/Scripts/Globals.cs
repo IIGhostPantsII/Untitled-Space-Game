@@ -15,6 +15,7 @@ public static class Globals
     public static bool Paused;
     public static bool AnimationOver;
     public static bool GetOriginalTriggers;
+    public static bool AllPowerOn;
     public static GameState GameState = GameState.Main;
 
     public static List<RoomTasks> RoomTasks = new List<RoomTasks>();
@@ -59,6 +60,7 @@ public static class Globals
         PatrolMode = false;
         IdleMode = true;
         ChaseMode = false;
+        AllPowerOn = false;
     }
 
     public static void OriginalTriggersCompleted()
@@ -134,6 +136,20 @@ public static class Globals
             IdleMode = false;
             PatrolMode = true;
         }
+    }
+
+    public static void PowerCheck()
+    {
+        for(int i = 0; i < RoomPower.Length; i++)
+        {
+            if(!RoomPower[i])
+            {
+                return;
+            }
+        }
+
+        Debug.Log("ALL POWER IS ON");
+        AllPowerOn = true;
     }
 
     public static bool CheckMonsterState(string Mode)

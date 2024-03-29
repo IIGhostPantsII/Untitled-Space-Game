@@ -9,12 +9,12 @@ public class AreaTriggers : MonoBehaviour
     [SerializeField] private float _zMinPos;
     [SerializeField] private float _zMaxPos;
 
-    [SerializeField] private Vector3[] _directions;
+    [SerializeField] private Vector3[] _leavingPoints;
 
-    [SerializeField] private bool _north;
-    [SerializeField] private bool _south;
-    [SerializeField] private bool _east;
-    [SerializeField] private bool _west;
+    [SerializeField] private bool _north = true;
+    [SerializeField] private bool _south = true;
+    [SerializeField] private bool _east = true;
+    [SerializeField] private bool _west = true;
     
     public float GetPositions(string name)
     {
@@ -47,19 +47,19 @@ public class AreaTriggers : MonoBehaviour
 
         if(random == 0)
         {
-            return _directions[random];
+            return _leavingPoints[random];
         }
         else if(random == 1)
         {
-            return _directions[random];
+            return _leavingPoints[random];
         }
         else if(random == 2)
         {
-            return _directions[random];
+            return _leavingPoints[random];
         }
         else
         {
-            return _directions[0];
+            return _leavingPoints[0];
         }
     }
 
