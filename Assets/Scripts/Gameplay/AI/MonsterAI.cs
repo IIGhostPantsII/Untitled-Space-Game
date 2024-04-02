@@ -54,6 +54,8 @@ public class MonsterAI : MonoBehaviour
 
     private NavMeshAgent monsterPathing;
 
+    //[SerializeField] private NavMeshSurface monsterSurface;
+
     private AreaTriggers areaTrigger;
 
     private Vector3 randomPosition;
@@ -66,6 +68,7 @@ public class MonsterAI : MonoBehaviour
         //SpawnTheMonster(spawnLength);
         monsterPathing = GetComponent<NavMeshAgent>();
         soundPerception = GetComponent<SoundPerception>();
+        //monsterSurface.BuildNavMesh();
         growlEvent = RuntimeManager.CreateInstance(events[0]);
     }
 

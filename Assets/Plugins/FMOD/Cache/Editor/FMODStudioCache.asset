@@ -814,10 +814,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638468973643120951
+  lastModified: 638476770515715157
   FileSizes:
   - Name: Desktop
-    Value: 798432
+    Value: 1300064
   Exists: 1
 --- !u!114 &-7931402118236997697
 MonoBehaviour:
@@ -1655,10 +1655,10 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638469962750732512
+  lastModified: 638476768033224162
   FileSizes:
   - Name: Desktop
-    Value: 5880
+    Value: 5974
   Exists: 1
 --- !u!114 &-6808477022153283704
 MonoBehaviour:
@@ -2639,6 +2639,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-4790674722276694139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Sizzle
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Sizzle
+  Guid:
+    Data1: -97815274
+    Data2: 1173703260
+    Data3: -922295424
+    Data4: -1347959837
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 30
+  Length: 4560
 --- !u!114 &-4738297766231592217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4324,6 +4351,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-2099742048550672333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Flow
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Flow
+  Guid:
+    Data1: 204635566
+    Data2: 1142261515
+    Data3: 925694338
+    Data4: 1920659433
+  Banks:
+  - {fileID: -7964591791849441354}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 100
+  Length: 36974
 --- !u!114 &-2084931039029219058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5244,13 +5298,15 @@ MonoBehaviour:
   - {fileID: 5682344448122913754}
   - {fileID: -5401131906672691488}
   - {fileID: -7668169968469485784}
+  - {fileID: -2099742048550672333}
+  - {fileID: -4790674722276694139}
   EditorParameters:
   - {fileID: -8313169315778054019}
   MasterBanks:
   - {fileID: 6422365686012519055}
   StringsBanks:
   - {fileID: -6838026933355539509}
-  cacheTime: 638469962750952633
+  cacheTime: 638476770515715157
   cacheVersion: 131607
 --- !u!114 &11466826389644830
 MonoBehaviour:
@@ -9107,7 +9163,7 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638468973643060855
+  lastModified: 638476768033193967
   FileSizes:
   - Name: Desktop
     Value: 73408
@@ -10092,7 +10148,7 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Voices.bank
   Name: Voices
   StudioPath: bank:/Voices
-  lastModified: 638468973643459808
+  lastModified: 638476075449239702
   FileSizes:
   - Name: Desktop
     Value: 3841536
@@ -10340,7 +10396,7 @@ MonoBehaviour:
   Path: FMOD Project/Space/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638469962750952633
+  lastModified: 638476767923118056
   FileSizes:
   - Name: Desktop
     Value: 4666912
