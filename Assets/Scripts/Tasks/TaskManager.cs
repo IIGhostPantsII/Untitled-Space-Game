@@ -12,11 +12,14 @@ public class TaskManager : MonoBehaviour
     [SerializeField] private GameObject _taskListUI;
     
     [SerializeField] private RoomTasks _debugTaskList;
-
+    
+    
     private bool _inTask;
     [SerializeField] private RoomTasks _currentTaskList;
     private List<TaskIconController> _taskIcons = new List<TaskIconController>();
     private Animator _anim;
+
+    private InActiveRoom _roomNode;
 
     private void Start()
     {
