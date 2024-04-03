@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class RoomOrbController : MonoBehaviour
 {
     [SerializeField] private Color _filledColor;
-    [SerializeField] private Image[] _rooms;
+    [SerializeField] public Image[] _rooms;
     [SerializeField] private bool[] _roomsOn;
 
     private void Start()

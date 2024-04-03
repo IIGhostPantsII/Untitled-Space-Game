@@ -32,7 +32,7 @@ public class Oxygen : MonoBehaviour
     [SerializeField] public float _time = 0f;
     [SerializeField] private bool _subMeter;
     [SerializeField] private Oxygen _mainOxygen;
-    [SerializeField] private GameObject _lowOxy;
+    [SerializeField] private Animator _lowOxy;
 
     [Space] [SerializeField] private Volume _volume; [Space]
     
@@ -101,8 +101,11 @@ public class Oxygen : MonoBehaviour
                     eventInstance.start();
                     whiteNoiseEventInstance.start();
                     heartbeatEventInstance.start();
-                    StartCoroutine(LowOxygen(3f));
-                    _lowOxy.SetActive(true);
+                    _lowOxy.gameObject.SetActive(true);
+                    
+                    AnimationClip[] clips = _lowOxy.runtimeAnimatorController.animationClips;
+                    
+                    StartCoroutine(LowOxygen(clips[0].length));
                     _playOnce = false;
                 }
 
@@ -170,6 +173,6 @@ public class Oxygen : MonoBehaviour
     IEnumerator LowOxygen(float seconds)
     {
         yield return new WaitForSeconds(seconds);
-        _lowOxy.SetActive(false);
+        _lowOxy.gameObject.SetActive(false);
     }
 }

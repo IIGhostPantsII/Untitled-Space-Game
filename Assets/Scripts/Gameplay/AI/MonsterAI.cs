@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using FMODUnity;
+using NaughtyAttributes;
 
 public class MonsterAI : MonoBehaviour
 {
@@ -54,6 +55,8 @@ public class MonsterAI : MonoBehaviour
 
     private NavMeshAgent monsterPathing;
 
+    //[SerializeField] private NavMeshSurface monsterSurface;
+
     private AreaTriggers areaTrigger;
 
     private Vector3 randomPosition;
@@ -66,7 +69,28 @@ public class MonsterAI : MonoBehaviour
         //SpawnTheMonster(spawnLength);
         monsterPathing = GetComponent<NavMeshAgent>();
         soundPerception = GetComponent<SoundPerception>();
+        //monsterSurface.BuildNavMesh();
         growlEvent = RuntimeManager.CreateInstance(events[0]);
+    }
+
+    [Button]
+    public void Comeback()
+    {
+        bool boo = false;
+
+        while (!boo)
+        {
+            Vector3 newPos = _playerTransform.position;
+
+            newPos.x += Random.Range(-100, 100);
+            newPos.z += Random.Range(-100, 100);
+
+            if (Vector3.Distance(_playerTransform.position, newPos) < 50) continue;
+            
+            boo = monsterPathing.Warp(newPos);
+            
+            Debug.Log(boo);
+        }
     }
 
     void Update()
