@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
 
-public class RandomAmbientNoises : MonoBehaviour
+public class GlobalAmbientController : MonoBehaviour
 {
     [SerializeField] private FMODUnity.EventReference[] _ambientSounds;
 
     private FMOD.Studio.EventInstance[] events;
 
-    private float minDelay = 60f;
-    private float maxDelay = 120f;
+    [SerializeField] private float minDelay = 60f;
+    [SerializeField] private float maxDelay = 120f;
 
     int random;
 
