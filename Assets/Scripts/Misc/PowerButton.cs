@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using NaughtyAttributes;
 using UnityEditor;
 using UnityEngine;
+using FMODUnity;
 
 public class PowerButton : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class PowerButton : MonoBehaviour
     [ShowIf("_buttonType", ButtonType.Door)] [AllowNesting] [SerializeField] private Door _door;
     [ShowIf("_buttonType", ButtonType.Door)] [AllowNesting] [SerializeField] public TMP_Text _text;
 
+    [ShowIf("_buttonType", ButtonType.Pickup)] public FMOD.Studio.EventInstance pickupEvent;
+    [ShowIf("_buttonType", ButtonType.Pickup)] public FMODUnity.EventReference eventPath;
     [ShowIf("ShouldShowPickup")] [AllowNesting] [SerializeField] private PickupAndPlace _pickUp;
     [ShowIf("_buttonType", ButtonType.Pickup)] [AllowNesting] [SerializeField] private bool _automatic;
     [ShowIf("_buttonType", ButtonType.Pickup)] [AllowNesting] [SerializeField] private int _value;
@@ -45,6 +48,8 @@ public class PowerButton : MonoBehaviour
 
     void Start()
     {
+        pickupEvent = RuntimeManager.CreateInstance(eventPath);
+
         if(_buttonType == ButtonType.Door)
         {
             ButtonSpeed = 0.25f;
@@ -53,6 +58,7 @@ public class PowerButton : MonoBehaviour
         else if(_buttonType == ButtonType.Pickup)
         {
             OnActivate += () => _pickUp.Pickup(_value, _automatic);
+            OnActivate += () => pickupEvent.start();
         }
         else if(_buttonType == ButtonType.Place)
         {
