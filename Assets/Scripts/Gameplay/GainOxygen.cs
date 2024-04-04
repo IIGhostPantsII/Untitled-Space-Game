@@ -56,6 +56,7 @@ public class GainOxygen : MonoBehaviour
         if(InStation)
         {
             _player._subOxygen._time -= Time.deltaTime * 2;
+            
             if(_player._subOxygen._oxygenMeter >= 100f)
             {
                 _player._oxygen._oxygenMeter += 8.0f * Time.deltaTime;

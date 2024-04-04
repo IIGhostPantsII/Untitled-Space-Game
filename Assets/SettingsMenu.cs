@@ -22,8 +22,11 @@ public class SettingsMenu : MonoBehaviour
    [SerializeField] private Slider _mouseSensitivitySlider;
    [SerializeField] private Slider _brightnessSlider;
    
+   [Space]
    [SerializeField] private Volume _lowBrightnessVolume;
    [SerializeField] private Volume _highBrightnessVolume;
+   [SerializeField] private GameObject _crossHair;
+   [SerializeField] private GameObject _subtitles;
 
    private SettingsDataFormatter _settings;
 
@@ -113,6 +116,14 @@ public class SettingsMenu : MonoBehaviour
         {
             _highBrightnessVolume.weight = Mathf.Abs(0);
             _lowBrightnessVolume.weight = Mathf.Abs(0);
+        }
+        
+        if (_crossHair != null) _crossHair.SetActive(Globals.CrosshairOn);
+        if (_subtitles != null) _subtitles.SetActive(Globals.SubtitlesOn);
+
+        foreach (Door door in FindObjectsOfType<Door>(true))
+        {
+            door.UpdateLockedLights(true);
         }
     }
 }

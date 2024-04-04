@@ -33,8 +33,9 @@ public class PowerButton : MonoBehaviour
     [ShowIf("ShouldShowTextPrompt")] [AllowNesting] [SerializeField] public string _taskText;
 
     [ShowIf("_buttonType", ButtonType.End)] [AllowNesting] [SerializeField] public EndgameLogic _end;
-    [ShowIf("_buttonType", ButtonType.End)] [AllowNesting] [SerializeField] public GameObject _light;
+    [ShowIf("_buttonType", ButtonType.End)] [AllowNesting] [SerializeField] public GameObject[] _lights;
     [ShowIf("_buttonType", ButtonType.End)] [AllowNesting] [SerializeField] public GameObject _lowGrav;
+    [ShowIf("_buttonType", ButtonType.End)] [AllowNesting] [SerializeField] public ReflectionProbe _reflectionProbe;
     [ShowIf("_buttonType", ButtonType.End)] [AllowNesting] [SerializeField] public PlayerController _player;
 
     public float ButtonProgress;
@@ -48,8 +49,6 @@ public class PowerButton : MonoBehaviour
 
     void Start()
     {
-        pickupEvent = RuntimeManager.CreateInstance(eventPath);
-
         if(_buttonType == ButtonType.Door)
         {
             ButtonSpeed = 0.25f;
@@ -59,6 +58,7 @@ public class PowerButton : MonoBehaviour
         {
             OnActivate += () => _pickUp.Pickup(_value, _automatic);
             OnActivate += () => pickupEvent.start();
+            if (!eventPath.IsNull) pickupEvent = RuntimeManager.CreateInstance(eventPath);
         }
         else if(_buttonType == ButtonType.Place)
         {
@@ -75,10 +75,14 @@ public class PowerButton : MonoBehaviour
         }
         else if(_buttonType == ButtonType.End)
         {
-            OnActivate += () => _light.SetActive(true);
+            foreach (GameObject light in _lights)
+            {
+                OnActivate += () => light.SetActive(true);
+            }
             OnActivate += () => _lowGrav.SetActive(false);
-            _player.isInLowGravity = false;
+            OnActivate += () => _player.isInLowGravity = false;
             OnActivate += () => _end.StartEndgame();
+            OnActivate += () =>_reflectionProbe.RenderProbe();
         }
     }
 

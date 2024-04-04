@@ -30,6 +30,11 @@ public class Door : MonoBehaviour
     [SerializeField] [ColorUsageAttribute(true, true)]
     private Color LockedColor;
     
+    [SerializeField] [ColorUsageAttribute(true, true)]
+    private Color UnlockedColorAlt;
+    [SerializeField] [ColorUsageAttribute(true, true)]
+    private Color LockedColorAlt;
+    
     [SerializeField] private Light[] _lights;
     [SerializeField] private MeshRenderer[] _lightObjects;
 
@@ -83,33 +88,33 @@ public class Door : MonoBehaviour
         }
     }
 
-    private void UpdateLockedLights()
+    public void UpdateLockedLights(bool forceUpdate = false)
     {
-        if (IsLocked && !LockedLights)
+        if ((IsLocked && !LockedLights) || forceUpdate)
         {
             LockedLights = true;
 
             foreach (Light light in _lights)
             {
-                light.color = LockedColor;
+                light.color = Globals.AltDoorColors ? LockedColorAlt : LockedColor;
             }
 
             foreach (MeshRenderer renderer in _lightObjects)
             {
-                renderer.material.SetColor("_EmissionColor", LockedColor);
+                renderer.material.SetColor("_EmissionColor", Globals.AltDoorColors ? LockedColorAlt : LockedColor);
             }
         } 
-        else if (!IsLocked && LockedLights)
+        else if ((!IsLocked && LockedLights) || forceUpdate)
         {
             LockedLights = false;
             
             foreach (Light light in _lights)
             {
-                light.color = UnlockedColor;
+                light.color = Globals.AltDoorColors ? UnlockedColorAlt : UnlockedColor;
             }
             foreach (MeshRenderer renderer in _lightObjects)
             {
-                renderer.material.SetColor("_EmissionColor", UnlockedColor);
+                renderer.material.SetColor("_EmissionColor", Globals.AltDoorColors ? UnlockedColorAlt : UnlockedColor);
             }
             
         }

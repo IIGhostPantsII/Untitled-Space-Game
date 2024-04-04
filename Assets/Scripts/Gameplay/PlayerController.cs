@@ -324,6 +324,8 @@ public class PlayerController : MonoBehaviour
 
         movement.y = grav;
         
+        Debug.Log(charController);
+        
         if(jumpPressed && !isJumping && charController.isGrounded)
         {
             isJumping = true;
