@@ -49,9 +49,9 @@ Material:
     - _VoronoiTime: 2
     m_Colors:
     - _ChangeBlack: {r: 1, g: 0, b: 0, a: 1}
-    - _Color: {r: 0, g: 0, b: 0, a: 1}
+    - _Color: {r: 0.013939093, g: 0, b: 0.1981132, a: 1}
     - _NormalSpeed: {r: 0, g: 0.75, b: 0, a: 0}
-    - _VoronoiColor: {r: 0, g: 1, b: 0, a: 1}
+    - _VoronoiColor: {r: 0.18823528, g: 0, b: 1, a: 1}
     - _VoronoiSpeed: {r: 0, g: 0.25, b: 0, a: 0}
     - _VoronoiTiling: {r: 2, g: 2, b: 0, a: 0}
   m_BuildTextureStacks: []

@@ -36,7 +36,7 @@ Transform:
   m_Children:
   - {fileID: 6442133016704934041}
   - {fileID: 358323822416147251}
-  - {fileID: 6524867675524823979}
+  - {fileID: 1244673881109394563}
   - {fileID: 8418629342311669617}
   - {fileID: 1124761355056894112}
   - {fileID: 674097998696639674}
@@ -246,9 +246,47 @@ MonoBehaviour:
   _pickUp: {fileID: 0}
   _automatic: 0
   _value: 0
+  _pickupItems: []
   _taskText: 
+  _end: {fileID: 0}
+  _light: {fileID: 0}
+  _lowGrav: {fileID: 0}
+  _player: {fileID: 0}
   ButtonProgress: 0
+  pickedUp: 0
   doorState: 1
+--- !u!1 &3385418158170235228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1244673881109394563}
+  m_Layer: 0
+  m_Name: Door
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1244673881109394563
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3385418158170235228}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: -0.013787601, w: 0.999905}
+  m_LocalPosition: {x: 0.001, y: 0.043, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6524867675524823979}
+  m_Father: {fileID: 2241310064917096331}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -1.58}
 --- !u!1 &4087712214047014138
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,8 +1027,14 @@ MonoBehaviour:
   _pickUp: {fileID: 0}
   _automatic: 0
   _value: 0
+  _pickupItems: []
   _taskText: 
+  _end: {fileID: 0}
+  _light: {fileID: 0}
+  _lowGrav: {fileID: 0}
+  _player: {fileID: 0}
   ButtonProgress: 0
+  pickedUp: 0
   doorState: 1
 --- !u!1 &7485175068939601979
 GameObject:
@@ -1220,12 +1264,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7542909838958276521}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.70710623, y: -0.0008823649, z: -0.0008823649, w: 0.70710623}
-  m_LocalPosition: {x: -0.0000000042463, y: -0.313, z: 0.0000000011066}
-  m_LocalScale: {x: 1.8094594, y: 0.025796385, z: 1.7226385}
+  m_LocalRotation: {x: -0.7071063, y: -0.0008823649, z: -0.00088236347, w: 0.70710623}
+  m_LocalPosition: {x: 0, y: -0.313, z: -0}
+  m_LocalScale: {x: 1.8094593, y: 0.025796385, z: 1.7226386}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2241310064917096331}
+  m_Father: {fileID: 1244673881109394563}
   m_LocalEulerAnglesHint: {x: -90, y: -14, z: 13.857}
 --- !u!33 &2331363145238273192
 MeshFilter:
@@ -1255,7 +1299,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: f2d314abc52a0df45ba8520f26a46750, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
