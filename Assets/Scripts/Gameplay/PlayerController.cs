@@ -107,8 +107,6 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        FindObjectOfType<SettingsMenu>(true).LoadSettingsFromJson();
-        
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
@@ -143,8 +141,8 @@ public class PlayerController : MonoBehaviour
         {
             Oxygen.PauseDepletion = false;
             
-            float mouseX = Input.GetAxis("Mouse X") * Globals.MouseSensitivity * Screen.dpi;
-            float mouseY = Input.GetAxis("Mouse Y") * Globals.MouseSensitivity * Screen.dpi;
+            float mouseX = Input.GetAxis("Mouse X") * _mouseSensitivity * Screen.dpi;
+            float mouseY = Input.GetAxis("Mouse Y") * _mouseSensitivity * Screen.dpi;
 
             xRotation -= mouseY;
             xRotation = Mathf.Clamp(xRotation, -90f, 90f);
@@ -311,8 +309,6 @@ public class PlayerController : MonoBehaviour
         if (_ladderMode) return;
 
         movement.y = grav;
-        
-        Debug.Log(charController);
         
         if(jumpPressed && !isJumping && charController.isGrounded)
         {
