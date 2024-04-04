@@ -11,11 +11,16 @@ public class TitleScreenController : MonoBehaviour
     public string SceneName;
     [SerializeField] private Image _fadeOut;
     [SerializeField] private float _fadeOutSpeed;
+    [SerializeField] private SettingsMenu _settings;
     [SerializeField] private FMOD.Studio.EventInstance fmodInstance;
     [SerializeField] public FMODUnity.EventReference fmodEvent;
     
-    void Start() 
+    void Start()
     {
+        Globals.StoryFlags = new List<string>();
+        
+        _settings.LoadSettingsFromJson();
+        
         fmodInstance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
         fmodInstance.start();
         fmodInstance.setParameterByName("Title Screen Volume", 1, true);

@@ -1488,7 +1488,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Your'e winner :D
+  m_text: You win!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 679c1782d45552249898a8701ec9f110, type: 2}
   m_sharedMaterial: {fileID: 6932671051395313330, guid: 679c1782d45552249898a8701ec9f110, type: 2}

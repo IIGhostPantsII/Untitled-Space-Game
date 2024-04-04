@@ -8,18 +8,24 @@ using Random = UnityEngine.Random;
 public class MonsterComebackTrigger : MonoBehaviour
 {
     [SerializeField] private float _maxWaitTime;
+    [SerializeField] private MonsterAI[] _monsters;
 
     private float _waitTimer;
+
+    private void Start()
+    {
+        _waitTimer = _maxWaitTime;
+        
+        _monsters[Random.Range(0, _monsters.Length)].gameObject.SetActive(true);
+    }
 
     private void Update()
     {
         _waitTimer -= Time.deltaTime;
         
         if (_waitTimer > 0) return;
-
-        GameObject[] monsterList = GameObject.FindGameObjectsWithTag("Monster");
-
-        MonsterAI monster = monsterList[(int) Random.Range(0, monsterList.Length)].GetComponent<MonsterAI>();
+        
+        MonsterAI monster = _monsters[(int) Random.Range(0, _monsters.Length)];
         
         monster.Comeback();
     }

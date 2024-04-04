@@ -18,9 +18,8 @@ public class TaskAreaController : MonoBehaviour
     {
         _taskManager = FindObjectOfType<TaskManager>();
         _voiceline = FindObjectOfType<VoicelineController>();
-
-
-        _roomNode = FindObjectOfType<RoomOrbController>()._rooms[_roomNum].GetComponent<InActiveRoom>();
+        
+        _roomNode = FindObjectOfType<RoomOrbController>(true)._rooms[_roomNum].GetComponent<InActiveRoom>();
     }
 
     public void UpdatePAMode()

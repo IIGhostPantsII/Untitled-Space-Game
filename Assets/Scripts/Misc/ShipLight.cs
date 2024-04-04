@@ -13,6 +13,7 @@ public class ShipLight : MonoBehaviour
     [SerializeField] private PowerButton _linkedButton;
     [SerializeField] private GameObject[] _lights;
     [SerializeField] private MoveObject _move;
+    [SerializeField] private ReflectionProbe _reflectionProbe;
 
     private void Start()
     {
@@ -49,5 +50,7 @@ public class ShipLight : MonoBehaviour
         {
             _move.Move();
         }
+
+        _reflectionProbe.RenderProbe();
     }
 }
