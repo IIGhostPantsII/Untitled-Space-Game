@@ -49,8 +49,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject _interactPromptText;
     [SerializeField] private TMP_Text _interactText;
     [SerializeField] private GameObject _camObject;
+
+    [Header("Don't Have On In Hub")]
     [SerializeField] private SoundPerception _monsterHearing;
-    [SerializeField] private PowerButton[] _powerButtons;
 
     // INPUT BOOLS
     private bool isSprinting;
@@ -78,7 +79,6 @@ public class PlayerController : MonoBehaviour
     private AreaTriggers areaTrigger;
     private PickupAndPlace pickupAndPlace;
 
-    public bool is2D;
     private int winCounter = 0;
     private bool _ladderMode;
 
@@ -117,11 +117,6 @@ public class PlayerController : MonoBehaviour
         jumpEndEvent = RuntimeManager.CreateInstance(jumpEndEventPath);
 
         originalCameraPosition = new Vector3(0f, 2f, 0f);
-
-        //foreach(PowerButton button in _powerButtons)
-        //{
-        //    button.OnActivate += IncrementWinCounter;
-        //}
         
         if(_firstPersonCam != null)
         {
@@ -134,16 +129,6 @@ public class PlayerController : MonoBehaviour
 
         cam = _camObject.GetComponent<CinemachineVirtualCamera>();
         transposer = cam.GetCinemachineComponent<CinemachineTransposer>();
-    }
-
-    void IncrementWinCounter()
-    {
-        winCounter += 1;
-
-        if(winCounter >= _powerButtons.Length)
-        {
-            WinGame();
-        }
     }
 
     void Update()
@@ -209,13 +194,16 @@ public class PlayerController : MonoBehaviour
                 if(Globals.Movement && charController.isGrounded && !isCrouching)
                 {
                     moveEvent.start();
-                    if(isSprinting)
+                    if(_monsterHearing != null)
                     {
-                        _monsterHearing.ActionPerformed(1.1f);
-                    }
-                    else
-                    {
-                        _monsterHearing.ActionPerformed(1f);
+                        if(isSprinting)
+                        {
+                            _monsterHearing.ActionPerformed(1.1f);
+                        }
+                        else
+                        {
+                            _monsterHearing.ActionPerformed(1f);
+                        }
                     }
                     Globals.SpatialSounds(moveEvent, gameObject);
                     Globals.CheckLowpass(moveEvent, _subOxygen);
@@ -327,7 +315,10 @@ public class PlayerController : MonoBehaviour
             isJumping = true;
             movement.y = isInLowGravity ? _jumpVelocityLowGrav : _jumpVelocity;
             jumpStartEvent.start();
-            _monsterHearing.ActionPerformed(1.15f);
+            if(_monsterHearing != null)
+            {
+                _monsterHearing.ActionPerformed(1.15f);
+            }
             Globals.SpatialSounds(jumpStartEvent, gameObject);
             Globals.CheckLowpass(jumpStartEvent, _subOxygen);
             jumpSound = true;
@@ -344,29 +335,6 @@ public class PlayerController : MonoBehaviour
                 jumpSound = false;
             }
         }
-
-        //Cinemachine Attack funcion
-        //if(true)
-        //{
-        //    attackTimer += Time.deltaTime;
-        //    Vector3 originalPos = transposer.m_FollowOffset;
-        //    if(attackTimer < 2.5f)
-        //    {
-        //        transposer.m_FollowOffset = new Vector3(originalPos.x, originalPos.y, originalPos.z);
-        //    }
-        //    else if(attackTimer > 2.5f && attackTimer < 4.5f)
-        //    {
-        //        transposer.m_FollowOffset = Vector3.Lerp(originalPos, new Vector3(originalPos.x - 4f, originalPos.y - 3f, originalPos.z + 2f), 2f);
-        //    }
-        //    else if(attackTimer > 4.5f && attackTimer < 6.5f)
-        //    {
-        //        transposer.m_FollowOffset = Vector3.Lerp(new Vector3(originalPos.x - 4f, originalPos.y - 3f, originalPos.z + 2f), new Vector3(originalPos.x - 8f, originalPos.y, originalPos.z), 2f);
-        //    }
-        //}
-        //else
-        //{
-        //    attackTimer = 0f;
-        //}
     }
 
     void LateUpdate()
