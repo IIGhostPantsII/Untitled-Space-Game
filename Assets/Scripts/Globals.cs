@@ -21,12 +21,34 @@ public static class Globals
     public static List<RoomTasks> RoomTasks = new List<RoomTasks>();
     public static List<string> StoryFlags = new List<string>();
     public static bool[] RoomPower = new bool[6];
-    
-    public static readonly string SaveDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/Occupational Hazards ~ The Trials and Tribulations of the Stellar United Systems";
+
+    public static int CurrentResolution = 2;
+    public static bool IsFullscreen = false;
+    public static bool SubtitlesOn = true;
+    public static bool CrosshairOn = true;
+    public static bool AltDoorColors = false;
+    public static float Volume;
+    public static float MouseSensitivity = 0.02f;
+    public static float Gamma = 0;
+
     //Monster Modes
     public static bool ChaseMode;
     public static bool IdleMode = true;
     public static bool PatrolMode;
+
+    public static readonly string SaveDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/Occupational Hazards ~ The Trials and Tribulations of the Stellar United Systems";
+    
+    public static readonly List<List<int>> Resolutions = new List<List<int>>
+    {
+        new List<int> {16, 9},
+        new List<int> {800, 450},
+        new List<int> {1280, 720},
+        new List<int> {1366, 768},
+        new List<int> {1600, 900},
+        new List<int> {1920, 1080},
+        new List<int> {2560, 1440},
+        new List<int> {3840, 2160}
+    };
 
     public static int Money;
 

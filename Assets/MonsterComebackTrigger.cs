@@ -11,6 +11,11 @@ public class MonsterComebackTrigger : MonoBehaviour
 
     private float _waitTimer;
 
+    private void Start()
+    {
+        _waitTimer = _maxWaitTime * 3;
+    }
+
     private void Update()
     {
         _waitTimer -= Time.deltaTime;

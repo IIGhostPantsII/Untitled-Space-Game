@@ -82,8 +82,8 @@ public class MonsterAI : MonoBehaviour
         {
             Vector3 newPos = _playerTransform.position;
 
-            newPos.x += Random.Range(-100, 100);
-            newPos.z += Random.Range(-100, 100);
+            newPos.x += Random.Range(-150, 150);
+            newPos.z += Random.Range(-150, 150);
 
             if (Vector3.Distance(_playerTransform.position, newPos) < 50) continue;
             
