@@ -126,6 +126,8 @@ MonoBehaviour:
   isOutsideTrigger: 0
   UnlockedColor: {r: 0.039215688, g: 1, b: 0.03137255, a: 1}
   LockedColor: {r: 1.3977199, g: 0.04385003, b: 0.11147599, a: 1}
+  UnlockedColorAlt: {r: 0, g: 0, b: 0, a: 0}
+  LockedColorAlt: {r: 0, g: 0, b: 0, a: 0}
   _lights:
   - {fileID: 1607906849526607011}
   - {fileID: 10765746381952855}
@@ -196,7 +198,7 @@ Transform:
   m_GameObject: {fileID: 148953187258021376}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.687, y: -0.556, z: -0.725}
+  m_LocalPosition: {x: -0.55, y: -0.556, z: -0.9}
   m_LocalScale: {x: 0.14828652, y: 0.13587998, z: 0.133898}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -243,14 +245,22 @@ MonoBehaviour:
   _taskName: 
   _door: {fileID: 5163342626430192864}
   _text: {fileID: 0}
+  eventPath:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   _pickUp: {fileID: 0}
   _automatic: 0
   _value: 0
   _pickupItems: []
   _taskText: 
   _end: {fileID: 0}
-  _light: {fileID: 0}
+  _lights: []
   _lowGrav: {fileID: 0}
+  _reflectionProbe: {fileID: 0}
   _player: {fileID: 0}
   ButtonProgress: 0
   pickedUp: 0
@@ -977,7 +987,7 @@ Transform:
   m_GameObject: {fileID: 7318262384560149302}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.6863, y: -0.5776, z: 0.725}
+  m_LocalPosition: {x: 0.55, y: -0.577, z: 0.9}
   m_LocalScale: {x: 0.14828652, y: 0.13587998, z: 0.133898}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1024,14 +1034,22 @@ MonoBehaviour:
   _taskName: 
   _door: {fileID: 5163342626430192864}
   _text: {fileID: 0}
+  eventPath:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   _pickUp: {fileID: 0}
   _automatic: 0
   _value: 0
   _pickupItems: []
   _taskText: 
   _end: {fileID: 0}
-  _light: {fileID: 0}
+  _lights: []
   _lowGrav: {fileID: 0}
+  _reflectionProbe: {fileID: 0}
   _player: {fileID: 0}
   ButtonProgress: 0
   pickedUp: 0

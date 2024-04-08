@@ -329,7 +329,10 @@ public class PlayerController : MonoBehaviour
             if(jumpSound)
             {
                 jumpEndEvent.start();
-                _monsterHearing.ActionPerformed(1.3f);
+                if(_monsterHearing != null)
+                {
+                    _monsterHearing.ActionPerformed(1.3f);
+                }
                 Globals.SpatialSounds(jumpEndEvent, gameObject);
                 Globals.CheckLowpass(jumpEndEvent, _subOxygen);
                 jumpSound = false;
