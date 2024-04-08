@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using FMODUnity;
@@ -77,6 +78,7 @@ public class PlayerController : MonoBehaviour
     private PowerButton currentButton;
     private AreaTriggers areaTrigger;
     private PickupAndPlace pickupAndPlace;
+    private bool _isPaused = false;
 
     public bool is2D;
     private int winCounter = 0;
@@ -99,7 +101,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         input = new PlayerInput();
-        
+
         input.Player.Pause.performed += PauseGame;
         input.Player.Screenshot.performed += Screenshot;
         input.UI.Screenshot.performed += Screenshot;
@@ -461,10 +463,12 @@ public class PlayerController : MonoBehaviour
     private void PauseGame(InputAction.CallbackContext obj)
     {
         if(!charController.isGrounded) return;
+        if(_isPaused) return;
         
         EventSystem.current.SetSelectedGameObject(null);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        _isPaused = true;
         Globals.LockMovement();
         
         _defaultUI.SetActive(false);
@@ -476,6 +480,7 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Globals.UnlockMovement();
+        _isPaused = false;
         
         _defaultUI.SetActive(true);
         _pauseMenu.SetActive(false);
@@ -483,6 +488,7 @@ public class PlayerController : MonoBehaviour
 
     public void RestartGame()
     {
+        Globals.StoryFlags = new List<string>();
         Globals.GameState = GameState.Main;
         MonsterAI.Reset();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
